@@ -1,6 +1,6 @@
 import { Header, Container } from "./header.styled";
 
-export const header = () => {
+export const SideBar = () => {
   return (
     <Header>
       <Container>
