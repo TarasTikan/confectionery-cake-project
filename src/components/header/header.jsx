@@ -1,28 +1,28 @@
-import { Header, Container } from "./header.styled";
-
+import { Header, Container, NavList, Logo, NavLink, BtnHeader, BtnBasket } from "./header.styled";
+import {ShopBascetIcon} from '../../icons/shopBascetIcon'
 export const SideBar = () => {
   return (
     <Header>
       <Container>
-        <a href="/">Кондитерська</a>
+        <Logo href="/">Кондитерська</Logo>
         <nav>
-          <ul>
+          <NavList>
             <li>
-              <a href="/">Головна</a>
+              <NavLink href="/">Головна</NavLink>
             </li>
             <li>
-              <a href="/">Меню</a>
+              <NavLink href="/">Меню</NavLink>
             </li>
             <li>
-              <a href="/">Про нас</a>
+              <NavLink href="/">Про нас</NavLink>
             </li>
             <li>
-              <a href="/">контакти</a>
+              <NavLink href="/">контакти</NavLink>
             </li>
-          </ul>
+          </NavList>
         </nav>
-        <button type="button">Замовити зараз</button>
-        <a href="0">корз</a>
+        <BtnHeader type="button">Замовити зараз</BtnHeader>
+        <BtnBasket href="0"><ShopBascetIcon/></BtnBasket>
       </Container>
     </Header>
   );
