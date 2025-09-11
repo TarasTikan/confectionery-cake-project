@@ -1,9 +1,11 @@
-import { Header, Container, NavList, Logo, NavLink, BtnHeader, BtnBasket } from "./header.styled";
+import { Header, Container, NavList, Logo, NavLink, BtnHeader, BtnBasket,BtnMobMenu } from "./header.styled";
 import {ShopBascetIcon} from '../../icons/shopBascetIcon'
+import {MobMenuIcon} from '../../icons/mobMenuIcon'
 export const SideBar = () => {
   return (
     <Header>
       <Container>
+        <BtnMobMenu><MobMenuIcon/></BtnMobMenu>
         <Logo href="/">Кондитерська</Logo>
         <nav>
           <NavList>
