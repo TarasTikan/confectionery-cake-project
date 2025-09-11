@@ -50,6 +50,7 @@ export const Logo = styled.a`
   @media screen and (min-width: 1200px) {
     font-size: 24px; /* пк */
     margin-right: auto;
+    margin-left: 0;
   }
 `
 
@@ -192,4 +193,5 @@ export const BtnBasket = styled.button`
       width: 25px;
       height: 25px;
     }
+      display: none;
   }`
