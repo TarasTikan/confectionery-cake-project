@@ -27,6 +27,7 @@ export const Container = styled.div`
 
 
 export const Logo = styled.a`
+font-family: 'Inter', sans-serif;
 margin-right: auto;
  font-size: 24px;   
   font-weight: 700;    
@@ -43,7 +44,7 @@ list-style:none;
 `
 
 export const NavLink = styled.a`
- font-family: 'Inter';
+font-family: 'Inter', sans-serif;
   text-transform: uppercase;
   font-size: 16px;
   font-weight: 500;
@@ -58,7 +59,7 @@ export const NavLink = styled.a`
 }
 `
 export const BtnHeader = styled.button`
- font-family: 'Inter';
+font-family: 'Inter', sans-serif;
  font-size: 16px;
   font-weight: 600;
   padding: 10px 20px;
