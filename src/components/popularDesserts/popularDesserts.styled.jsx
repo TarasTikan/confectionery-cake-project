@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-
+import { Swiper, SwiperSlide } from 'swiper/react';
 export const PopularDessertsSection = styled.section`
   background-color: #FFFFFF;
   font-family: 'Inter', sans-serif;
@@ -23,7 +23,7 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-
+  flex-direction: column;
   @media screen and (min-width: 600px) {
     width: 600px;
   }
@@ -32,7 +32,7 @@ export const Container = styled.div`
   }
   @media screen and (min-width: 1200px) {
     width: 1200px;
-    flex-direction: column;
+    
   }
 `;
 
@@ -51,43 +51,13 @@ export const PopularDessertsTitle = styled.h2`
 
   @media screen and (min-width: 1200px) {
     font-size: 36px;
-    margin-bottom: 60px;
-  }
-`;
-
-export const PopularDessertsList = styled.ul`
-  display: flex;
-
-  align-items: center;
-  justify-content: center;
-  gap: 30px;
-  flex-wrap: wrap;
-`;
-
-export const PopularDessertsCard = styled.li`
-  background: #fff;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  text-align: center;
-  transition: transform 0.3s ease;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  cursor: pointer;
-  &:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
-  }
-
-    &:hover div {
-    transform: translateY(0);
+    margin-bottom: 40px;
   }
 `;
 
 export const PopularDessertsImage = styled.img`
   display: block;
-  width: 270px;
+  width: 100%;
   height: auto;
   object-fit: cover;
   @include tablet {
@@ -151,5 +121,44 @@ export const ProductButton = styled.button`
 
   &:hover {
     background-color: #643a99ff;      /* темніший відтінок при наведенні */
+  }
+`;
+
+export const StyledSwiper = styled(Swiper)`
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  display: flex;
+      align-items: center;
+    justify-content: center;
+      @media screen and (min-width: 600px) {
+    width: 600px;
+  }
+      @media screen and (min-width: 800px) {
+    width: 800px;
+  }
+  @media screen and (min-width: 1200px) {
+    width: 1200px;
+    
+  }
+`;
+
+export const StyledSlideCard = styled(SwiperSlide)`
+  background-color: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  transition: transform 0.3s ease;
+  flex-direction: column;
+  position: relative;
+  cursor: pointer;
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  }
+
+    &:hover div {
+    transform: translateY(0);
   }
 `;
