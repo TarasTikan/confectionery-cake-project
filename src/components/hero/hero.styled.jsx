@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 
 export const HeroSection = styled.section`
+background-color: #FFF8F0;
  padding-top: 40px;
   padding-bottom: 40px;
 
@@ -104,7 +105,7 @@ export const HeroBtn = styled.button`
   transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
 
   &:hover {
-    background-color: #e57e65;
+    background-color: #643a99ff; 
   }
 
   @media screen and (min-width: 600px) {

@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { Swiper, SwiperSlide } from 'swiper/react';
 export const PopularDessertsSection = styled.section`
-  background-color: #FFFFFF;
+  background-color: #FFF8F0;
   font-family: 'Inter', sans-serif;
      padding-top: 30px;
     padding-bottom: 20px;
@@ -96,7 +96,6 @@ export const ProductTitle = styled.h3`
   font-size: 20px;
   font-weight: 700;
   color: #2E2E2E;
-  margin: 0;
 `;
 
 export const ProductPrice = styled.p`
@@ -112,7 +111,7 @@ export const ProductButton = styled.button`
   font-size: 16px;
   font-weight: 600;
   color: #fff;
-  background: #9B6BCE;           /* бузковий */
+  background: #9B6BCE;    
   border: none;
   border-radius: 12px;
   padding: 12px 24px;
@@ -120,7 +119,7 @@ export const ProductButton = styled.button`
   transition: background 0.3s ease;
 
   &:hover {
-    background-color: #643a99ff;      /* темніший відтінок при наведенні */
+    background-color: #643a99ff;      
   }
 `;
 

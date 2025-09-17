@@ -1,4 +1,4 @@
-import data from '../../data/data'
+import {cakes} from '../../data/data'
 import { PopularDessertsSection, Container, PopularDessertsTitle, StyledSlideCard, StyledSwiper, PopularDessertsImage, WrapInfo, ProductTitle, ProductPrice, ProductButton } from "./popularDesserts.styled"
 import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from 'swiper/modules';
 import { useRef } from 'react';
@@ -47,7 +47,7 @@ export const PopularDesserts = () => {
                         },
                     }}
                 >
-                    {data.map(item => (<StyledSlideCard key={item.id}><PopularDessertsImage src={item.image} alt='торт' /> <WrapInfo><ProductTitle>{item.title}</ProductTitle><ProductPrice>{item.price}</ProductPrice><ProductButton>Замовити</ProductButton></WrapInfo></StyledSlideCard >))}
+                    {cakes.map(item => (<StyledSlideCard key={item.id}><PopularDessertsImage src={item.image} alt='торт' /> <WrapInfo><ProductTitle>{item.title}</ProductTitle><ProductPrice>{item.price}</ProductPrice><ProductButton>Замовити</ProductButton></WrapInfo></StyledSlideCard >))}
                 </StyledSwiper>
             </Container>
         </PopularDessertsSection>

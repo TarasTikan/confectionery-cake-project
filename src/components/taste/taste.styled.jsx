@@ -1,0 +1,122 @@
+import styled from '@emotion/styled';
+import { Swiper, SwiperSlide } from 'swiper/react';
+export const TasteSection = styled.section`
+  background-color: #FFF8F0;
+  font-family: 'Inter', sans-serif;
+     padding-top: 30px;
+    padding-bottom: 20px;
+  @media screen and (min-width: 600px) {
+     padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  @media screen and (min-width: 1200px) {
+         padding-top: 50px;
+    padding-bottom: 50px;
+  }
+`
+export const Container = styled.div`
+  width: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  @media screen and (min-width: 600px) {
+    width: 600px;
+  }
+      @media screen and (min-width: 800px) {
+    width: 800px;
+  }
+  @media screen and (min-width: 1200px) {
+    width: 1200px;
+    
+  }
+`;
+
+export const StyledSwiper = styled(Swiper)` 
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  display: flex;
+  gap: 20px;
+      align-items: center;
+    justify-content: center;
+      @media screen and (min-width: 600px) {
+    width: 600px;
+  }
+      @media screen and (min-width: 800px) {
+    width: 800px;
+  }
+  @media screen and (min-width: 1200px) {
+    width: 1200px;
+    
+  }
+`;
+
+export const TasteTitle = styled.h3`
+ font-family: "Inter", sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 30px;
+  color: #2e2e2e;
+
+  @media screen and (min-width: 600px) {
+    font-size: 32px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    font-size: 36px;
+  }
+`
+
+export const StyledSlideCard = styled(SwiperSlide)`
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  transition: overflow 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  &:hover {
+ transform: scale(1.05);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+
+  }
+
+   &:hover h3 {
+   color: #9b6bce;
+   }
+
+`;
+
+
+export const TasteImage = styled.img`
+  display: block;
+  width: 100%;
+  object-fit: cover;
+  @include tablet {
+    width: calc((100% - 30px) / 2);
+  }
+  @include desktop {
+    width: calc((100% - 30px) / 4);
+    flex-grow: 3;
+  }
+`;
+
+export const TasteTitleProduct = styled.h3`
+position: absolute;
+left: 0;
+  right: 0;
+  top: 10px;
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #2E2E2E;
+  transition: color 300ms cubic-bezier(0.4, 0, 0.2, 1);
+`;

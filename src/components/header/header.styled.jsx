@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 
 export const Header = styled.header`
-  background-color: #FFFFFF;
+background-color: #FFF8F0;
   font-family: 'Inter', sans-serif;
      padding-top: 15px
     padding-bottom: 20px
@@ -100,7 +100,7 @@ export const BtnHeader = styled.button`
   transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
 display: none;
   &:hover {
-    background-color: #F89B82;
+    background-color: #643a99ff;   
   }
 
   @media screen and (min-width: 600px) {
@@ -156,7 +156,7 @@ export const BtnBasket = styled.button`
     }
   }`
 
-  export const BtnMobMenu = styled.button`
+export const BtnMobMenu = styled.button`
     width: 45px;  /* мобілка */
   height: 45px;
   border: none;
