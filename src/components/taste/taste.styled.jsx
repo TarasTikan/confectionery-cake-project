@@ -77,12 +77,11 @@ export const StyledSlideCard = styled(SwiperSlide)`
   border-radius: 16px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   text-align: center;
-  transition: overflow 300ms cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
   flex-direction: column;
   position: relative;
   cursor: pointer;
-  transition: transform 0.3s ease;
+  transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1);
   &:hover {
  transform: scale(1.05);
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
@@ -93,6 +92,8 @@ export const StyledSlideCard = styled(SwiperSlide)`
    color: #9b6bce;
    }
 
+   &:hover button {
+   opacity: 1;}
 `;
 
 
@@ -119,4 +120,58 @@ left: 0;
   font-weight: 700;
   color: #2E2E2E;
   transition: color 300ms cubic-bezier(0.4, 0, 0.2, 1);
+`;
+
+
+export const TasteBtnProduct = styled.button`
+  width: 70%;
+  height: 40px;
+  border-radius: 20px;
+  border: none;
+  background-color: #fefcef;    
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 0 auto;          
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 10px;
+  transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1), opacity 400ms cubic-bezier(0.4, 0, 0.2, 1);
+opacity: 0;
+
+  &:hover {
+  background-color: #ffeef8;      
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+ svg{
+ pointer-events: none;
+}
+
+`;
+
+export const DescriptionContainer = styled.div`
+  text-align: center;
+  font-size: 14px;
+  color: #555;
+  line-height: 1.4;
+ position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 50px;
+  background-color: #fffefa;
+  width: 80%;
+  padding-top:20px;
+padding-bottom:20px;
+padding-left: 10px;
+padding-right: 10px;
+  margin: 0 auto;
+  border-radius: 20px;
+  opacity: ${({ active }) =>
+    active === 'true' ? '1' : '0'};
+
 `;
