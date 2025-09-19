@@ -60,13 +60,6 @@ export const PopularDessertsImage = styled.img`
   width: 100%;
   height: auto;
   object-fit: cover;
-  @include tablet {
-    width: calc((100% - 30px) / 2);
-  }
-  @include desktop {
-    width: calc((100% - 30px) / 4);
-    flex-grow: 3;
-  }
 `;
 
 
