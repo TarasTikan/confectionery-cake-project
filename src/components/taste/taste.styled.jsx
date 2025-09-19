@@ -92,8 +92,13 @@ export const StyledSlideCard = styled(SwiperSlide)`
    color: #9b6bce;
    }
 
-   &:hover button {
-   opacity: 1;}
+      &:hover div {
+   opacity: 1;
+   }
+
+      &:hover button {
+   opacity: 1;
+   }
 `;
 
 
@@ -136,14 +141,13 @@ export const TasteBtnProduct = styled.button`
   transition: all 0.3s ease;
   margin: 0 auto;          
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-
-  position: absolute;
+position: absolute;
   left: 0;
   right: 0;
-  bottom: 10px;
-  transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1), opacity 400ms cubic-bezier(0.4, 0, 0.2, 1);
-opacity: 0;
+  bottom: 15px;
 
+  transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1), opacity 300ms cubic-bezier(0.4, 0, 0.2, 1);
+opacity: 0;
   &:hover {
   background-color: #ffeef8;      
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
@@ -162,7 +166,7 @@ export const DescriptionContainer = styled.div`
  position: absolute;
   left: 0;
   right: 0;
-  bottom: 50px;
+  bottom: 60px;
   background-color: #fffefa;
   width: 80%;
   padding-top:20px;
@@ -171,7 +175,19 @@ padding-left: 10px;
 padding-right: 10px;
   margin: 0 auto;
   border-radius: 20px;
-  opacity: ${({ active }) =>
-    active === 'true' ? '1' : '0'};
+ padding: ${({ active }) => (active === 'true' ? '20px 10px' : '0 10px')};
+  max-height: ${({ active }) => (active === 'true' ? '150px' : '0')};
+ transform: ${({ active }) => (active === 'true' ? 'translateY(0)' : 'translateY(20px)')};
+  overflow: hidden;
+    opacity: 0;
+   transition: 
+    max-height 300ms cubic-bezier(0.4, 0, 0.2, 1),
+    padding 300ms cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 300ms cubic-bezier(0.4, 0, 0.2, 1),
+    transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
 
 `;
+
+export const TasteTextDescribe = styled.p`
+
+ `

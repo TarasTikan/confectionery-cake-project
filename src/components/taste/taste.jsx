@@ -1,4 +1,4 @@
-import { TasteSection, Container, StyledSwiper, TasteImage, TasteTitle, StyledSlideCard, TasteTitleProduct, TasteBtnProduct, DescriptionContainer} from "./taste.styled"
+import { TasteSection, Container, StyledSwiper, TasteImage, TasteTitle, StyledSlideCard, TasteTitleProduct, TasteBtnProduct, DescriptionContainer,TasteTextDescribe } from "./taste.styled"
 import { fillings } from "../../data/data"
 import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from 'swiper/modules';
 import { useRef, useState } from 'react';
@@ -7,11 +7,11 @@ export const Tastes = e => {
     const swiperRef = useRef(null);
     const [openDescribe, setOpenDescribe] = useState(null);
     const toggleDescribeTasteBtn = (id) => {
-          if (openDescribe === id) {
-    setOpenDescribe(null);
-  } else {
-    setOpenDescribe(id); 
-  }
+        if (openDescribe === id) {
+            setOpenDescribe(null);
+        } else {
+            setOpenDescribe(id);
+        }
     }
     return (<TasteSection>
         <Container>
@@ -53,7 +53,7 @@ export const Tastes = e => {
                     <StyledSlideCard key={item.id}>
                         <TasteTitleProduct>{item.title}</TasteTitleProduct>
                         <TasteImage src={item.image} />
-                        <DescriptionContainer active={(openDescribe === item.id).toString()}><p>{item.description}</p></DescriptionContainer>
+                        <DescriptionContainer active={(openDescribe === item.id).toString()}><TasteTextDescribe>{item.description}</TasteTextDescribe></DescriptionContainer>
                         <TasteBtnProduct active={(openDescribe === item.id).toString()} onClick={() => toggleDescribeTasteBtn(item.id)}><ArrowIcon /></TasteBtnProduct>
                     </StyledSlideCard>
                 ))}
