@@ -1,4 +1,4 @@
-import styled from '@emotion/styled';
+import styled from "@emotion/styled";
 
 export const Header = styled.header`
 background-color: #FFF8F0;
@@ -14,7 +14,7 @@ background-color: #FFF8F0;
          padding-top: 25px
     padding-bottom: 50px
   }
-`
+`;
 export const Container = styled.div`
   width: 100%;
   padding-left: 15px;
@@ -27,7 +27,7 @@ export const Container = styled.div`
   @media screen and (min-width: 600px) {
     width: 600px;
   }
-      @media screen and (min-width: 800px) {
+  @media screen and (min-width: 800px) {
     width: 800px;
   }
   @media screen and (min-width: 1200px) {
@@ -35,11 +35,10 @@ export const Container = styled.div`
   }
 `;
 
-
 export const Logo = styled.a`
   font-size: 20px; /* мобілка */
   font-weight: 700;
-  color: #9B6BCE;
+  color: #9b6bce;
   text-decoration: none;
   margin: 0 auto;
 
@@ -52,7 +51,7 @@ export const Logo = styled.a`
     margin-right: auto;
     margin-left: 0;
   }
-`
+`;
 
 export const NavList = styled.ul`
   display: none; /* мобілка */
@@ -63,18 +62,18 @@ export const NavList = styled.ul`
   @media screen and (min-width: 1200px) {
     display: flex; /* планшет */
   }
-`
+`;
 
 export const NavLink = styled.a`
-  font-size: 14px;  /* мобілка */
+  font-size: 14px; /* мобілка */
   font-weight: 500;
-  color: #2E2E2E;
+  color: #2e2e2e;
   text-decoration: none;
   padding: 10px 0;
   transition: color 300ms cubic-bezier(0.4, 0, 0.2, 1);
 
   &:hover {
-    color: #9B6BCE;
+    color: #9b6bce;
   }
 
   @media screen and (min-width: 600px) {
@@ -85,22 +84,22 @@ export const NavLink = styled.a`
     font-size: 16px;
     padding: 20px 0; /* більше простору */
   }
-`
+`;
 export const BtnHeader = styled.button`
- font-size: 14px;   /* мобілка */
+  font-size: 14px; /* мобілка */
   font-weight: 600;
   padding: 8px 16px;
   border-radius: 30px;
   border: none;
-  background-color: #9B6BCE;
+  background-color: #9b6bce;
   color: #fff;
   cursor: pointer;
   margin-left: auto;
   margin-right: 10px;
   transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
-display: none;
+  display: none;
   &:hover {
-    background-color: #643a99ff;   
+    background-color: #643a99ff;
   }
 
   @media screen and (min-width: 600px) {
@@ -115,18 +114,18 @@ display: none;
     margin-right: 20px;
     display: block;
   }
-  `
+`;
 
 export const BtnBasket = styled.button`
-    width: 45px;  /* мобілка */
+  width: 45px; /* мобілка */
   height: 45px;
   border: none;
   background-color: transparent;
   border-radius: 50%;
   cursor: pointer;
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
-              border 250ms cubic-bezier(0.4, 0, 0.2, 1),
-              background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   svg {
     width: 20px;
@@ -135,11 +134,11 @@ export const BtnBasket = styled.button`
 
   &:hover {
     fill: #fff;
-    background-color: #9B6BCE;
+    background-color: #9b6bce;
   }
 
   @media screen and (min-width: 600px) {
-    width: 55px;  /* планшет */
+    width: 55px; /* планшет */
     height: 55px;
     svg {
       width: 22px;
@@ -154,18 +153,19 @@ export const BtnBasket = styled.button`
       width: 25px;
       height: 25px;
     }
-  }`
+  }
+`;
 
 export const BtnMobMenu = styled.button`
-    width: 45px;  /* мобілка */
+  width: 45px; /* мобілка */
   height: 45px;
   border: none;
   background-color: transparent;
   border-radius: 50%;
   cursor: pointer;
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
-              border 250ms cubic-bezier(0.4, 0, 0.2, 1),
-              background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   svg {
     width: 20px;
@@ -174,11 +174,11 @@ export const BtnMobMenu = styled.button`
 
   &:hover {
     fill: #fff;
-    background-color: #9B6BCE;
+    background-color: #9b6bce;
   }
 
   @media screen and (min-width: 600px) {
-    width: 55px;  /* планшет */
+    width: 55px; /* планшет */
     height: 55px;
     svg {
       width: 22px;
@@ -193,5 +193,6 @@ export const BtnMobMenu = styled.button`
       width: 25px;
       height: 25px;
     }
-      display: none;
-  }`
+    display: none;
+  }
+`;

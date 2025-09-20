@@ -4,6 +4,7 @@ import {Hero} from './hero/hero'
 import {Menu} from './menu/menu'
 import {PopularDesserts} from './popularDesserts/popularDesserts'
 import {Tastes} from './taste/taste'
+import {CustomDesign} from './customDesign/customDesign'
 function App() {
   return (
     <>
@@ -13,6 +14,7 @@ function App() {
       <Menu/>
       <PopularDesserts/>
       <Tastes/>
+      <CustomDesign/>
     </main>
     </>
   );

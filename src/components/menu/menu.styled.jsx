@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 
 export const MenuSection = styled.section`
-  background-color: #FFF8F0;
+  background-color: #fff8f0;
   padding-bottom: 40px;
 `;
 

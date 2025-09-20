@@ -1,20 +1,20 @@
-import styled from '@emotion/styled';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import styled from "@emotion/styled";
+import { Swiper, SwiperSlide } from "swiper/react";
 export const PopularDessertsSection = styled.section`
-  background-color: #FFF8F0;
-  font-family: 'Inter', sans-serif;
-     padding-top: 30px;
-    padding-bottom: 20px;
+  background-color: #fff8f0;
+  font-family: "Inter", sans-serif;
+  padding-top: 30px;
+  padding-bottom: 20px;
   @media screen and (min-width: 600px) {
-     padding-top: 30px;
+    padding-top: 30px;
     padding-bottom: 30px;
   }
 
   @media screen and (min-width: 1200px) {
-         padding-top: 50px;
+    padding-top: 50px;
     padding-bottom: 50px;
   }
-`
+`;
 export const Container = styled.div`
   width: 100%;
   padding-left: 15px;
@@ -27,12 +27,11 @@ export const Container = styled.div`
   @media screen and (min-width: 600px) {
     width: 600px;
   }
-      @media screen and (min-width: 800px) {
+  @media screen and (min-width: 800px) {
     width: 800px;
   }
   @media screen and (min-width: 1200px) {
     width: 1200px;
-    
   }
 `;
 
@@ -62,17 +61,16 @@ export const PopularDessertsImage = styled.img`
   object-fit: cover;
 `;
 
-
 export const WrapInfo = styled.div`
-background-color: #fff;
-border-radius: 20px;
-text-align: center;
-width: 230px;
+  background-color: #fff;
+  border-radius: 20px;
+  text-align: center;
+  width: 230px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   gap: 12px;
   position: absolute;
   left: 0;
@@ -85,14 +83,14 @@ box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 `;
 
 export const ProductTitle = styled.h3`
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 20px;
   font-weight: 700;
-  color: #2E2E2E;
+  color: #2e2e2e;
 `;
 
 export const ProductPrice = styled.p`
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 16px;
   font-weight: 500;
   color: #555;
@@ -100,11 +98,11 @@ export const ProductPrice = styled.p`
 `;
 
 export const ProductButton = styled.button`
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 16px;
   font-weight: 600;
   color: #fff;
-  background: #9B6BCE;    
+  background: #9b6bce;
   border: none;
   border-radius: 12px;
   padding: 12px 24px;
@@ -112,7 +110,7 @@ export const ProductButton = styled.button`
   transition: background 0.3s ease;
 
   &:hover {
-    background-color: #643a99ff;      
+    background-color: #643a99ff;
   }
 `;
 
@@ -121,17 +119,16 @@ export const StyledSwiper = styled(Swiper)`
   padding-top: 20px;
   padding-bottom: 20px;
   display: flex;
-      align-items: center;
-    justify-content: center;
-      @media screen and (min-width: 600px) {
+  align-items: center;
+  justify-content: center;
+  @media screen and (min-width: 600px) {
     width: 600px;
   }
-      @media screen and (min-width: 800px) {
+  @media screen and (min-width: 800px) {
     width: 800px;
   }
   @media screen and (min-width: 1200px) {
     width: 1200px;
-    
   }
 `;
 
@@ -150,7 +147,7 @@ export const StyledSlideCard = styled(SwiperSlide)`
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
   }
 
-    &:hover div {
+  &:hover div {
     transform: translateY(0);
   }
 `;

@@ -26,14 +26,14 @@ export const Container = styled.div`
   flex-direction: column;
   justify-content: space-between;
 
-    @media screen and (min-width: 400px) {
+  @media screen and (min-width: 400px) {
     width: 400px;
   }
   @media screen and (min-width: 600px) {
     width: 600px;
     flex-direction: row;
   }
-      @media screen and (min-width: 800px) {
+  @media screen and (min-width: 800px) {
     width: 800px;
   }
   @media screen and (min-width: 1200px) {

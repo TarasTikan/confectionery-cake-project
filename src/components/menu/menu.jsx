@@ -31,29 +31,29 @@ export const Menu = () => {
           </MenuCard>
           <MenuCard>
             <a href="/">
-            <WrapInfo>
-              <MenuName>Капкейки</MenuName>
-              <MenuBtn>Детальніше</MenuBtn>
-            </WrapInfo>
-            <MenuCardImage src={CapCakeImg} alt="Капкейки" />
+              <WrapInfo>
+                <MenuName>Капкейки</MenuName>
+                <MenuBtn>Детальніше</MenuBtn>
+              </WrapInfo>
+              <MenuCardImage src={CapCakeImg} alt="Капкейки" />
             </a>
           </MenuCard>
           <MenuCard>
             <a href="/">
-            <WrapInfo>
-              <MenuName>Макарони</MenuName>
-              <MenuBtn>Детальніше</MenuBtn>
-            </WrapInfo>
-            <MenuCardImage src={MakaronImg} alt="Макарони" />
+              <WrapInfo>
+                <MenuName>Макарони</MenuName>
+                <MenuBtn>Детальніше</MenuBtn>
+              </WrapInfo>
+              <MenuCardImage src={MakaronImg} alt="Макарони" />
             </a>
           </MenuCard>
           <MenuCard>
             <a href="/">
-            <WrapInfo>
-              <MenuName>Тарти</MenuName>
-              <MenuBtn>Детальніше</MenuBtn>
-            </WrapInfo>
-            <MenuCardImage src={TartImg} alt="Тарти" />
+              <WrapInfo>
+                <MenuName>Тарти</MenuName>
+                <MenuBtn>Детальніше</MenuBtn>
+              </WrapInfo>
+              <MenuCardImage src={TartImg} alt="Тарти" />
             </a>
           </MenuCard>
         </MenuList>
