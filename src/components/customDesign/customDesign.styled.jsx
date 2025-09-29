@@ -119,65 +119,56 @@ export const DesignTextCard = styled.p`
 `;
 
 export const DesignList = styled.ul`
-  display: flex;
-  gap: 20px;
-  align-items: center;
-  justify-content: center;
   list-style: none;
+  display: flex;
+  gap: 30px;
   flex-wrap: wrap;
-  max-width: 850px;
 `;
 
 export const DesignListItem = styled.li`
+  background-color: #ffff;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #fff;
-  border-radius: 16px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
-  padding: 16px;
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
   text-align: center;
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  flex-grow: 1;
-  width: 130px;
-  height: 140px;
-  cursor: pointer;
-
-  @media (min-width: 400px) {
-    width: 150px;
-    height: 160px;
-    padding: 18px;
-  }
-
-  @media (min-width: 600px) {
-    width: 180px;
-    height: 190px;
-    padding: 20px;
-  }
+  border-radius: 8px;
+  width: calc((100% - 30px) / 2);
 
   @media (min-width: 1200px) {
-    width: 200px;
-    height: 210px;
-    padding: 24px;
+    width: calc((100% - 30px) / 4);
+    flex-grow: 3;
   }
 
   &:hover {
     transform: translateY(-6px);
     box-shadow: 0 8px 22px rgba(0, 0, 0, 0.1);
   }
-
   &:hover svg {
     transform: scale(1.1);
   }
 
   svg {
-    display: block;
-       width: 58px;
-      height: 58px;
+    width: 58px;
+    height: 58px;
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+`;
 
+export const Designbtn = styled.button`
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @media (min-width: 600px) {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
   }
 `;
