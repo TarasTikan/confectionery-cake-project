@@ -175,23 +175,9 @@ export const DesignListItem = styled.li`
 
   svg {
     display: block;
-    margin: 0 auto 10px;
-    width: 32px;
-    height: 32px;
-    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    @media (min-width: 400px) {
-      width: 36px;
-      height: 36px;
-    }
-
-    @media (min-width: 600px) {
-      width: 42px;
-      height: 42px;
-    }
-
-    @media (min-width: 1200px) {
-      width: 58px;
+       width: 58px;
       height: 58px;
-    }
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
   }
 `;
