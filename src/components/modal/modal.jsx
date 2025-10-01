@@ -4,10 +4,20 @@ import {
   ModalWindow,
   Container,
   Title,
-  LabelForm,
+  TitleForm,
   ListForm,
-  ItemForm
+  ItemForm,
+  RadioInput,
+  RadioLabel,
+  FormCakes,
+  TasteSelect,
+  DesignCakesForm,
+  DecorLabel,
+  DecorCheckbox,
+  CommentCakes
 } from "./modal.styled";
+
+import { fillings } from "../../data/data.js"
 
 export const Modal = ({ clouseModal, open }) => {
   const handleClouse = () => {
@@ -21,38 +31,85 @@ export const Modal = ({ clouseModal, open }) => {
           <Title>Створи свій торт</Title>
           <ListForm>
             <ItemForm>
+              <TitleForm>Форма</TitleForm>
+              <FormCakes>
+                <RadioInput type="radio" name="form-cakes" id="form-cakes-round" />
+                <RadioLabel for="form-cakes-round">Круглий</RadioLabel>
+
+                <RadioInput type="radio" name="form-cakes" id="form-cakes-square" />
+                <RadioLabel for="form-cakes-square">Квадратний</RadioLabel>
+
+                <RadioInput type="radio" name="form-cakes" id="form-cakes-heart" />
+                <RadioLabel for="form-cakes-heart">Серце</RadioLabel>
+
+                <RadioInput type="radio" name="form-cakes" id="form-cakes-rectangular" />
+                <RadioLabel for="form-cakes-rectangular">Прямокутний</RadioLabel>
+              </FormCakes>
+            </ItemForm>
+            <ItemForm>
+              <TitleForm>Розмір форми та вага</TitleForm>
+              <FormCakes>
+                <RadioLabel for="size-cakes-one">16 см та 1,5 кг</RadioLabel>
+                <RadioInput type="radio" name="size-cakes" id="size-cakes-one" />
+
+                <RadioInput type="radio" name="size-cakes" id="size-cakes-two" />
+                <RadioLabel for="size-cakes-two">18 см та 2 кг</RadioLabel>
+
+                <RadioInput type="radio" name="size-cakes" id="size-cakes-three" />
+                <RadioLabel for="size-cakes-three">20 см та 2,5-3 кг</RadioLabel>
+
+                <RadioInput type="radio" name="size-cakes" id="size-cakes-four" />
+                <RadioLabel for="size-cakes-four">22 см та 4-4,5 кг</RadioLabel>
+
+                <RadioInput type="radio" name="size-cakes" id="size-cakes-five" />
+                <RadioLabel for="size-cakes-five">24 см та 5-5,5 кг</RadioLabel>
+              </FormCakes>
+            </ItemForm>
+            <ItemForm>
+              <TitleForm>Смак</TitleForm>
               <form>
-                <LabelForm for="form-cakes">Форма</LabelForm>
-                <input id="form-cakes" />
+                <TasteSelect id="size" name="size">
+                  {fillings.map(({ id, title }) => <option value="title" id={id}>{title}</option>)}
+                </TasteSelect>
               </form>
             </ItemForm>
             <ItemForm>
+              <TitleForm>Декор</TitleForm>
+              <DesignCakesForm>
+             <DecorLabel>
+        <DecorCheckbox type="checkbox" name="decor" value="berries" />
+        Ягоди
+      </DecorLabel>
+                <DecorLabel>
+                  <DecorCheckbox type="checkbox" name="design" />
+                  Квіти</DecorLabel>
+                <DecorLabel>
+                  <DecorCheckbox type="checkbox" name="design" />
+                  Шоколадний дрип</DecorLabel>
+                <DecorLabel>
+                  <DecorCheckbox type="checkbox" name="design" />
+                  Макарони</DecorLabel>
+                <DecorLabel>
+                  <DecorCheckbox type="checkbox" name="design" />
+                  Меренги</DecorLabel>
+                <DecorLabel>
+                  <DecorCheckbox type="checkbox" name="design" />
+                  Дзеркальна глазур</DecorLabel>
+                <DecorLabel>
+                  <DecorCheckbox type="checkbox" name="design" />
+                  Мінімалізм</DecorLabel>
+              </DesignCakesForm>
+            </ItemForm>
+            <ItemForm>
+              <TitleForm>Коментар чи напис до замовлення</TitleForm>
               <form>
-                <LabelForm for="size-cakes">Розмір</LabelForm>
-                <input id="size-cakes" />
+                <CommentCakes placeholder="ім'я, дата або привітання" />
               </form>
             </ItemForm>
             <ItemForm>
+              <TitleForm>Фото</TitleForm>
               <form>
-               <LabelForm for="taste-cakes">Смак</LabelForm>
-                <input id="taste-cakes" />
-              </form>
-            </ItemForm>
-            <ItemForm>
-              <form>
-                 <LabelForm for="design-cakes">Декор</LabelForm>
-                <input id="design-cakes" />
-              </form>
-            </ItemForm>
-            <ItemForm>
-              <form>
-                 <LabelForm for="text-cakes">Напис</LabelForm>
-                <input id="text-cakes" placeholder="ім'я, дата або привітання"/>
-              </form>
-            </ItemForm>
-            <ItemForm>
-              <form>
-                 <LabelForm for="img-cakes">Фото</LabelForm>
+                <label for="img-cakes">Фото</label>
                 <input id="img-cakes" />
               </form>
             </ItemForm>
