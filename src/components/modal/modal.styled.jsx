@@ -96,39 +96,21 @@ export const TitleForm = styled.h2`
 export const ListForm = styled.ul`
   list-style: none;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-
-  gap: 10px;
-   @media (min-width: 500px) {
-    font-size: 18px;
-    line-height: 1.4;
-     flex-wrap: wrap;
-     flex-direction: row;
-  }
-    @media (min-width: 1200px) {
-    font-size: 18px;
-    line-height: 1.4;
-    gap: 20px;
-  }
+  gap: 16px;
+flex-wrap: wrap;
 `;
 
 export const ItemForm = styled.li`
-  background-color: #fbf9ff;
-  border-radius: 8px;
-  padding: 10px;
-  text-align: center;
-width: 100%;
-  @media (min-width: 600px) {
-  width: calc((100% - 30px) / 2);
-  }
-  @media (min-width: 1200px) {
-    width: calc((100% - 30px) / 4);
-    flex-grow: 3;
-    height: 215px;
-     padding: 20px;
-  }
+background-color: #fbf9ff; 
+border-radius: 8px; 
+padding: 10px; 
+text-align: center; 
+width: calc((100% - 30px) / 2); 
+
+@media (min-width: 1200px) { 
+width: calc((100% - 30px) / 4); 
+flex-grow: 3; 
+padding: 20px; }
 `;
 
 export const RadioInput = styled.input`
@@ -265,9 +247,6 @@ text-align: start;
 /* Видимий кастомний чекбокс */
 export const DecorCheckbox = styled.input`
   appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-
   width: 22px;
   height: 22px;
   border: 2px solid #bdbdbd;
@@ -309,7 +288,6 @@ export const DecorCheckbox = styled.input`
 
 export const CommentCakes = styled.textarea`
   width: 100%;
-  height: 125px;
   padding: 10px;
   border-radius: 12px;
 
