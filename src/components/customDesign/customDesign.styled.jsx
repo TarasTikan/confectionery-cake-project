@@ -166,9 +166,9 @@ export const Designbtn = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   @media (min-width: 600px) {
     display: flex;
-    flex-direction: column;
     height: 100%;
   }
 `;

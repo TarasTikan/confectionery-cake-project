@@ -15,7 +15,6 @@ export const Backdrop = styled.div`
 
 export const ModalWindow = styled.div`
   width: 90%;
-  height: 90%;
   position: fixed;
   top: 50%;
   left: 50%;
@@ -51,14 +50,11 @@ export const Title = styled.h1`
   font-weight: 700;
   text-align: center;
   color: #222;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+  font-size: 18px;
+  line-height: 1.3;
 
-  @media (max-width: 400px) {
-    font-size: 18px;
-    line-height: 1.3;
-  }
-
-  @media (min-width: 401px) and (max-width: 1199px) {
+  @media (min-width: 600px) {
     font-size: 24px;
     line-height: 1.4;
   }
@@ -66,6 +62,7 @@ export const Title = styled.h1`
   @media (min-width: 1200px) {
     font-size: 32px;
     line-height: 1.5;
+    margin-bottom: 20px;
   }
 `;
 
@@ -75,42 +72,40 @@ export const TitleForm = styled.h2`
   color: #444;
   margin-bottom: 8px;
   display: block;
-
-  @media (max-width: 400px) {
-    font-size: 14px;
-    line-height: 1.2;
-  }
-
-  @media (min-width: 401px) and (max-width: 1199px) {
-    font-size: 16px;
-    line-height: 1.3;
-  }
-
+  font-size: 14px;
+  line-height: 1.2;
   @media (min-width: 1200px) {
     font-size: 18px;
     line-height: 1.4;
-     margin-bottom: 15px;
+    margin-bottom: 15px;
   }
 `;
 
 export const ListForm = styled.ul`
-  list-style: none;
   display: flex;
-  gap: 16px;
-flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  @media (min-width: 1200px) {
+    gap: 15px;
+  }
 `;
 
 export const ItemForm = styled.li`
-background-color: #fbf9ff; 
-border-radius: 8px; 
-padding: 10px; 
-text-align: center; 
-width: calc((100% - 30px) / 2); 
+  background-color: #fbf9ff;
+  border-radius: 8px;
+  padding: 10px;
+text-align: center;
+  flex-grow: 1;
+  flex-shrink: 1;
+  border: 1px solid #ece8f6;
 
-@media (min-width: 1200px) { 
-width: calc((100% - 30px) / 4); 
-flex-grow: 3; 
-padding: 20px; }
+
+  @media (min-width: 600px) {
+  width: calc((100% - 30px) / 2); 
+  @media (min-width: 1200px) { 
+  width: calc((100% - 30px) / 4); 
+  flex-grow: 3;}
 `;
 
 export const RadioInput = styled.input`
@@ -128,32 +123,19 @@ export const RadioLabel = styled.label`
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 10px 16px;
   border: 2px solid #e5e5e5;
-  border-radius: 12px;
+  border-radius: 8px;
   background: #fff;
   font-family: "Inter", sans-serif;
-  font-size: 14px;
+  font-size: 10px;
   font-weight: 600;
   color: #2e2e2e;
   cursor: pointer;
   transition: all 0.3s ease;
-
+  padding: 6px 10px;
   &:hover {
     border-color: #9b6bce;
     color: #9b6bce;
-  }
-
-  @media (min-width: 320px) {
-    font-size: 10px;
-    padding: 6px 10px;
-    border-radius: 8px;
-  }
-
-  @media (min-width: 600px) {
-    font-size: 12px;
-    padding: 8px 12px;
-    border-radius: 10px;
   }
 
   @media (min-width: 1200px) {
@@ -167,6 +149,8 @@ export const FormCakes = styled.form`
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+  align-items: center;
+  justify-content: center;
 `;
 
 export const TasteSelect = styled.select`
@@ -204,7 +188,6 @@ export const TasteSelect = styled.select`
     height: 35px;
   }
 
-
   @media (min-width: 1200px) {
     font-size: 16px;
     height: 48px;
@@ -213,14 +196,12 @@ export const TasteSelect = styled.select`
 
 export const DesignCakesForm = styled.form`
   display: grid;
-   grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: 5px;
-    @media (min-width: 600px) {
-   gap: 10px;
+  @media (min-width: 600px) {
+    gap: 10px;
   }
 `;
-
-
 
 export const DecorLabel = styled.label`
   display: flex;
@@ -230,7 +211,7 @@ export const DecorLabel = styled.label`
   color: #2e2e2e;
   font-size: 12px;
   font-weight: 500;
-text-align: start;
+  text-align: start;
   @media (min-width: 320px) {
     font-size: 13px;
   }
@@ -244,16 +225,14 @@ text-align: start;
   }
 `;
 
-/* Видимий кастомний чекбокс */
 export const DecorCheckbox = styled.input`
   appearance: none;
-  width: 22px;
-  height: 22px;
+  width: 16px;
+  height: 16px;
   border: 2px solid #bdbdbd;
   border-radius: 8px; /* легке округлення */
   background: #fff;
   position: relative;
-  flex: 0 0 22px;
   transition: all 0.2s ease;
 
   /* фокус із клавіатури */
@@ -277,29 +256,37 @@ export const DecorCheckbox = styled.input`
   /* намальована галочка SVG'ом, щоб було чітко на будь-якому DPI */
   &:checked::after {
     content: "";
-    position: absolute;
     inset: 0;
+    position: absolute;
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 16px 16px;
+    background-size: 9px 9px;
     background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><polyline points='20 6 9 17 4 12'/></svg>");
+  }
+
+  @media (min-width: 1200px) {
+    width: 22px;
+    height: 22px;
+    &:checked::after {
+      background-size: 16px 16px;
+    }
   }
 `;
 
 export const CommentCakes = styled.textarea`
   width: 100%;
-  padding: 10px;
+  padding: 5px;
   border-radius: 12px;
-
+  height: 100%;
   border: 2px solid #e5e5e5;
   background: #fff;
   font-family: "Inter", sans-serif;
-  font-size: 15px;
+  font-size: 10px;
   font-weight: 600;
   color: #2e2e2e;
   cursor: pointer;
   transition: all 0.3s ease;
-resize: none;
+  resize: none;
   /* При наведенні */
   &:hover {
     border-color: #9b6bce;
@@ -310,4 +297,83 @@ resize: none;
     outline: none;
     border-color: #9b6bce;
     box-shadow: 0 0 0 3px rgba(155, 107, 206, 0.15);
-  }`
+  }
+  @media (min-width: 1200px) {
+    padding: 10px;
+    font-size: 15px;
+  }
+`;
+
+export const FileUploadForm = styled.form`
+  border: 2px dashed #d4c2f6;
+  border-radius: 12px;
+  padding: 10px;
+
+  cursor: pointer;
+  background-color: #fbf9ff;
+  transition: border-color 0.3s ease;
+
+  &:hover {
+    border-color: #9b6bce;
+  }
+  @media (min-width: 600px) {
+    padding: 20px;
+  }
+`;
+
+export const FileInput = styled.input`
+  display: none;
+`;
+
+export const ButtonsWrapper = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 14px;
+  @media (min-width: 600px) {
+    margin-top: 24px;
+  }
+`;
+
+export const ConfirmButton = styled.button`
+  padding: 9px 15px;
+  border-radius: 10px;
+  border: none;
+  background: linear-gradient(90deg, #9b6bce 0%, #7a4bc0 100%);
+  color: #fff;
+  font-family: "Inter", sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 10px rgba(155, 107, 206, 0.3);
+  &:hover {
+    background-color: linear-gradient(90deg, #7a4bc0 0%, #9b6bce 100%);
+  }
+
+  @media (min-width: 600px) {
+    padding: 12px 20px;
+    font-size: 15px;
+  }
+`;
+
+export const CancelButton = styled.button`
+  padding: 9px 15px;
+  border-radius: 10px;
+  border: 2px solid #9b6bce;
+  background: #fff;
+  color: #9b6bce;
+  font-family: "Inter", sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover {
+    background-color: #f6f0ff;
+  }
+  @media (min-width: 1200px) {
+    padding: 12px 20px;
+    font-size: 15px;
+  }
+`;
