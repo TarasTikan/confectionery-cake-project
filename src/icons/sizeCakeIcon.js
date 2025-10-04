@@ -7,9 +7,9 @@ export const SizeCakeIcon = () => {
       height="48"
       fill="none"
       stroke="#F5C542"
-      stroke-width="2.5"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="2.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
       aria-label="Розмір"
     >
       <path d="M32 6v12" />

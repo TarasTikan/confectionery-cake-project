@@ -7,9 +7,9 @@ export const DecorIcon = () => {
       height="48"
       fill="none"
       stroke="#F28C2F"
-      stroke-width="4"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="4"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     >
       <path
         d="M32 10

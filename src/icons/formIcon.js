@@ -7,9 +7,9 @@ export const FormIcon = () => {
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       stroke="#F28C8C"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
       aria-label="Форма"
     >
       <circle cx="15" cy="15" r="10" />

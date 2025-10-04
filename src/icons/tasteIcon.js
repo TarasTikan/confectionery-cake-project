@@ -7,9 +7,9 @@ export const TasteIcon = () => {
       height="48"
       fill="none"
       stroke="#9B6BCE"
-      stroke-width="2.5"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="2.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
       aria-label="Смак"
     >
       <circle cx="32" cy="32" r="24" />

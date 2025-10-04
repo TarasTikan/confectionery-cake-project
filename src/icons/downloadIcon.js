@@ -6,9 +6,9 @@ export const DownloadIcon = () => {
       height="48"
       fill="none"
       stroke="#3b82f6"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     >
       <path d="M24 32V12" />
       <path d="M16 20l8-8 8 8" />
