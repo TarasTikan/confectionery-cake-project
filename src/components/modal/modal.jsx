@@ -20,6 +20,7 @@ import {
   CancelButton,
   ConfirmButton,
   ButtonsWrapper,
+  FileLabel
 } from "./modal.styled";
 
 import { fillings } from "../../data/data.js";
@@ -164,11 +165,9 @@ export const Modal = ({ clouseModal, open }) => {
             <ItemForm>
               <TitleForm>Фото</TitleForm>
               <FileUploadForm>
-                <label for="img-cakes">
-                  Перетягни зображення
-                  <br />
-                  або обери файл
-                </label>
+                <FileLabel for="img-cakes">
+                   Обери фото
+                </FileLabel>
                 <FileInput id="img-cakes" type="file" />
               </FileUploadForm>
             </ItemForm>

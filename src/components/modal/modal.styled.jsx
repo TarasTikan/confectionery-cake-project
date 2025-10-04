@@ -23,22 +23,31 @@ export const ModalWindow = styled.div`
   opacity: ${({ open }) => (open ? 1 : 0)};
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
     transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  padding: 20px;
+  padding: 10px;
   background-color: #fff;
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+
+  @media (min-width: 600px) {
+    padding: 20px;
+  }
 `;
 
 export const ClouseBtn = styled.button`
   position: absolute;
   top: 10px;
   right: 10px;
-  width: 30px;
-  height: 30px;
+  width: 20px;
+  height: 20px;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
   background-color: transparent;
   cursor: pointer;
+
+  @media (min-width: 600px) {
+    width: 30px;
+    height: 30px;
+  }
 `;
 
 export const Container = styled.div`
@@ -50,13 +59,14 @@ export const Title = styled.h1`
   font-weight: 700;
   text-align: center;
   color: #222;
-  margin-bottom: 10px;
-  font-size: 18px;
+  margin-bottom: 5px;
+  font-size: 14px;
   line-height: 1.3;
 
   @media (min-width: 600px) {
     font-size: 24px;
     line-height: 1.4;
+    margin-bottom: 10px;
   }
 
   @media (min-width: 1200px) {
@@ -72,8 +82,12 @@ export const TitleForm = styled.h2`
   color: #444;
   margin-bottom: 8px;
   display: block;
-  font-size: 14px;
+  font-size: 10px;
   line-height: 1.2;
+  @media (min-width: 600px) {
+    font-size: 14px;
+    line-height: 1.2;
+  }
   @media (min-width: 1200px) {
     font-size: 18px;
     line-height: 1.4;
@@ -84,8 +98,11 @@ export const TitleForm = styled.h2`
 export const ListForm = styled.ul`
   display: flex;
   justify-content: center;
-  gap: 10px;
+  gap: 5px;
   flex-wrap: wrap;
+  @media (min-width: 600px) {
+    gap: 10px;
+  }
   @media (min-width: 1200px) {
     gap: 15px;
   }
@@ -94,7 +111,7 @@ export const ListForm = styled.ul`
 export const ItemForm = styled.li`
   background-color: #fbf9ff;
   border-radius: 8px;
-  padding: 10px;
+  padding: 8px;
 text-align: center;
   flex-grow: 1;
   flex-shrink: 1;
@@ -102,10 +119,14 @@ text-align: center;
 
 
   @media (min-width: 600px) {
-  width: calc((100% - 30px) / 2); 
+  width: calc((100% - 30px) / 2)
+  padding: 10px;
+  }
+
   @media (min-width: 1200px) { 
   width: calc((100% - 30px) / 4); 
-  flex-grow: 3;}
+  flex-grow: 3;
+  }
 `;
 
 export const RadioInput = styled.input`
@@ -127,7 +148,7 @@ export const RadioLabel = styled.label`
   border-radius: 8px;
   background: #fff;
   font-family: "Inter", sans-serif;
-  font-size: 10px;
+  font-size: 8px;
   font-weight: 600;
   color: #2e2e2e;
   cursor: pointer;
@@ -137,7 +158,9 @@ export const RadioLabel = styled.label`
     border-color: #9b6bce;
     color: #9b6bce;
   }
-
+  @media (min-width: 600px) {
+    font-size: 10px;
+  }
   @media (min-width: 1200px) {
     font-size: 16px;
     padding: 12px 20px;
@@ -155,13 +178,13 @@ export const FormCakes = styled.form`
 
 export const TasteSelect = styled.select`
   width: 100%;
-  height: 28px;
+  height: 22px;
   padding: 0 14px;
   border-radius: 12px;
   border: 2px solid #e5e5e5;
   background: #fff;
   font-family: "Inter", sans-serif;
-  font-size: 10px;
+  font-size: 8px;
   font-weight: 600;
   color: #2e2e2e;
   cursor: pointer;
@@ -209,12 +232,9 @@ export const DecorLabel = styled.label`
   gap: 8px;
   font-family: "Inter", system-ui, sans-serif;
   color: #2e2e2e;
-  font-size: 12px;
+  font-size: 9px;
   font-weight: 500;
   text-align: start;
-  @media (min-width: 320px) {
-    font-size: 13px;
-  }
 
   @media (min-width: 600px) {
     font-size: 14px;
@@ -227,8 +247,8 @@ export const DecorLabel = styled.label`
 
 export const DecorCheckbox = styled.input`
   appearance: none;
-  width: 16px;
-  height: 16px;
+  width: 12px;
+  height: 12px;
   border: 2px solid #bdbdbd;
   border-radius: 8px; /* легке округлення */
   background: #fff;
@@ -260,8 +280,16 @@ export const DecorCheckbox = styled.input`
     position: absolute;
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 9px 9px;
+    background-size: 5px 5px;
     background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><polyline points='20 6 9 17 4 12'/></svg>");
+  }
+
+  @media (min-width: 600px) {
+    width: 16px;
+    height: 16px;
+    &:checked::after {
+      background-size: 9px 9px;
+    }
   }
 
   @media (min-width: 1200px) {
@@ -281,7 +309,7 @@ export const CommentCakes = styled.textarea`
   border: 2px solid #e5e5e5;
   background: #fff;
   font-family: "Inter", sans-serif;
-  font-size: 10px;
+  font-size: 7px;
   font-weight: 600;
   color: #2e2e2e;
   cursor: pointer;
@@ -298,6 +326,10 @@ export const CommentCakes = styled.textarea`
     border-color: #9b6bce;
     box-shadow: 0 0 0 3px rgba(155, 107, 206, 0.15);
   }
+  @media (min-width: 600px) {
+    padding: 5px;
+    font-size: 10px;
+  }
   @media (min-width: 1200px) {
     padding: 10px;
     font-size: 15px;
@@ -307,7 +339,7 @@ export const CommentCakes = styled.textarea`
 export const FileUploadForm = styled.form`
   border: 2px dashed #d4c2f6;
   border-radius: 12px;
-  padding: 10px;
+  padding: 5px;
 
   cursor: pointer;
   background-color: #fbf9ff;
@@ -317,6 +349,9 @@ export const FileUploadForm = styled.form`
     border-color: #9b6bce;
   }
   @media (min-width: 600px) {
+    padding: 10px;
+  }
+  @media (min-width: 1200px) {
     padding: 20px;
   }
 `;
@@ -325,30 +360,45 @@ export const FileInput = styled.input`
   display: none;
 `;
 
+export const FileLabel = styled.label`
+  font-family: "Inter", sans-serif;
+  font-size: 8px;
+  font-weight: 600;
+  color: #2e2e2e;
+  line-height: 1.1;
+  @media (min-width: 600px) {
+    font-size: 10px;
+  }
+  @media (min-width: 1200px) {
+    font-size: 16px;
+    padding: 12px 20px;
+    border-radius: 14px;
+  }
+`;
 export const ButtonsWrapper = styled.div`
   display: flex;
   justify-content: flex-end;
   gap: 12px;
-  margin-top: 14px;
+  margin-top: 9px;
   @media (min-width: 600px) {
     margin-top: 24px;
   }
 `;
 
 export const ConfirmButton = styled.button`
-  padding: 9px 15px;
+  padding: 6px 12px;
   border-radius: 10px;
   border: none;
   background: linear-gradient(90deg, #9b6bce 0%, #7a4bc0 100%);
   color: #fff;
   font-family: "Inter", sans-serif;
-  font-size: 11px;
+  font-size: 9px;
   font-weight: 600;
   cursor: pointer;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background 250ms cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 0 4px 10px rgba(155, 107, 206, 0.3);
   &:hover {
-    background-color: linear-gradient(90deg, #7a4bc0 0%, #9b6bce 100%);
+    background: linear-gradient(90deg, #7a4bc0 0%, #9b6bce 100%);
   }
 
   @media (min-width: 600px) {
@@ -358,7 +408,7 @@ export const ConfirmButton = styled.button`
 `;
 
 export const CancelButton = styled.button`
-  padding: 9px 15px;
+  padding: 6px 12px;
   border-radius: 10px;
   border: 2px solid #9b6bce;
   background: #fff;
