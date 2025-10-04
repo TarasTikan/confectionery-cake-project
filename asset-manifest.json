@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/confectionery-cake-project/static/css/main.31aebaf4.css",
-    "main.js": "/confectionery-cake-project/static/js/main.52ca9ec1.js",
+    "main.js": "/confectionery-cake-project/static/js/main.a1337b9d.js",
     "static/js/453.3a50c51a.chunk.js": "/confectionery-cake-project/static/js/453.3a50c51a.chunk.js",
     "static/media/tasteBerry.jpg": "/confectionery-cake-project/static/media/tasteBerry.d9feb13de659fe6732e5.jpg",
     "static/media/tasteCharryChocolate.jpg": "/confectionery-cake-project/static/media/tasteCharryChocolate.244b2974f7e87f089680.jpg",
@@ -26,11 +26,11 @@
     "static/media/makaron.jpg": "/confectionery-cake-project/static/media/makaron.b50d41e74110b1b20493.jpg",
     "index.html": "/confectionery-cake-project/index.html",
     "main.31aebaf4.css.map": "/confectionery-cake-project/static/css/main.31aebaf4.css.map",
-    "main.52ca9ec1.js.map": "/confectionery-cake-project/static/js/main.52ca9ec1.js.map",
+    "main.a1337b9d.js.map": "/confectionery-cake-project/static/js/main.a1337b9d.js.map",
     "453.3a50c51a.chunk.js.map": "/confectionery-cake-project/static/js/453.3a50c51a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.31aebaf4.css",
-    "static/js/main.52ca9ec1.js"
+    "static/js/main.a1337b9d.js"
   ]
 }
