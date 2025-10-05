@@ -8,6 +8,13 @@ import {
   DesignList,
   Designbtn,
   DesignListItem,
+  StepsWrap,
+  StepsTitle,
+  StepsList,
+  StepsItem,
+  StepsItemTitle,
+  StepsItemText,
+  StepsItemImg
 } from "./customDesign.styled";
 import { FormIcon } from "../../icons/formIcon";
 import { DownloadIcon } from "../../icons/downloadIcon";
@@ -17,6 +24,11 @@ import { DecorIcon } from "../../icons/decorIcon";
 import { PencilIcon } from "../../icons/pencilIcon";
 import { useState, useEffect } from "react";
 import { Modal } from "../modal/modal";
+
+import formImg from "../../img/formImg.png";
+import designImg from "../../img/designImg.png";
+import agreeOrderImg from "../../img/agreeOrderImg.png";
+import deliveryImg from "../../img/deliveryImg.png";
 export const CustomDesign = () => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -37,6 +49,31 @@ export const CustomDesign = () => {
   return (
     <DesignSection>
       <Container>
+            <StepsWrap>
+        <StepsTitle>Як створити свій торт?</StepsTitle>
+        <StepsList>
+          <StepsItem>
+            <StepsItemTitle>1</StepsItemTitle>
+            <StepsItemImg src={formImg} alt="Форма" width="100px" height="60px"/>
+            <StepsItemText>Оберіть форму, розмір та смак</StepsItemText>
+          </StepsItem>
+          <StepsItem>
+            <StepsItemTitle>2</StepsItemTitle>
+            <StepsItemImg src={designImg} alt="Декор" width="120px"/>
+            <StepsItemText>Додайте декор або фото для натхення</StepsItemText>
+          </StepsItem>
+          <StepsItem>
+            <StepsItemTitle>3</StepsItemTitle>
+            <StepsItemImg src={agreeOrderImg} alt="Галочка" width="65px" />
+            <StepsItemText>Підтвердіть замовлення</StepsItemText>
+          </StepsItem>
+          <StepsItem>
+            <StepsItemTitle>4</StepsItemTitle>
+            <StepsItemImg src={deliveryImg} alt="Машина" width="110px" />
+            <StepsItemText>Отримайте торт прямо додому</StepsItemText>
+          </StepsItem>
+        </StepsList>
+        </StepsWrap>
         <div>
           <DesignTitle>Кастомний дизайн</DesignTitle>
           <DesignSubTitle>
@@ -97,6 +134,7 @@ export const CustomDesign = () => {
             </Designbtn>
           </DesignListItem>
         </DesignList>
+    
       </Container>
       <Modal open={isOpen} clouseModal={handleToggleHover} />
     </DesignSection>
