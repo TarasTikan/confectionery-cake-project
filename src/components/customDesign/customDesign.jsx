@@ -47,29 +47,32 @@ export const CustomDesign = () => {
   }, [isOpen]);
 
   return (
-    <DesignSection>
+    <DesignSection initial={{ opacity: 0, y: 40 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.8, ease: "easeOut" }}
+  viewport={{ once: true, amount: 0.2 }}>
       <Container>
             <StepsWrap>
         <StepsTitle>Як створити свій торт?</StepsTitle>
         <StepsList>
           <StepsItem>
             <StepsItemTitle>1</StepsItemTitle>
-            <StepsItemImg src={formImg} alt="Форма" width="100px" height="60px"/>
+            <StepsItemImg src={formImg} alt="Форма"/>
             <StepsItemText>Оберіть форму, розмір та смак</StepsItemText>
           </StepsItem>
           <StepsItem>
             <StepsItemTitle>2</StepsItemTitle>
-            <StepsItemImg src={designImg} alt="Декор" width="120px"/>
+            <StepsItemImg src={designImg} alt="Декор"/>
             <StepsItemText>Додайте декор або фото для натхення</StepsItemText>
           </StepsItem>
           <StepsItem>
             <StepsItemTitle>3</StepsItemTitle>
-            <StepsItemImg src={agreeOrderImg} alt="Галочка" width="65px" />
+            <StepsItemImg src={agreeOrderImg} alt="Галочка"/>
             <StepsItemText>Підтвердіть замовлення</StepsItemText>
           </StepsItem>
           <StepsItem>
             <StepsItemTitle>4</StepsItemTitle>
-            <StepsItemImg src={deliveryImg} alt="Машина" width="110px" />
+            <StepsItemImg src={deliveryImg} alt="Машина" />
             <StepsItemText>Отримайте торт прямо додому</StepsItemText>
           </StepsItem>
         </StepsList>
