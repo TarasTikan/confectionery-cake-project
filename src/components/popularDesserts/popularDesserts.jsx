@@ -27,7 +27,16 @@ import "swiper/css/scrollbar";
 export const PopularDesserts = () => {
   const swiperRef = useRef(null);
   return (
-    <PopularDessertsSection>
+    <PopularDessertsSection
+      initial={{ opacity: 0, y: 28 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{
+        duration: 0.6,
+        ease: [0.22, 1, 0.36, 1],
+        staggerChildren: 0.08,
+      }}
+      viewport={{ once: true, amount: 0.25 }}
+    >
       <Container>
         <PopularDessertsTitle>Популярні десерти</PopularDessertsTitle>
         <StyledSwiper

@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 import { Swiper, SwiperSlide } from "swiper/react";
-export const TasteSection = styled.section`
+import { motion } from "framer-motion";
+export const TasteSection = styled(motion.section)`
   background-color: #fff8f0;
   font-family: "Inter", sans-serif;
   padding-top: 30px;
@@ -59,7 +60,7 @@ export const TasteTitle = styled.h3`
   font-size: 28px;
   font-weight: 700;
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
   color: #2e2e2e;
 
   @media screen and (min-width: 600px) {
@@ -187,20 +188,20 @@ export const DescriptionContainer = styled.div`
     padding 300ms cubic-bezier(0.4, 0, 0.2, 1),
     opacity 300ms cubic-bezier(0.4, 0, 0.2, 1),
     transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
-      @media screen and (min-width: 400px) {
-     transform: ${({ active }) =>
-    active === "true" ? "translateY(0)" : "translateY(20px)"};
+  @media screen and (min-width: 400px) {
+    transform: ${({ active }) =>
+      active === "true" ? "translateY(0)" : "translateY(20px)"};
   }
 `;
 
 export const TasteTextDescribe = styled.p`
-font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: 400;
-  color: #2E2E2E;
+  color: #2e2e2e;
   line-height: 1.4;
-font-size: 9px;
+  font-size: 9px;
   @media screen and (min-width: 400px) {
-  font-size: 12px;
+    font-size: 12px;
   }
   @media screen and (min-width: 600px) {
     font-size: 14px;
@@ -208,4 +209,5 @@ font-size: 9px;
 
   @media screen and (min-width: 1200px) {
     font-size: 16px;
-  }`;
+  }
+`;

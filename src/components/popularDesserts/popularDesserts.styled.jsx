@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 import { Swiper, SwiperSlide } from "swiper/react";
-export const PopularDessertsSection = styled.section`
+import { motion } from "framer-motion";
+export const PopularDessertsSection = styled(motion.section)`
   background-color: #fff8f0;
   font-family: "Inter", sans-serif;
   padding-top: 30px;

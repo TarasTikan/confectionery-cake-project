@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-
+import { motion } from "framer-motion";
 export const DesignSection = styled.section`
   background-color: #fff8f0;
   font-family: "Inter", sans-serif;
@@ -35,7 +35,7 @@ export const Container = styled.div`
   }
 `;
 
-export const DesignTitle = styled.h2`
+export const DesignTitle = styled(motion.h2)`
   font-family: "Inter", sans-serif;
   font-weight: 700;
   text-align: center;
@@ -56,7 +56,7 @@ export const DesignTitle = styled.h2`
   }
 `;
 
-export const DesignSubTitle = styled.p`
+export const DesignSubTitle = styled(motion.p)`
   font-family: "Inter", sans-serif;
   font-weight: 400;
   text-align: center;
@@ -118,7 +118,7 @@ export const DesignTextCard = styled.p`
   }
 `;
 
-export const DesignList = styled.ul`
+export const DesignList = styled(motion.ul)`
   list-style: none;
   display: flex;
   gap: 30px;
@@ -173,8 +173,7 @@ export const Designbtn = styled.button`
   }
 `;
 
-export const StepsWrap = styled.div`
-  margin-bottom: 20px;
+export const StepsWrap = styled(motion.div)`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -182,7 +181,7 @@ export const StepsWrap = styled.div`
   text-align: center;
 `;
 
-export const StepsTitle = styled.h2`
+export const StepsTitle = styled(motion.h2)`
   font-family: "Inter", sans-serif;
   font-weight: 700;
   color: #2e2e2e;
@@ -200,7 +199,7 @@ export const StepsTitle = styled.h2`
     margin-bottom: 22px;
   }
 `;
-export const StepsList = styled.ul`
+export const StepsList = styled(motion.ul)`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -312,4 +311,13 @@ export const StepsItemText = styled.p`
   @media (min-width: 1200px) {
     font-size: 14px;
   }
+`;
+
+export const WrapCustomContainer = styled(motion.div)`
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 `;

@@ -1,8 +1,8 @@
 import styled from "@emotion/styled";
-
+import { motion } from "framer-motion";
 export const MenuSection = styled.section`
   background-color: #fff8f0;
-  padding-bottom: 40px;
+  padding-bottom: 70px;
 `;
 
 export const Container = styled.div`
@@ -27,7 +27,7 @@ export const Container = styled.div`
   }
 `;
 
-export const MenuTitle = styled.h2`
+export const MenuTitle = styled(motion.h2)`
   font-family: "Inter", sans-serif;
   font-size: 28px;
   font-weight: 700;
@@ -37,12 +37,10 @@ export const MenuTitle = styled.h2`
 
   @media screen and (min-width: 600px) {
     font-size: 32px;
-    margin-bottom: 50px;
   }
 
   @media screen and (min-width: 1200px) {
     font-size: 36px;
-    margin-bottom: 60px;
   }
 `;
 
@@ -55,7 +53,7 @@ export const MenuList = styled.ul`
   flex-wrap: wrap;
 `;
 
-export const MenuCard = styled.li`
+export const MenuCard = styled(motion.li)`
   background: #fff;
   border-radius: 16px;
   overflow: hidden;

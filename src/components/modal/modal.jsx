@@ -31,11 +31,21 @@ export const Modal = ({ clouseModal, open }) => {
     clouseModal();
   };
 
-  const [form, setForm] = useState(JSON.parse(localStorage.getItem("form")) || "");
-  const [size, setSize] = useState(JSON.parse(localStorage.getItem("size")) || "");
-  const [taste, setTaste] = useState(JSON.parse(localStorage.getItem("taste")) || "");
-  const [design, setDesign] = useState(JSON.parse(localStorage.getItem("design")) || []);
-  const [comment, setComment] = useState(JSON.parse(localStorage.getItem("comment")) || "");
+  const [form, setForm] = useState(
+    JSON.parse(localStorage.getItem("form")) || ""
+  );
+  const [size, setSize] = useState(
+    JSON.parse(localStorage.getItem("size")) || ""
+  );
+  const [taste, setTaste] = useState(
+    JSON.parse(localStorage.getItem("taste")) || ""
+  );
+  const [design, setDesign] = useState(
+    JSON.parse(localStorage.getItem("design")) || []
+  );
+  const [comment, setComment] = useState(
+    JSON.parse(localStorage.getItem("comment")) || ""
+  );
   const [file, setFile] = useState("");
 
   const handleFormChange = (e) => {
@@ -72,7 +82,7 @@ export const Modal = ({ clouseModal, open }) => {
     localStorage.setItem("taste", JSON.stringify(taste));
     localStorage.setItem("comment", JSON.stringify(comment));
     localStorage.setItem("file", JSON.stringify(file));
-  }, [design,form,size,taste,comment,file]);
+  }, [design, form, size, taste, comment, file]);
 
   return (
     <Backdrop open={open}>
