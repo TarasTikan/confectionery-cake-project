@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/confectionery-cake-project/static/css/main.31aebaf4.css",
-    "main.js": "/confectionery-cake-project/static/js/main.7a31b7a5.js",
+    "main.css": "/confectionery-cake-project/static/css/main.5b8134f8.css",
+    "main.js": "/confectionery-cake-project/static/js/main.2fa30830.js",
     "static/js/453.3a50c51a.chunk.js": "/confectionery-cake-project/static/js/453.3a50c51a.chunk.js",
     "static/media/designImg.png": "/confectionery-cake-project/static/media/designImg.384ca92892b74e95f80d.png",
     "static/media/tasteBerry.jpg": "/confectionery-cake-project/static/media/tasteBerry.d9feb13de659fe6732e5.jpg",
@@ -29,12 +29,12 @@
     "static/media/tortTwo.jpg": "/confectionery-cake-project/static/media/tortTwo.bbbb44d0d5a4abc73dd0.jpg",
     "static/media/makaron.jpg": "/confectionery-cake-project/static/media/makaron.b50d41e74110b1b20493.jpg",
     "index.html": "/confectionery-cake-project/index.html",
-    "main.31aebaf4.css.map": "/confectionery-cake-project/static/css/main.31aebaf4.css.map",
-    "main.7a31b7a5.js.map": "/confectionery-cake-project/static/js/main.7a31b7a5.js.map",
+    "main.5b8134f8.css.map": "/confectionery-cake-project/static/css/main.5b8134f8.css.map",
+    "main.2fa30830.js.map": "/confectionery-cake-project/static/js/main.2fa30830.js.map",
     "453.3a50c51a.chunk.js.map": "/confectionery-cake-project/static/js/453.3a50c51a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.31aebaf4.css",
-    "static/js/main.7a31b7a5.js"
+    "static/css/main.5b8134f8.css",
+    "static/js/main.2fa30830.js"
   ]
 }
