@@ -1,7 +1,6 @@
 import styled from "@emotion/styled";
 import { motion } from "framer-motion";
 export const MenuSection = styled.section`
-  background-color: #fff8f0;
   padding-bottom: 70px;
 `;
 

@@ -1,7 +1,6 @@
 import styled from "@emotion/styled";
 
 export const HeroSection = styled.section`
-  background-color: #fff8f0;
   padding-top: 40px;
   padding-bottom: 70px;
 

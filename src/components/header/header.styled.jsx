@@ -1,7 +1,6 @@
 import styled from "@emotion/styled";
 
 export const Header = styled.header`
-background-color: #FFF8F0;
   font-family: 'Inter', sans-serif;
      padding-top: 15px
     padding-bottom: 20px

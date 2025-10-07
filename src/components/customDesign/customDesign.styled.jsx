@@ -1,7 +1,6 @@
 import styled from "@emotion/styled";
 import { motion } from "framer-motion";
 export const DesignSection = styled.section`
-  background-color: #fff8f0;
   font-family: "Inter", sans-serif;
   padding-top: 30px;
   padding-bottom: 20px;
