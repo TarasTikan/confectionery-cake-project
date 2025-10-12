@@ -236,7 +236,7 @@ export const StepsItem = styled.li`
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
   }
 
-  &:nth-child(1) img {
+  &:nth-of-type(1) img {
     width: 70px;
     height: auto;
     @media (min-width: 400px) {
@@ -247,7 +247,7 @@ export const StepsItem = styled.li`
     }
   }
 
-  &:nth-child(2) img {
+  &:nth-of-type(2) img {
     width: 85px;
     @media (min-width: 400px) {
       width: 100px;
@@ -257,7 +257,7 @@ export const StepsItem = styled.li`
     }
   }
 
-  &:nth-child(3) img {
+  &:nth-of-type(3) img {
     width: 50px;
     @media (min-width: 400px) {
       width: 58px;
@@ -266,7 +266,7 @@ export const StepsItem = styled.li`
       width: 65px;
     }
   }
-  &:nth-child(4) img {
+  &:nth-of-type(4) img {
     width: 80px;
     @media (min-width: 400px) {
       width: 88px;
