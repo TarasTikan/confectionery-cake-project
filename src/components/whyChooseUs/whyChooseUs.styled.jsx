@@ -79,7 +79,6 @@ export const WhyTitle = styled.h2`
   margin: 0 0 12px;
   font-weight: 800;
   letter-spacing: -0.02em;
-
   font-size: 22px;     
   line-height: 1.15;
 
@@ -95,10 +94,11 @@ export const WhyTitle = styled.h2`
 `;
 
 export const BenefitText = styled.p`
-  display: block;
+  display: flex;
   margin-top: 2px;
   color: #564c47;
-
+ align-items: center;
+ justify-content: center;
   font-size: 13px;       
   line-height: 1.35;
 
