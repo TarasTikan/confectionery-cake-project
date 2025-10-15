@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/confectionery-cake-project/static/css/main.31aebaf4.css",
-    "main.js": "/confectionery-cake-project/static/js/main.422a2027.js",
+    "main.js": "/confectionery-cake-project/static/js/main.0e62a797.js",
     "static/js/453.3a50c51a.chunk.js": "/confectionery-cake-project/static/js/453.3a50c51a.chunk.js",
     "static/media/cupcake_green-bgremover.png": "/confectionery-cake-project/static/media/cupcake_green-bgremover.acd6eca47f0bdedabd4a.png",
     "static/media/strawberry-bgremover.png": "/confectionery-cake-project/static/media/strawberry-bgremover.5a9d7dd716f1fd1d6c37.png",
@@ -24,6 +24,7 @@
     "static/media/tart.jpg": "/confectionery-cake-project/static/media/tart.01ab7a21f3534f27ec37.jpg",
     "static/media/tasteChocolate.jpg": "/confectionery-cake-project/static/media/tasteChocolate.3a33e882bc1b62203c77.jpg",
     "static/media/tortFour.jpg": "/confectionery-cake-project/static/media/tortFour.f5c1c55b79896fe5e5ad.jpg",
+    "static/media/womanPopular.png": "/confectionery-cake-project/static/media/womanPopular.6fede2b5e0f258922fc4.png",
     "static/media/tasteStrawberryMango.jpg": "/confectionery-cake-project/static/media/tasteStrawberryMango.eb070762e2143eead8ec.jpg",
     "static/media/tortThree.jpg": "/confectionery-cake-project/static/media/tortThree.6c381c47cea6b78f8dbd.jpg",
     "static/media/heroImage.jpg": "/confectionery-cake-project/static/media/heroImage.edb84d773710db25ce63.jpg",
@@ -38,11 +39,11 @@
     "static/media/makaron.jpg": "/confectionery-cake-project/static/media/makaron.b50d41e74110b1b20493.jpg",
     "index.html": "/confectionery-cake-project/index.html",
     "main.31aebaf4.css.map": "/confectionery-cake-project/static/css/main.31aebaf4.css.map",
-    "main.422a2027.js.map": "/confectionery-cake-project/static/js/main.422a2027.js.map",
+    "main.0e62a797.js.map": "/confectionery-cake-project/static/js/main.0e62a797.js.map",
     "453.3a50c51a.chunk.js.map": "/confectionery-cake-project/static/js/453.3a50c51a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.31aebaf4.css",
-    "static/js/main.422a2027.js"
+    "static/js/main.0e62a797.js"
   ]
 }
