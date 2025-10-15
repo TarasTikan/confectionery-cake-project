@@ -6,6 +6,7 @@ import {PopularDesserts} from './popularDesserts/popularDesserts'
 import {Tastes} from './taste/taste'
 import {CustomDesign} from './customDesign/customDesign'
 import {ParticlesBg } from './background/ParticlesBackground';
+import {WhyChooseUs} from "./whyChooseUs/whyChooseUs"
 function App() {
   return (
     <>
@@ -17,6 +18,7 @@ function App() {
       <PopularDesserts/>
       <Tastes/>
       <CustomDesign/>
+      <WhyChooseUs/>
     </main>
     </>
   );
