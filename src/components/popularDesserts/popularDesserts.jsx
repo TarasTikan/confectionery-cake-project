@@ -78,7 +78,7 @@ export const PopularDesserts = () => {
               <PopularDessertsImage src={item.image} alt="торт" />{" "}
               <WrapInfo>
                 <ProductTitle>{item.title}</ProductTitle>
-                <ProductPrice>{item.price}</ProductPrice>
+                <ProductPrice>{item.price} грн</ProductPrice>
                 <ProductButton>Замовити</ProductButton>
               </WrapInfo>
             </StyledSlideCard>

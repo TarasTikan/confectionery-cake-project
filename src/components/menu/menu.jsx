@@ -33,9 +33,9 @@ export const Menu = () => {
             transition={{ duration: 0.45, ease: "easeOut", delay: 0.4 }}
             viewport={{ once: true, amount: 0.25 }}
             whileHover={{
-              y: -4,
+              y: -10,
               rotate: -0.6,
-              transition: { type: "spring", stiffness: 300, damping: 18 },
+              transition: { type: "spring", stiffness: 300, damping: 10 },
             }}
           >
             <a href="/">
@@ -52,9 +52,9 @@ export const Menu = () => {
             transition={{ duration: 0.45, ease: "easeOut", delay: 0.4 }}
             viewport={{ once: true, amount: 0.25 }}
             whileHover={{
-              y: -4,
+              y: -10,
               rotate: -0.6,
-              transition: { type: "spring", stiffness: 300, damping: 18 },
+              transition: { type: "spring", stiffness: 300, damping: 10 },
             }}
           >
             <a href="/">
@@ -71,9 +71,9 @@ export const Menu = () => {
             transition={{ duration: 0.45, ease: "easeOut", delay: 0.4 }}
             viewport={{ once: true, amount: 0.25 }}
             whileHover={{
-              y: -4,
+              y: -10,
               rotate: -0.6,
-              transition: { type: "spring", stiffness: 300, damping: 18 },
+              transition: { type: "spring", stiffness: 300, damping: 10 },
             }}
           >
             <a href="/">
@@ -90,9 +90,9 @@ export const Menu = () => {
             transition={{ duration: 0.45, ease: "easeOut", delay: 0.4 }}
             viewport={{ once: true, amount: 0.25 }}
             whileHover={{
-              y: -4,
+              y: -10,
               rotate: -0.6,
-              transition: { type: "spring", stiffness: 300, damping: 18 },
+              transition: { type: "spring", stiffness: 300, damping: 10 },
             }}
           >
             <a href="/">

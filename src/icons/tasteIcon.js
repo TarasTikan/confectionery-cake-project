@@ -6,7 +6,7 @@ export const TasteIcon = () => {
       width="48"
       height="48"
       fill="none"
-      stroke="#9B6BCE"
+      stroke="#8B5CF6"
       strokeWidth="2.5"
       strokeLinecap="round"
       strokeLinejoin="round"

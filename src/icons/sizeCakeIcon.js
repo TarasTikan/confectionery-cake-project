@@ -6,7 +6,7 @@ export const SizeCakeIcon = () => {
       width="48"
       height="48"
       fill="none"
-      stroke="#F5C542"
+      stroke="#8B5CF6"
       strokeWidth="2.5"
       strokeLinecap="round"
       strokeLinejoin="round"

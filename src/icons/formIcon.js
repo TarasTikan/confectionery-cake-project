@@ -6,7 +6,7 @@ export const FormIcon = () => {
       viewBox="0 0 50 50"
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
-      stroke="#F28C8C"
+      stroke="#8B5CF6"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"

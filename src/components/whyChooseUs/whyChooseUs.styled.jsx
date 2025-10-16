@@ -1,17 +1,12 @@
 import styled from "@emotion/styled";
-
-export const WhyChooseUsSection = styled.section`
+import { motion } from "framer-motion";
+export const WhyChooseUsSection = styled(motion.section)`
   padding-top: 40px;
   padding-bottom: 70px;
 
   @media screen and (min-width: 600px) {
     padding-top: 60px;
     padding-bottom: 60px;
-  }
-
-  @media screen and (min-width: 1200px) {
-    padding-top: 80px;
-    padding-bottom: 80px;
   }
 `;
 
@@ -24,7 +19,7 @@ export const Container = styled.div`
   align-items: center;
   flex-direction: column;
   justify-content: space-between;
-
+flex-direction: column-reverse;
   @media screen and (min-width: 400px) {
     width: 400px;
   }
@@ -81,12 +76,13 @@ export const WhyTitle = styled.h2`
   letter-spacing: -0.02em;
   font-size: 22px;     
   line-height: 1.15;
-
+text-align: center;
   @media (min-width: 400px) {
     font-size: 24px;   
   }
   @media (min-width: 600px) {
-    font-size: 28px;   
+    font-size: 28px;
+    text-align: left;   
   }
   @media (min-width: 1200px) {
     font-size: 40px;    
@@ -94,11 +90,7 @@ export const WhyTitle = styled.h2`
 `;
 
 export const BenefitText = styled.p`
-  display: flex;
-  margin-top: 2px;
   color: #564c47;
- align-items: center;
- justify-content: center;
   font-size: 13px;       
   line-height: 1.35;
 
@@ -112,3 +104,10 @@ export const BenefitText = styled.p`
     font-size: 16px;        
   }
 `;
+
+
+export const WrapText = styled(motion.div)`
+display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 10px;`
