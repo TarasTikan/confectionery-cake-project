@@ -1,6 +1,7 @@
 import {WhyChooseUsSection,Container,WhyChooseImg,WrapWhyText,WhyTitle,BenefitText} from "./whyChooseUs.styled"
 import womanImg from "../../img/womanPopular.png"
 import {CakeIcon} from '../../icons/cakeIcon'
+import {HeartIcon} from "../../icons/heartIcon"
 export const WhyChooseUs = () => {
     return (
 <WhyChooseUsSection>
@@ -8,7 +9,7 @@ export const WhyChooseUs = () => {
         <WhyChooseImg src={womanImg} alt="жінка тримає торт" />
         <WrapWhyText>
             <WhyTitle>Чому нас обирають?</WhyTitle>
-            <BenefitText>Торти ручної роботи з найкращих інгредієнтів</BenefitText>
+            <BenefitText><HeartIcon/>Торти ручної роботи з найкращих інгредієнтів</BenefitText>
             <BenefitText><CakeIcon/>Індивідуальний дизайн для кожного замовлення</BenefitText>
             <BenefitText>Швидка доставка по місту <br/>та збереження свіжості</BenefitText>
         </WrapWhyText> 
