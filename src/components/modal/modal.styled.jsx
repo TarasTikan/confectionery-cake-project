@@ -427,3 +427,18 @@ export const CancelButton = styled.button`
     font-size: 15px;
   }
 `;
+
+export const TextModalCustom = styled.p`
+  font-family: "Inter", sans-serif;
+  font-size: 8px;
+  font-weight: 600;
+  color: #2e2e2e;
+  line-height: 1.1;
+  margin-top: 10px;
+  @media (min-width: 600px) {
+    font-size: 10px;
+  }
+  @media (min-width: 1200px) {
+    font-size: 16px;
+  }
+`;

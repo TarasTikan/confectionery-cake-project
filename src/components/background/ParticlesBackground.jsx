@@ -26,7 +26,7 @@ export function ParticlesBg() {
         enable: true,
         zIndex: -1,
       },
-      background: { color: { value: "#fff8f2" } },
+      background: { color: { value: "#fffff" } },
       fpsLimit: 60,
       detectRetina: true,
       interactivity: { events: { onHover: { enable: true, mode: "repulse" } } },

@@ -2,15 +2,15 @@ import styled from "@emotion/styled";
 import { motion } from "framer-motion";
 export const DesignSection = styled.section`
   font-family: "Inter", sans-serif;
-  padding-top: 30px;
+  padding-top: 40px;
   padding-bottom: 20px;
   @media screen and (min-width: 600px) {
-    padding-top: 30px;
+    padding-top: 50px;
     padding-bottom: 30px;
   }
 
   @media screen and (min-width: 1200px) {
-    padding-top: 50px;
+    padding-top: 70px;
     padding-bottom: 50px;
   }
 `;
@@ -126,6 +126,7 @@ export const DesignList = styled(motion.ul)`
 
 export const DesignListItem = styled.li`
   background-color: #ffff;
+  border: 2px solid #8B5CF6;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -172,151 +173,27 @@ export const Designbtn = styled.button`
   }
 `;
 
-export const StepsWrap = styled(motion.div)`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-`;
-
-export const StepsTitle = styled(motion.h2)`
+export const CreateCustombtn = styled.button`
+width: 50%;
+padding-top: 10px;
+padding-bottom: 10px;
+margin-top: 20px;
+  border-radius: 10px;
+  border: none;
+  background-color:#9b6bce;
+  color: #fff;
   font-family: "Inter", sans-serif;
-  font-weight: 700;
-  color: #2e2e2e;
-  margin-bottom: 12px;
-
-  font-size: 20px; // 320px
-
-  @media (min-width: 600px) {
-    font-size: 26px;
-    margin-bottom: 20px;
-  }
-
-  @media (min-width: 1200px) {
-    font-size: 36px;
-    margin-bottom: 22px;
-  }
-`;
-export const StepsList = styled(motion.ul)`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  flex-wrap: wrap;
-`;
-
-export const StepsItemImg = styled.img`
-  height: auto;
-`;
-
-export const StepsItem = styled.li`
-  background-color: #fff;
-  border-radius: 8px;
-  border: 1px solid #f0e8ff;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-  text-align: center;
-  height: 250px;
-  width: calc((100% - 30px) / 2);
-  cursor: pointer;
-  @media (min-width: 1200px) {
-    width: calc((100% - 30px) / 4);
-    flex-grow: 3;
-  }
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  &:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-  }
-
-  &:nth-of-type(1) img {
-    width: 70px;
-    height: auto;
-    @media (min-width: 400px) {
-      width: 85px;
-    }
-    @media (min-width: 600px) {
-      width: 110px;
-    }
-  }
-
-  &:nth-of-type(2) img {
-    width: 85px;
-    @media (min-width: 400px) {
-      width: 100px;
-    }
-    @media (min-width: 600px) {
-      width: 120px;
-    }
-  }
-
-  &:nth-of-type(3) img {
-    width: 50px;
-    @media (min-width: 400px) {
-      width: 58px;
-    }
-    @media (min-width: 600px) {
-      width: 65px;
-    }
-  }
-  &:nth-of-type(4) img {
-    width: 80px;
-    @media (min-width: 400px) {
-      width: 88px;
-    }
-    @media (min-width: 600px) {
-      width: 110px;
-    }
-  }
-`;
-
-export const StepsItemTitle = styled.h3`
-  font-family: "Inter", sans-serif;
+  font-size: 9px;
   font-weight: 600;
-  color: #ffff;
-  margin-bottom: 8px;
-  font-size: 14px;
-  background-color: #8f4ffe;
-  width: 30px;
-  height: 30px;
-  padding: 6px;
-  border-radius: 50%;
-  @media (min-width: 600px) {
-    font-size: 16px;
+  cursor: pointer;
+  transition: background 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 10px rgba(155, 107, 206, 0.3);
+  &:hover {
+    background-color: #7a4bc0;
   }
-
-  @media (min-width: 1200px) {
-    font-size: 16px;
-  }
-`;
-
-export const StepsItemText = styled.p`
-  font-family: "Inter", sans-serif;
-  color: #555;
-  font-size: 12px;
-  line-height: 1.5;
 
   @media (min-width: 600px) {
-    font-size: 14px;
+    padding: 12px 20px;
+    font-size: 15px;
   }
-
-  @media (min-width: 1200px) {
-    font-size: 14px;
-  }
-`;
-
-export const WrapCustomContainer = styled(motion.div)`
-  margin-top: 100px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
 `;

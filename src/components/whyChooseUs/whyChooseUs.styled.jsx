@@ -5,8 +5,8 @@ export const WhyChooseUsSection = styled(motion.section)`
   padding-bottom: 70px;
 
   @media screen and (min-width: 600px) {
-    padding-top: 60px;
-    padding-bottom: 60px;
+    padding-top: 50px;
+    padding-bottom: 50px;
   }
 `;
 
