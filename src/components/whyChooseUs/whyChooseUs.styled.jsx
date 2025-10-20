@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 import { motion } from "framer-motion";
 export const WhyChooseUsSection = styled(motion.section)`
   padding-top: 40px;
-  padding-bottom: 70px;
+  padding-bottom: 50px;
 
   @media screen and (min-width: 600px) {
     padding-top: 50px;

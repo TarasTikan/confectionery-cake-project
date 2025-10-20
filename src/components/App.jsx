@@ -7,6 +7,7 @@ import {Tastes} from './taste/taste'
 import {CustomDesign} from './customDesign/customDesign'
 import {ParticlesBg } from './background/ParticlesBackground';
 import {WhyChooseUs} from "./whyChooseUs/whyChooseUs"
+import {OrderCake} from "./orderCake/orderCake"
 function App() {
   return (
     <>
@@ -19,6 +20,7 @@ function App() {
       <Tastes/>
       <CustomDesign/>
       <WhyChooseUs/>
+      <OrderCake/>
     </main>
     </>
   );
