@@ -8,6 +8,7 @@ import {CustomDesign} from './customDesign/customDesign'
 import {ParticlesBg } from './background/ParticlesBackground';
 import {WhyChooseUs} from "./whyChooseUs/whyChooseUs"
 import {OrderCake} from "./orderCake/orderCake"
+import {FooterCake} from "./footer/footer"
 function App() {
   return (
     <>
@@ -22,6 +23,7 @@ function App() {
       <WhyChooseUs/>
       <OrderCake/>
     </main>
+    <FooterCake/>
     </>
   );
 }
