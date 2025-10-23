@@ -1,4 +1,4 @@
-import {Footer, Container,FooterLogo,FooterNavList,NavLink,FooterNavTitle,WrapText,Phone} from "./footer.styled"
+import {Footer, Container,FooterLogo,FooterNavList,NavLink,FooterNavTitle,WrapText,Phone,SocLinkFooter,SocLinkList,Copyright} from "./footer.styled"
 
 
 export const FooterCake = () => {
@@ -16,14 +16,15 @@ export const FooterCake = () => {
                 </WrapText>
                 <WrapText>
                     <FooterNavTitle>Зв'язатися з нами</FooterNavTitle>
-                    <ul>
-                        <li><Phone href="/">+38 (xxx)-XX-XX</Phone></li>
-                        <li><a href="/">Telegram</a></li>
-                        <li><a href="/">Viber</a></li>
-                    </ul>
+                    <SocLinkList>
+                        <li><Phone href="/">+38 (xxx)-xx-xx</Phone></li>
+                        <li><SocLinkFooter href="/" variant="telegram">Telegram</SocLinkFooter></li>
+                        <li><SocLinkFooter href="/" variant="viber">Viber</SocLinkFooter></li>
+                    </SocLinkList>
+                    <Copyright>(c) Кондитерська, 2025</Copyright>
                 </WrapText>
                 <div>
-                    <h2>МИ В СОЦМЕРЕЖАХ</h2>
+                    <FooterNavTitle>МИ В СОЦМЕРЕЖАХ</FooterNavTitle>
         
                 </div>
             </Container>
