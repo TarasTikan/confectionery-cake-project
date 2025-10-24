@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
-import { loadSlim } from "@tsparticles/slim"; 
-import { loadImageShape } from "@tsparticles/shape-image"; 
+import { loadSlim } from "@tsparticles/slim";
+import { loadImageShape } from "@tsparticles/shape-image";
 import charryBg from "../../img/charry-bgremover.png";
 import chokoBg from "../../img/choko-bgremover.png";
 import cupcakeGreenBg from "../../img/cupcake_green-bgremover.png";
@@ -15,8 +15,8 @@ export function ParticlesBg() {
 
   useEffect(() => {
     initParticlesEngine(async (engine) => {
-      await loadSlim(engine); 
-      await loadImageShape(engine); 
+      await loadSlim(engine);
+      await loadImageShape(engine);
     }).then(() => setReady(true));
   }, []);
 

@@ -1,8 +1,11 @@
-import {Footer, Container,FooterLogo,FooterNavList,NavLink,FooterNavTitle,WrapText,Phone,SocLinkFooter,SocLinkList,Copyright} from "./footer.styled"
-
-
+import { Footer, WrapLinkSoc, LinkSoc, WrapSocList, Container, FooterLogo, FooterNavList, NavLink, FooterNavTitle, WrapText, Phone, SocLinkFooter, SocLinkList, Copyright } from "./footer.styled"
+import { CallIcon } from "../../icons/callIcon"
+import { TelegramIcon } from "../../icons/telegramIcon"
+import { ViberIcon } from "../../icons/viberIcon"
+import { FaceBookIcon } from "../../icons/facebookIcon"
+import { InstagramIcon } from "../../icons/instagramIcon"
 export const FooterCake = () => {
-    return(
+    return (
         <Footer>
             <Container>
                 <WrapText>
@@ -17,16 +20,20 @@ export const FooterCake = () => {
                 <WrapText>
                     <FooterNavTitle>Зв'язатися з нами</FooterNavTitle>
                     <SocLinkList>
-                        <li><Phone href="/">+38 (xxx)-xx-xx</Phone></li>
-                        <li><SocLinkFooter href="/" variant="telegram">Telegram</SocLinkFooter></li>
-                        <li><SocLinkFooter href="/" variant="viber">Viber</SocLinkFooter></li>
+                        <li><Phone href="/"><CallIcon />+38 (xxx)-xx-xx</Phone></li>
+                        <li><SocLinkFooter href="/" variant="telegram"><TelegramIcon />Telegram</SocLinkFooter></li>
+                        <li><SocLinkFooter href="/" variant="viber"><ViberIcon />Viber</SocLinkFooter></li>
                     </SocLinkList>
                     <Copyright>(c) Кондитерська, 2025</Copyright>
                 </WrapText>
-                <div>
+                <WrapSocList>
                     <FooterNavTitle>МИ В СОЦМЕРЕЖАХ</FooterNavTitle>
-        
-                </div>
+                    <WrapLinkSoc>
+                        <LinkSoc><InstagramIcon /></LinkSoc>
+                        <LinkSoc><FaceBookIcon /></LinkSoc>
+
+                    </WrapLinkSoc>
+                </WrapSocList>
             </Container>
         </Footer>
     )

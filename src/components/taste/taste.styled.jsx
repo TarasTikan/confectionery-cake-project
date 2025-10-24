@@ -189,7 +189,7 @@ export const DescriptionContainer = styled.div`
     transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
   @media screen and (min-width: 400px) {
     transform: ${({ active }) =>
-      active === "true" ? "translateY(0)" : "translateY(20px)"};
+    active === "true" ? "translateY(0)" : "translateY(20px)"};
   }
 `;
 

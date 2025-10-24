@@ -87,8 +87,8 @@ export const SocLinkOrder = styled.a`
     variant === "telegram"
       ? "#2AABEE"
       : variant === "viber"
-      ? "linear-gradient(90deg, #8f5db7 0%, #9c27b0 100%)"
-      : "#ff9900"};
+        ? "linear-gradient(90deg, #8f5db7 0%, #9c27b0 100%)"
+        : "#ff9900"};
 
     &:hover {
     transform: translateY(-3px);
@@ -101,7 +101,7 @@ export const SocLinkOrder = styled.a`
     padding: 14px 26px;
   }`
 
-  
+
 export const CakeImage = styled.img`
   width: 340px;
   display: block;

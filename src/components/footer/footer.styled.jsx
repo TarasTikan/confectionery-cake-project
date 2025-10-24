@@ -90,9 +90,9 @@ export const WrapText = styled.div`
 `;
 
 export const Phone = styled.a`
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  gap: 10px;
+
   color: #2B1F1F;
   text-decoration: none;
   font-weight: 600;
@@ -106,42 +106,34 @@ transition: color .2s ease, transform .2s ease;
 `;
 
 export const SocLinkFooter = styled.a`
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
   font-weight: 600;
   font-size: 12px;
   color: #fff;
   text-decoration: none;
   border-radius: 10px;
   padding: 10px 20px;
+  gap: 10px;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   margin: 0 auto;
    background: ${({ variant }) =>
     variant === "telegram"
       ? "#2AABEE"
       : variant === "viber"
-      ? "linear-gradient(90deg, #8f5db7 0%, #9c27b0 100%)"
-      : "#ff9900"};
+        ? "linear-gradient(90deg, #8f5db7 0%, #9c27b0 100%)"
+        : "#ff9900"};
 
     &:hover {
     transform: translateY(-3px);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
   }
 
-  @media (min-width: 600px) {
-    width: 70%;
-    font-size: 14px;
-  }
-    
-    @media (min-width: 1200px) {
-    width: 50%;
-  margin: 0;
-  }
+
   `
 
-  export const SocLinkList = styled.ul`
+export const SocLinkList = styled.ul`
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -151,13 +143,53 @@ export const SocLinkFooter = styled.a`
     }
   `
 
-  export const Copyright = styled.p`
+export const Copyright = styled.p`
   margin-top: 15px;
   color: #2B1F1F;
   font-weight: 600;
 
   font-size: 13px;                    
   @media (min-width: 400px)  { font-size: 13.5px; }
-  @media (min-width: 600px)  { font-size: 14px; }
-  @media (min-width: 1200px) { font-size: 15px; }
+  @media (min-width: 600px)  { font-size: 14px; display: none;}
+  @media (min-width: 1200px) { font-size: 15px; display: block;}
 `;
+
+export const WrapSocList = styled.div`
+display: flex;
+ align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 13px;
+  margin: 0 auto;
+  @media (min-width: 1200px) { margin: 0; gap: 20px;  align-items: start;}
+`
+export const WrapLinkSoc = styled.div`
+display: flex;
+ align-items: center;
+  justify-content: center;
+  gap: 10px;
+`
+export const LinkSoc = styled.a`
+padding: 7px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+background-image: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+&:last-child {
+  background-image: linear-gradient(#1877F2);
+}
+border-radius: 10px;
+svg {
+fill: #ffff;
+height: 20px;
+width: 20px;
+ @media (min-width: 600px) { height: 25px;
+width: 25px;}
+}
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  }
+
+  @media (min-width: 600px) { padding: 10px;}
+`

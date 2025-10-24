@@ -8,7 +8,7 @@ import {
   DesignList,
   Designbtn,
   DesignListItem,
-CreateCustombtn
+  CreateCustombtn
 } from "./customDesign.styled";
 import { FormIcon } from "../../icons/formIcon";
 import { DownloadIcon } from "../../icons/downloadIcon";
@@ -39,86 +39,86 @@ export const CustomDesign = () => {
   return (
     <DesignSection>
       <Container>
- 
- 
-          <div>
-            <DesignTitle
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-              viewport={{ once: true, amount: 0.2 }}
-            >
-              Кастомний дизайн
-            </DesignTitle>
-            <DesignSubTitle
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-              viewport={{ once: true, amount: 0.2 }}
-            >
-              Створи торт своєї мрії - обери форму, смак, декор та інші деталі
-            </DesignSubTitle>
-          </div>
-          <DesignList
+
+
+        <div>
+          <DesignTitle
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             viewport={{ once: true, amount: 0.2 }}
           >
-            <DesignListItem>
-              <Designbtn onClick={handleToggleHover}>
-                <DesignTitleCard>Форма</DesignTitleCard>
-                <FormIcon />
-                <DesignTextCard>
-                  Круглий, квадратний, прямокутний, серце, багатоярусний
-                </DesignTextCard>
-              </Designbtn>
-            </DesignListItem>
-            <DesignListItem>
-              <Designbtn onClick={handleToggleHover}>
-                <DesignTitleCard>Розмір</DesignTitleCard>
-                <SizeCakeIcon />
-                <DesignTextCard>
-                  на 6, 10, 20, 30, 50 персон або більше
-                </DesignTextCard>
-              </Designbtn>
-            </DesignListItem>
-            <DesignListItem>
-              <Designbtn onClick={handleToggleHover}>
-                <DesignTitleCard>Смак</DesignTitleCard>
-                <TasteIcon />
-                <DesignTextCard>
-                  шоколадний, ванільний, полуничниий і т.д.
-                </DesignTextCard>
-              </Designbtn>
-            </DesignListItem>
-            <DesignListItem>
-              <Designbtn onClick={handleToggleHover}>
-                <DesignTitleCard>Декор</DesignTitleCard>
-                <DecorIcon />
-                <DesignTextCard>
-                  квіти, фігурки, стрічки, топери і т.д.
-                </DesignTextCard>
-              </Designbtn>
-            </DesignListItem>
-            <DesignListItem>
-              <Designbtn onClick={handleToggleHover}>
-                <DesignTitleCard>Напис</DesignTitleCard>
-                <PencilIcon />
-                <DesignTextCard>ім'я, вітання, побажання і т.д.</DesignTextCard>
-              </Designbtn>
-            </DesignListItem>
-            <DesignListItem>
-              <Designbtn onClick={handleToggleHover}>
-                <DesignTitleCard>Фото</DesignTitleCard>
-                <DownloadIcon />
-                <DesignTextCard>
-                  прикріпи фото, яке хочеш бачити на торті.
-                </DesignTextCard>
-              </Designbtn>
-            </DesignListItem>
-          </DesignList>
-          <CreateCustombtn onClick={handleToggleHover}>Створити власний дизайн</CreateCustombtn>
+            Кастомний дизайн
+          </DesignTitle>
+          <DesignSubTitle
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            viewport={{ once: true, amount: 0.2 }}
+          >
+            Створи торт своєї мрії - обери форму, смак, декор та інші деталі
+          </DesignSubTitle>
+        </div>
+        <DesignList
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: true, amount: 0.2 }}
+        >
+          <DesignListItem>
+            <Designbtn onClick={handleToggleHover}>
+              <DesignTitleCard>Форма</DesignTitleCard>
+              <FormIcon />
+              <DesignTextCard>
+                Круглий, квадратний, прямокутний, серце, багатоярусний
+              </DesignTextCard>
+            </Designbtn>
+          </DesignListItem>
+          <DesignListItem>
+            <Designbtn onClick={handleToggleHover}>
+              <DesignTitleCard>Розмір</DesignTitleCard>
+              <SizeCakeIcon />
+              <DesignTextCard>
+                на 6, 10, 20, 30, 50 персон або більше
+              </DesignTextCard>
+            </Designbtn>
+          </DesignListItem>
+          <DesignListItem>
+            <Designbtn onClick={handleToggleHover}>
+              <DesignTitleCard>Смак</DesignTitleCard>
+              <TasteIcon />
+              <DesignTextCard>
+                шоколадний, ванільний, полуничниий і т.д.
+              </DesignTextCard>
+            </Designbtn>
+          </DesignListItem>
+          <DesignListItem>
+            <Designbtn onClick={handleToggleHover}>
+              <DesignTitleCard>Декор</DesignTitleCard>
+              <DecorIcon />
+              <DesignTextCard>
+                квіти, фігурки, стрічки, топери і т.д.
+              </DesignTextCard>
+            </Designbtn>
+          </DesignListItem>
+          <DesignListItem>
+            <Designbtn onClick={handleToggleHover}>
+              <DesignTitleCard>Напис</DesignTitleCard>
+              <PencilIcon />
+              <DesignTextCard>ім'я, вітання, побажання і т.д.</DesignTextCard>
+            </Designbtn>
+          </DesignListItem>
+          <DesignListItem>
+            <Designbtn onClick={handleToggleHover}>
+              <DesignTitleCard>Фото</DesignTitleCard>
+              <DownloadIcon />
+              <DesignTextCard>
+                прикріпи фото, яке хочеш бачити на торті.
+              </DesignTextCard>
+            </Designbtn>
+          </DesignListItem>
+        </DesignList>
+        <CreateCustombtn onClick={handleToggleHover}>Створити власний дизайн</CreateCustombtn>
       </Container>
       <Modal open={isOpen} clouseModal={handleToggleHover} />
     </DesignSection>
