@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { motion } from "framer-motion";
 const COLORS = {
   pink: "#ffe0e4",
   lavender: "#f8f0ff",
@@ -8,7 +9,6 @@ const COLORS = {
   border: "#f5ccff",
 };
 export const HeroSection = styled.section`
-  padding-top: 20px;
   padding-bottom: 40px;
   background: linear-gradient(
     180deg,
@@ -19,18 +19,15 @@ export const HeroSection = styled.section`
   color: ${COLORS.text};
 
   @media screen and (min-width: 600px) {
-    padding-top: 60px;
     padding-bottom: 80px;
   }
 
   @media screen and (min-width: 1200px) {
-    padding-top: 80px;
     padding-bottom: 100px;
   }
 `;
 
 export const Container = styled.div`
-  width: 100%;
   padding-left: 15px;
   padding-right: 15px;
   margin: 0 auto;
@@ -53,8 +50,9 @@ export const Container = styled.div`
   }
 `;
 
-export const AboutHeroTitleSecond = styled.h2`
+export const AboutHeroTitleSecond = styled(motion.h2)`
   margin-right: auto;
+  margin-left: auto;
   padding: 5px 15px;
   border-radius: 999px;
   font-size: 15px;
@@ -62,10 +60,14 @@ export const AboutHeroTitleSecond = styled.h2`
   background: rgba(255, 255, 255, 0.85);
   border: 1px solid ${COLORS.border};
   box-shadow: 0 2px 8px rgba(166, 99, 204, 0.15);
-  margin-bottom: 20px;
+  margin-bottom: 40px;
+  @media screen and (min-width: 600px) {
+    margin-right: auto;
+    margin-left: 0;
+  }
 `;
 
-export const Title = styled.h1`
+export const Title = styled(motion.h1)`
   font-weight: 800;
   line-height: 1.1;
   font-size: 40px;
@@ -89,7 +91,7 @@ export const AboutHeroWrapper = styled.div`
   margin-bottom: 20px;
 `;
 
-export const Description = styled.p`
+export const Description = styled(motion.p)`
   font-size: 15px;
   line-height: 30px;
   color: #4a4a4a;
@@ -99,10 +101,10 @@ export const Description = styled.p`
   }
 `;
 
-export const PrimaryBtn = styled.a`
+export const PrimaryBtn = styled(motion.a)`
   background-color: #a663cc;
   color: #ffffff;
-  padding: 12px 23px;
+  padding: 12px 20px;
   border-radius: 24px;
   text-decoration: none;
   font-weight: 500;
@@ -112,24 +114,26 @@ export const PrimaryBtn = styled.a`
   cursor: pointer;
   &:hover {
     box-shadow: 0 6px 14px rgba(166, 99, 204, 0.45);
-
+    background-color: #ffffff;
     color: #a663cc;
   }
   margin-right: 6px;
-  font-size: 13px;
-    @media screen and (min-width: 600px) {
-      font-size: 16px;
-       padding: 14px 28px;
-       margin-right: 12px;
+  font-size: 10px;
+  @media screen and (min-width: 400px) {
+    font-size: 13px;
   }
-
+  @media screen and (min-width: 600px) {
+    font-size: 16px;
+    padding: 14px 28px;
+    margin-right: 12px;
+  }
 `;
 
-export const SecondaryBtn = styled.a`
+export const SecondaryBtn = styled(motion.a)`
   background: rgba(255, 255, 255, 0.9);
   border: 1px solid #f5ccff;
   color: #a663cc;
-  padding: 12px 23px;
+  padding: 12px 20px;
   border-radius: 24px;
   text-decoration: none;
   transition: background 0.3s ease, border-color 0.3s ease;
@@ -139,13 +143,16 @@ export const SecondaryBtn = styled.a`
     background: #ffffff;
     border-color: #a663cc;
   }
-      font-size: 13px;
-    @media screen and (min-width: 600px) {
-      font-size: 16px;
-       padding: 14px 28px;
+  font-size: 10px;
+  @media screen and (min-width: 400px) {
+    font-size: 13px;
+  }
+  @media screen and (min-width: 600px) {
+    font-size: 16px;
+    padding: 14px 28px;
   }
 `;
-export const StatsList = styled.ul`
+export const StatsList = styled(motion.ul)`
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;

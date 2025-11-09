@@ -11,13 +11,20 @@ import {
 import { ShopBascetIcon } from "../../icons/shopBascetIcon";
 import { MobMenuIcon } from "../../icons/mobMenuIcon";
 import { Outlet } from "react-router-dom";
+import { useState } from "react";
+import { MobMenu } from "../MobMenu/MobMenu";
 export const SideBar = () => {
+ const [isOpen, setIsOpen] = useState(false);
+  const handleMobMenuClick = () => {
+    setIsOpen(!isOpen);
+  }
+
   return (
     <>
     <Header>
       <Container>
-        <BtnMobMenu>
-          <MobMenuIcon />
+        <BtnMobMenu onClick={handleMobMenuClick} type="button">
+          <MobMenuIcon/>
         </BtnMobMenu>
         <Logo href="/">Кондитерська</Logo>
         <nav>
@@ -41,6 +48,7 @@ export const SideBar = () => {
           <ShopBascetIcon />
         </BtnBasket>
       </Container>
+      <MobMenu open={isOpen} clouseMobMenu={handleMobMenuClick}/>
     </Header>
     <Outlet />
 </>

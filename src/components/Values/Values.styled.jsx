@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-
+import { motion } from "framer-motion";
 const COLORS = {
   pink: "#ffe0e4",
   lavender: "#f8f0ff",
@@ -22,7 +22,6 @@ export const ValuesSection = styled.section`
 `;
 
 export const Container = styled.div`
-  width: 100%;
   padding-left: 15px;
   padding-right: 15px;
   margin: 0 auto;
@@ -46,7 +45,7 @@ export const Container = styled.div`
 `;
 
 
-export const ValuesTitle = styled.h2`
+export const ValuesTitle = styled(motion.h2)`
   color: ${COLORS.text};
   font-weight: 800;
   line-height: 1.1;
@@ -64,7 +63,7 @@ export const ValuesTitle = styled.h2`
   }
 `;
 
-export const ValuesLead = styled.p`
+export const ValuesLead = styled(motion.p)`
   color: ${COLORS.textMuted};
   font-size: 15px;
   line-height: 26px;
@@ -80,7 +79,7 @@ export const ValuesLead = styled.p`
   }
 `;
 
-export const ValuesGrid = styled.ul`
+export const ValuesGrid = styled(motion.ul)`
   margin-top: 24px;
   display: flex;
   flex-wrap: wrap;
@@ -105,11 +104,7 @@ export const ValueCard = styled.li`
   border-radius: 28px;
   box-shadow: 0 6px 22px rgba(166, 99, 204, 0.08);
  padding: 16px;
-  width: 100%;
-  display: flex;
-flex-direction: column;
-  align-items: center;
-flex-wrap: wrap;
+
 
   transition: box-shadow 0.25s ease, transform 0.25s ease, border-color 0.25s ease;
 
