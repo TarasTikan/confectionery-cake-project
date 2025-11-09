@@ -58,7 +58,7 @@ export const NavList = styled.ul`
   list-style: none;
 
   @media screen and (min-width: 1200px) {
-    display: flex; /* планшет */
+    display: flex;
   }
 `;
 

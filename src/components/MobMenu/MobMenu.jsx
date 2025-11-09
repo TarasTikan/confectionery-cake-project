@@ -1,16 +1,16 @@
 import { NavLink } from "react-router-dom"
-import { MobMenuContainer, MobMenuSection } from "./MobMenu.styled"
+import { MobMenuContainer, MobMenuSection,MobMenuBtn } from "./MobMenu.styled"
 
 
-export const MobMenu = ({ clouseModal, open }) => {
+export const MobMenu = ({ clouseMobMenu, open }) => {
      const handleClouse = () => {
-    clouseModal();
+    clouseMobMenu();
   };
     return (
              <MobMenuSection open={open}>
 
           <MobMenuContainer>
-            <div class="mob__menu__container">
+            <div >
           <button type="button" onClick={handleClouse}>
           x
           </button>
@@ -31,8 +31,10 @@ export const MobMenu = ({ clouseModal, open }) => {
                       </li>
             </ul>
           </nav>
-        </div>
-        <button type="button">Замовити зараз</button>
+          </div>
+          <MobMenuBtn>Замовити зараз</MobMenuBtn>
+        
+        
         </MobMenuContainer>  
 
 
