@@ -34,18 +34,18 @@ export const Container = styled.div`
 `;
 
 export const Logo = styled.a`
-  font-size: 20px; /* мобілка */
+  font-size: 20px; 
   font-weight: 700;
   color: #9b6bce;
   text-decoration: none;
   margin: 0 auto;
 
   @media screen and (min-width: 600px) {
-    font-size: 22px; /* планшет */
+    font-size: 22px;
   }
 
   @media screen and (min-width: 1200px) {
-    font-size: 24px; /* пк */
+    font-size: 24px; 
     margin-right: auto;
     margin-left: 0;
   }
@@ -84,7 +84,7 @@ export const NavLink = styled(RouterNavLink)`
   }
 `;
 export const BtnHeader = styled.button`
-  font-size: 14px; /* мобілка */
+  font-size: 14px;
   font-weight: 600;
   padding: 8px 16px;
   border-radius: 30px;
@@ -101,13 +101,13 @@ export const BtnHeader = styled.button`
   }
 
   @media screen and (min-width: 600px) {
-    font-size: 15px; /* планшет */
+    font-size: 15px; 
     padding: 10px 20px;
     margin-right: 15px;
   }
 
   @media screen and (min-width: 1200px) {
-    font-size: 16px; /* пк */
+    font-size: 16px; 
     padding: 12px 28px;
     margin-right: 20px;
     display: block;
@@ -115,7 +115,7 @@ export const BtnHeader = styled.button`
 `;
 
 export const BtnBasket = styled.button`
-  width: 45px; /* мобілка */
+  width: 45px; 
   height: 45px;
   border: none;
   background-color: transparent;
@@ -136,7 +136,7 @@ export const BtnBasket = styled.button`
   }
 
   @media screen and (min-width: 600px) {
-    width: 55px; /* планшет */
+    width: 55px; 
     height: 55px;
     svg {
       width: 22px;
@@ -145,7 +145,7 @@ export const BtnBasket = styled.button`
   }
 
   @media screen and (min-width: 1200px) {
-    width: 60px; /* пк */
+    width: 60px; 
     height: 60px;
     svg {
       width: 25px;
@@ -155,7 +155,7 @@ export const BtnBasket = styled.button`
 `;
 
 export const BtnMobMenu = styled.button`
-  width: 45px; /* мобілка */
+  width: 45px;
   height: 45px;
   border: none;
   background-color: transparent;
@@ -172,11 +172,10 @@ export const BtnMobMenu = styled.button`
 
   &:hover {
     fill: #fff;
-    background-color: #9b6bce;
-  }
+    background-color: #9b6bce;  }
 
   @media screen and (min-width: 600px) {
-    width: 55px; /* планшет */
+    width: 55px;
     height: 55px;
     svg {
       width: 22px;
@@ -185,7 +184,7 @@ export const BtnMobMenu = styled.button`
   }
 
   @media screen and (min-width: 1200px) {
-    width: 60px; /* пк */
+    width: 60px; 
     height: 60px;
     svg {
       width: 25px;
