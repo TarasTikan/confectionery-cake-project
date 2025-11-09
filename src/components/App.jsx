@@ -1,31 +1,21 @@
-import '../App.css';
-import { SideBar } from './header/header';
-import {Hero} from './hero/hero'
-import {Menu} from './menu/menu'
-import {PopularDesserts} from './popularDesserts/popularDesserts'
-import {Tastes} from './taste/taste'
-import {CustomDesign} from './customDesign/customDesign'
-import {ParticlesBg } from './background/ParticlesBackground';
-import {WhyChooseUs} from "./whyChooseUs/whyChooseUs"
-import {OrderCake} from "./orderCake/orderCake"
-import {FooterCake} from "./footer/footer"
+import { Routes, Route } from 'react-router-dom';
+import { SideBar } from './header/header.jsx';
+import { HomePage } from "../pages/HomePage/HomePage.jsx";
+import { MenuPage } from '../pages/MenuPage/MenuPage.jsx';
+import { AboutPage } from '../pages/AboutPage/AboutPage.jsx';
+
+
 function App() {
   return (
-    <>
-    <ParticlesBg/>
-    <SideBar/>
-    <main>
-      <Hero/>
-      <Menu/>
-      <PopularDesserts/>
-      <Tastes/>
-      <CustomDesign/>
-      <WhyChooseUs/>
-      <OrderCake/>
-    </main>
-    <FooterCake/>
-    </>
-  );
+    <Routes>
+      <Route path="/" element={<SideBar/>}>
+      <Route index element={<HomePage/>}/>
+      <Route path='menu' element={<MenuPage/>}/>
+      <Route path='about' element={<AboutPage/>}/>
+       </Route>
+    </Routes>
+  
+  )
 }
 
 export default App;

@@ -2,7 +2,6 @@ import styled from "@emotion/styled";
 
 export const HeroSection = styled.section`
   padding-top: 40px;
-  padding-bottom: 70px;
 
   @media screen and (min-width: 600px) {
     padding-top: 60px;
@@ -11,7 +10,6 @@ export const HeroSection = styled.section`
 
   @media screen and (min-width: 1200px) {
     padding-top: 80px;
-    padding-bottom: 130px;
   }
 `;
 

@@ -1,0 +1,37 @@
+import { Container, HeroSection,AboutHeroTitleSecond,Title,AboutHeroWrapper, Description,PrimaryBtn,StatsLabel,SecondaryBtn,StatsList,StatsNumber,StatsItem} from "./AboutHero.styled";
+
+export const AboutHero = () => {
+  return (
+    <HeroSection>
+      <Container>
+        <AboutHeroTitleSecond>💜 Ручна робота • Свіжі інгредієнти</AboutHeroTitleSecond>
+        <AboutHeroWrapper>
+          <Title>Про нас</Title>
+          <Description>
+            Ми — невеличка кондитерська, що готує торти, капкейки, макарони та
+            тарти у <strong>ніжній пастельній естетиці</strong>. Працюємо лише з натуральними
+            інгредієнтами й створюємо індивідуальні десерти під вашу подію.
+          </Description>
+          <div>
+            <PrimaryBtn>Замовити десерт</PrimaryBtn>
+            <SecondaryBtn>Дізнатись більше</SecondaryBtn>
+          </div>
+        </AboutHeroWrapper>
+        <StatsList>
+            <StatsItem>
+                <StatsNumber>7+</StatsNumber>
+                <StatsLabel>років досвіду</StatsLabel>
+            </StatsItem>
+            <StatsItem>
+                <StatsNumber>1200+</StatsNumber>
+                <StatsLabel>щасливих клієнтів</StatsLabel>
+            </StatsItem>
+            <StatsItem>
+                <StatsNumber>30+</StatsNumber>
+                <StatsLabel>смаків тортів</StatsLabel>
+            </StatsItem>
+        </StatsList>
+      </Container>
+    </HeroSection>
+  );
+};

@@ -122,6 +122,7 @@ export const DesignList = styled(motion.ul)`
   display: flex;
   gap: 30px;
   flex-wrap: wrap;
+  justify-content: center;
 `;
 
 export const DesignListItem = styled.li`

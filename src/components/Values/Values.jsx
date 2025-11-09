@@ -1,0 +1,37 @@
+import { Container, ValueCard, ValuesGrid, ValuesLead, ValuesSection, ValuesTitle, ValueText, ValueTitle } from "./Values.styled";
+
+export const Values = () => {
+  return (
+    <ValuesSection>
+      <Container>
+        <ValuesTitle>Наші цінності</ValuesTitle>
+        <ValuesLead>
+          Якість, турбота та естетика — три речі, які ви відчуєте з першого
+          шматочка.
+        </ValuesLead>
+        <ValuesGrid>
+          <ValueCard>
+            <ValueTitle>🥛 Натуральні інгредієнти</ValueTitle>
+            <ValueText>
+              Вершкове масло, фермерські яйця, сезонні ягоди — без штучних
+              ароматизаторів.
+            </ValueText>
+          </ValueCard>
+          <ValueCard>
+            <ValueTitle>🎀 Індивідуальний дизайн</ValueTitle>
+            <ValueText>
+              Підбираємо форму, колір, декор і напис під вашу подію та настрій.
+            </ValueText>
+          </ValueCard>
+          <ValueCard>
+            <ValueTitle>🚚 Свіжість і доставка</ValueTitle>
+            <ValueText>
+              Готуємо під дату, охолоджене пакування та оперативна доставка по
+              місту.
+            </ValueText>
+          </ValueCard>
+        </ValuesGrid>
+      </Container>
+    </ValuesSection>
+  );
+};

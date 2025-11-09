@@ -10,8 +10,10 @@ import {
 } from "./header.styled";
 import { ShopBascetIcon } from "../../icons/shopBascetIcon";
 import { MobMenuIcon } from "../../icons/mobMenuIcon";
+import { Outlet } from "react-router-dom";
 export const SideBar = () => {
   return (
+    <>
     <Header>
       <Container>
         <BtnMobMenu>
@@ -21,16 +23,16 @@ export const SideBar = () => {
         <nav>
           <NavList>
             <li>
-              <NavLink href="/">Головна</NavLink>
+              <NavLink to="/">Головна</NavLink>
             </li>
             <li>
-              <NavLink href="/">Меню</NavLink>
+              <NavLink to="/menu">Меню</NavLink>
             </li>
             <li>
-              <NavLink href="/">Про нас</NavLink>
+              <NavLink to="/about">Про нас</NavLink>
             </li>
             <li>
-              <NavLink href="/">контакти</NavLink>
+              <NavLink to="/">Контакти</NavLink>
             </li>
           </NavList>
         </nav>
@@ -40,5 +42,7 @@ export const SideBar = () => {
         </BtnBasket>
       </Container>
     </Header>
+    <Outlet />
+</>
   );
 };
