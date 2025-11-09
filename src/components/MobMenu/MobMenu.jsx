@@ -1,5 +1,4 @@
-import { NavLink } from "react-router-dom"
-import { MobMenuContainer, MobMenuSection,MobMenuBtn } from "./MobMenu.styled"
+import { MobMenuContainer, MobMenuSection,MobMenuBtn,MobMenuList,NavLink,BtnHeaderClouse } from "./MobMenu.styled"
 
 
 export const MobMenu = ({ clouseMobMenu, open }) => {
@@ -11,25 +10,25 @@ export const MobMenu = ({ clouseMobMenu, open }) => {
 
           <MobMenuContainer>
             <div >
-          <button type="button" onClick={handleClouse}>
+          <BtnHeaderClouse type="button" onClick={handleClouse}>
           x
-          </button>
+          </BtnHeaderClouse>
 
           <nav>
-            <ul>
+            <MobMenuList>
               <li>
-                        <NavLink to="/">Головна</NavLink>
+                        <NavLink to="/" onClick={handleClouse}>Головна</NavLink>
                       </li>
                       <li>
-                        <NavLink to="/menu">Меню</NavLink>
+                        <NavLink to="/menu" onClick={handleClouse}>Меню</NavLink>
                       </li>
                       <li>
-                        <NavLink to="/about">Про нас</NavLink>
+                        <NavLink to="/about" onClick={handleClouse}>Про нас</NavLink>
                       </li>
                       <li>
-                        <NavLink to="/">Контакти</NavLink>
+                        <NavLink to="/" onClick={handleClouse}>Контакти</NavLink>
                       </li>
-            </ul>
+            </MobMenuList>
           </nav>
           </div>
           <MobMenuBtn>Замовити зараз</MobMenuBtn>

@@ -15,7 +15,6 @@ export const DesignSection = styled.section`
   }
 `;
 export const Container = styled.div`
-  width: 100%;
   padding-left: 15px;
   padding-right: 15px;
   margin: 0 auto;
@@ -135,8 +134,15 @@ export const DesignListItem = styled.li`
     transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
   text-align: center;
   border-radius: 8px;
-  width: calc((100% - 30px) / 2);
 
+  width: calc((100% - 30px) / 2);
+  flex-grow: 1;
+
+    @media (min-width: 600px) {
+    width: calc((100% - 30px) / 3);
+flex-grow: 2;
+  }
+ 
   @media (min-width: 1200px) {
     width: calc((100% - 30px) / 4);
     flex-grow: 3;

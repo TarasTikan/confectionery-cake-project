@@ -2,7 +2,8 @@ import styled from "@emotion/styled";
 import { motion } from "framer-motion";
 
 export const OrderCakeSection = styled(motion.section)`
-  padding: 20px 20px;
+  padding-top: 20px;
+  padding-bottom: 60px;
   text-align: center;
   color: #2b2b2b;
 
@@ -16,7 +17,6 @@ export const OrderCakeSection = styled(motion.section)`
 `;
 
 export const Container = styled.div`
-  width: 100%;
   padding-left: 15px;
   padding-right: 15px;
   margin: 0 auto;

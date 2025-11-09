@@ -1,9 +1,10 @@
 import styled from "@emotion/styled";
+import { NavLink as RouterNavLink } from "react-router-dom";
 
 export const MobMenuSection = styled.div`
   position: fixed;
   top: 0;
-  left: 0; /* ставимо з лівого краю */
+  left: 0; 
   width: 50%;
   height: 100%;
   background-color: #fff;
@@ -44,4 +45,49 @@ export const MobMenuBtn = styled.a`
     color: #3b3b3bff;
   }
   
+`;
+
+
+export const MobMenuList = styled.ul`
+display: flex;
+flex-direction: column;
+gap: 20px;
+margin-top: 40px;
+`
+
+export const NavLink = styled(RouterNavLink)`
+  font-size: 20px;
+  font-weight: 500;
+  color: #2e2e2e;
+  text-decoration: none;
+  padding: 10px 0;
+  transition: color 300ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover {
+    color: #9b6bce;
+  }
+
+  @media screen and (min-width: 600px) {
+    font-size: 15px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    font-size: 16px;
+    padding: 20px 0; 
+  }
+`;
+
+export const BtnHeaderClouse = styled.button`
+background-color: transparent;
+margin-left: auto;
+border: none;
+font-size: 24px;
+display: flex;
+cursor: pointer;
+
+ transition: color 300ms cubic-bezier(0.4, 0, 0.2, 1);
+&:hover {
+    color: #9b6bce;
+
+    }
 `;

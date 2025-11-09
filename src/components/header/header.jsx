@@ -11,7 +11,7 @@ import {
 import { ShopBascetIcon } from "../../icons/shopBascetIcon";
 import { MobMenuIcon } from "../../icons/mobMenuIcon";
 import { Outlet } from "react-router-dom";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import { MobMenu } from "../MobMenu/MobMenu";
 export const SideBar = () => {
  const [isOpen, setIsOpen] = useState(false);
@@ -19,6 +19,15 @@ export const SideBar = () => {
     setIsOpen(!isOpen);
   }
 
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+
+    return () => (document.body.style.overflow = "auto");
+  }, [isOpen]);
   return (
     <>
     <Header>

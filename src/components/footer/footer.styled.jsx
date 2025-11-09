@@ -2,12 +2,12 @@ import styled from "@emotion/styled";
 import { motion } from "framer-motion";
 
 export const Footer = styled(motion.footer)`
-  padding: 60px 20px;
+  padding-top: 60px;
+  padding-bottom: 60px;
   background-color: #F7F3FF;
 `;
 
 export const Container = styled.div`
-  width: 100%;
   padding-left: 15px;
   padding-right: 15px;
   margin: 0 auto;
