@@ -6,7 +6,6 @@ export const WhyChooseUsSection = styled(motion.section)`
 
   @media screen and (min-width: 600px) {
     padding-top: 50px;
-    padding-bottom: 50px;
   }
 `;
 
@@ -19,7 +18,7 @@ export const Container = styled.div`
   align-items: center;
   flex-direction: column;
   justify-content: space-between;
-flex-direction: column-reverse;
+  flex-direction: column-reverse;
   @media screen and (min-width: 400px) {
     width: 400px;
   }
@@ -32,30 +31,30 @@ flex-direction: column-reverse;
   }
   @media screen and (min-width: 1200px) {
     width: 1200px;
-     justify-content: center;
-     gap:50px;
+    justify-content: center;
+    gap: 50px;
   }
 `;
 
 export const WhyChooseImg = styled.img`
   display: block;
-  margin: 0 auto;       
-  width: 220px;          
+  margin: 0 auto;
+  width: 220px;
   height: auto;
 
   @media (min-width: 400px) {
-    width: 260px;    
+    width: 260px;
   }
   @media (min-width: 600px) {
-    width: 320px;      
+    width: 320px;
   }
   @media (min-width: 1200px) {
-    width: 460px;     
-    margin: 0;          
+    width: 460px;
+    margin: 0;
   }
-`
+`;
 export const WrapWhyText = styled.div`
- display: flex;
+  display: flex;
   gap: 10px;
   flex-direction: column;
   align-items: start;
@@ -66,48 +65,46 @@ export const WrapWhyText = styled.div`
   @media (min-width: 1200px) {
     gap: 14px;
   }
-
-`
-
+`;
 
 export const WhyTitle = styled.h2`
   margin: 0 0 12px;
   font-weight: 800;
   letter-spacing: -0.02em;
-  font-size: 22px;     
+  font-size: 22px;
   line-height: 1.15;
-text-align: center;
+  text-align: center;
   @media (min-width: 400px) {
-    font-size: 24px;   
+    font-size: 24px;
   }
   @media (min-width: 600px) {
     font-size: 28px;
-    text-align: left;   
+    text-align: left;
   }
   @media (min-width: 1200px) {
-    font-size: 40px;    
+    font-size: 40px;
   }
 `;
 
 export const BenefitText = styled.p`
   color: #564c47;
-  font-size: 13px;       
+  font-size: 13px;
   line-height: 1.35;
 
   @media (min-width: 400px) {
-    font-size: 14px;       
+    font-size: 14px;
   }
   @media (min-width: 600px) {
-    font-size: 15px;        
+    font-size: 15px;
   }
   @media (min-width: 1200px) {
-    font-size: 16px;        
+    font-size: 16px;
   }
 `;
 
-
 export const WrapText = styled(motion.div)`
-display: flex;
- align-items: center;
- justify-content: center;
- gap: 10px;`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+`;

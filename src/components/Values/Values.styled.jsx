@@ -10,8 +10,8 @@ const COLORS = {
 };
 
 export const ValuesSection = styled.section`
-  background: rgba(248, 240, 255, 0.6);
-  padding: 40px 0;
+  background: linear-gradient(180deg, #f3d9ff 0%, #f8f0ff 60%, #ffffff 100%);
+  padding: 40px 40px;
 
   @media screen and (min-width: 600px) {
     padding: 60px 0;
@@ -30,9 +30,6 @@ export const Container = styled.div`
   flex-direction: column;
   justify-content: space-between;
 
-  @media screen and (min-width: 400px) {
-    width: 400px;
-  }
   @media screen and (min-width: 600px) {
     width: 600px;
   }
@@ -43,7 +40,6 @@ export const Container = styled.div`
     width: 1200px;
   }
 `;
-
 
 export const ValuesTitle = styled(motion.h2)`
   color: ${COLORS.text};
@@ -90,7 +86,6 @@ export const ValuesGrid = styled(motion.ul)`
     gap: 18px;
   }
   @media screen and (min-width: 600px) {
-
     gap: 22px;
   }
   @media screen and (min-width: 1200px) {
@@ -103,10 +98,10 @@ export const ValueCard = styled.li`
   border: 1px solid ${COLORS.border};
   border-radius: 28px;
   box-shadow: 0 6px 22px rgba(166, 99, 204, 0.08);
- padding: 16px;
+  padding: 16px;
 
-
-  transition: box-shadow 0.25s ease, transform 0.25s ease, border-color 0.25s ease;
+  transition: box-shadow 0.25s ease, transform 0.25s ease,
+    border-color 0.25s ease;
 
   &:hover {
     transform: translateY(-2px);
@@ -119,12 +114,12 @@ export const ValueCard = styled.li`
   }
   @media screen and (min-width: 600px) {
     padding: 22px;
-      width: calc((100% - 30px) / 3);
-  flex-grow: 2;
+    width: calc((100% - 30px) / 3);
+    flex-grow: 2;
   }
   @media screen and (min-width: 1200px) {
     padding: 24px;
-     width: calc((100% - 30px) / 4);
+    width: calc((100% - 30px) / 4);
     flex-grow: 3;
   }
 `;

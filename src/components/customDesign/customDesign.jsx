@@ -8,7 +8,7 @@ import {
   DesignList,
   Designbtn,
   DesignListItem,
-  CreateCustombtn
+  CreateCustombtn,
 } from "./customDesign.styled";
 import { FormIcon } from "../../icons/formIcon";
 import { DownloadIcon } from "../../icons/downloadIcon";
@@ -39,8 +39,6 @@ export const CustomDesign = () => {
   return (
     <DesignSection>
       <Container>
-
-
         <div>
           <DesignTitle
             initial={{ opacity: 0, y: 40 }}
@@ -118,7 +116,9 @@ export const CustomDesign = () => {
             </Designbtn>
           </DesignListItem>
         </DesignList>
-        <CreateCustombtn onClick={handleToggleHover}>Створити власний дизайн</CreateCustombtn>
+        <CreateCustombtn onClick={handleToggleHover}>
+          Створити власний дизайн
+        </CreateCustombtn>
       </Container>
       <Modal open={isOpen} clouseModal={handleToggleHover} />
     </DesignSection>

@@ -4,26 +4,24 @@ import { NavLink as RouterNavLink } from "react-router-dom";
 export const MobMenuSection = styled.div`
   position: fixed;
   top: 0;
-  left: 0; 
+  left: 0;
   width: 50%;
   height: 100%;
   background-color: #fff;
   z-index: 100;
   padding: 10px 48px 48px 40px;
 
-  transform: ${({ open }) =>
-    open ? "translateX(0)" : "translateX(-100%)"};
+  transform: ${({ open }) => (open ? "translateX(0)" : "translateX(-100%)")};
   opacity: ${({ open }) => (open ? 1 : 0)};
-  transition:
-    opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
     transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-`
+`;
 export const MobMenuContainer = styled.div`
-   flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
-    display: flex;
-`
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  display: flex;
+`;
 
 export const MobMenuBtn = styled.a`
   background-color: #a663cc;
@@ -44,16 +42,14 @@ export const MobMenuBtn = styled.a`
     background-color: #ffffff;
     color: #3b3b3bff;
   }
-  
 `;
 
-
 export const MobMenuList = styled.ul`
-display: flex;
-flex-direction: column;
-gap: 20px;
-margin-top: 40px;
-`
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 40px;
+`;
 
 export const NavLink = styled(RouterNavLink)`
   font-size: 20px;
@@ -73,21 +69,20 @@ export const NavLink = styled(RouterNavLink)`
 
   @media screen and (min-width: 1200px) {
     font-size: 16px;
-    padding: 20px 0; 
+    padding: 20px 0;
   }
 `;
 
 export const BtnHeaderClouse = styled.button`
-background-color: transparent;
-margin-left: auto;
-border: none;
-font-size: 24px;
-display: flex;
-cursor: pointer;
+  background-color: transparent;
+  margin-left: auto;
+  border: none;
+  font-size: 24px;
+  display: flex;
+  cursor: pointer;
 
- transition: color 300ms cubic-bezier(0.4, 0, 0.2, 1);
-&:hover {
+  transition: color 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  &:hover {
     color: #9b6bce;
-
-    }
+  }
 `;

@@ -44,7 +44,6 @@ export function ParticlesBg() {
           type: "image",
           options: {
             image: [
-              // Шлях з public/
               { src: charryBg, width: 200, height: 200 },
               { src: chokoBg, width: 200, height: 200 },
               { src: cupcakeGreenBg, width: 200, height: 240 },
@@ -53,11 +52,9 @@ export function ParticlesBg() {
               { src: makaronPinkBg, width: 200, height: 240 },
               { src: makaronYelowBg, width: 200, height: 240 },
               { src: strawbarryBg, width: 200, height: 200 },
-
-              // додай інші PNG
             ],
           },
-        }, // або type: "image" + options.image
+        },
       },
     }),
     []

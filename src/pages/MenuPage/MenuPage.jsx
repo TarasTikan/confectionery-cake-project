@@ -1,13 +1,13 @@
-import { FooterCake } from "../../components/footer/footer"
-import { Menu } from "../../components/menu/menu"
+import { FooterCake } from "../../components/footer/footer";
+import { Menu } from "../../components/menu/menu";
 
 export const MenuPage = () => {
-return (
+  return (
     <>
-    <main>
-        <Menu/>
-    </main>
-    <FooterCake/>
+      <main>
+        <Menu />
+      </main>
+      <FooterCake />
     </>
-)    
-}
+  );
+};

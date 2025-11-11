@@ -126,7 +126,7 @@ export const DesignList = styled(motion.ul)`
 
 export const DesignListItem = styled.li`
   background-color: #ffff;
-  border: 2px solid #8B5CF6;
+  border: 2px solid #8b5cf6;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -138,11 +138,11 @@ export const DesignListItem = styled.li`
   width: calc((100% - 30px) / 2);
   flex-grow: 1;
 
-    @media (min-width: 600px) {
+  @media (min-width: 600px) {
     width: calc((100% - 30px) / 3);
-flex-grow: 2;
+    flex-grow: 2;
   }
- 
+
   @media (min-width: 1200px) {
     width: calc((100% - 30px) / 4);
     flex-grow: 3;
@@ -181,13 +181,13 @@ export const Designbtn = styled.button`
 `;
 
 export const CreateCustombtn = styled.button`
-width: 50%;
-padding-top: 10px;
-padding-bottom: 10px;
-margin-top: 20px;
+  width: 50%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: 20px;
   border-radius: 10px;
   border: none;
-  background-color:#9b6bce;
+  background-color: #9b6bce;
   color: #fff;
   font-family: "Inter", sans-serif;
   font-size: 9px;

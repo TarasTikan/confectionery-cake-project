@@ -10,12 +10,7 @@ const COLORS = {
 };
 export const HeroSection = styled.section`
   padding-bottom: 40px;
-  background: linear-gradient(
-    180deg,
-    #fff 0%,
-    ${COLORS.lavender} 55%,
-    ${COLORS.pink} 120%
-  );
+  background: linear-gradient(180deg, #ffffff 0%, #f8f0ff 60%, #f3d9ff 100%);
   color: ${COLORS.text};
 
   @media screen and (min-width: 600px) {
@@ -138,7 +133,7 @@ export const SecondaryBtn = styled(motion.a)`
   text-decoration: none;
   transition: background 0.3s ease, border-color 0.3s ease;
   cursor: pointer;
-
+  display: inline-block;
   &:hover {
     background: #ffffff;
     border-color: #a663cc;

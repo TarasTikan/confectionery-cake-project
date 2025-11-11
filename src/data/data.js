@@ -5,16 +5,16 @@ import tortFour from "../img/tortFour.jpg";
 import tortFive from "../img/tortFive.jpg";
 import tortSix from "../img/tortSix.jpg";
 
-import tasteBerry from "../img/tasteBerry.jpg"
-import tasteBerryLemon from "../img/tasteBerryLemon.jpg"
-import tasteCharryChocolate from "../img/tasteCharryChocolate.jpg"
-import tasteChocolate from "../img/tasteChocolate.jpg"
-import tasteNapoleon from "../img/tasteNapoleon.jpg"
-import tastePistachioRaspberry from "../img/tastePistachioRaspberry.jpg"
-import tasteRedVelvet from "../img/tasteRedVelvet.jpg"
-import tasteSnikers from "../img/tasteSnikers.jpg"
-import tasteStrawberry from "../img/tasteStrawberry.jpg"
-import tasteStrawberryMango from "../img/tasteStrawberryMango.jpg"
+import tasteBerry from "../img/tasteBerry.jpg";
+import tasteBerryLemon from "../img/tasteBerryLemon.jpg";
+import tasteCharryChocolate from "../img/tasteCharryChocolate.jpg";
+import tasteChocolate from "../img/tasteChocolate.jpg";
+import tasteNapoleon from "../img/tasteNapoleon.jpg";
+import tastePistachioRaspberry from "../img/tastePistachioRaspberry.jpg";
+import tasteRedVelvet from "../img/tasteRedVelvet.jpg";
+import tasteSnikers from "../img/tasteSnikers.jpg";
+import tasteStrawberry from "../img/tasteStrawberry.jpg";
+import tasteStrawberryMango from "../img/tasteStrawberryMango.jpg";
 
 export const cakes = [
   {
@@ -115,5 +115,5 @@ export const fillings = [
     title: "Полуниця-манго",
     image: tasteStrawberryMango,
     description: "Екзотичне поєднання полуниці та манго.",
-  }
+  },
 ];

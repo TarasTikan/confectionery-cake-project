@@ -21,7 +21,7 @@ import {
   ConfirmButton,
   ButtonsWrapper,
   FileLabel,
-  TextModalCustom
+  TextModalCustom,
 } from "./modal.styled";
 
 import { fillings } from "../../data/data.js";
@@ -315,7 +315,10 @@ export const Modal = ({ clouseModal, open }) => {
               </FileUploadForm>
             </ItemForm>
           </ListForm>
-          <TextModalCustom>Після заповнення форми, ми з вами додатково зв'яжемось, для уточнення дизайну вашого торта!</TextModalCustom>
+          <TextModalCustom>
+            Після заповнення форми, ми з вами додатково зв'яжемось, для
+            уточнення дизайну вашого торта!
+          </TextModalCustom>
           <ButtonsWrapper>
             <ConfirmButton>Додати до кошика</ConfirmButton>
             <CancelButton onClick={handleClouse}>Скасувати</CancelButton>

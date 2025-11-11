@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import { motion } from "framer-motion";
 export const MenuSection = styled.section`
-padding-top: 40px;
+  padding-top: 40px;
   padding-bottom: 70px;
 `;
 
