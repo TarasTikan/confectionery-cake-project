@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/confectionery-cake-project/static/css/main.fa3880dd.css",
-    "main.js": "/confectionery-cake-project/static/js/main.86befc34.js",
+    "main.js": "/confectionery-cake-project/static/js/main.7b759f4a.js",
     "static/js/453.3a50c51a.chunk.js": "/confectionery-cake-project/static/js/453.3a50c51a.chunk.js",
     "static/media/cupcake_green-bgremover.png": "/confectionery-cake-project/static/media/cupcake_green-bgremover.acd6eca47f0bdedabd4a.png",
     "static/media/strawberry-bgremover.png": "/confectionery-cake-project/static/media/strawberry-bgremover.5a9d7dd716f1fd1d6c37.png",
@@ -29,18 +29,17 @@
     "static/media/tortThree.jpg": "/confectionery-cake-project/static/media/tortThree.6c381c47cea6b78f8dbd.jpg",
     "static/media/capcake.jpg": "/confectionery-cake-project/static/media/capcake.7a49c4acc01afd8c86cf.jpg",
     "static/media/tortOne.jpg": "/confectionery-cake-project/static/media/tortOne.4dc836b5f848f0c5c43b.jpg",
-    "static/media/orderCakeImg.png": "/confectionery-cake-project/static/media/orderCakeImg.de325bbbcea02191b0f1.png",
     "static/media/cake.jpg": "/confectionery-cake-project/static/media/cake.054ff2691863ae95e5e3.jpg",
     "static/media/tortFive.jpg": "/confectionery-cake-project/static/media/tortFive.330c4fe0836ead3d2ead.jpg",
     "static/media/tortTwo.jpg": "/confectionery-cake-project/static/media/tortTwo.bbbb44d0d5a4abc73dd0.jpg",
     "static/media/makaron.jpg": "/confectionery-cake-project/static/media/makaron.b50d41e74110b1b20493.jpg",
     "index.html": "/confectionery-cake-project/index.html",
     "main.fa3880dd.css.map": "/confectionery-cake-project/static/css/main.fa3880dd.css.map",
-    "main.86befc34.js.map": "/confectionery-cake-project/static/js/main.86befc34.js.map",
+    "main.7b759f4a.js.map": "/confectionery-cake-project/static/js/main.7b759f4a.js.map",
     "453.3a50c51a.chunk.js.map": "/confectionery-cake-project/static/js/453.3a50c51a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.fa3880dd.css",
-    "static/js/main.86befc34.js"
+    "static/js/main.7b759f4a.js"
   ]
 }
