@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import CakeImg from "../../img/cake.jpg";
 import CapCakeImg from "../../img/capcake.jpg";
 import MakaronImg from "../../img/makaron.jpg";
@@ -95,13 +96,13 @@ export const Menu = () => {
               transition: { type: "spring", stiffness: 300, damping: 10 },
             }}
           >
-            <a href="/">
+            <Link to="products">
               <WrapInfo>
                 <MenuName>Тарти</MenuName>
                 <MenuBtn>Детальніше</MenuBtn>
               </WrapInfo>
               <MenuCardImage src={TartImg} alt="Тарти" />
-            </a>
+            </Link>
           </MenuCard>
         </MenuList>
       </Container>

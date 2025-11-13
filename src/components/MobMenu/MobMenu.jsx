@@ -36,11 +36,6 @@ export const MobMenu = ({ clouseMobMenu, open }) => {
                   Про нас
                 </NavLink>
               </li>
-              <li>
-                <NavLink to="/" onClick={handleClouse}>
-                  Контакти
-                </NavLink>
-              </li>
             </MobMenuList>
           </nav>
         </div>
