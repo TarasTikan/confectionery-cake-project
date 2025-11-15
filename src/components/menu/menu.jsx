@@ -39,7 +39,7 @@ export const Menu = () => {
               transition: { type: "spring", stiffness: 300, damping: 10 },
             }}
           >
-            <Link to="cakes">
+            <Link to="/menu/cakes">
               <WrapInfo>
                 <MenuName>Торти</MenuName>
                 <MenuBtn>Детальніше</MenuBtn>
@@ -58,7 +58,7 @@ export const Menu = () => {
               transition: { type: "spring", stiffness: 300, damping: 10 },
             }}
           >
-            <Link to="cupcakes">
+            <Link to="/menu/cupcakes">
               <WrapInfo>
                 <MenuName>Капкейки</MenuName>
                 <MenuBtn>Детальніше</MenuBtn>
@@ -77,7 +77,7 @@ export const Menu = () => {
               transition: { type: "spring", stiffness: 300, damping: 10 },
             }}
           >
-            <Link to="macarons">
+            <Link to="/menu/macarons">
               <WrapInfo>
                 <MenuName>Макарони</MenuName>
                 <MenuBtn>Детальніше</MenuBtn>
@@ -96,7 +96,7 @@ export const Menu = () => {
               transition: { type: "spring", stiffness: 300, damping: 10 },
             }}
           >
-            <Link to="tarts">
+            <Link to="/menu/tarts">
               <WrapInfo>
                 <MenuName>Тарти</MenuName>
                 <MenuBtn>Детальніше</MenuBtn>

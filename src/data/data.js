@@ -78,6 +78,22 @@ import product60 from "../img/productsImg/product60.jpg";
 import product61 from "../img/productsImg/product61.jpg";
 import product62 from "../img/productsImg/product62.jpg";
 import product63 from "../img/productsImg/product63.jpg";
+
+import product64 from "../img/productsImg/product64.jpg";
+import product65 from "../img/productsImg/product65.jpg";
+import product66 from "../img/productsImg/product66.jpg";
+import product67 from "../img/productsImg/product67.jpg";
+import product68 from "../img/productsImg/product68.jpg";
+import product69 from "../img/productsImg/product69.jpg";
+import product70 from "../img/productsImg/product70.jpg";
+import product71 from "../img/productsImg/product71.jpg";
+import product72 from "../img/productsImg/product72.jpg";
+import product73 from "../img/productsImg/product73.jpg";
+import product74 from "../img/productsImg/product74.jpg";
+import product75 from "../img/productsImg/product75.jpg";
+import product76 from "../img/productsImg/product76.jpg";
+import product77 from "../img/productsImg/product77.jpg";
+import product78 from "../img/productsImg/product78.jpg";
 export const cakes = [
   {
     id: 1,
@@ -878,5 +894,171 @@ export const products = [
     category: "ягідні",
     isTheme: false,
     price: 55
-  }
+  },
+
+  {
+    id: 2223414211,
+    title: "Малиновий тарт класичний",
+    image: product64,
+    description: "Тарт з ванільним кремом та свіжою малиною, прикрашений полуницею та м'ятою.",
+    taste: "малина",
+    type: "tarts",
+    category: "ягідний",
+    isTheme: false,
+    price: 950
+  },
+  {
+    id: 2223414212,
+    title: "Малиновий спіральний тарт",
+    image: product65,
+    description: "Незвичайний дизайн з малиновою спіраллю та полуницею.",
+    taste: "малина",
+    type: "tarts",
+    category: "дизайнерський",
+    isTheme: false,
+    price: 980
+  },
+  {
+    id: 2223414213,
+    title: "Малиновий тарт з полуницею",
+    image: product66,
+    description: "Класичний тарт із щедрою кількістю малини та полуниці.",
+    taste: "малина",
+    type: "tarts",
+    category: "ягідний",
+    isTheme: false,
+    price: 950
+  },
+  {
+    id: 2223414214,
+    title: "Персиково-чорничний тарт",
+    image: product67,
+    description: "Тарт із персиковими пелюстками та великими чорницями.",
+    taste: "персик, чорниця",
+    type: "tarts",
+    category: "фруктовий",
+    isTheme: false,
+    price: 990
+  },
+  {
+    id: 2223414215,
+    title: "Ягідний мікс тарт",
+    image: product68,
+    description: "Полуниця, малина та яблуко в красивому декоративному оформленні.",
+    taste: "ягоди",
+    type: "tarts",
+    category: "ягідний",
+    isTheme: false,
+    price: 970
+  },
+  {
+    id: 2223414216,
+    title: "Мангово-малиновий тарт",
+    image: product69,
+    description: "Персикові пелюстки, малина та кремові бортики.",
+    taste: "манго, малина",
+    type: "tarts",
+    category: "фруктовий",
+    isTheme: false,
+    price: 1050
+  },
+  {
+    id: 2223414217,
+    title: "Червона смородина з шоколадом",
+    image: product70,
+    description: "Яскравий тарт зі смородиною та шоколадною сіткою.",
+    taste: "смородина",
+    type: "tarts",
+    category: "ягідний",
+    isTheme: false,
+    price: 960
+  },
+  {
+    id: 2223414218,
+    title: "Лимонний тарт з меренгою",
+    image: product71,
+    description: "Кисло-солодкий тарт з лимонним курдом та підпаленими італійськими меренгами.",
+    taste: "лимон",
+    type: "tarts",
+    category: "кремовий",
+    isTheme: false,
+    price: 1020
+  },
+  {
+    id: 2223414219,
+    title: "Лимонний тарт квітка",
+    image: product72,
+    description: "Акуратний дизайн у вигляді квітки з кремовими меренгами.",
+    taste: "лимон",
+    type: "tarts",
+    category: "кремовий",
+    isTheme: false,
+    price: 1080
+  },
+  {
+    id: 2223414220,
+    title: "Полуничний тарт класичний",
+    image: product73,
+    description: "Полуничний дизайн у формі квітки з м'ятою.",
+    taste: "полуниця",
+    type: "tarts",
+    category: "ягідний",
+    isTheme: false,
+    price: 960
+  },
+  {
+    id: 2223414221,
+    title: "Полунично-фісташковий тарт",
+    image: product74,
+    description: "Полуниця та кремова фісташка у центрі — ідеальний баланс.",
+    taste: "полуниця, фісташка",
+    type: "tarts",
+    category: "горіховий",
+    isTheme: false,
+    price: 1100
+  },
+  {
+    id: 2223414222,
+    title: "Полуничний тарт з білим шоколадом",
+    image: product75,
+    description: "Полуниця, білий шоколад та фісташкові крихти.",
+    taste: "полуниця, білий шоколад",
+    type: "tarts",
+    category: "ягідний",
+    isTheme: false,
+    price: 1020
+  },
+  {
+    id: 2223414223,
+    title: "Полуничний тарт з темним шоколадом",
+    image: product76,
+    description: "Поєднання полуниці та шматочків темного шоколаду.",
+    taste: "полуниця, шоколад",
+    type: "tarts",
+    category: "шоколадний",
+    isTheme: false,
+    price: 1040
+  },
+  {
+    id: 2223414224,
+    title: "Чорнично-малиновий тарт спіраль",
+    image: product77,
+    description: "Дизайнерський тарт зі спіраллю з малини та чорниці.",
+    taste: "малина, чорниця",
+    type: "tarts",
+    category: "ягідний",
+    isTheme: false,
+    price: 1080
+  },
+  {
+    id: 2223414225,
+    title: "Малиновий тарт з трояндою",
+    image: product78,
+    description: "Ніжний тарт з малиновою трояндою у центрі.",
+    taste: "малина",
+    type: "tarts",
+    category: "декор",
+    isTheme: false,
+    price: 1120
+  },
 ];

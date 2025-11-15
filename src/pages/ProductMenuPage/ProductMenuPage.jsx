@@ -6,12 +6,15 @@ import {
   CakePrice,
   CakesList,
   CategoryContainer,
+  CategoryFilterBar,
+  CategoryFilterItem,
   CategorySection,
   CategoryTitle,
   WrapCakeInfo,
+  CategoryFilterLink
 } from "./ProductMenuPage.styled";
 import { products } from "../../data/data";
-import { useParams } from "react-router-dom";
+import { useParams} from "react-router-dom";
 const CATEGORY_TITLES = {
   cakes: "Торти",
   cupcakes: "Капкейки",
@@ -20,10 +23,12 @@ const CATEGORY_TITLES = {
 };
 export const ProductMenuPage = () => {
   const { category } = useParams();
-  const name = CATEGORY_TITLES[category] || "Продукти";
+
+  const name = CATEGORY_TITLES[category] || "Усі десерти";
   const filteredProducts = products.filter(
-    (product) => product.type === category
+    (product) => product.type === category || category === "allProducts"
   );
+
   return (
     <>
       <CategorySection>
@@ -32,6 +37,13 @@ export const ProductMenuPage = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true, amount: 0.2 }}>{name}</CategoryTitle>
+          <CategoryFilterBar>
+            <CategoryFilterItem><CategoryFilterLink to="/menu/allProducts">Усі</CategoryFilterLink></CategoryFilterItem>
+            <CategoryFilterItem><CategoryFilterLink to="/menu/cakes">Торти</CategoryFilterLink></CategoryFilterItem>
+            <CategoryFilterItem><CategoryFilterLink to="/menu/cupcakes">Капкейки</CategoryFilterLink></CategoryFilterItem>
+            <CategoryFilterItem><CategoryFilterLink to="/menu/macarons">Макарони</CategoryFilterLink></CategoryFilterItem>
+            <CategoryFilterItem><CategoryFilterLink to="/menu/tarts">Тарти</CategoryFilterLink></CategoryFilterItem>
+          </CategoryFilterBar>
           <CakesList>
             {filteredProducts.map((product) => (
               <CakeCard key={product.id}  initial={{ opacity: 0, y: 18, scale: 0.98 }}
