@@ -79,13 +79,6 @@ export const MenuCardImage = styled.img`
   width: 270px;
   height: auto;
   object-fit: cover;
-  @include tablet {
-    width: calc((100% - 30px) / 2);
-  }
-  @include desktop {
-    width: calc((100% - 30px) / 4);
-    flex-grow: 3;
-  }
 `;
 
 export const MenuName = styled.p`

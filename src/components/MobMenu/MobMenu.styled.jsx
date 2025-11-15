@@ -1,6 +1,17 @@
 import styled from "@emotion/styled";
 import { NavLink as RouterNavLink } from "react-router-dom";
-
+export const Backdrop = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+  opacity: ${({ open }) => (open ? 1 : 0)};
+  pointer-events: ${({ open }) => (open ? "auto" : "none")};
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+`;
 export const MobMenuSection = styled.div`
   position: fixed;
   top: 0;

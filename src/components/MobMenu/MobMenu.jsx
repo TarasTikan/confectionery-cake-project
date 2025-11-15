@@ -5,6 +5,7 @@ import {
   MobMenuList,
   NavLink,
   BtnHeaderClouse,
+  Backdrop
 } from "./MobMenu.styled";
 
 export const MobMenu = ({ clouseMobMenu, open }) => {
@@ -12,6 +13,7 @@ export const MobMenu = ({ clouseMobMenu, open }) => {
     clouseMobMenu();
   };
   return (
+    <Backdrop open={open}>
     <MobMenuSection open={open}>
       <MobMenuContainer>
         <div>
@@ -42,5 +44,6 @@ export const MobMenu = ({ clouseMobMenu, open }) => {
         <MobMenuBtn>Замовити зараз</MobMenuBtn>
       </MobMenuContainer>
     </MobMenuSection>
+    </Backdrop>
   );
 };

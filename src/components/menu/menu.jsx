@@ -39,13 +39,13 @@ export const Menu = () => {
               transition: { type: "spring", stiffness: 300, damping: 10 },
             }}
           >
-            <a href="/">
+            <Link to="cakes">
               <WrapInfo>
                 <MenuName>Торти</MenuName>
                 <MenuBtn>Детальніше</MenuBtn>
               </WrapInfo>
               <MenuCardImage src={CakeImg} alt="торт" />
-            </a>
+            </Link>
           </MenuCard>
           <MenuCard
             initial={{ opacity: 0, y: 18, scale: 0.98 }}
@@ -58,13 +58,13 @@ export const Menu = () => {
               transition: { type: "spring", stiffness: 300, damping: 10 },
             }}
           >
-            <a href="/">
+            <Link to="cupcakes">
               <WrapInfo>
                 <MenuName>Капкейки</MenuName>
                 <MenuBtn>Детальніше</MenuBtn>
               </WrapInfo>
               <MenuCardImage src={CapCakeImg} alt="Капкейки" />
-            </a>
+            </Link>
           </MenuCard>
           <MenuCard
             initial={{ opacity: 0, y: 18, scale: 0.98 }}
@@ -77,13 +77,13 @@ export const Menu = () => {
               transition: { type: "spring", stiffness: 300, damping: 10 },
             }}
           >
-            <a href="/">
+            <Link to="macarons">
               <WrapInfo>
                 <MenuName>Макарони</MenuName>
                 <MenuBtn>Детальніше</MenuBtn>
               </WrapInfo>
               <MenuCardImage src={MakaronImg} alt="Макарони" />
-            </a>
+            </Link>
           </MenuCard>
           <MenuCard
             initial={{ opacity: 0, y: 18, scale: 0.98 }}
@@ -96,7 +96,7 @@ export const Menu = () => {
               transition: { type: "spring", stiffness: 300, damping: 10 },
             }}
           >
-            <Link to="products">
+            <Link to="tarts">
               <WrapInfo>
                 <MenuName>Тарти</MenuName>
                 <MenuBtn>Детальніше</MenuBtn>
