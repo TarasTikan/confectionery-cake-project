@@ -874,7 +874,7 @@ export const products = [
     price: 60
   },
   {
-    id: 24122121,
+    id: 24122122324,
     title: "Ягідний Mix",
     image: product62,
     description: "Насичена ягідна начинка: малина, чорниця та полуниця.",

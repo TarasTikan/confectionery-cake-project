@@ -11,10 +11,11 @@ import {
   CategorySection,
   CategoryTitle,
   WrapCakeInfo,
-  CategoryFilterLink
+  CategoryFilterLink,
 } from "./ProductMenuPage.styled";
 import { products } from "../../data/data";
-import { useParams} from "react-router-dom";
+import { useParams } from "react-router-dom";
+import { useEffect, useMemo } from "react";
 const CATEGORY_TITLES = {
   cakes: "Торти",
   cupcakes: "Капкейки",
@@ -25,36 +26,59 @@ export const ProductMenuPage = () => {
   const { category } = useParams();
 
   const name = CATEGORY_TITLES[category] || "Усі десерти";
-  const filteredProducts = products.filter(
-    (product) => product.type === category || category === "allProducts"
+
+useEffect(() => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}, [category]);
+
+  const filteredProducts = useMemo(
+    () =>
+      category === "allProducts"
+        ? products
+        : products.filter((product) => product.type === category),
+    [category]
   );
 
   return (
     <>
       <CategorySection>
         <CategoryContainer>
-          <CategoryTitle  initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          viewport={{ once: true, amount: 0.2 }}>{name}</CategoryTitle>
+          <CategoryTitle
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            viewport={{ once: true, amount: 0.2 }}
+          >
+            {name}
+          </CategoryTitle>
           <CategoryFilterBar>
-            <CategoryFilterItem><CategoryFilterLink to="/menu/allProducts">Усі</CategoryFilterLink></CategoryFilterItem>
-            <CategoryFilterItem><CategoryFilterLink to="/menu/cakes">Торти</CategoryFilterLink></CategoryFilterItem>
-            <CategoryFilterItem><CategoryFilterLink to="/menu/cupcakes">Капкейки</CategoryFilterLink></CategoryFilterItem>
-            <CategoryFilterItem><CategoryFilterLink to="/menu/macarons">Макарони</CategoryFilterLink></CategoryFilterItem>
-            <CategoryFilterItem><CategoryFilterLink to="/menu/tarts">Тарти</CategoryFilterLink></CategoryFilterItem>
+            <CategoryFilterItem active={category === "allProducts" ? "true" : "false"}>
+              <CategoryFilterLink to="/menu/allProducts"> 
+                Усі
+              </CategoryFilterLink>
+            </CategoryFilterItem>
+            <CategoryFilterItem active={category === "cakes" ? "true" : "false"}>
+              <CategoryFilterLink to="/menu/cakes" >Торти</CategoryFilterLink>
+            </CategoryFilterItem>
+            <CategoryFilterItem active={category === "cupcakes" ? "true" : "false"}>
+              <CategoryFilterLink to="/menu/cupcakes">
+                Капкейки
+              </CategoryFilterLink>
+            </CategoryFilterItem>
+            <CategoryFilterItem active={category === "macarons" ? "true" : "false"}>
+              <CategoryFilterLink to="/menu/macarons" >
+                Макарони
+              </CategoryFilterLink>
+            </CategoryFilterItem>
+            <CategoryFilterItem active={category === "tarts" ? "true" : "false"}>
+              <CategoryFilterLink to="/menu/tarts" >Тарти</CategoryFilterLink>
+            </CategoryFilterItem>
           </CategoryFilterBar>
           <CakesList>
             {filteredProducts.map((product) => (
-              <CakeCard key={product.id}  initial={{ opacity: 0, y: 18, scale: 0.98 }}
-            whileInView={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ duration: 0.45, ease: "easeOut", delay: 0.4 }}
-            viewport={{ once: true, amount: 0.25 }}
-            whileHover={{
-              y: -10,
-              rotate: -0.6,
-              transition: { type: "spring", stiffness: 300, damping: 10 },
-            }}>
+              <CakeCard
+                key={product.id}
+              >
                 <CakeImage src={product.image} />
                 <WrapCakeInfo>
                   <CakeName>{product.title}</CakeName>

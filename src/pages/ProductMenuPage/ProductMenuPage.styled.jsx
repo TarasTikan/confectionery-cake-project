@@ -76,7 +76,7 @@ export const CakesList = styled.ul`
   gap: 20px;
 `;
 
-export const CakeCard = styled(motion.li)`
+export const CakeCard = styled.li`
   background-color: ${COLORS.cardBg};
   border-radius: 28px;
   border: 1px solid ${COLORS.borderSoft};
@@ -108,26 +108,6 @@ export const CakeCard = styled(motion.li)`
     background-color: #643a99ff;
   }
 `;
-
-/* Верхня частина з фото */
-// export const CakeImageWrapper = styled.div`
-//   width: 100%;
-//   background-color: ${COLORS.cardAccent};
-//   display: flex;
-//   justify-content: center;
-//   padding-top: 32px;
-//   padding-bottom: 32px;
-
-//   @media (min-width: 600px) {
-//     padding-top: 36px;
-//     padding-bottom: 36px;
-//   }
-
-//   @media (min-width: 1200px) {
-//     padding-top: 40px;
-//     padding-bottom: 40px;
-//   }
-// `;
 
 export const CakeImage = styled.img`
   display: block;
@@ -222,15 +202,29 @@ margin-bottom: 30px;
 
 export const CategoryFilterLink = styled(NavLink)`
 text-decoration: none;
+  padding: 8px 18px;
+  font-size: 14px;
+  @media (min-width: 400px) {
+    padding: 9px 20px;
+    font-size: 15px;
+  }
 
+  @media (min-width: 600px) {
+    padding: 10px 22px;
+    font-size: 16px;
+  }
+
+  @media (min-width: 1200px) {
+    padding: 10px 24px;
+  }
 `;
 export const CategoryFilterItem = styled.li`
   padding: 8px 18px;
   border-radius: 999px;
   font-size: 14px;
   border: 1px solid ${COLORS.chipBorder};
-  background-color: ${({ active }) => (active ? COLORS.accentSoft : "#ffffff")};
-  color: ${({ active }) => (active ? "#ffffff" : COLORS.textMain)};
+  background-color: ${({ active }) => (active === "true" ? COLORS.accentSoft : "#ffffff")};
+  color: ${({ active }) => (active === "true" ? "#ffffff" : COLORS.textMain)};
   cursor: pointer;
   white-space: nowrap;
   transition: background-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease,
