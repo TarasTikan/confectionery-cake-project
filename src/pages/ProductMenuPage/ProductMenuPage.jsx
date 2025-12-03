@@ -13,32 +13,36 @@ import {
   WrapCakeInfo,
   CategoryFilterLink,
 } from "./ProductMenuPage.styled";
-import { products } from "../../data/data";
-import { useParams } from "react-router-dom";
-import { useEffect, useMemo } from "react";
-const CATEGORY_TITLES = {
-  cakes: "Торти",
-  cupcakes: "Капкейки",
-  macarons: "Макарони",
-  tarts: "Тарти",
-};
+
+import { useDispatch, useSelector } from "react-redux";
+import { getProducts, getCategory } from "../../redux/selectors";
+
+import { categoryProducts } from "../../redux/filtersSlice";
+import { productsCategory } from "../../redux/constans";
+const getVisibleProducts = (product, category) => {
+  switch (category) {
+    case productsCategory.tarts:
+      return product.filter(item => item.type === productsCategory.tarts);
+    case productsCategory.cakes:
+      return product.filter(item => item.type === productsCategory.cakes);
+    case productsCategory.cupcakes:
+      return product.filter(item => item.type === productsCategory.cupcakes);
+    case productsCategory.macarons:
+      return product.filter(item => item.type === productsCategory.macarons);
+    case productsCategory.allProducts:
+      return product;
+    default:
+      return product;
+  }
+}
 export const ProductMenuPage = () => {
-  const { category } = useParams();
+const products = useSelector(getProducts)
+const category = useSelector(getCategory)
+const dispatch = useDispatch();
+const visibleProducts = getVisibleProducts(products, category);
 
-  const name = CATEGORY_TITLES[category] || "Усі десерти";
 
-useEffect(() => {
-  window.scrollTo({ top: 0, behavior: "smooth" });
-}, [category]);
-
-  const filteredProducts = useMemo(
-    () =>
-      category === "allProducts"
-        ? products
-        : products.filter((product) => product.type === category),
-    [category]
-  );
-
+const handleCategoryCakes = type => dispatch(categoryProducts(type))
   return (
     <>
       <CategorySection>
@@ -49,33 +53,33 @@ useEffect(() => {
             transition={{ duration: 0.8, ease: "easeOut" }}
             viewport={{ once: true, amount: 0.2 }}
           >
-            {name}
+            Наше меню
           </CategoryTitle>
           <CategoryFilterBar>
             <CategoryFilterItem active={category === "allProducts" ? "true" : "false"}>
-              <CategoryFilterLink to="/menu/allProducts"> 
+              <CategoryFilterLink to="/menu/allProducts" onClick={() => handleCategoryCakes(productsCategory.allProducts)}> 
                 Усі
               </CategoryFilterLink>
             </CategoryFilterItem>
             <CategoryFilterItem active={category === "cakes" ? "true" : "false"}>
-              <CategoryFilterLink to="/menu/cakes" >Торти</CategoryFilterLink>
+              <CategoryFilterLink to="/menu/cakes" onClick={() => handleCategoryCakes(productsCategory.cakes)}>Торти</CategoryFilterLink>
             </CategoryFilterItem>
             <CategoryFilterItem active={category === "cupcakes" ? "true" : "false"}>
-              <CategoryFilterLink to="/menu/cupcakes">
+              <CategoryFilterLink to="/menu/cupcakes" onClick={() => handleCategoryCakes(productsCategory.cupcakes)}>
                 Капкейки
               </CategoryFilterLink>
             </CategoryFilterItem>
             <CategoryFilterItem active={category === "macarons" ? "true" : "false"}>
-              <CategoryFilterLink to="/menu/macarons" >
+              <CategoryFilterLink to="/menu/macarons" onClick={() => handleCategoryCakes(productsCategory.macarons)}>
                 Макарони
               </CategoryFilterLink>
             </CategoryFilterItem>
             <CategoryFilterItem active={category === "tarts" ? "true" : "false"}>
-              <CategoryFilterLink to="/menu/tarts" >Тарти</CategoryFilterLink>
+              <CategoryFilterLink to="/menu/tarts" onClick={() => handleCategoryCakes(productsCategory.tarts)}>Тарти</CategoryFilterLink>
             </CategoryFilterItem>
           </CategoryFilterBar>
           <CakesList>
-            {filteredProducts.map((product) => (
+            {visibleProducts.map((product) => (
               <CakeCard
                 key={product.id}
               >

@@ -200,6 +200,7 @@ margin-bottom: 30px;
   }
 `;
 
+
 export const CategoryFilterLink = styled(NavLink)`
 text-decoration: none;
   padding: 8px 18px;

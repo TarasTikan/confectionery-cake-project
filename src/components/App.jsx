@@ -12,7 +12,6 @@ function App() {
         <Route index element={<HomePage />} />
         <Route path="menu" element={<MenuPage />} />
         <Route path="menu/:category" element={<ProductMenuPage />} />
-        <Route path="/:category" element={<ProductMenuPage />} />
         <Route path="about" element={<AboutPage />} />
       </Route>
     </Routes>
