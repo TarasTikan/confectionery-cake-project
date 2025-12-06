@@ -41,7 +41,7 @@ export const MobMenu = ({ clouseMobMenu, open }) => {
             </MobMenuList>
           </nav>
         </div>
-        <MobMenuBtn>Замовити зараз</MobMenuBtn>
+        <MobMenuBtn to="/menu">Замовити зараз</MobMenuBtn>
       </MobMenuContainer>
     </MobMenuSection>
     </Backdrop>

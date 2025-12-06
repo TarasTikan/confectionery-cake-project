@@ -34,7 +34,7 @@ export const MobMenuContainer = styled.div`
   display: flex;
 `;
 
-export const MobMenuBtn = styled.a`
+export const MobMenuBtn = styled(RouterNavLink)`
   background-color: #a663cc;
   color: #ffffff;
   padding: 12px 20px;

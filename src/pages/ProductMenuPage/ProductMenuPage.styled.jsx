@@ -184,9 +184,9 @@ export const BuyButton = styled.button`
 export const CategoryFilterBar = styled.ul`
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-end;
+  justify-content: center;
   gap: 10px;
-margin-bottom: 30px;
+  margin-bottom: 30px;
   @media (max-width: 599px) {
     justify-content: center;
   }
@@ -200,23 +200,16 @@ margin-bottom: 30px;
   }
 `;
 
-
 export const CategoryFilterLink = styled(NavLink)`
-text-decoration: none;
-  padding: 8px 18px;
+  text-decoration: none;
   font-size: 14px;
+  text-align: center;
   @media (min-width: 400px) {
-    padding: 9px 20px;
     font-size: 15px;
   }
 
   @media (min-width: 600px) {
-    padding: 10px 22px;
     font-size: 16px;
-  }
-
-  @media (min-width: 1200px) {
-    padding: 10px 24px;
   }
 `;
 export const CategoryFilterItem = styled.li`
@@ -224,12 +217,13 @@ export const CategoryFilterItem = styled.li`
   border-radius: 999px;
   font-size: 14px;
   border: 1px solid ${COLORS.chipBorder};
-  background-color: ${({ active }) => (active === "true" ? COLORS.accentSoft : "#ffffff")};
+  background-color: ${({ active }) =>
+    active === "true" ? COLORS.accentSoft : "#ffffff"};
   color: ${({ active }) => (active === "true" ? "#ffffff" : COLORS.textMain)};
   cursor: pointer;
   white-space: nowrap;
-  transition: background-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease,
-    transform 0.2s ease;
+  transition: background-color 0.25s ease, color 0.25s ease,
+    box-shadow 0.25s ease, transform 0.2s ease;
 
   &:hover {
     box-shadow: 0 4px 12px rgba(166, 99, 204, 0.25);

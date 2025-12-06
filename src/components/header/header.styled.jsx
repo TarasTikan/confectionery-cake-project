@@ -83,7 +83,7 @@ export const NavLink = styled(RouterNavLink)`
     padding: 20px 0; /* більше простору */
   }
 `;
-export const BtnHeader = styled.button`
+export const BtnHeader = styled(NavLink)`
   font-size: 14px;
   font-weight: 600;
   padding: 8px 16px;
@@ -94,10 +94,11 @@ export const BtnHeader = styled.button`
   cursor: pointer;
   margin-left: auto;
   margin-right: 10px;
-  transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1), color 300ms cubic-bezier(0.4, 0, 0.2, 1);
   display: none;
   &:hover {
     background-color: #643a99ff;
+      color: #fff;
   }
 
   @media screen and (min-width: 600px) {

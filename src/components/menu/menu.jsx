@@ -14,8 +14,13 @@ import {
   MenuBtn,
   WrapInfo,
 } from "./menu.styled";
+import { useDispatch } from "react-redux";
+import { categoryProducts } from "../../redux/filtersSlice";
+import { productsCategory } from "../../redux/constans";
 
 export const Menu = () => {
+  const dispatch = useDispatch();
+  const handleCategoryCakes = type => dispatch(categoryProducts(type))
   return (
     <MenuSection>
       <Container>
@@ -39,7 +44,7 @@ export const Menu = () => {
               transition: { type: "spring", stiffness: 300, damping: 10 },
             }}
           >
-            <Link to="/menu/cakes">
+            <Link to="/menu/cakes" onClick={() => handleCategoryCakes(productsCategory.cakes)}>
               <WrapInfo>
                 <MenuName>Торти</MenuName>
                 <MenuBtn>Детальніше</MenuBtn>
@@ -58,7 +63,7 @@ export const Menu = () => {
               transition: { type: "spring", stiffness: 300, damping: 10 },
             }}
           >
-            <Link to="/menu/cupcakes">
+            <Link to="/menu/cupcakes" onClick={() => handleCategoryCakes(productsCategory.cupcakes)}>
               <WrapInfo>
                 <MenuName>Капкейки</MenuName>
                 <MenuBtn>Детальніше</MenuBtn>
@@ -77,7 +82,7 @@ export const Menu = () => {
               transition: { type: "spring", stiffness: 300, damping: 10 },
             }}
           >
-            <Link to="/menu/macarons">
+            <Link to="/menu/macarons" onClick={() => handleCategoryCakes(productsCategory.macarons)}>
               <WrapInfo>
                 <MenuName>Макарони</MenuName>
                 <MenuBtn>Детальніше</MenuBtn>
@@ -96,7 +101,7 @@ export const Menu = () => {
               transition: { type: "spring", stiffness: 300, damping: 10 },
             }}
           >
-            <Link to="/menu/tarts">
+            <Link to="/menu/tarts" onClick={() => handleCategoryCakes(productsCategory.tarts)}>
               <WrapInfo>
                 <MenuName>Тарти</MenuName>
                 <MenuBtn>Детальніше</MenuBtn>

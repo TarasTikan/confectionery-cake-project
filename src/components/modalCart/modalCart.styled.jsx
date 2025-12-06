@@ -18,11 +18,12 @@ export const CartOverlay = styled.div`
   justify-content: center;
   align-items: center;
   z-index: 2000;
-    opacity: ${({ open }) => (open ? 1 : 0)};
+  opacity: ${({ open }) => (open ? 1 : 0)};
   pointer-events: ${({ open }) => (open ? "auto" : "none")};
-   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  padding-left: 10px;
+  padding-right: 10px;
 `;
-
 
 export const CartModal = styled.div`
   width: 92%;
@@ -34,7 +35,7 @@ export const CartModal = styled.div`
   transform: ${({ open }) =>
     open ? "translate(0, 0) scale(1)" : "translate(0, 0) scale(0)"};
   opacity: ${({ open }) => (open ? 1 : 0)};
- transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
     transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
   /* 400px */
   @media (min-width: 400px) {
@@ -47,9 +48,7 @@ export const CartModal = styled.div`
     padding: 32px;
     max-width: 560px;
   }
-
 `;
-
 
 export const CartHeader = styled.div`
   display: flex;
@@ -76,7 +75,7 @@ export const CloseBtn = styled.button`
   font-size: 24px;
   cursor: pointer;
   color: ${COLORS.text};
-transition: color 0.3s ease, transform 0.3s ease, transform 0.3s ease;
+  transition: color 0.3s ease, transform 0.3s ease, transform 0.3s ease;
   &:hover {
     transform: scale(1.12);
     color: #a663cc;
@@ -87,8 +86,13 @@ export const CartList = styled.ul`
   margin-top: 24px;
   display: flex;
   flex-direction: column;
+  max-height: 420px;
   gap: 10px;
-
+  @media (min-width: 600px) {
+    max-height: 420px;
+  }
+  max-height: 420px;
+  overflow-y: scroll;
 `;
 
 export const CartItem = styled.li`
@@ -130,21 +134,23 @@ export const ItemInfo = styled.div`
 `;
 
 export const ItemName = styled.h2`
-  font-size: 14px;
+  font-size: 10px;
   font-weight: 600;
-width-max: 310px 
-  @media (min-width: 400px) {
+  width-max: 310px @media (min-width: 400px) {
+    font-size: 13px;
+  }
+  @media (min-width: 600px) {
     font-size: 16px;
   }
-
- 
 `;
 
 export const ItemPrice = styled.p`
-  font-size: 13px;
+  font-size: 9px;
   color: ${COLORS.muted};
   margin: 6px 0;
-
+  @media (min-width: 400px) {
+    font-size: 11px;
+  }
   @media (min-width: 600px) {
     font-size: 13px;
   }
@@ -174,7 +180,7 @@ export const QuantityBtn = styled.button`
   background: #fff;
   font-size: 18px;
   cursor: pointer;
-transition: background 0.3s ease;
+  transition: background 0.3s ease;
   &:hover {
     background: #f8f0ff;
   }
@@ -190,7 +196,6 @@ transition: background 0.3s ease;
   }
 `;
 
-
 export const CheckoutButton = styled.button`
   width: 100%;
   margin-top: 20px;
@@ -202,7 +207,7 @@ export const CheckoutButton = styled.button`
   border: none;
   cursor: pointer;
   transition: 0.25s;
-transition: background 0.3s ease;
+  transition: background 0.3s ease;
   &:hover {
     background: ${COLORS.accentSoft};
   }
@@ -223,7 +228,7 @@ export const ContinueButton = styled.button`
   background: #fff;
   color: ${COLORS.accent};
   cursor: pointer;
-transition: background 0.3s ease;
+  transition: background 0.3s ease;
 
   &:hover {
     background: #faf6ff;

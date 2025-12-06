@@ -14,24 +14,31 @@ import { MobMenuIcon } from "../../icons/mobMenuIcon";
 import { Outlet } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { MobMenu } from "../MobMenu/MobMenu";
-import { useSelector } from "react-redux";
-import { getCartItems } from "../../redux/selectors";
+import { useDispatch, useSelector } from "react-redux";
+import { getCartItems, openCartItems } from "../../redux/selectors";
+import { toggleCart } from "../../redux/cartSlice";
+import { ModalCart } from "../modalCart/modalCart";
 export const SideBar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const cart = useSelector(getCartItems);
+    const isOpenCart = useSelector(openCartItems)
+    const dispatch = useDispatch();
   const handleMobMenuClick = () => {
     setIsOpen(!isOpen);
   };
+  const handleToggleHover = () => dispatch(toggleCart(!isOpenCart));
   const countCartItems = cart.reduce((total, item) => total + item.quantity, 0);
   useEffect(() => {
-    if (isOpen) {
+    if (isOpen || isOpenCart) {
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "auto";
     }
 
     return () => (document.body.style.overflow = "auto");
-  }, [isOpen]);
+  }, [isOpen,isOpenCart]);
+   
+
   return (
     <>
       <Header>
@@ -53,8 +60,8 @@ export const SideBar = () => {
               </li>
             </NavList>
           </nav>
-          <BtnHeader type="button">Замовити зараз</BtnHeader>
-          <BtnBasket type="button">
+          <BtnHeader to="/menu">Замовити зараз</BtnHeader>
+          <BtnBasket type="button" onClick={handleToggleHover}>
             <ShopBascetIcon />
             <BasketCount
               active={countCartItems === 0 ? undefined : cart.length}
@@ -64,6 +71,7 @@ export const SideBar = () => {
           </BtnBasket>
         </Container>
         <MobMenu open={isOpen} clouseMobMenu={handleMobMenuClick} />
+        <ModalCart/>
       </Header>
       <Outlet />
     </>
