@@ -13,7 +13,7 @@ export const MobMenu = ({ clouseMobMenu, open }) => {
     clouseMobMenu();
   };
   return (
-    <Backdrop open={open}>
+    <Backdrop open={open} onClick={handleClouse}>
     <MobMenuSection open={open}>
       <MobMenuContainer>
         <div>

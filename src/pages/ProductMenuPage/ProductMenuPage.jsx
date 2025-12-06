@@ -15,12 +15,13 @@ import {
 } from "./ProductMenuPage.styled";
 
 import { useDispatch, useSelector } from "react-redux";
-import { getProducts, getCategory, getCartItems} from "../../redux/selectors";
+import { getProducts, getCategory, getCartItems } from "../../redux/selectors";
 
 import { categoryProducts } from "../../redux/filtersSlice";
 import { productsCategory } from "../../redux/constans";
-import { addCart} from "../../redux/cartSlice";
-import { useEffect } from "react";
+import { addCart } from "../../redux/cartSlice";
+import { useEffect, useState } from "react";
+import { ModalCart } from "../../components/modalCart/modalCart";
 
 const getVisibleProducts = (product, category) => {
   switch (category) {
@@ -39,27 +40,40 @@ const getVisibleProducts = (product, category) => {
   }
 }
 export const ProductMenuPage = () => {
-const products = useSelector(getProducts)
-const category = useSelector(getCategory)
-const cart = useSelector(getCartItems)
-const dispatch = useDispatch();
-const visibleProducts = getVisibleProducts(products, category);
+  const products = useSelector(getProducts)
+  const category = useSelector(getCategory)
+  const cart = useSelector(getCartItems)
+  const dispatch = useDispatch();
+  const visibleProducts = getVisibleProducts(products, category);
+  const [isOpen, setIsOpen] = useState(false);
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
 
-const handleCakesCart = (product) => {
+    return () => (document.body.style.overflow = "auto");
+  }, [isOpen]);
+  const handleToggleHover = () => {
+    setIsOpen(!isOpen);
+  };
 
-  if(cart.find(item => item.id === product.id)) {
-    
-    
-    dispatch(addCart({...product, quantity: 1}))
-    return;
-   }
+  const handleCakesCart = (product) => {
 
-  dispatch(addCart(product))
-};
+    if (cart.find(item => item.id === product.id)) {
 
 
-const handleCategoryCakes = type => dispatch(categoryProducts(type))
-useEffect(() => {console.log(cart)}, [cart])
+      dispatch(addCart({ ...product, quantity: 1 }))
+      return;
+    }
+
+    dispatch(addCart(product))
+  };
+
+
+  const handleCategoryCakes = type => dispatch(categoryProducts(type))
+
   return (
     <>
       <CategorySection>
@@ -74,7 +88,7 @@ useEffect(() => {console.log(cart)}, [cart])
           </CategoryTitle>
           <CategoryFilterBar>
             <CategoryFilterItem active={category === "allProducts" ? "true" : "false"}>
-              <CategoryFilterLink to="/menu/allProducts" onClick={() => handleCategoryCakes(productsCategory.allProducts)}> 
+              <CategoryFilterLink to="/menu/allProducts" onClick={() => handleCategoryCakes(productsCategory.allProducts)}>
                 Усі
               </CategoryFilterLink>
             </CategoryFilterItem>
@@ -99,7 +113,11 @@ useEffect(() => {console.log(cart)}, [cart])
             {visibleProducts.map((product) => (
               <CakeCard
                 key={product.id}
-                onClick={() => handleCakesCart(product)}
+                onClick={() => {
+                  handleCakesCart(product);
+                  handleToggleHover();
+                }}
+
               >
                 <CakeImage src={product.image} />
                 <WrapCakeInfo>
@@ -111,6 +129,7 @@ useEffect(() => {console.log(cart)}, [cart])
             ))}
           </CakesList>
         </CategoryContainer>
+        <ModalCart open={isOpen} clouseModal={handleToggleHover} />
       </CategorySection>
     </>
   );
