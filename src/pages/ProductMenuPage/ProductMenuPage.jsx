@@ -15,10 +15,13 @@ import {
 } from "./ProductMenuPage.styled";
 
 import { useDispatch, useSelector } from "react-redux";
-import { getProducts, getCategory } from "../../redux/selectors";
+import { getProducts, getCategory, getCartItems} from "../../redux/selectors";
 
 import { categoryProducts } from "../../redux/filtersSlice";
 import { productsCategory } from "../../redux/constans";
+import { addCart} from "../../redux/cartSlice";
+import { useEffect } from "react";
+
 const getVisibleProducts = (product, category) => {
   switch (category) {
     case productsCategory.tarts:
@@ -38,11 +41,25 @@ const getVisibleProducts = (product, category) => {
 export const ProductMenuPage = () => {
 const products = useSelector(getProducts)
 const category = useSelector(getCategory)
+const cart = useSelector(getCartItems)
 const dispatch = useDispatch();
 const visibleProducts = getVisibleProducts(products, category);
 
+const handleCakesCart = (product) => {
+
+  if(cart.find(item => item.id === product.id)) {
+    
+    
+    dispatch(addCart({...product, quantity: 1}))
+    return;
+   }
+
+  dispatch(addCart(product))
+};
+
 
 const handleCategoryCakes = type => dispatch(categoryProducts(type))
+useEffect(() => {console.log(cart)}, [cart])
   return (
     <>
       <CategorySection>
@@ -82,6 +99,7 @@ const handleCategoryCakes = type => dispatch(categoryProducts(type))
             {visibleProducts.map((product) => (
               <CakeCard
                 key={product.id}
+                onClick={() => handleCakesCart(product)}
               >
                 <CakeImage src={product.image} />
                 <WrapCakeInfo>

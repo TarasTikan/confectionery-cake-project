@@ -124,7 +124,7 @@ export const BtnBasket = styled.button`
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
     border 250ms cubic-bezier(0.4, 0, 0.2, 1),
     background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-
+  position: relative;
   svg {
     width: 20px;
     height: 20px;
@@ -133,6 +133,10 @@ export const BtnBasket = styled.button`
   &:hover {
     fill: #fff;
     background-color: #9b6bce;
+    p {
+      background-color: #fff;
+      color: #9b6bce;
+    }
   }
 
   @media screen and (min-width: 600px) {
@@ -193,4 +197,20 @@ export const BtnMobMenu = styled.button`
     }
     display: none;
   }
+`;
+
+export const BasketCount = styled.p`
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background-color: #9b6bce;
+  color: #fff;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  font-size: 9px;
+  font-weight: 600;
+  display: ${props => (props.active ? "flex" : "none")};
+  align-items: center;
+  justify-content: center;
 `;
