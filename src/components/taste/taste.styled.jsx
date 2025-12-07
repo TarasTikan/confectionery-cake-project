@@ -39,7 +39,12 @@ export const TasteList = styled.ul`
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-
+  height: 700px;
+  overflow-y: scroll;
+   @media screen and (min-width: 800px) {
+     height: 100%;
+     overflow-y: hidden;
+  }
 `;
 
 export const TasteTitle = styled.h3`
