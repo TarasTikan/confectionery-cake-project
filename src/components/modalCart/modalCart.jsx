@@ -15,12 +15,16 @@ import {
   QuantityBtn,
   ContinueButton,
   CheckoutButton,
+  WrapPrice,
+  ClearButton,
+  TitlePrice
 } from "./modalCart.styled";
 import { getCartItems, openCartItems } from "../../redux/selectors";
 import {
   incrementQuantity,
   decrementQuantity,
   toggleCart,
+  clearCart,
 } from "../../redux/cartSlice";
 import { useEffect } from "react";
 
@@ -32,6 +36,7 @@ export const ModalCart = () => {
   const handleIncrementQuantity = (item) => dispatch(incrementQuantity(item));
   const handleDecrementQuantity = (item) => dispatch(decrementQuantity(item));
   const handleClouse = () => dispatch(toggleCart(!isOpenCart));
+  const handleClearCart = () => dispatch(clearCart());
 
   useEffect(() => {
     if (isOpenCart && cart.length === 0) {
@@ -72,6 +77,10 @@ export const ModalCart = () => {
             </CartItem>
           ))}
         </CartList>
+        <WrapPrice>
+        <TitlePrice>Загальна сума: {cart.reduce((total, item) => total + item.price * item.quantity, 0)} грн</TitlePrice>
+        <ClearButton type="button" onClick={handleClearCart}>Очистити корзину</ClearButton>
+        </WrapPrice>
         <CheckoutButton type="button">Оформити замовлення</CheckoutButton>
         <ContinueButton type="button" onClick={handleClouse}>
           Повернутись до покупок

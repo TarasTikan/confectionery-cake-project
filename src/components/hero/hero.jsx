@@ -17,7 +17,7 @@ export const Hero = () => {
           <HeroSubTitle>
             Торти, капкейки та десерти ручної роботи з доставкою по місту
           </HeroSubTitle>
-          <HeroBtn>Переглянути меню</HeroBtn>
+          <HeroBtn to="/menu">Переглянути меню</HeroBtn>
         </HeroWrapInfo>
         <HeroImage src={imgHero} alt="тортик" />
       </Container>

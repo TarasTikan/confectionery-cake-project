@@ -1,9 +1,4 @@
-import tortOne from "../img/tortOne.jpg";
-import tortTwo from "../img/tortTwo.jpg";
-import tortThree from "../img/tortThree.jpg";
-import tortFour from "../img/tortFour.jpg";
-import tortFive from "../img/tortFive.jpg";
-import tortSix from "../img/tortSix.jpg";
+
 
 import tasteBerry from "../img/tasteBerry.jpg";
 import tasteBerryLemon from "../img/tasteBerryLemon.jpg";
@@ -96,40 +91,222 @@ import product77 from "../img/productsImg/product77.jpg";
 import product78 from "../img/productsImg/product78.jpg";
 export const cakes = [
   {
-    id: 1,
-    title: "Торт Наполеон",
-    price: 350,
-    image: tortOne,
+    id: 122412,
+    title: "Шоколадний дрип",
+    image: product1,
+    description: "Ніжний шоколадний крем з густим ганашем та шоколадними завитками.",
+    taste: "шоколад",
+    type: "cakes",
+    category: "шоколадний",
+    isTheme: false,
+    weight: "1 кг",
+    price: 950
   },
   {
     id: 2,
-    title: "Чізкейк Нью-Йорк",
-    price: 420,
-    image: tortTwo,
+    title: "Полуничний дрип",
+    image: product2,
+    description: "Свіжі полуниці з ягідним соусом та ванільним кремом.",
+    taste: "полуниця",
+    type: "cakes",
+    category: "ягідний",
+    isTheme: false,
+    weight: "1 кг",
+    price: 1050
   },
   {
     id: 3,
-    title: "Торт Київський",
-    price: 390,
-    image: tortThree,
+    title: "Чорничний мус",
+    image: product3,
+    description: "Легкий чорничний мус на пісочній основі з глянцевим дрипом.",
+    taste: "чорниця",
+    type: "cakes",
+    category: "ягідний",
+    isTheme: false,
+    weight: "1.2 кг",
+    price: 1150
   },
   {
     id: 4,
-    title: "Шоколадний торт",
-    price: 370,
-    image: tortFour,
+    title: "Подвійний шоколад",
+    image: product4,
+    description: "Густий шоколадний крем та какао-трюфелі зверху.",
+    taste: "шоколад",
+    type: "cakes",
+    category: "шоколадний",
+    isTheme: false,
+    weight: "1.1 кг",
+    price: 1100
+  },
+   {
+    id: 24122101,
+    title: "Жовтий класичний макарон",
+    image: product42,
+    description: "Ніжний мигдальний макарон з кремовою лимонною начинкою.",
+    taste: "лимон",
+    type: "macarons",
+    category: "цитрусові",
+    isTheme: false,
+    price: 45
+  },
+  {
+    id: 24122102,
+    title: "Апельсиновий макарон",
+    image: product43,
+    description: "Яскравий апельсиновий макарон з освіжаючим цитрусовим кремом.",
+    taste: "апельсин",
+    type: "macarons",
+    category: "цитрусові",
+    isTheme: false,
+    price: 45
+  },
+  {
+    id: 24122103,
+    title: "Фісташковий макарон",
+    image: product44,
+    description: "Традиційний фісташковий макарон з насиченим кремом.",
+    taste: "фісташка",
+    type: "macarons",
+    category: "горіхові",
+    isTheme: false,
+    price: 50
+  },
+  {
+    id: 24122104,
+    title: "Шоколадно-ванільний макарон",
+    image: product45,
+    description: "Ніжна ванільна начинка у поєднанні з темним шоколадним ганашем.",
+    taste: "шоколад",
+    type: "macarons",
+    category: "шоколадні",
+    isTheme: false,
+    price: 50
+  },
+  {
+    id: 24122105,
+    title: "Полунично-лимонний макарон",
+    image: product46,
+    description: "Ніжна полунична нотка з яскравим лимонним кремом усередині.",
+    taste: "полуниця",
+    type: "macarons",
+    category: "ягідні",
+    isTheme: false,
+    price: 45
+  },
+  {
+    id: 24122106,
+    title: "М'ятно-апельсиновий макарон",
+    image: product47,
+    description: "Екзотичний макарон з апельсиновим конфі та свіжим листочком м’яти.",
+    taste: "апельсин",
+    type: "macarons",
+    category: "цитрусові",
+    isTheme: false,
+    price: 50
+  },
+  {
+    id: 24122107,
+    title: "Фіолетовий макарон з шоколадом",
+    image: product48,
+    description: "Ніжний лавандовий макарон з білим кремом та шоколадним декором.",
+    taste: "ваніль",
+    type: "macarons",
+    category: "квіткові",
+    isTheme: false,
+    price: 55
+  },
+  {
+    id: 24122108,
+    title: "Валентинів макарон",
+    image: product49,
+    description: "Полуничний макарон з серцем — ідеальний для романтичних моментів.",
+    taste: "полуниця",
+    type: "macarons",
+    category: "ягідні",
+    isTheme: true,
+    price: 55
+  },
+  {
+    id: 24122109,
+    title: "Лимонний макарон з цукром",
+    image: product50,
+    description: "Яскравий лимонний макарон, посипаний хрумким цукром.",
+    taste: "лимон",
+    type: "macarons",
+    category: "цитрусові",
+    isTheme: false,
+    price: 45
+  },
+  {
+    id: 24122110,
+    title: "Класичний фісташковий макарон",
+    image: product51,
+    description: "Ніжний зелений макарон з густим фісташковим кремом.",
+    taste: "фісташка",
+    type: "macarons",
+    category: "горіхові",
+    isTheme: false,
+    price: 50
   },
   {
     id: 5,
-    title: "Медовик",
-    price: 360,
-    image: tortFive,
+    title: "Малиновий мус",
+    image: product5,
+    description: "Яскравий малиновий мус з ягідним соусом.",
+    taste: "малина",
+    type: "cakes",
+    category: "ягідний",
+    isTheme: false,
+    weight: "1 кг",
+    price: 1050
   },
   {
     id: 6,
-    title: "Фруктовий торт",
-    price: 400,
-    image: tortSix,
+    title: "Лимонний десерт",
+    image: product6,
+    description: "Ніжний лимонний мус зі свіжими цитрусовими нотками.",
+    taste: "лимон",
+    type: "cakes",
+    category: "цитрусовий",
+    isTheme: false,
+    weight: "1 кг",
+    price: 1000
+  },
+  {
+    id: 7,
+    title: "Шоколадний торт з трюфелями",
+    image: product7,
+    description: "Повітряний шоколадний крем та какао-трюфелі зверху.",
+    taste: "шоколад",
+    type: "cakes",
+    category: "шоколадний",
+    isTheme: false,
+    weight: "1 кг",
+    price: 1090
+  },
+  {
+    id: 8,
+    title: "Японський полуничний",
+    image: product8,
+    description: "Суфле-крем та цільні ягоди полуниці.",
+    taste: "полуниця",
+    type: "cakes",
+    category: "ягідний",
+    isTheme: false,
+    weight: "0.9 кг",
+    price: 990
+  },
+  {
+    id: 12,
+    title: "Minecraft Block",
+    image: product12,
+    description: "Торт у стилі Minecraft, повністю у вигляді блоку.",
+    taste: "ваніль",
+    type: "cakes",
+    category: "тематичний",
+    isTheme: true,
+    weight: "1.4 кг",
+    price: 1650
   },
 ];
 

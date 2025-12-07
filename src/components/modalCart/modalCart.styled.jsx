@@ -45,7 +45,7 @@ export const CartModal = styled.div`
 
   /* 600px */
   @media (min-width: 600px) {
-    padding: 32px;
+
     max-width: 560px;
   }
 `;
@@ -86,12 +86,15 @@ export const CartList = styled.ul`
   margin-top: 24px;
   display: flex;
   flex-direction: column;
-  max-height: 420px;
+  max-height: 320px;
   gap: 10px;
   @media (min-width: 600px) {
+    max-height: 320px;
+  }
+  @media (min-width: 1600px) {
     max-height: 420px;
   }
-  max-height: 420px;
+
   overflow-y: scroll;
 `;
 
@@ -213,8 +216,8 @@ export const CheckoutButton = styled.button`
   }
 
   @media (min-width: 600px) {
-    padding: 16px;
-    font-size: 15px;
+    padding: 13px;
+    font-size: 13px;
   }
 `;
 
@@ -235,7 +238,42 @@ export const ContinueButton = styled.button`
   }
 
   @media (min-width: 600px) {
-    padding: 14px;
-    font-size: 15px;
+    padding: 13px;
+    font-size: 13px;
+  }
+`;
+
+export const WrapPrice = styled.div`
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-top: 20px;
+`
+
+export const ClearButton = styled.button`
+padding: 6px 14px;
+border-radius: 18px;
+background: #ff6b6b;
+color: white;
+border: none;
+cursor: pointer;
+transition: background 0.3s ease;
+font-size: 10px;
+&:hover {
+  background: #ff4c4c;
+}
+   @media (min-width: 400px) {
+      padding: 8px 16px;
+      font-size: 12px;
+  }
+`
+export const TitlePrice = styled.h3`
+  font-size: 13px;
+  font-weight: 600;
+  @media (min-width: 400px) {
+      font-size: 16px;
+  }
+  @media (min-width: 600px) {
+    font-size: 18px;
   }
 `;

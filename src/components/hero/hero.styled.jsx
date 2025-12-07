@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { NavLink } from "react-router-dom";
 
 export const HeroSection = styled.section`
   padding-top: 40px;
@@ -89,7 +90,8 @@ export const HeroSubTitle = styled.p`
   }
 `;
 
-export const HeroBtn = styled.button`
+export const HeroBtn = styled(NavLink)`
+text-decoration: none;
   font-size: 14px;
   font-weight: 600;
   padding: 10px 22px;

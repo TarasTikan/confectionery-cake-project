@@ -83,7 +83,8 @@ export const NavLink = styled(RouterNavLink)`
     padding: 20px 0; /* більше простору */
   }
 `;
-export const BtnHeader = styled(NavLink)`
+export const BtnHeader = styled(RouterNavLink)`
+text-decoration: none;
   font-size: 14px;
   font-weight: 600;
   padding: 8px 16px;

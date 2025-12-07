@@ -24,7 +24,20 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
+import { useDispatch, useSelector } from "react-redux";
+import { getCartItems } from "../../redux/selectors";
+import { addCart } from "../../redux/cartSlice";
 export const PopularDesserts = () => {
+  const dispatch = useDispatch();
+  const cart = useSelector(getCartItems);
+    const handleCakesCart = (product) => {
+      if (cart.find((item) => item.id === product.id)) {
+        dispatch(addCart({ ...product, quantity: 1 }));
+        return;
+      }
+      dispatch(addCart(product));
+    };
+
   const swiperRef = useRef(null);
   return (
     <PopularDessertsSection
@@ -79,7 +92,7 @@ export const PopularDesserts = () => {
               <WrapInfo>
                 <ProductTitle>{item.title}</ProductTitle>
                 <ProductPrice>{item.price} грн</ProductPrice>
-                <ProductButton>Замовити</ProductButton>
+                <ProductButton onClick={handleCakesCart(item)}>Додати до кошику</ProductButton>
               </WrapInfo>
             </StyledSlideCard>
           ))}
