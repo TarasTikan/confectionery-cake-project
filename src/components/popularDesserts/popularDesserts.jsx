@@ -25,18 +25,21 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import { useDispatch, useSelector } from "react-redux";
-import { getCartItems } from "../../redux/selectors";
-import { addCart } from "../../redux/cartSlice";
+import { getCartItems, openCartItems } from "../../redux/selectors";
+import { addCart, toggleCart } from "../../redux/cartSlice";
+import { ModalCart } from "../modalCart/modalCart";
 export const PopularDesserts = () => {
   const dispatch = useDispatch();
   const cart = useSelector(getCartItems);
-    const handleCakesCart = (product) => {
-      if (cart.find((item) => item.id === product.id)) {
-        dispatch(addCart({ ...product, quantity: 1 }));
-        return;
-      }
-      dispatch(addCart(product));
-    };
+  const isOpenCart = useSelector(openCartItems);
+  const handleToggleHover = () => dispatch(toggleCart(!isOpenCart));
+  const handleCakesCart = (product) => {
+    if (cart.find((item) => item.id === product.id)) {
+      dispatch(addCart({ ...product, quantity: 1 }));
+      return;
+    }
+    dispatch(addCart(product));
+  };
 
   const swiperRef = useRef(null);
   return (
@@ -85,19 +88,25 @@ export const PopularDesserts = () => {
               slidesPerView: 4,
             },
           }}
+          preventClicks={false}
+          preventClicksPropagation={false}
         >
           {cakes.map((item) => (
-            <StyledSlideCard key={item.id}>
+            <StyledSlideCard key={item.id}  >
               <PopularDessertsImage src={item.image} alt="торт" />{" "}
               <WrapInfo>
                 <ProductTitle>{item.title}</ProductTitle>
                 <ProductPrice>{item.price} грн</ProductPrice>
-                <ProductButton onClick={handleCakesCart(item)}>Додати до кошику</ProductButton>
+                <ProductButton onClick={() => {
+                  handleCakesCart(item);
+                  handleToggleHover();
+                }}>Додати до кошику</ProductButton>
               </WrapInfo>
             </StyledSlideCard>
           ))}
         </StyledSwiper>
       </Container>
+      <ModalCart />
     </PopularDessertsSection>
   );
 };

@@ -1,5 +1,4 @@
 import styled from "@emotion/styled";
-import { Swiper, SwiperSlide } from "swiper/react";
 import { motion } from "framer-motion";
 export const TasteSection = styled(motion.section)`
   font-family: "Inter", sans-serif;
@@ -34,23 +33,13 @@ export const Container = styled.div`
   }
 `;
 
-export const StyledSwiper = styled(Swiper)`
-  width: 100%;
-  padding-top: 20px;
-  padding-bottom: 20px;
+export const TasteList = styled.ul`
   display: flex;
   gap: 20px;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  @media screen and (min-width: 600px) {
-    width: 600px;
-  }
-  @media screen and (min-width: 800px) {
-    width: 800px;
-  }
-  @media screen and (min-width: 1200px) {
-    width: 1200px;
-  }
+
 `;
 
 export const TasteTitle = styled.h3`
@@ -70,7 +59,7 @@ export const TasteTitle = styled.h3`
   }
 `;
 
-export const StyledSlideCard = styled(SwiperSlide)`
+export const TasteCard = styled.li`
   border-radius: 16px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   text-align: center;
@@ -84,7 +73,8 @@ export const StyledSlideCard = styled(SwiperSlide)`
     transform: scale(1.05);
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
   }
-
+width: 200px;
+height: 250px;
   &:hover h3 {
     color: #9b6bce;
   }
@@ -93,14 +83,13 @@ export const StyledSlideCard = styled(SwiperSlide)`
     opacity: 1;
   }
 
-  &:hover button {
-    opacity: 1;
-  }
 `;
 
 export const TasteImage = styled.img`
+  border-radius: 16px;
   display: block;
-  width: 100%;
+  width: 200px;
+height: 250px;
   object-fit: cover;
 `;
 
@@ -108,9 +97,9 @@ export const TasteTitleProduct = styled.h3`
   position: absolute;
   left: 0;
   right: 0;
-  top: 10px;
+  bottom: 30px;
   font-family: "Inter", sans-serif;
-  font-size: 11px;
+  font-size: 15px;
   font-weight: 700;
   color: #2e2e2e;
   transition: color 300ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -119,45 +108,7 @@ export const TasteTitleProduct = styled.h3`
   }
 `;
 
-export const TasteBtnProduct = styled.button`
-  width: 50%;
-  height: 20px;
-  border-radius: 20px;
-  border: none;
-  background-color: #fefcef;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  margin: 0 auto;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 10px;
 
-  transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1),
-    box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1),
-    opacity 300ms cubic-bezier(0.4, 0, 0.2, 1);
-  opacity: 0;
-  &:hover {
-    background-color: #ffeef8;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  }
-  svg {
-    pointer-events: none;
-    @media screen and (min-width: 400px) {
-      width: 20px;
-      height: 20px;
-    }
-  }
-  @media screen and (min-width: 400px) {
-    width: 70%;
-    height: 40px;
-    bottom: 15px;
-  }
-`;
 
 export const DescriptionContainer = styled.div`
   text-align: center;
@@ -176,20 +127,15 @@ export const DescriptionContainer = styled.div`
   padding-right: 10px;
   margin: 0 auto;
   border-radius: 20px;
-  padding: ${({ active }) => (active === "true" ? "20px 10px" : "0 10px")};
-  max-height: ${({ active }) => (active === "true" ? "150px" : "0")};
-  transform: ${({ active }) =>
-    active === "true" ? "translateY(25px)" : "translateY(20px)"};
+  padding: 20px 10px;
+  max-height: 150px;
+
   overflow: hidden;
   opacity: 0;
   transition: max-height 300ms cubic-bezier(0.4, 0, 0.2, 1),
     padding 300ms cubic-bezier(0.4, 0, 0.2, 1),
     opacity 300ms cubic-bezier(0.4, 0, 0.2, 1),
     transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
-  @media screen and (min-width: 400px) {
-    transform: ${({ active }) =>
-      active === "true" ? "translateY(0)" : "translateY(20px)"};
-  }
 `;
 
 export const TasteTextDescribe = styled.p`

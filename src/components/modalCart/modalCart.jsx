@@ -42,7 +42,7 @@ export const ModalCart = () => {
     if (isOpenCart && cart.length === 0) {
       dispatch(toggleCart(!isOpenCart));
     }
-  }, [cart, isOpenCart]);
+  }, [cart, isOpenCart,dispatch]);
 
   return (
     <CartOverlay open={isOpenCart} onClick={handleClouse}>

@@ -64,7 +64,7 @@ export const WrapInfo = styled.div`
   background-color: #fff;
   border-radius: 20px;
   text-align: center;
-  width: 230px;
+  width: 200px;
   display: flex;
   justify-content: center;
   align-items: center;
