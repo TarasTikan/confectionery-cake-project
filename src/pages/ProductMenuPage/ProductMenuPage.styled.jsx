@@ -130,9 +130,10 @@ export const WrapCakeInfo = styled.div`
   text-align: center;
 `;
 
-export const CakeName = styled.h3`
+export const CakeName = styled(NavLink)`
   font-size: 10px;
   font-weight: 600;
+  text-decoration: none;
   color: ${COLORS.textMain};
   margin-bottom: 8px;
 

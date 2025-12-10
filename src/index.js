@@ -9,7 +9,7 @@ import { store } from './redux/store';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <BrowserRouter basename="/confectionery-cake-project">
+    <BrowserRouter>
     <Provider store={store}>
     <App />
     </Provider>
@@ -21,3 +21,4 @@ root.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+// basename="/confectionery-cake-project"

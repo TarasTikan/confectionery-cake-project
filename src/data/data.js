@@ -1241,4 +1241,6 @@ export const products = [
 ];
 
 
-export const getProductById = productId => products.find(item => item.id === productId)
+export const getProductById = (productId) => {
+  return products.find(item => item.id === productId)
+}

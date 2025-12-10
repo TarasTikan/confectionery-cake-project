@@ -143,16 +143,15 @@ export const ProductMenuPage = () => {
             {visibleProducts.map((product) => (
               <CakeCard
                 key={product.id}
-                onClick={() => {
-                  handleCakesCart(product);
-                  handleToggleHover();
-                }}
               >
                 <CakeImage src={product.image} />
                 <WrapCakeInfo>
-                  <CakeName>{product.title}</CakeName>
+                  <CakeName to={`${product.id}`}>{product.title}</CakeName>
                   <CakePrice>{product.price} грн</CakePrice>
-                  <BuyButton>Додати до кошика</BuyButton>
+                  <BuyButton onClick={() => {
+                  handleCakesCart(product);
+                  handleToggleHover();
+                }}>Додати до кошика</BuyButton>
                 </WrapCakeInfo>
               </CakeCard>
             ))}
