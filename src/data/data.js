@@ -1239,3 +1239,6 @@ export const products = [
     price: 1120
   },
 ];
+
+
+export const getProductById = productId => products.find(item => item.id === productId)
