@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { motion } from "framer-motion";
+import { NavLink } from "react-router-dom";
 export const PopularDessertsSection = styled(motion.section)`
   font-family: "Inter", sans-serif;
   padding-top: 30px;
@@ -81,11 +82,16 @@ export const WrapInfo = styled.div`
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 `;
 
-export const ProductTitle = styled.h3`
+export const ProductTitle = styled(NavLink)`
+  text-decoration: none;
   font-family: "Inter", sans-serif;
   font-size: 20px;
   font-weight: 700;
   color: #2e2e2e;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    &:hover {
+    color: #a663cc;
+  }
 `;
 
 export const ProductPrice = styled.p`

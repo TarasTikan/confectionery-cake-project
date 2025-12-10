@@ -95,7 +95,7 @@ export const PopularDesserts = () => {
             <StyledSlideCard key={item.id}  >
               <PopularDessertsImage src={item.image} alt="торт" />{" "}
               <WrapInfo>
-                <ProductTitle>{item.title}</ProductTitle>
+                <ProductTitle to={`menu/allProducts/${item.id}`}>{item.title}</ProductTitle>
                 <ProductPrice>{item.price} грн</ProductPrice>
                 <ProductButton onClick={() => {
                   handleCakesCart(item);

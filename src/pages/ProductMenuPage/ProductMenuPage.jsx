@@ -27,6 +27,7 @@ import { productsCategory } from "../../redux/constans";
 import { addCart, toggleCart } from "../../redux/cartSlice";
 import { useEffect } from "react";
 import { ModalCart } from "../../components/modalCart/modalCart";
+import { Link } from "react-router-dom";
 
 const getVisibleProducts = (product, category) => {
   switch (category) {
@@ -144,7 +145,9 @@ export const ProductMenuPage = () => {
               <CakeCard
                 key={product.id}
               >
+                <Link to={`${product.id}`}>
                 <CakeImage src={product.image} />
+                </Link>
                 <WrapCakeInfo>
                   <CakeName to={`${product.id}`}>{product.title}</CakeName>
                   <CakePrice>{product.price} грн</CakePrice>

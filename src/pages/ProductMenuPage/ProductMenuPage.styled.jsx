@@ -104,16 +104,13 @@ export const CakeCard = styled.li`
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
   }
 
-  &:hover button {
-    background-color: #643a99ff;
-  }
 `;
 
 export const CakeImage = styled.img`
   display: block;
   height: 140px;
   object-fit: cover;
-
+  width: 100%;
   @media (min-width: 400px) {
     height: 190px;
   }
@@ -136,13 +133,17 @@ export const CakeName = styled(NavLink)`
   text-decoration: none;
   color: ${COLORS.textMain};
   margin-bottom: 8px;
-
+  transition: color 0.3s ease;
   @media (min-width: 400px) {
     font-size: 15px;
   }
 
   @media (min-width: 600px) {
     font-size: 20px;
+  }
+
+  &:hover {
+    color: ${COLORS.accent};
   }
 `;
 
@@ -179,6 +180,10 @@ export const BuyButton = styled.button`
 
   @media (min-width: 600px) {
     font-size: 16px;
+  }
+
+   &:hover {
+    background-color: #643a99ff;
   }
 `;
 

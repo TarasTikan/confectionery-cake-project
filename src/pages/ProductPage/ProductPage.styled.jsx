@@ -1,9 +1,8 @@
 import styled from "@emotion/styled";
 
 export const ProductPageSection = styled.section`
- width: 100%;
+  width: 100%;
   padding: 20px 0;
-
 `;
 
 export const Container = styled.div`
@@ -28,53 +27,59 @@ export const Container = styled.div`
 `;
 
 export const WrapInfo = styled.div`
-display: flex;
-gap: 20px;
-flex-direction: column;
- @media screen and (min-width: 1200px) {
+  display: flex;
+  width: 100%;
+  gap: 20px;
+  flex-direction: column;
+  align-items: center;
+  @media screen and (min-width: 800px) {
     flex-direction: row;
-    gap: 50px;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 30px;
   }
-
-`
+`;
 
 export const ImageDessert = styled.img`
+  width: 100%;
+  max-width: 480px;
   height: auto;
   border-radius: 16px;
-  object-fit: contain;
-  max-height: 320px; 
-   @media screen and (min-width: 400px) {
-    max-height: 380px; 
-  }
-   @media screen and (min-width: 600px) {
-    max-height: 520px; 
-  }
- @media screen and (min-width: 1200px) {
-    max-height: 620px; 
-  }
+  object-fit: cover;
 
+  max-height: 480px;
 `;
 
 export const ProductTitle = styled.h1`
   font-size: 36px;
+  font-size: 28px;
   font-weight: 700;
   margin-bottom: 10px;
+text-align: center;
+  @media (min-width: 800px) {
+  font-size: 36px;
 
-  @media (max-width: 768px) {
-    font-size: 28px;
+    text-align: start;
   }
 `;
-
 
 export const ProductPrice = styled.p`
   font-size: 24px;
   font-weight: 600;
   margin-bottom: 20px;
+  text-align: center;
+  @media (min-width: 800px) {
+    text-align: start;
+  }
 `;
 
 export const ProductInfo = styled.p`
-   margin: 6px 0;
-    font-size: 16px;
+  margin: 6px 0;
+  font-size: 16px;
+   text-align: center;
+  @media (min-width: 800px) {
+    text-align: start;
+  }
 `;
 
 export const ProductShortDescription = styled.p`
@@ -82,35 +87,39 @@ export const ProductShortDescription = styled.p`
   line-height: 1.5;
   color: #444;
   margin-bottom: 25px;
+    text-align: center;
+  @media (min-width: 800px) {
+    text-align: start;
+  }
 `;
 
 export const ButtonsWrap = styled.div`
   display: flex;
   gap: 15px;
-  margin-top: auto;
-
+  margin-top: 20px;
+  justify-content: center;
+  @media (min-width: 800px) {
+    justify-content: flex-start;
+  }
 `;
 
 export const AddToCartBtn = styled.button`
- font-family: "Inter", sans-serif;
-  font-size: 8px;
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
   font-weight: 600;
   color: #fff;
   background: #9d6dd1ff;
   border: none;
   border-radius: 12px;
-
+  padding: 10px 20px;
   cursor: pointer;
   transition: background 0.3s ease;
 
-  @media (min-width: 400px) {
-    font-size: 12px;
-  }
 
   @media (min-width: 600px) {
     font-size: 16px;
   }
-     &:hover {
+  &:hover {
     background-color: #643a99ff;
   }
 `;
