@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom"
 import { useSelector } from "react-redux"
 import { getProducts } from "../../redux/selectors"
+import { ProductPageSection,Container,WrapInfo,ImageDessert,ProductTitle,ProductPrice,ProductShortDescription,ProductInfo,ButtonsWrap,AddToCartBtn,BuyNowBtn } from "./ProductPage.styled"
 
 export const ProductPage = () => {
     const {id} = useParams()
@@ -8,27 +9,27 @@ export const ProductPage = () => {
     const productFind = products.find(item => item.id === Number(id))
 
     return (
-        <section>
-            <div>
-                <div>
-                    <img src={productFind.image} alt={productFind.description}/>
+        <ProductPageSection>
+            <Container>
+                <WrapInfo>
+                    <ImageDessert src={productFind.image} alt={productFind.description}/>
                     <div>
-                        <h1>{productFind.title}</h1>
-                        <h2>{productFind.price} грн</h2>
-                        <p>Об'єм: 1кг</p>
-                        <p>Смак: {productFind.taste}</p>
-                        <p>Категорія: {productFind.category}</p>
-                        <div>
-                            <button type="button">Додати до кошика</button>
-                            <button type="button">Купити зараз</button>
-                        </div>
+                        <ProductTitle>{productFind.title}</ProductTitle>
+                        <ProductPrice>{productFind.price} грн</ProductPrice>
+                        <ProductInfo>Об'єм: 1кг</ProductInfo>
+                        <ProductInfo>Смак: {productFind.taste}</ProductInfo>
+                        <ProductInfo>Категорія: {productFind.category}</ProductInfo>
+                        <ButtonsWrap>
+                            <AddToCartBtn type="button">Додати до кошика</AddToCartBtn>
+                            <BuyNowBtn type="button">Купити зараз</BuyNowBtn>
+                        </ButtonsWrap>
                     </div>
-                </div>
+                </WrapInfo>
                 <div>
                     <h2>Про десерт</h2>
-                    <p>{productFind.description}</p>
+                    <ProductShortDescription>{productFind.description}</ProductShortDescription>
                 </div>
-            </div>
-        </section>
+            </Container>
+        </ProductPageSection>
     )
 }
