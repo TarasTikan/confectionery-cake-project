@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { NavLink } from "react-router-dom";
 
 const COLORS = {
   accent: "#a663cc",
@@ -136,9 +137,11 @@ export const ItemInfo = styled.div`
   flex: 1;
 `;
 
-export const ItemName = styled.h2`
+export const ItemName = styled(NavLink)`
   font-size: 10px;
   font-weight: 600;
+  text-decoration: none;
+  color: ${COLORS.text};
   width-max: 310px @media (min-width: 400px) {
     font-size: 13px;
   }

@@ -56,7 +56,7 @@ export const ModalCart = () => {
             <CartItem key={item.id}>
               <ItemImage src={item.image} />
               <ItemInfo>
-                <ItemName>{item.description}</ItemName>
+                <ItemName to={`/menu/allProducts/${item.id}`} onClick={handleClouse}>{item.description}</ItemName>
                 <ItemPrice>{item.price} грн</ItemPrice>
               </ItemInfo>
               <QuantityControl>

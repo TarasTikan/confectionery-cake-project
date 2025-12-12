@@ -1,8 +1,10 @@
 import styled from "@emotion/styled";
+import { NavLink } from "react-router-dom";
 
 export const ProductPageSection = styled.section`
   width: 100%;
-  padding: 20px 0;
+  padding-top: 25px;
+  padding-bottom: 85px;
 `;
 
 export const Container = styled.div`
@@ -10,6 +12,7 @@ export const Container = styled.div`
   padding-right: 15px;
   margin: 0 auto;
   display: flex;
+  justify-content: center;
   align-items: center;
   flex-direction: column;
   @media screen and (min-width: 400px) {
@@ -32,6 +35,7 @@ export const WrapInfo = styled.div`
   gap: 20px;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 30px;
   @media screen and (min-width: 800px) {
     flex-direction: row;
     align-items: flex-start;
@@ -124,7 +128,7 @@ export const AddToCartBtn = styled.button`
   }
 `;
 
-export const BuyNowBtn = styled.button`
+export const BuyNowBtn = styled(NavLink)`
   background: #fff;
   color: #333;
   border: 2px solid #d6c8ff;

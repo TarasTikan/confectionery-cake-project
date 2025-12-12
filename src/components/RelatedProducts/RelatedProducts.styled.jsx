@@ -15,7 +15,8 @@ export const RelatedList = styled.ul`
   flex-wrap: nowrap;      
   overflow-x: auto;        
   overflow-y: hidden;
-
+  justify-content: center;
+  align-items: center;
   padding-bottom: 10px;
   width: 100%;
 
