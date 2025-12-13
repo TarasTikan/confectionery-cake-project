@@ -1,3 +1,4 @@
+import { useSelector } from "react-redux";
 import {
   Container,
   HeroSection,
@@ -7,13 +8,14 @@ import {
   Description,
   PrimaryBtn,
   StatsLabel,
-  SecondaryBtn,
   StatsList,
   StatsNumber,
   StatsItem,
 } from "./AboutHero.styled";
+import { getCartItems } from "../../redux/selectors";
 
 export const AboutHero = () => {
+  const cart = useSelector(getCartItems);
   return (
     <HeroSection>
       <Container>
@@ -45,24 +47,14 @@ export const AboutHero = () => {
             натуральними інгредієнтами й створюємо індивідуальні десерти під
             вашу подію.
           </Description>
-          <div>
             <PrimaryBtn
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, ease: "easeOut" }}
               viewport={{ once: true, amount: 0.2 }}
-            >
+            to={cart.length === 0 ? "/menu" : "/order"}>
               Замовити десерт
             </PrimaryBtn>
-            <SecondaryBtn
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, ease: "easeOut" }}
-              viewport={{ once: true, amount: 0.2 }}
-            >
-              Дізнатись більше
-            </SecondaryBtn>
-          </div>
         </AboutHeroWrapper>
         <StatsList
           initial={{ opacity: 0, y: 40 }}

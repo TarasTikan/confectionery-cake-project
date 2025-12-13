@@ -6,9 +6,11 @@ import { AboutPage } from "../pages/AboutPage/AboutPage.jsx";
 import { ProductMenuPage } from "../pages/ProductMenuPage/ProductMenuPage.jsx";
 import { ProductPage } from "../pages/ProductPage/ProductPage.jsx";
 import { OrderPage } from "../pages/OrderPage/OrderPage.jsx";
+import { ScrollToTop } from "./ScrollToTop/ScrollToTop.jsx";
 
 function App() {
-  return (
+  return (<>
+    <ScrollToTop/>
     <Routes>
       <Route path="/" element={<SideBar />}>
         <Route index element={<HomePage />} />
@@ -19,6 +21,7 @@ function App() {
         <Route path="about" element={<AboutPage />} />
       </Route>
     </Routes>
+    </>
   );
 }
 

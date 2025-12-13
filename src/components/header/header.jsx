@@ -60,7 +60,7 @@ export const SideBar = () => {
               </li>
             </NavList>
           </nav>
-          <BtnHeader to="/menu">Замовити зараз</BtnHeader>
+          <BtnHeader to={cart.length === 0 ? "/menu" : "/order"}>Замовити зараз</BtnHeader>
           <BtnBasket type="button" onClick={handleToggleHover}>
             <ShopBascetIcon />
             <BasketCount

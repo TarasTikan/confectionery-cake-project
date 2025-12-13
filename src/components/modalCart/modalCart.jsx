@@ -56,7 +56,7 @@ export const ModalCart = () => {
             <CartItem key={item.id}>
               <ItemImage src={item.image} />
               <ItemInfo>
-                <ItemName to={`/menu/allProducts/${item.id}`} onClick={handleClouse}>{item.description}</ItemName>
+                <ItemName to={`/menu/allProducts/${item.id}`} onClick={handleClouse}>{item.title}</ItemName>
                 <ItemPrice>{item.price} грн</ItemPrice>
               </ItemInfo>
               <QuantityControl>
@@ -81,7 +81,7 @@ export const ModalCart = () => {
         <TitlePrice>Загальна сума: {cart.reduce((total, item) => total + item.price * item.quantity, 0)} грн</TitlePrice>
         <ClearButton type="button" onClick={handleClearCart}>Очистити корзину</ClearButton>
         </WrapPrice>
-        <CheckoutButton type="button">Оформити замовлення</CheckoutButton>
+        <CheckoutButton to={`/order`} onClick={handleClouse}>Оформити замовлення</CheckoutButton>
         <ContinueButton type="button" onClick={handleClouse}>
           Повернутись до покупок
         </ContinueButton>

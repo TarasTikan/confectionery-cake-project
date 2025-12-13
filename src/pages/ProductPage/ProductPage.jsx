@@ -44,7 +44,7 @@ export const ProductPage = () => {
                                 handleCakesCart(productFind);
                                 handleToggleHover();
                             }}>Додати до кошика</AddToCartBtn>
-                            <BuyNowBtn to={`/order`}>Купити зараз</BuyNowBtn>
+                            <BuyNowBtn to={`/order`} onClick={() => handleCakesCart(productFind)}>Купити зараз</BuyNowBtn>
                         </ButtonsWrap>
                     </div>
                 </WrapInfo>

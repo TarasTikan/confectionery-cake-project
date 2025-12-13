@@ -22,7 +22,7 @@ export const RelatedProducts = () => {
   };
 
 
-  const relatedProducts = products.filter(item => item.category === productFind.category).slice(0, 6)
+  const relatedProducts = products.filter(item => item.category === productFind.category && item.id !== productFind.id).slice(0, 4)
   return (
     <>
       {relatedProducts.length < 0 || <><RelatedTitle>Схожі товари</RelatedTitle>

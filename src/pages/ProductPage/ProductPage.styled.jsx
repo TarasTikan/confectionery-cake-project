@@ -135,6 +135,7 @@ export const BuyNowBtn = styled(NavLink)`
   padding: 14px 26px;
   font-size: 16px;
   border-radius: 12px;
+  text-decoration: none;
   cursor: pointer;
   transition: 0.25s ease;
 

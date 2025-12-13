@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import { motion } from "framer-motion";
+import { NavLink } from "react-router-dom";
 const COLORS = {
   pink: "#ffe0e4",
   lavender: "#f8f0ff",
@@ -96,7 +97,7 @@ export const Description = styled(motion.p)`
   }
 `;
 
-export const PrimaryBtn = styled(motion.a)`
+export const PrimaryBtn = styled(motion(NavLink))`
   background-color: #a663cc;
   color: #ffffff;
   padding: 12px 20px;
@@ -124,29 +125,6 @@ export const PrimaryBtn = styled(motion.a)`
   }
 `;
 
-export const SecondaryBtn = styled(motion.a)`
-  background: rgba(255, 255, 255, 0.9);
-  border: 1px solid #f5ccff;
-  color: #a663cc;
-  padding: 12px 20px;
-  border-radius: 24px;
-  text-decoration: none;
-  transition: background 0.3s ease, border-color 0.3s ease;
-  cursor: pointer;
-  display: inline-block;
-  &:hover {
-    background: #ffffff;
-    border-color: #a663cc;
-  }
-  font-size: 10px;
-  @media screen and (min-width: 400px) {
-    font-size: 13px;
-  }
-  @media screen and (min-width: 600px) {
-    font-size: 16px;
-    padding: 14px 28px;
-  }
-`;
 export const StatsList = styled(motion.ul)`
   display: flex;
   flex-direction: column;

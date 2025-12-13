@@ -142,11 +142,16 @@ export const ItemName = styled(NavLink)`
   font-weight: 600;
   text-decoration: none;
   color: ${COLORS.text};
-  width-max: 310px @media (min-width: 400px) {
+  width-max: 310px 
+  transition: color 0.3s ease;
+  @media (min-width: 400px) {
     font-size: 13px;
   }
   @media (min-width: 600px) {
     font-size: 16px;
+  }
+    &:hover {
+    color: #a663cc;
   }
 `;
 
@@ -202,9 +207,11 @@ export const QuantityBtn = styled.button`
   }
 `;
 
-export const CheckoutButton = styled.button`
-  width: 100%;
+export const CheckoutButton = styled(NavLink)`
   margin-top: 20px;
+  display: block;
+  text-align: center;
+  text-decoration: none;
   padding: 10px;
   font-size: 13px;
   border-radius: 18px;
