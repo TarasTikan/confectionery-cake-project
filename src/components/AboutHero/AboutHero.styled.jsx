@@ -13,7 +13,7 @@ export const HeroSection = styled.section`
   padding-bottom: 40px;
   background: linear-gradient(180deg, #ffffff 0%, #f8f0ff 60%, #f3d9ff 100%);
   color: ${COLORS.text};
-
+padding-top: 100px;
   @media screen and (min-width: 600px) {
     padding-bottom: 80px;
   }

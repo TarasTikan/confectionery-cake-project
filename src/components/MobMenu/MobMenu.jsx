@@ -1,3 +1,4 @@
+import { useSelector } from "react-redux";
 import {
   MobMenuContainer,
   MobMenuSection,
@@ -7,8 +8,10 @@ import {
   BtnHeaderClouse,
   Backdrop
 } from "./MobMenu.styled";
+import { getCartItems } from "../../redux/selectors";
 
 export const MobMenu = ({ clouseMobMenu, open }) => {
+  const cart = useSelector(getCartItems);
   const handleClouse = () => {
     clouseMobMenu();
   };
@@ -41,7 +44,7 @@ export const MobMenu = ({ clouseMobMenu, open }) => {
             </MobMenuList>
           </nav>
         </div>
-        <MobMenuBtn to="/menu">Замовити зараз</MobMenuBtn>
+        <MobMenuBtn to={cart.length === 0 ? "/menu" : "/order"}>Замовити зараз</MobMenuBtn>
       </MobMenuContainer>
     </MobMenuSection>
     </Backdrop>

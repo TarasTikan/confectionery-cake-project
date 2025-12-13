@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 import { NavLink } from "react-router-dom";
 
 export const OrderSection = styled.section`
-  padding: 60px 0;
+  padding: 100px 0;
 `;
 
 export const Container = styled.div`
@@ -252,7 +252,7 @@ export const QuantityBtn = styled.button`
   border-radius: 8px;
   border: 1px solid "#f1d8ff";
   background: #fff;
-  font-size: 10px;
+  font-size: 13px;
   cursor: pointer;
   transition: background 0.3s ease;
   &:hover {
@@ -264,4 +264,20 @@ export const QuantityBtn = styled.button`
     height: 34px;
     font-size: 18px;
   }
+`;
+
+export const DeleteItemsBtn = styled.button`
+  background: none;
+  border: none;
+  cursor: pointer;
+  svg {
+  width: 20px;
+  height: 20px;
+    cursor: pointer;
+    transition: fill 0.3s ease, transform 0.3s ease;
+   
+    &:hover {
+      fill: #ff4c4c;
+      transform: scale(1.1);
+      }
 `;

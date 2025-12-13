@@ -17,7 +17,8 @@ import {
   CheckoutButton,
   WrapPrice,
   ClearButton,
-  TitlePrice
+  TitlePrice,
+  DeleteItemsBtn
 } from "./modalCart.styled";
 import { getCartItems, openCartItems } from "../../redux/selectors";
 import {
@@ -25,14 +26,16 @@ import {
   decrementQuantity,
   toggleCart,
   clearCart,
+  deleteCart,
 } from "../../redux/cartSlice";
 import { useEffect } from "react";
+import { DeleteIcon } from "../../icons/deleteIcon";
 
 export const ModalCart = () => {
   const isOpenCart = useSelector(openCartItems);
   const cart = useSelector(getCartItems);
   const dispatch = useDispatch();
-
+  const hadleDeleteItem = (item) => dispatch(deleteCart(item));
   const handleIncrementQuantity = (item) => dispatch(incrementQuantity(item));
   const handleDecrementQuantity = (item) => dispatch(decrementQuantity(item));
   const handleClouse = () => dispatch(toggleCart(!isOpenCart));
@@ -60,6 +63,8 @@ export const ModalCart = () => {
                 <ItemPrice>{item.price} грн</ItemPrice>
               </ItemInfo>
               <QuantityControl>
+                <DeleteItemsBtn type="button" onClick={()=> hadleDeleteItem(item.id)}><DeleteIcon/></DeleteItemsBtn>
+                
                 <QuantityBtn
                   type="button"
                   onClick={() => handleDecrementQuantity(item)}

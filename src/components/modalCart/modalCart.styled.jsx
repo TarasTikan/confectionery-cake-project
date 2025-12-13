@@ -46,7 +46,6 @@ export const CartModal = styled.div`
 
   /* 600px */
   @media (min-width: 600px) {
-
     max-width: 560px;
   }
 `;
@@ -172,22 +171,27 @@ export const QuantityControl = styled.div`
   align-items: center;
   gap: 14px;
 
-  span {
-    font-size: 16px;
-    width: 24px;
-    text-align: center;
-
-    @media (min-width: 600px) {
-      font-size: 17px;
-    }
-  }
 `;
-
+export const DeleteItemsBtn = styled.button`
+  background: none;
+  border: none;
+  cursor: pointer;
+  svg {
+  width: 20px;
+  height: 20px;
+    cursor: pointer;
+    transition: fill 0.3s ease, transform 0.3s ease;
+   
+    &:hover {
+      fill: #ff4c4c;
+      transform: scale(1.1);
+      }
+`;
 export const QuantityBtn = styled.button`
   width: 30px;
   height: 30px;
   border-radius: 8px;
-  border: 1px solid ${COLORS.border};
+  border: 1px solid #1a1a1a;
   background: #fff;
   font-size: 18px;
   cursor: pointer;
@@ -254,34 +258,34 @@ export const ContinueButton = styled.button`
 `;
 
 export const WrapPrice = styled.div`
-display: flex;
-justify-content: space-between;
-align-items: center;
-margin-top: 20px;
-`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+`;
 
 export const ClearButton = styled.button`
-padding: 6px 14px;
-border-radius: 18px;
-background: #ff6b6b;
-color: white;
-border: none;
-cursor: pointer;
-transition: background 0.3s ease;
-font-size: 10px;
-&:hover {
-  background: #ff4c4c;
-}
-   @media (min-width: 400px) {
-      padding: 8px 16px;
-      font-size: 12px;
+  padding: 6px 14px;
+  border-radius: 18px;
+  background: #ff6b6b;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  font-size: 10px;
+  &:hover {
+    background: #ff4c4c;
   }
-`
+  @media (min-width: 400px) {
+    padding: 8px 16px;
+    font-size: 12px;
+  }
+`;
 export const TitlePrice = styled.h3`
   font-size: 13px;
   font-weight: 600;
   @media (min-width: 400px) {
-      font-size: 16px;
+    font-size: 16px;
   }
   @media (min-width: 600px) {
     font-size: 18px;

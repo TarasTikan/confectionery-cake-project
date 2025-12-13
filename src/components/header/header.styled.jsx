@@ -2,17 +2,14 @@ import styled from "@emotion/styled";
 import { NavLink as RouterNavLink } from "react-router-dom";
 export const Header = styled.header`
   font-family: "Inter", sans-serif;
-  padding-top: 15px;
-  padding-bottom: 20px;
-  @media screen and (min-width: 600px) {
-    padding-top: 20px;
-    padding-bottom: 30px;
-  }
 
-  @media screen and (min-width: 1200px) {
-    padding-top: 25px;
-    padding-bottom: 50px;
-  }
+position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 100;
+  background-color: #fff;
+
+ 
 `;
 export const Container = styled.div`
   padding-left: 15px;
@@ -52,7 +49,7 @@ export const Logo = styled.a`
 `;
 
 export const NavList = styled.ul`
-  display: none; /* мобілка */
+  display: none; 
   gap: 20px;
   align-items: center;
   list-style: none;

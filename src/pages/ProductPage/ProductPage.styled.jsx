@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 export const ProductPageSection = styled.section`
   width: 100%;
-  padding-top: 25px;
+  padding-top: 120px;
   padding-bottom: 85px;
 `;
 

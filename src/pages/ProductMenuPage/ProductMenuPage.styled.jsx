@@ -17,6 +17,7 @@ const COLORS = {
 export const CategorySection = styled.section`
   width: 100%;
   padding-bottom: 60px;
+  padding-top: 100px;
   background: linear-gradient(
     180deg,
     ${COLORS.bgTop} 0%,

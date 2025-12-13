@@ -1,14 +1,18 @@
 import { useDispatch, useSelector } from "react-redux";
-import { Container, OrderSection, FormTitle,Form,Input, PageTitle, SubmitButton,WrapInfoOrder, SummaryBox, TitleListOrder, ListOrder, SummaryText, CartItem, ItemImage, ItemInfo, ItemName, ItemPrice, QuantityControl, QuantityBtn } from "./OrderPage.styled"
+import { Container, OrderSection, FormTitle,Form,Input, PageTitle, SubmitButton,WrapInfoOrder, SummaryBox, TitleListOrder, ListOrder, SummaryText, CartItem, ItemImage, ItemInfo, ItemName, ItemPrice, QuantityControl, QuantityBtn, DeleteItemsBtn } from "./OrderPage.styled"
 import { getCartItems } from "../../redux/selectors";
-import { decrementQuantity, incrementQuantity } from "../../redux/cartSlice";
+import { decrementQuantity, deleteCart, incrementQuantity } from "../../redux/cartSlice";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { FooterCake } from "../../components/footer/footer";
+import { DeleteIcon } from "../../icons/deleteIcon";
 
 export const OrderPage = () => {
     const cart = useSelector(getCartItems);
      const dispatch = useDispatch();
     const navigate = useNavigate();
+
+      const hadleDeleteItem = (item) => dispatch(deleteCart(item));
       const handleIncrementQuantity = (item) => dispatch(incrementQuantity(item));
       const handleDecrementQuantity = (item) => dispatch(decrementQuantity(item));
       useEffect(()=>{
@@ -17,6 +21,7 @@ export const OrderPage = () => {
         }
       },[cart,navigate])
     return(
+      <>
         <main>
             <OrderSection>
                 <Container>
@@ -57,6 +62,7 @@ export const OrderPage = () => {
                                               <ItemPrice>{item.price} грн</ItemPrice>
                                             </ItemInfo>
                                             <QuantityControl>
+                                                <DeleteItemsBtn type="button" onClick={()=> hadleDeleteItem(item.id)}><DeleteIcon/></DeleteItemsBtn>
                                               <QuantityBtn
                                                 type="button"
                                                 onClick={() => handleDecrementQuantity(item)}
@@ -80,5 +86,7 @@ export const OrderPage = () => {
                 </Container>
             </OrderSection>
         </main>
+        <FooterCake/>
+        </>
     )
 }

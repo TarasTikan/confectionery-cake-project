@@ -2,15 +2,14 @@ import styled from "@emotion/styled";
 import { NavLink } from "react-router-dom";
 
 export const HeroSection = styled.section`
-  padding-top: 40px;
-
+  padding-top: 80px;
+padding-bottom: 40px;
   @media screen and (min-width: 600px) {
-    padding-top: 60px;
     padding-bottom: 60px;
   }
 
   @media screen and (min-width: 1200px) {
-    padding-top: 80px;
+    padding-top: 100px;
   }
 `;
 
