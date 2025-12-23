@@ -1,4 +1,4 @@
-import { createClient } from "@supabase/supabase-js/dist/index.cjs";
+import { createClient } from "@supabase/supabase-js";
 
 export const superbase = createClient(
   process.env.REACT_APP_SUPABASE_URL,

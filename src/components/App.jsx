@@ -7,20 +7,32 @@ import { ProductMenuPage } from "../pages/ProductMenuPage/ProductMenuPage.jsx";
 import { ProductPage } from "../pages/ProductPage/ProductPage.jsx";
 import { OrderPage } from "../pages/OrderPage/OrderPage.jsx";
 import { ScrollToTop } from "./ScrollToTop/ScrollToTop.jsx";
-
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { initAuth } from "../redux/auth/operations.js";
+import { RegisterPage } from "../pages/RegisterPage/RegisterPage.jsx";
+import { LoginPage } from "../pages/LoginPage/LoginPage.jsx";
 function App() {
-  return (<>
-    <ScrollToTop/>
-    <Routes>
-      <Route path="/" element={<SideBar />}>
-        <Route index element={<HomePage />} />
-        <Route path="menu" element={<MenuPage />} />
-        <Route path="menu/:category" element={<ProductMenuPage />} />
-        <Route path="menu/:category/:id" element={<ProductPage />} />
-        <Route path="order" element={<OrderPage/>}/>
-        <Route path="about" element={<AboutPage />} />
-      </Route>
-    </Routes>
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(initAuth());
+  }, [dispatch]);
+
+  return (
+    <>
+      <ScrollToTop />
+      <Routes>
+        <Route path="/" element={<SideBar />}>
+          <Route index element={<HomePage />} />
+          <Route path="menu" element={<MenuPage />} />
+          <Route path="menu/:category" element={<ProductMenuPage />} />
+          <Route path="menu/:category/:id" element={<ProductPage />} />
+          <Route path="order" element={<OrderPage />} />
+          <Route path="about" element={<AboutPage />} />
+          <Route path="/register" element={<RegisterPage />} />
+          <Route path="/login" element={<LoginPage />} />
+        </Route>
+      </Routes>
     </>
   );
 }
