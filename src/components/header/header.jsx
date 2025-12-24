@@ -8,6 +8,12 @@ import {
   BtnBasket,
   BtnMobMenu,
   BasketCount,
+  NavLinkAuth,
+  WrapperAuth,
+  Separator,
+  UserWrap,
+  GreetingText,
+  LogoutText,
 } from "./header.styled";
 import { ShopBascetIcon } from "../../icons/shopBascetIcon";
 import { MobMenuIcon } from "../../icons/mobMenuIcon";
@@ -18,11 +24,15 @@ import { useDispatch, useSelector } from "react-redux";
 import { getCartItems, openCartItems } from "../../redux/selectors";
 import { toggleCart } from "../../redux/cartSlice";
 import { ModalCart } from "../modalCart/modalCart";
+import { selectAuthUser } from "../../redux/auth/selectors";
+import { UserIcon } from "../../icons/userIcon";
+import { logoutUser } from "../../redux/auth/operations";
 export const SideBar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const cart = useSelector(getCartItems);
-    const isOpenCart = useSelector(openCartItems)
-    const dispatch = useDispatch();
+  const isOpenCart = useSelector(openCartItems);
+  const isUser = useSelector(selectAuthUser);
+  const dispatch = useDispatch();
   const handleMobMenuClick = () => {
     setIsOpen(!isOpen);
   };
@@ -36,9 +46,10 @@ export const SideBar = () => {
     }
 
     return () => (document.body.style.overflow = "auto");
-  }, [isOpen,isOpenCart]);
-   
-
+  }, [isOpen, isOpenCart]);
+  const handleLogout = () => {
+   dispatch(logoutUser());
+  }
   return (
     <>
       <Header>
@@ -60,7 +71,9 @@ export const SideBar = () => {
               </li>
             </NavList>
           </nav>
-          <BtnHeader to={cart.length === 0 ? "/menu" : "/order"}>Замовити зараз</BtnHeader>
+          <BtnHeader to={cart.length === 0 ? "/menu" : "/order"}>
+            Замовити зараз
+          </BtnHeader>
           <BtnBasket type="button" onClick={handleToggleHover}>
             <ShopBascetIcon />
             <BasketCount
@@ -69,9 +82,15 @@ export const SideBar = () => {
               {countCartItems}
             </BasketCount>
           </BtnBasket>
+          {!isUser ? <WrapperAuth>
+            <NavLinkAuth to="/register">Зареєструватися</NavLinkAuth>
+            <Separator>|</Separator>
+            <NavLinkAuth to="/login">Увійти</NavLinkAuth>
+          </WrapperAuth> : <UserWrap><UserIcon /><GreetingText>Привіт, <span>{isUser?.user_metadata.name}</span></GreetingText><Separator>|</Separator><LogoutText type="button" onClick={handleLogout}>Вийти</LogoutText></UserWrap>}
+ 
         </Container>
         <MobMenu open={isOpen} clouseMobMenu={handleMobMenuClick} />
-        <ModalCart/>
+        <ModalCart />
       </Header>
       <Outlet />
     </>

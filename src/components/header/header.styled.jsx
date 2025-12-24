@@ -3,13 +3,11 @@ import { NavLink as RouterNavLink } from "react-router-dom";
 export const Header = styled.header`
   font-family: "Inter", sans-serif;
 
-position: fixed;
+  position: fixed;
   width: 100%;
   top: 0;
   z-index: 100;
   background-color: #fff;
-
- 
 `;
 export const Container = styled.div`
   padding-left: 15px;
@@ -49,7 +47,7 @@ export const Logo = styled.a`
 `;
 
 export const NavList = styled.ul`
-  display: none; 
+  display: none;
   gap: 20px;
   align-items: center;
   list-style: none;
@@ -81,7 +79,7 @@ export const NavLink = styled(RouterNavLink)`
   }
 `;
 export const BtnHeader = styled(RouterNavLink)`
-text-decoration: none;
+  text-decoration: none;
   font-size: 14px;
   font-weight: 600;
   padding: 8px 16px;
@@ -91,24 +89,23 @@ text-decoration: none;
   color: #fff;
   cursor: pointer;
   margin-left: auto;
-  margin-right: 10px;
-  transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1), color 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  margin-right: 15px;
+  transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 300ms cubic-bezier(0.4, 0, 0.2, 1);
   display: none;
   &:hover {
     background-color: #643a99ff;
-      color: #fff;
+    color: #fff;
   }
 
   @media screen and (min-width: 600px) {
     font-size: 15px;
     padding: 10px 20px;
-    margin-right: 15px;
   }
 
   @media screen and (min-width: 1200px) {
     font-size: 16px;
     padding: 12px 28px;
-    margin-right: 20px;
     display: block;
   }
 `;
@@ -120,6 +117,7 @@ export const BtnBasket = styled.button`
   background-color: transparent;
   border-radius: 50%;
   cursor: pointer;
+  margin-right: 15px;
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
     border 250ms cubic-bezier(0.4, 0, 0.2, 1),
     background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -209,7 +207,84 @@ export const BasketCount = styled.p`
   border-radius: 50%;
   font-size: 9px;
   font-weight: 600;
-  display: ${props => (props.active ? "flex" : "none")};
+  display: ${(props) => (props.active ? "flex" : "none")};
   align-items: center;
   justify-content: center;
+`;
+
+export const NavLinkAuth = styled(RouterNavLink)`
+  font-size: 10px;
+  font-weight: 500;
+  color: #9b6bce;
+  text-decoration: none;
+  padding: 10px 0;
+  transition: color 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  display: none;
+
+  &:hover {
+    color: #643a99ff;
+  }
+
+  @media screen and (min-width: 1200px) {
+    font-size: 16px;
+    padding: 20px 0;
+    display: block;
+  }
+`;
+
+export const WrapperAuth = styled.div`
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  text-align: center;
+  svg {
+    width: 33px;
+    height: 33px;
+    stroke: #000000;
+    cursor: pointer;
+  }
+`;
+
+export const Separator = styled.p`
+  color: #9b6bce;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  @media screen and (min-width: 1200px) {
+    display: flex;
+  }
+`;
+
+export const UserWrap = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 8px 14px;
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(8px);
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+`;
+
+export const GreetingText = styled.p`
+  font-size: 15px;
+  font-weight: 500;
+  color: #3a3a3a;
+
+  span {
+    font-weight: 600;
+    color: #d16c8f;
+  }
+`;
+
+export const LogoutText = styled.button`
+  background: none;
+  border: none;
+  font-size: 14px;
+  font-weight: 500;
+  color: #ff4d4f;
+  cursor: pointer;
 `;

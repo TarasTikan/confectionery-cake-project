@@ -1,14 +1,14 @@
 import { LoginForm } from "../../components/LoginForm/LoginForm"
+import { AuthPage } from "./LoginPage.styled"
 
 
 export const LoginPage = () => {
     
     return (
         <main>
-            <section>
-                <h1>Login Page</h1>
+            <AuthPage>
                 <LoginForm/>
-            </section>
+            </AuthPage>
         </main>
     )
 }
