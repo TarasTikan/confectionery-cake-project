@@ -33,19 +33,29 @@ export const AuthForm = styled.form`
 `;
 
 export const AuthTitle = styled.h2`
-  font-size: 30px;
-  font-weight: 700;
-  color: #111;
-  margin-bottom: 10px;
+  font-family: "Playfair Display", serif;
+  font-size: 34px;
+  font-weight: 600;
+  color: #1f1f1f;
+  text-align: center;
+
+  @media (max-width: 480px) {
+    font-size: 28px;
+  }
 `;
 
-export const Field = styled.label`
-  display: flex;
-  flex-direction: column;
+export const AuthSubtitle = styled.p`
+  font-size: 15px;
+  line-height: 1.5;
+  color: #6b6b6b;
+  text-align: center;
+
+  @media (max-width: 480px) {
+    font-size: 14px;
+  }
 `;
 
 export const AuthInput = styled.input`
-  width: 100%;
   padding: 14px 16px;
   border-radius: 14px;
   border: 1px solid #e5e5e5;
@@ -71,7 +81,7 @@ export const AuthButton = styled.button`
   border-radius: 14px;
   border: none;
 
-  background: linear-gradient(135deg, #9b7bf5, #b28cff);
+background-color: #9b6bce;
   color: #fff;
 
   font-size: 16px;
@@ -90,10 +100,12 @@ export const AuthButton = styled.button`
   }
 `;
 
+
 export const AuthFooterText = styled.p`
-  margin-top: 12px;
+  margin-top: 18px;
   font-size: 14px;
-  color: #666;
+  color: #777;
+  text-align: center;
 
   a {
     color: #9b7bf5;
