@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/confectionery-cake-project/static/css/main.fa3880dd.css",
-    "main.js": "/confectionery-cake-project/static/js/main.58e7e161.js",
+    "main.js": "/confectionery-cake-project/static/js/main.d107e126.js",
     "static/js/453.72b5c7fc.chunk.js": "/confectionery-cake-project/static/js/453.72b5c7fc.chunk.js",
     "static/media/cupcake_green-bgremover.png": "/confectionery-cake-project/static/media/cupcake_green-bgremover.acd6eca47f0bdedabd4a.png",
     "static/media/strawberry-bgremover.png": "/confectionery-cake-project/static/media/strawberry-bgremover.5a9d7dd716f1fd1d6c37.png",
@@ -103,14 +103,15 @@
     "static/media/products37.jpg": "/confectionery-cake-project/static/media/products37.b62bf0ab70a10d83a04e.jpg",
     "static/media/products36.jpg": "/confectionery-cake-project/static/media/products36.d3003170b7e737829a0f.jpg",
     "static/media/tasteStrawberryMango.jpg": "/confectionery-cake-project/static/media/tasteStrawberryMango.4c8764624cdadbf8818b.jpg",
+    "static/media/authBg.jpg": "/confectionery-cake-project/static/media/authBg.8e1a2758f747e4751053.jpg",
     "static/media/makaron.jpg": "/confectionery-cake-project/static/media/makaron.6b895a4aace81e334076.jpg",
     "index.html": "/confectionery-cake-project/index.html",
     "main.fa3880dd.css.map": "/confectionery-cake-project/static/css/main.fa3880dd.css.map",
-    "main.58e7e161.js.map": "/confectionery-cake-project/static/js/main.58e7e161.js.map",
+    "main.d107e126.js.map": "/confectionery-cake-project/static/js/main.d107e126.js.map",
     "453.72b5c7fc.chunk.js.map": "/confectionery-cake-project/static/js/453.72b5c7fc.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.fa3880dd.css",
-    "static/js/main.58e7e161.js"
+    "static/js/main.d107e126.js"
   ]
 }
