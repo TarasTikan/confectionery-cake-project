@@ -1,5 +1,6 @@
 import { useDispatch } from "react-redux";
 import { registerUser } from "../../redux/auth/operations";
+import { AuthForm,AuthTitle,Field,AuthInput, AuthButton } from "./Register.styled";
 
 
 export const RegisterForm = () => {
@@ -14,17 +15,17 @@ export const RegisterForm = () => {
   }
 
   return (
-    <form onSubmit={handleRegister}>
-        <h2>Register</h2>
-        <label>
+    <AuthForm onSubmit={handleRegister}>
+        <AuthTitle>Register</AuthTitle>
+        <Field>
             Email:
-            <input type="email" name="email" required />
-            </label>
-            <label>
+            <AuthInput type="email" name="email" required />
+            </Field>
+            <Field>
             Password:
-            <input type="password" name="password" required />
-            </label>
-            <button type="submit">Register</button>
-    </form>
+            <AuthInput type="password" name="password" required />
+            </Field>
+            <AuthButton type="submit">Register</AuthButton>
+    </AuthForm>
   )
 }

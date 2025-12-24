@@ -273,7 +273,6 @@ export const DecorCheckbox = styled.input`
     background-color: #9b6bce;
   }
 
-  /* намальована галочка SVG'ом, щоб було чітко на будь-якому DPI */
   &:checked::after {
     content: "";
     inset: 0;
