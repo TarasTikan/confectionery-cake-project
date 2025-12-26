@@ -17,12 +17,27 @@ export const registerUser = createAsyncThunk(
   "auth/registerUser",
   async ({ email, password, name }, thunkAPI) => {
     try {
-      const { data } = await superbase.auth.signUp({
+      const { data, error } = await superbase.auth.signUp({
         email,
         password,
         options: { data: { name } },
       });
-      return data;
+      if (error) throw error;
+      const user = data.user;
+      if (!user) {
+        throw new Error("User was not created");
+      }
+
+      const { error: profileError } = await superbase.from("profiles").insert({
+        id: user.id,
+        name,
+        email,
+      });
+      if (profileError) throw profileError;
+      return {
+        user,
+        session: data.session ?? null,
+      };
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
     }
