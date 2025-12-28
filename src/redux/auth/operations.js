@@ -37,8 +37,7 @@ export const registerUser = createAsyncThunk(
       if (!user) {
         throw new Error("User was not created");
       }
-
-      const { error: profileError, data: profileData } = await superbase
+      const {data: profileData, error: profileError,} = await superbase
         .from("profiles")
         .insert({
           id: user.id,
@@ -47,6 +46,7 @@ export const registerUser = createAsyncThunk(
         })
         .select("*")
         .single();
+
       if (profileError) throw profileError;
       return {
         user,

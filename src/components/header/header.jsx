@@ -51,7 +51,7 @@ export const SideBar = () => {
   const handleLogout = () => {
    dispatch(logoutUser());
   }
-  console.log(isUser)
+
   return (
     <>
       <Header>
