@@ -18,34 +18,67 @@ import {
   WrapPrice,
   ClearButton,
   TitlePrice,
-  DeleteItemsBtn
+  DeleteItemsBtn,
 } from "./modalCart.styled";
-import { getCartItems, openCartItems } from "../../redux/selectors";
 import {
-  incrementQuantity,
-  decrementQuantity,
+  getCartItems,
+  getMode,
+  openCartItems,
+} from "../../redux/cart/selectors";
+import {
+  clearCartAuth,
+  clearCartGuest,
+  decrementQuantityGuest,
+  incrementQuantityGuest,
+  removeItemFromCartAuth,
+  removeItemFromCartGuest,
   toggleCart,
-  clearCart,
-  deleteCart,
-} from "../../redux/cartSlice";
+  updateCartItemQtyAuth,
+} from "../../redux/cart/operations";
 import { useEffect } from "react";
 import { DeleteIcon } from "../../icons/deleteIcon";
 
 export const ModalCart = () => {
   const isOpenCart = useSelector(openCartItems);
   const cart = useSelector(getCartItems);
+  const modeCart = useSelector(getMode);
   const dispatch = useDispatch();
-  const hadleDeleteItem = (item) => dispatch(deleteCart(item));
-  const handleIncrementQuantity = (item) => dispatch(incrementQuantity(item));
-  const handleDecrementQuantity = (item) => dispatch(decrementQuantity(item));
+  const hadleDeleteItem = (item) => {
+    if (modeCart === "guest") {
+      dispatch(removeItemFromCartGuest(item));
+    } else {
+      dispatch(removeItemFromCartAuth(item));
+    }
+  };
+
+  const handleIncrementQuantity = (item) => {
+    if (modeCart === "guest") {
+      dispatch(incrementQuantityGuest(item));
+    } else {
+      dispatch(updateCartItemQtyAuth(item, 1));
+    }
+  };
+  const handleDecrementQuantity = (item) => {
+    if (modeCart === "guest") {
+      dispatch(decrementQuantityGuest(item));
+    } else {
+      dispatch(updateCartItemQtyAuth(item, 1));
+    }
+  };
+  const handleClearCart = () => {
+    if (modeCart === "guest") {
+      dispatch(clearCartGuest());
+    } else {
+      dispatch(clearCartAuth());
+    }
+  };
   const handleClouse = () => dispatch(toggleCart(!isOpenCart));
-  const handleClearCart = () => dispatch(clearCart());
 
   useEffect(() => {
     if (isOpenCart && cart.length === 0) {
       dispatch(toggleCart(!isOpenCart));
     }
-  }, [cart, isOpenCart,dispatch]);
+  }, [cart, isOpenCart, dispatch]);
 
   return (
     <CartOverlay open={isOpenCart} onClick={handleClouse}>
@@ -57,14 +90,24 @@ export const ModalCart = () => {
         <CartList>
           {cart.map((item) => (
             <CartItem key={item.id}>
-              <ItemImage src={item.image} />
+              <ItemImage src={item.image_url} />
               <ItemInfo>
-                <ItemName to={`/menu/allProducts/${item.id}`} onClick={handleClouse}>{item.title}</ItemName>
+                <ItemName
+                  to={`/menu/allProducts/${item.id}`}
+                  onClick={handleClouse}
+                >
+                  {item.title}
+                </ItemName>
                 <ItemPrice>{item.price} грн</ItemPrice>
               </ItemInfo>
               <QuantityControl>
-                <DeleteItemsBtn type="button" onClick={()=> hadleDeleteItem(item.id)}><DeleteIcon/></DeleteItemsBtn>
-                
+                <DeleteItemsBtn
+                  type="button"
+                  onClick={() => hadleDeleteItem(item.id)}
+                >
+                  <DeleteIcon />
+                </DeleteItemsBtn>
+
                 <QuantityBtn
                   type="button"
                   onClick={() => handleDecrementQuantity(item)}
@@ -83,10 +126,21 @@ export const ModalCart = () => {
           ))}
         </CartList>
         <WrapPrice>
-        <TitlePrice>Загальна сума: {cart.reduce((total, item) => total + item.price * item.quantity, 0)} грн</TitlePrice>
-        <ClearButton type="button" onClick={handleClearCart}>Очистити корзину</ClearButton>
+          <TitlePrice>
+            Загальна сума:{" "}
+            {cart.reduce(
+              (total, item) => total + item.price * item.quantity,
+              0
+            )}{" "}
+            грн
+          </TitlePrice>
+          <ClearButton type="button" onClick={handleClearCart}>
+            Очистити корзину
+          </ClearButton>
         </WrapPrice>
-        <CheckoutButton to={`/order`} onClick={handleClouse}>Оформити замовлення</CheckoutButton>
+        <CheckoutButton to={`/order`} onClick={handleClouse}>
+          Оформити замовлення
+        </CheckoutButton>
         <ContinueButton type="button" onClick={handleClouse}>
           Повернутись до покупок
         </ContinueButton>

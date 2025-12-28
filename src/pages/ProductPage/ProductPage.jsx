@@ -1,29 +1,36 @@
 import { useParams } from "react-router-dom"
 import { useDispatch, useSelector } from "react-redux"
-import { getCartItems, openCartItems } from "../../redux/selectors"
+import { getCartItems, openCartItems } from "../../redux/cart/selectors"
 import { getProducts } from "../../redux/products/selectors"
 import { ProductPageSection, Container, WrapInfo, ImageDessert, ProductTitle, ProductPrice, ProductShortDescription, ProductInfo, ButtonsWrap, AddToCartBtn, BuyNowBtn } from "./ProductPage.styled"
 import { RelatedProducts } from "../../components/RelatedProducts/RelatedProducts"
-import { addCart, toggleCart } from "../../redux/cartSlice"
 import { FooterCake } from "../../components/footer/footer"
+import { getCartId, getMode } from "../../redux/cart/selectors"
+import { addItemToCartAuth, addItemToCartGuest, toggleCart } from "../../redux/cart/operations"
 
 export const ProductPage = () => {
     const { id } = useParams()
     const products = useSelector(getProducts)
     const productFind = products.find(item => item.id === id)
-
+  const modeCart = useSelector(getMode)
+  const cartId = useSelector(getCartId)
 
     const dispatch = useDispatch();
     const cart = useSelector(getCartItems);
     const isOpenCart = useSelector(openCartItems);
     const handleToggleHover = () => dispatch(toggleCart(!isOpenCart));
     const handleCakesCart = (product) => {
-        if (cart.find((item) => item.id === product.id)) {
-            dispatch(addCart({ ...product, quantity: 1 }));
-            return;
-        }
-        dispatch(addCart(product));
+      if(modeCart === "guest") {
+  if (cart.find((item) => item.id === product.id)) {
+        dispatch(addItemToCartGuest(product));
+        return;
+      }
+      dispatch(addItemToCartGuest(product));
+      }else {
+         dispatch(addItemToCartAuth(cartId, product));
+      }
     };
+  
 
     return (
         <>

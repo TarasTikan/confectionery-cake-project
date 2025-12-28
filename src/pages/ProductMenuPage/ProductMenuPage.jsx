@@ -17,16 +17,15 @@ import {
 import { useDispatch, useSelector } from "react-redux";
 import {
   getCategory,
-  getCartItems,
-  openCartItems,
 } from "../../redux/selectors";
 import { getProducts } from "../../redux/products/selectors";
 import { categoryProducts } from "../../redux/filter/filtersSlice";
 import { productsCategory } from "../../redux/constans";
-import { addCart, toggleCart } from "../../redux/cartSlice";
 import { useEffect } from "react";
 import { ModalCart } from "../../components/modalCart/modalCart";
 import { Link } from "react-router-dom";
+import { getCartId, getCartItems, getMode, openCartItems } from "../../redux/cart/selectors";
+import { addItemToCartAuth, addItemToCartGuest, toggleCart } from "../../redux/cart/operations";
 
 const getVisibleProducts = (product, category) => {
   switch (category) {
@@ -49,6 +48,8 @@ export const ProductMenuPage = () => {
   const category = useSelector(getCategory);
   const cart = useSelector(getCartItems);
   const isOpenCart = useSelector(openCartItems);
+    const modeCart = useSelector(getMode)
+     const cartId = useSelector(getCartId)
   const dispatch = useDispatch();
   const visibleProducts = getVisibleProducts(products, category);
 
@@ -66,11 +67,15 @@ export const ProductMenuPage = () => {
   const handleCategoryCakes = (type) => dispatch(categoryProducts(type));
 
   const handleCakesCart = (product) => {
-    if (cart.find((item) => item.id === product.id)) {
-      dispatch(addCart({ ...product, quantity: 1 }));
+    if(modeCart === "guest") {
+if (cart.find((item) => item.id === product.id)) {
+      dispatch(addItemToCartGuest(product));
       return;
     }
-    dispatch(addCart(product));
+    dispatch(addItemToCartGuest(product));
+    }else {
+       dispatch(addItemToCartAuth(cartId, product));
+    }
   };
 
   return (

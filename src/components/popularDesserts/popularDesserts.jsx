@@ -25,21 +25,28 @@ import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import { useDispatch, useSelector } from "react-redux";
 import { getCartItems, openCartItems } from "../../redux/selectors";
-import { addCart, toggleCart } from "../../redux/cartSlice";
 import { ModalCart } from "../modalCart/modalCart";
 import { getProductsPopular } from "../../redux/products/selectors";
+import { addItemToCartAuth, addItemToCartGuest, toggleCart } from "../../redux/cart/operations";
+import { getCartId, getMode } from "../../redux/cart/selectors";
 export const PopularDesserts = () => {
   const dispatch = useDispatch();
   const popularProducts = useSelector(getProductsPopular);
   const cart = useSelector(getCartItems);
+    const modeCart = useSelector(getMode);
+      const cartId = useSelector(getCartId)
   const isOpenCart = useSelector(openCartItems);
   const handleToggleHover = () => dispatch(toggleCart(!isOpenCart));
   const handleCakesCart = (product) => {
-    if (cart.find((item) => item.id === product.id)) {
-      dispatch(addCart({ ...product, quantity: 1 }));
+    if(modeCart === "guest") {
+if (cart.find((item) => item.id === product.id)) {
+      dispatch(addItemToCartGuest(product));
       return;
     }
-    dispatch(addCart(product));
+    dispatch(addItemToCartGuest(product));
+    }else {
+       dispatch(addItemToCartAuth(cartId, product));
+    }
   };
 
   const swiperRef = useRef(null);

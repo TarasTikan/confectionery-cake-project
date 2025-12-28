@@ -1,9 +1,10 @@
 import { useParams } from "react-router-dom"
 import { RelatedButton, RelatedCard, RelatedImage, RelatedList, RelatedName, RelatedPrice, RelatedTitle, WrapInfo } from "./RelatedProducts.styled"
 import { useDispatch, useSelector } from "react-redux"
-import { getCartItems, openCartItems } from "../../redux/selectors"
+import { getCartId, getCartItems, getMode, openCartItems } from "../../redux/cart/selectors"
 import { getProducts } from "../../redux/products/selectors"
-import { addCart, toggleCart } from "../../redux/cartSlice"
+
+import { addItemToCartAuth, addItemToCartGuest, toggleCart } from "../../redux/cart/operations"
 
 
 export const RelatedProducts = () => {
@@ -12,14 +13,20 @@ export const RelatedProducts = () => {
   const dispatch = useDispatch();
   const productFind = products.find(item => item.id === id)
   const cart = useSelector(getCartItems);
+  const modeCart = useSelector(getMode)
+  const cartId = useSelector(getCartId)
   const isOpenCart = useSelector(openCartItems);
   const handleToggleHover = () => dispatch(toggleCart(!isOpenCart));
   const handleCakesCart = (product) => {
-    if (cart.find((item) => item.id === product.id)) {
-      dispatch(addCart({ ...product, quantity: 1 }));
+    if(modeCart === "guest") {
+if (cart.find((item) => item.id === product.id)) {
+      dispatch(addItemToCartGuest(product));
       return;
     }
-    dispatch(addCart(product));
+    dispatch(addItemToCartGuest(product));
+    }else {
+       dispatch(addItemToCartAuth(cartId, product));
+    }
   };
 
 

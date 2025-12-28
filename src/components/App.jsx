@@ -14,6 +14,7 @@ import { RegisterPage } from "../pages/RegisterPage/RegisterPage.jsx";
 import { LoginPage } from "../pages/LoginPage/LoginPage.jsx";
 import { fetchPopularProducts, fetchProducts } from "../redux/products/operations.js";
 import { fetchTaste } from "../redux/tastes/operations.js";
+import { fetchCartItems, getOrCreateCart, initModeCart } from "../redux/cart/operations.js";
 
 function App() {
   const dispatch = useDispatch();
@@ -22,7 +23,10 @@ function App() {
     dispatch(initAuth());
     dispatch(fetchProducts());
     dispatch(fetchPopularProducts());
-    dispatch(fetchTaste())
+    dispatch(fetchTaste());
+    dispatch(initModeCart());
+    dispatch(getOrCreateCart());
+    dispatch(fetchCartItems());
   }, [dispatch]);
 
   return (

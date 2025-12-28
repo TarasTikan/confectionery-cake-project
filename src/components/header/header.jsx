@@ -21,8 +21,9 @@ import { Outlet } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { MobMenu } from "../MobMenu/MobMenu";
 import { useDispatch, useSelector } from "react-redux";
-import { getCartItems, openCartItems } from "../../redux/selectors";
-import { toggleCart } from "../../redux/cartSlice";
+import { getCartItems, openCartItems } from "../../redux/cart/selectors";
+
+import { toggleCart } from "../../redux/cart/operations"
 import { ModalCart } from "../modalCart/modalCart";
 import { selectAuthUser } from "../../redux/auth/selectors";
 import { UserIcon } from "../../icons/userIcon";
@@ -50,6 +51,7 @@ export const SideBar = () => {
   const handleLogout = () => {
    dispatch(logoutUser());
   }
+  console.log(isUser)
   return (
     <>
       <Header>
