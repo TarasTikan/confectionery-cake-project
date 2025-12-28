@@ -6,7 +6,17 @@ export const initAuth = createAsyncThunk(
   async (_, thunkAPI) => {
     try {
       const { data } = await superbase.auth.getSession();
-      return data.session ?? null;
+      const session = data.session;
+      if (!session) return { session: null, user: null, profile: null };
+      const user = session.user;
+
+      const { data: profileData, error: profileError } = await superbase
+        .from("profiles")
+        .select("*")
+        .eq("id", user.id)
+        .maybeSingle();
+      if (profileError) throw profileError;
+      return { session, user, profile: profileData };
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
     }
@@ -28,15 +38,20 @@ export const registerUser = createAsyncThunk(
         throw new Error("User was not created");
       }
 
-      const { error: profileError } = await superbase.from("profiles").insert({
-        id: user.id,
-        name,
-        email,
-      });
+      const { error: profileError, data: profileData } = await superbase
+        .from("profiles")
+        .insert({
+          id: user.id,
+          name,
+          email,
+        })
+        .select("*")
+        .single();
       if (profileError) throw profileError;
       return {
         user,
         session: data.session ?? null,
+        profile: profileData,
       };
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
@@ -48,11 +63,24 @@ export const loginUser = createAsyncThunk(
   "auth/loginUser",
   async ({ email, password }, thunkAPI) => {
     try {
-      const { data } = await superbase.auth.signInWithPassword({
+      const { data, error } = await superbase.auth.signInWithPassword({
         email,
         password,
       });
-      return data;
+      if (error) throw error;
+      const user = data.user;
+
+      if (!user) {
+        throw new Error("User was not created");
+      }
+
+      const { data: profileData } = await superbase
+        .from("profiles")
+        .select("*")
+        .eq("id", user.id)
+        .single();
+      const dataWithProfile = { ...data, profile: profileData };
+      return dataWithProfile;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
     }

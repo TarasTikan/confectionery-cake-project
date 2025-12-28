@@ -16,13 +16,12 @@ import {
 
 import { useDispatch, useSelector } from "react-redux";
 import {
-  getProducts,
   getCategory,
   getCartItems,
   openCartItems,
 } from "../../redux/selectors";
-
-import { categoryProducts } from "../../redux/filtersSlice";
+import { getProducts } from "../../redux/products/selectors";
+import { categoryProducts } from "../../redux/filter/filtersSlice";
 import { productsCategory } from "../../redux/constans";
 import { addCart, toggleCart } from "../../redux/cartSlice";
 import { useEffect } from "react";
@@ -146,7 +145,7 @@ export const ProductMenuPage = () => {
                 key={product.id}
               >
                 <Link to={`${product.id}`}>
-                <CakeImage src={product.image} />
+                <CakeImage src={product.image_url} />
                 </Link>
                 <WrapCakeInfo>
                   <CakeName to={`${product.id}`}>{product.title}</CakeName>

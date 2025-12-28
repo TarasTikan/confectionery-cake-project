@@ -1,8 +1,4 @@
 import { Link } from "react-router-dom";
-import CakeImg from "../../img/cake.jpg";
-import CapCakeImg from "../../img/capcake.jpg";
-import MakaronImg from "../../img/makaron.jpg";
-import TartImg from "../../img/tart.jpg";
 import {
   MenuSection,
   Container,
@@ -15,7 +11,7 @@ import {
   WrapInfo,
 } from "./menu.styled";
 import { useDispatch } from "react-redux";
-import { categoryProducts } from "../../redux/filtersSlice";
+import { categoryProducts } from "../../redux/filter/filtersSlice";
 import { productsCategory } from "../../redux/constans";
 
 export const Menu = () => {
@@ -49,7 +45,7 @@ export const Menu = () => {
                 <MenuName>Торти</MenuName>
                 <MenuBtn>Детальніше</MenuBtn>
               </WrapInfo>
-              <MenuCardImage src={CakeImg} alt="торт" />
+              <MenuCardImage src="https://cgqujdwdsgcvzfqrsgmu.supabase.co/storage/v1/object/public/products/pageImages/cake.jpg" alt="торт" />
             </Link>
           </MenuCard>
           <MenuCard
@@ -68,7 +64,7 @@ export const Menu = () => {
                 <MenuName>Капкейки</MenuName>
                 <MenuBtn>Детальніше</MenuBtn>
               </WrapInfo>
-              <MenuCardImage src={CapCakeImg} alt="Капкейки" />
+              <MenuCardImage src="https://cgqujdwdsgcvzfqrsgmu.supabase.co/storage/v1/object/public/products/pageImages/capcake.jpg" alt="Капкейки" />
             </Link>
           </MenuCard>
           <MenuCard
@@ -87,7 +83,7 @@ export const Menu = () => {
                 <MenuName>Макарони</MenuName>
                 <MenuBtn>Детальніше</MenuBtn>
               </WrapInfo>
-              <MenuCardImage src={MakaronImg} alt="Макарони" />
+              <MenuCardImage src="https://cgqujdwdsgcvzfqrsgmu.supabase.co/storage/v1/object/public/products/pageImages/makaron.jpg" alt="Макарони" />
             </Link>
           </MenuCard>
           <MenuCard
@@ -106,7 +102,7 @@ export const Menu = () => {
                 <MenuName>Тарти</MenuName>
                 <MenuBtn>Детальніше</MenuBtn>
               </WrapInfo>
-              <MenuCardImage src={TartImg} alt="Тарти" />
+              <MenuCardImage src="https://cgqujdwdsgcvzfqrsgmu.supabase.co/storage/v1/object/public/products/pageImages/tart.jpg" alt="Тарти" />
             </Link>
           </MenuCard>
         </MenuList>

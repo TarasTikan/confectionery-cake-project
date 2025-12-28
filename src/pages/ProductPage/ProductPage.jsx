@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom"
 import { useDispatch, useSelector } from "react-redux"
-import { getCartItems, getProducts, openCartItems } from "../../redux/selectors"
+import { getCartItems, openCartItems } from "../../redux/selectors"
+import { getProducts } from "../../redux/products/selectors"
 import { ProductPageSection, Container, WrapInfo, ImageDessert, ProductTitle, ProductPrice, ProductShortDescription, ProductInfo, ButtonsWrap, AddToCartBtn, BuyNowBtn } from "./ProductPage.styled"
 import { RelatedProducts } from "../../components/RelatedProducts/RelatedProducts"
 import { addCart, toggleCart } from "../../redux/cartSlice"
@@ -9,7 +10,7 @@ import { FooterCake } from "../../components/footer/footer"
 export const ProductPage = () => {
     const { id } = useParams()
     const products = useSelector(getProducts)
-    const productFind = products.find(item => item.id === Number(id))
+    const productFind = products.find(item => item.id === id)
 
 
     const dispatch = useDispatch();
@@ -24,21 +25,20 @@ export const ProductPage = () => {
         dispatch(addCart(product));
     };
 
-
     return (
         <>
         <main>
         <ProductPageSection>
             <Container>
                 <WrapInfo>
-                    <ImageDessert src={productFind.image} alt={productFind.description} />
+                    <ImageDessert src={productFind?.image_url} alt={productFind?.description} />
                     <div>
-                        <ProductTitle>{productFind.title}</ProductTitle>
-                        <ProductPrice>{productFind.price} грн</ProductPrice>
-                        <ProductShortDescription>{productFind.description}</ProductShortDescription>
-                        <ProductInfo><strong>Об'єм:</strong> 1 кг</ProductInfo>
-                        <ProductInfo><strong>Смак:</strong> {productFind.taste}</ProductInfo>
-                        <ProductInfo><strong>Категорія:</strong> {productFind.category}</ProductInfo>
+                        <ProductTitle>{productFind?.title}</ProductTitle>
+                        <ProductPrice>{productFind?.price} грн</ProductPrice>
+                        <ProductShortDescription>{productFind?.description}</ProductShortDescription>
+                        <ProductInfo><strong>Об'єм:</strong> {productFind?.weight}</ProductInfo>
+                        <ProductInfo><strong>Смак:</strong> {productFind?.taste}</ProductInfo>
+                        <ProductInfo><strong>Категорія:</strong> {productFind?.category}</ProductInfo>
                         <ButtonsWrap>
                             <AddToCartBtn type="button" onClick={() => {
                                 handleCakesCart(productFind);

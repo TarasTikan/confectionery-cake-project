@@ -6,6 +6,7 @@ const initialState = {
   isLoading: false,
   error: null,
   isInitialized: false, 
+  profile: null,
 };
 
 const authSlice = createSlice({
@@ -21,6 +22,7 @@ const authSlice = createSlice({
         state.isLoading = false;
         state.session = action.payload?.session;
         state.user = action.payload?.user ?? null;
+        state.profile = action.payload?.profile ?? null;
       })
         .addCase(registerUser.rejected, (state, action) => {
         state.isLoading = false;
@@ -34,6 +36,7 @@ const authSlice = createSlice({
             state.isLoading = false;
             state.session = action.payload?.session;
             state.user = action.payload?.user ?? null;
+            state.profile = action.payload?.profile ?? null;
         })
         .addCase(loginUser.rejected, (state, action) => {
             state.isLoading = false;
@@ -48,6 +51,7 @@ const authSlice = createSlice({
             state.session = action.payload?.session;
             state.user = action.payload?.user ?? null;
             state.isInitialized = true;
+            state.profile = action.payload?.profile ?? null;
         })
         .addCase(initAuth.rejected, (state, action) => {
             state.isLoading = false;
@@ -56,6 +60,7 @@ const authSlice = createSlice({
         }).addCase(logoutUser.fulfilled, (state) => {
             state.session = null;
             state.user = null;
+            state.profile = null;
         });
   },
 });

@@ -1,7 +1,8 @@
 import { useParams } from "react-router-dom"
 import { RelatedButton, RelatedCard, RelatedImage, RelatedList, RelatedName, RelatedPrice, RelatedTitle, WrapInfo } from "./RelatedProducts.styled"
 import { useDispatch, useSelector } from "react-redux"
-import { getCartItems, getProducts, openCartItems } from "../../redux/selectors"
+import { getCartItems, openCartItems } from "../../redux/selectors"
+import { getProducts } from "../../redux/products/selectors"
 import { addCart, toggleCart } from "../../redux/cartSlice"
 
 
@@ -9,7 +10,7 @@ export const RelatedProducts = () => {
   const { id } = useParams()
   const products = useSelector(getProducts)
   const dispatch = useDispatch();
-  const productFind = products.find(item => item.id === Number(id))
+  const productFind = products.find(item => item.id === id)
   const cart = useSelector(getCartItems);
   const isOpenCart = useSelector(openCartItems);
   const handleToggleHover = () => dispatch(toggleCart(!isOpenCart));
@@ -29,7 +30,7 @@ export const RelatedProducts = () => {
         <RelatedList>
           {relatedProducts.map(item => (
             <RelatedCard key={item.id}  >
-              <RelatedImage src={item.image} alt="торт" />
+              <RelatedImage src={item?.image_url} alt="торт" />
               <WrapInfo>
                 <RelatedName to={`/menu/allProducts/${item.id}`}>{item.title}</RelatedName>
                 <RelatedPrice>{item.price} грн</RelatedPrice>

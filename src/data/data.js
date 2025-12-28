@@ -11,89 +11,11 @@ import tasteSnikers from "../img/tasteSnikers.jpg";
 import tasteStrawberry from "../img/tasteStrawberry.jpg";
 import tasteStrawberryMango from "../img/tasteStrawberryMango.jpg";
 
-import product1 from "../img/productsImg/product1.jpg";
-import product2 from "../img/productsImg/product2.jpg";
-import product3 from "../img/productsImg/product3.jpg";
-import product4 from "../img/productsImg/product4.jpg";
-import product5 from "../img/productsImg/product5.jpg";
-import product6 from "../img/productsImg/product6.jpg";
-import product7 from "../img/productsImg/product7.jpg";
-import product8 from "../img/productsImg/product8.jpg";
-import product9 from "../img/productsImg/product9.jpg";
-import product10 from "../img/productsImg/product10.jpg";
-import product11 from "../img/productsImg/product11.jpg";
-import product12 from "../img/productsImg/product12.jpg";
-import product13 from "../img/productsImg/product13.jpg";
-import product14 from "../img/productsImg/product14.jpg";
-import product15 from "../img/productsImg/product15.jpg";
-import product16 from "../img/productsImg/product16.jpg";
-import product18 from "../img/productsImg/products18.jpg";
-import product19 from "../img/productsImg/products19.jpg";
-import product20 from "../img/productsImg/products20.jpg";
-import product21 from "../img/productsImg/products21.jpg";
-import product22 from "../img/productsImg/products22.jpg";
-import product23 from "../img/productsImg/products23.jpg";
-import product24 from "../img/productsImg/products24.jpg";
-import product25 from "../img/productsImg/products25.jpg";
-import product26 from "../img/productsImg/products26.jpg";
-import product27 from "../img/productsImg/products27.jpg";
-import product28 from "../img/productsImg/products28.jpg";
-import product29 from "../img/productsImg/products29.jpg";
-import product30 from "../img/productsImg/products30.jpg";
-import product31 from "../img/productsImg/products31.jpg";
-import product32 from "../img/productsImg/products32.jpg";
-import product33 from "../img/productsImg/products33.jpg";
-import product34 from "../img/productsImg/products34.jpg";
-import product35 from "../img/productsImg/products35.jpg";
-import product36 from "../img/productsImg/products36.jpg";
-import product37 from "../img/productsImg/products37.jpg";
-import product38 from "../img/productsImg/products38.jpg";
-import product39 from "../img/productsImg/products39.jpg";
-import product40 from "../img/productsImg/products40.jpg";
-import product41 from "../img/productsImg/products41.jpg";
-import product42 from "../img/productsImg/product42.jpg";
-import product43 from "../img/productsImg/product43.jpg";
-import product44 from "../img/productsImg/product44.jpg";
-import product45 from "../img/productsImg/product45.jpg";
-import product46 from "../img/productsImg/product46.jpg";
-import product47 from "../img/productsImg/product47.jpg";
-import product48 from "../img/productsImg/product48.jpg";
-import product49 from "../img/productsImg/product49.jpg";
-import product50 from "../img/productsImg/product50.jpg";
-import product51 from "../img/productsImg/product51.jpg";
-import product52 from "../img/productsImg/product52.jpg";
-import product53 from "../img/productsImg/product53.jpg";
-import product54 from "../img/productsImg/product54.jpg";
-import product55 from "../img/productsImg/product55.jpg";
-import product56 from "../img/productsImg/product56.jpg";
-import product57 from "../img/productsImg/product57.jpg";
-import product58 from "../img/productsImg/product58.jpg";
-import product59 from "../img/productsImg/product59.jpg";
-import product60 from "../img/productsImg/product60.jpg";
-import product61 from "../img/productsImg/product61.jpg";
-import product62 from "../img/productsImg/product62.jpg";
-import product63 from "../img/productsImg/product63.jpg";
-
-import product64 from "../img/productsImg/product64.jpg";
-import product65 from "../img/productsImg/product65.jpg";
-import product66 from "../img/productsImg/product66.jpg";
-import product67 from "../img/productsImg/product67.jpg";
-import product68 from "../img/productsImg/product68.jpg";
-import product69 from "../img/productsImg/product69.jpg";
-import product70 from "../img/productsImg/product70.jpg";
-import product71 from "../img/productsImg/product71.jpg";
-import product72 from "../img/productsImg/product72.jpg";
-import product73 from "../img/productsImg/product73.jpg";
-import product74 from "../img/productsImg/product74.jpg";
-import product75 from "../img/productsImg/product75.jpg";
-import product76 from "../img/productsImg/product76.jpg";
-import product77 from "../img/productsImg/product77.jpg";
-import product78 from "../img/productsImg/product78.jpg";
 export const cakes = [
   {
     id: 122412,
     title: "Шоколадний дрип",
-    image: product1,
+    image_url: "https://cgqujdwdsgcvzfqrsgmu.supabase.co/storage/v1/object/public/products/cakes/product1.jpgs",
     description: "Ніжний шоколадний крем з густим ганашем та шоколадними завитками.",
     taste: "шоколад",
     type: "cakes",
@@ -105,7 +27,7 @@ export const cakes = [
   {
     id: 2,
     title: "Полуничний дрип",
-    image: product2,
+    image_url: "https://cgqujdwdsgcvzfqrsgmu.supabase.co/storage/v1/object/public/products/cakes/product2.jpg",
     description: "Свіжі полуниці з ягідним соусом та ванільним кремом.",
     taste: "полуниця",
     type: "cakes",
@@ -117,7 +39,7 @@ export const cakes = [
   {
     id: 3,
     title: "Чорничний мус",
-    image: product3,
+   image_url: "https://cgqujdwdsgcvzfqrsgmu.supabase.co/storage/v1/object/public/products/cakes/product3.jpg",
     description: "Легкий чорничний мус на пісочній основі з глянцевим дрипом.",
     taste: "чорниця",
     type: "cakes",
@@ -129,7 +51,7 @@ export const cakes = [
   {
     id: 4,
     title: "Подвійний шоколад",
-    image: product4,
+   image_url: "https://cgqujdwdsgcvzfqrsgmu.supabase.co/storage/v1/object/public/products/cakes/product4.jpg",
     description: "Густий шоколадний крем та какао-трюфелі зверху.",
     taste: "шоколад",
     type: "cakes",
@@ -141,7 +63,7 @@ export const cakes = [
    {
     id: 24122101,
     title: "Жовтий класичний макарон",
-    image: product42,
+    image_url: "https://cgqujdwdsgcvzfqrsgmu.supabase.co/storage/v1/object/public/products/macarons/product42.jpg",
     description: "Ніжний мигдальний макарон з кремовою лимонною начинкою.",
     taste: "лимон",
     type: "macarons",
@@ -152,7 +74,7 @@ export const cakes = [
   {
     id: 24122102,
     title: "Апельсиновий макарон",
-    image: product43,
+    image_url: "https://cgqujdwdsgcvzfqrsgmu.supabase.co/storage/v1/object/public/products/macarons/product43.jpg",
     description: "Яскравий апельсиновий макарон з освіжаючим цитрусовим кремом.",
     taste: "апельсин",
     type: "macarons",
@@ -163,7 +85,7 @@ export const cakes = [
   {
     id: 24122103,
     title: "Фісташковий макарон",
-    image: product44,
+    image_url: "https://cgqujdwdsgcvzfqrsgmu.supabase.co/storage/v1/object/public/products/macarons/product44.jpg",
     description: "Традиційний фісташковий макарон з насиченим кремом.",
     taste: "фісташка",
     type: "macarons",
@@ -174,7 +96,7 @@ export const cakes = [
   {
     id: 24122104,
     title: "Шоколадно-ванільний макарон",
-    image: product45,
+    image_url: "https://cgqujdwdsgcvzfqrsgmu.supabase.co/storage/v1/object/public/products/macarons/product45.jpg",
     description: "Ніжна ванільна начинка у поєднанні з темним шоколадним ганашем.",
     taste: "шоколад",
     type: "macarons",
@@ -185,7 +107,7 @@ export const cakes = [
   {
     id: 24122105,
     title: "Полунично-лимонний макарон",
-    image: product46,
+    image_url: "https://cgqujdwdsgcvzfqrsgmu.supabase.co/storage/v1/object/public/products/macarons/product46.jpg",
     description: "Ніжна полунична нотка з яскравим лимонним кремом усередині.",
     taste: "полуниця",
     type: "macarons",
@@ -196,7 +118,7 @@ export const cakes = [
   {
     id: 24122106,
     title: "М'ятно-апельсиновий макарон",
-    image: product47,
+    image_url: "https://cgqujdwdsgcvzfqrsgmu.supabase.co/storage/v1/object/public/products/macarons/product47.jpg",
     description: "Екзотичний макарон з апельсиновим конфі та свіжим листочком м’яти.",
     taste: "апельсин",
     type: "macarons",
@@ -207,7 +129,7 @@ export const cakes = [
   {
     id: 24122107,
     title: "Фіолетовий макарон з шоколадом",
-    image: product48,
+    image_url: "https://cgqujdwdsgcvzfqrsgmu.supabase.co/storage/v1/object/public/products/macarons/product48.jpg",
     description: "Ніжний лавандовий макарон з білим кремом та шоколадним декором.",
     taste: "ваніль",
     type: "macarons",
@@ -218,7 +140,7 @@ export const cakes = [
   {
     id: 24122108,
     title: "Валентинів макарон",
-    image: product49,
+    image_url: "https://cgqujdwdsgcvzfqrsgmu.supabase.co/storage/v1/object/public/products/macarons/product49.jpg",
     description: "Полуничний макарон з серцем — ідеальний для романтичних моментів.",
     taste: "полуниця",
     type: "macarons",
@@ -229,7 +151,7 @@ export const cakes = [
   {
     id: 24122109,
     title: "Лимонний макарон з цукром",
-    image: product50,
+    image_url: "https://cgqujdwdsgcvzfqrsgmu.supabase.co/storage/v1/object/public/products/macarons/product50.jpg",
     description: "Яскравий лимонний макарон, посипаний хрумким цукром.",
     taste: "лимон",
     type: "macarons",
@@ -240,7 +162,7 @@ export const cakes = [
   {
     id: 24122110,
     title: "Класичний фісташковий макарон",
-    image: product51,
+    image_url: "https://cgqujdwdsgcvzfqrsgmu.supabase.co/storage/v1/object/public/products/macarons/product51.jpg",
     description: "Ніжний зелений макарон з густим фісташковим кремом.",
     taste: "фісташка",
     type: "macarons",
@@ -251,7 +173,7 @@ export const cakes = [
   {
     id: 5,
     title: "Малиновий мус",
-    image: product5,
+    image_url: "https://cgqujdwdsgcvzfqrsgmu.supabase.co/storage/v1/object/public/products/cakes/product5.jpg",
     description: "Яскравий малиновий мус з ягідним соусом.",
     taste: "малина",
     type: "cakes",
@@ -263,7 +185,7 @@ export const cakes = [
   {
     id: 6,
     title: "Лимонний десерт",
-    image: product6,
+    image_url: "https://cgqujdwdsgcvzfqrsgmu.supabase.co/storage/v1/object/public/products/cakes/product6.jpg",
     description: "Ніжний лимонний мус зі свіжими цитрусовими нотками.",
     taste: "лимон",
     type: "cakes",
@@ -275,7 +197,7 @@ export const cakes = [
   {
     id: 7,
     title: "Шоколадний торт з трюфелями",
-    image: product7,
+    image_url: "https://cgqujdwdsgcvzfqrsgmu.supabase.co/storage/v1/object/public/products/cakes/product7.jpg",
     description: "Повітряний шоколадний крем та какао-трюфелі зверху.",
     taste: "шоколад",
     type: "cakes",
@@ -287,7 +209,7 @@ export const cakes = [
   {
     id: 8,
     title: "Японський полуничний",
-    image: product8,
+    image_url: "https://cgqujdwdsgcvzfqrsgmu.supabase.co/storage/v1/object/public/products/cakes/product8.jpg",
     description: "Суфле-крем та цільні ягоди полуниці.",
     taste: "полуниця",
     type: "cakes",
@@ -299,7 +221,7 @@ export const cakes = [
   {
     id: 12,
     title: "Minecraft Block",
-    image: product12,
+    image_url: "https://cgqujdwdsgcvzfqrsgmu.supabase.co/storage/v1/object/public/products/cakes/product12.jpg",
     description: "Торт у стилі Minecraft, повністю у вигляді блоку.",
     taste: "ваніль",
     type: "cakes",
@@ -377,7 +299,7 @@ export const products = [
   {
     id: 122412,
     title: "Шоколадний дрип",
-    image: product1,
+   image_url: "https://cgqujdwdsgcvzfqrsgmu.supabase.co/storage/v1/object/public/products/cakes/product1.jpg",
     description: "Ніжний шоколадний крем з густим ганашем та шоколадними завитками.",
     taste: "шоколад",
     type: "cakes",
@@ -389,7 +311,7 @@ export const products = [
   {
     id: 2,
     title: "Полуничний дрип",
-    image: product2,
+   image_url: "https://cgqujdwdsgcvzfqrsgmu.supabase.co/storage/v1/object/public/products/cakes/product2.jpg",
     description: "Свіжі полуниці з ягідним соусом та ванільним кремом.",
     taste: "полуниця",
     type: "cakes",
@@ -401,7 +323,7 @@ export const products = [
   {
     id: 3,
     title: "Чорничний мус",
-    image: product3,
+    image_url: "https://cgqujdwdsgcvzfqrsgmu.supabase.co/storage/v1/object/public/products/cakes/product3.jpg",
     description: "Легкий чорничний мус на пісочній основі з глянцевим дрипом.",
     taste: "чорниця",
     type: "cakes",
@@ -413,7 +335,7 @@ export const products = [
   {
     id: 4,
     title: "Подвійний шоколад",
-    image: product4,
+    image_url: "https://cgqujdwdsgcvzfqrsgmu.supabase.co/storage/v1/object/public/products/cakes/product4.jpg",
     description: "Густий шоколадний крем та какао-трюфелі зверху.",
     taste: "шоколад",
     type: "cakes",
@@ -425,7 +347,7 @@ export const products = [
   {
     id: 5,
     title: "Малиновий мус",
-    image: product5,
+    image_url: "https://cgqujdwdsgcvzfqrsgmu.supabase.co/storage/v1/object/public/products/cakes/product5.jpg",
     description: "Яскравий малиновий мус з ягідним соусом.",
     taste: "малина",
     type: "cakes",
@@ -437,7 +359,7 @@ export const products = [
   {
     id: 6,
     title: "Лимонний десерт",
-    image: product6,
+    image_url: "https://cgqujdwdsgcvzfqrsgmu.supabase.co/storage/v1/object/public/products/cakes/product6.jpg",
     description: "Ніжний лимонний мус зі свіжими цитрусовими нотками.",
     taste: "лимон",
     type: "cakes",
@@ -449,7 +371,7 @@ export const products = [
   {
     id: 7,
     title: "Шоколадний торт з трюфелями",
-    image: product7,
+    image_url: "https://cgqujdwdsgcvzfqrsgmu.supabase.co/storage/v1/object/public/products/cakes/product7.jpg",
     description: "Повітряний шоколадний крем та какао-трюфелі зверху.",
     taste: "шоколад",
     type: "cakes",
@@ -461,7 +383,7 @@ export const products = [
   {
     id: 8,
     title: "Японський полуничний",
-    image: product8,
+    image_url: "https://cgqujdwdsgcvzfqrsgmu.supabase.co/storage/v1/object/public/products/cakes/product8.jpg",
     description: "Суфле-крем та цільні ягоди полуниці.",
     taste: "полуниця",
     type: "cakes",
@@ -473,7 +395,7 @@ export const products = [
   {
     id: 9,
     title: "Фісташковий преміум",
-    image: product9,
+    image_url: "https://cgqujdwdsgcvzfqrsgmu.supabase.co/storage/v1/object/public/products/cakes/product9.jpg",
     description: "Фісташковий крем і цілі фісташки зверху.",
     taste: "фісташка",
     type: "cakes",
@@ -485,7 +407,7 @@ export const products = [
   {
     id: 10,
     title: "Темний шоколад делюкс",
-    image: product10,
+    image_url: "https://cgqujdwdsgcvzfqrsgmu.supabase.co/storage/v1/object/public/products/cakes/product10.jpg",
     description: "Густий гірко-шоколадний крем з хрусткою крихтою.",
     taste: "шоколад",
     type: "cakes",
@@ -497,7 +419,7 @@ export const products = [
   {
     id: 11,
     title: "Ред Вельвет",
-    image: product11,
+    image_url: "https://cgqujdwdsgcvzfqrsgmu.supabase.co/storage/v1/object/public/products/cakes/product11.jpg",
     description: "Класичний Red Velvet з вершковим кремом.",
     taste: "ваніль + какао",
     type: "cakes",
@@ -509,7 +431,7 @@ export const products = [
   {
     id: 12,
     title: "Minecraft Block",
-    image: product12,
+    image_url: "https://cgqujdwdsgcvzfqrsgmu.supabase.co/storage/v1/object/public/products/cakes/product12.jpg",
     description: "Торт у стилі Minecraft, повністю у вигляді блоку.",
     taste: "ваніль",
     type: "cakes",
@@ -521,7 +443,7 @@ export const products = [
   {
     id: 14,
     title: "Counter Strike 2",
-    image: product13,
+    image_url: "https://cgqujdwdsgcvzfqrsgmu.supabase.co/storage/v1/object/public/products/cakes/product13.jpg",
     description: "Стильний торт з CS2 логотипом та зброєю.",
     taste: "шоколад",
     type: "cakes",
@@ -533,7 +455,7 @@ export const products = [
   {
     id: 15,
     title: "Harry Potter",
-    image: product14,
+    image_url: "https://cgqujdwdsgcvzfqrsgmu.supabase.co/storage/v1/object/public/products/cakes/product14.jpg",
     description: "Бордове покриття, окуляри, чарівна паличка та золотий HP логотип.",
     taste: "шоколад + ваніль",
     type: "cakes",
@@ -545,7 +467,7 @@ export const products = [
   {
     id: 16,
     title: "Акварельні квіти",
-    image: product15,
+    image_url: "https://cgqujdwdsgcvzfqrsgmu.supabase.co/storage/v1/object/public/products/cakes/product15.jpg",
     description: "Акварельний дизайн і кремові троянди.",
     taste: "ваніль",
     type: "cakes",
@@ -557,7 +479,7 @@ export const products = [
   {
     id: 17,
     title: "Морозивний дитячий",
-    image: product16,
+    image_url: "https://cgqujdwdsgcvzfqrsgmu.supabase.co/storage/v1/object/public/products/cakes/product16.jpg",
     description: "Веселий торт з кремовими морозивами та кольоровими посипками.",
     taste: "ваніль",
     type: "cakes",
@@ -569,7 +491,7 @@ export const products = [
   {
     id: 24124124124,
     title: "Шоколадний класичний",
-    image: product18,
+    image_url: "https://cgqujdwdsgcvzfqrsgmu.supabase.co/storage/v1/object/public/products/cupcakes/products18.jpg",
     description: "Насичений шоколадний капкейк з густим кремом із какао.",
     taste: "шоколад",
     type: "cupcakes",
@@ -580,7 +502,7 @@ export const products = [
   {
     id: 24124124125,
     title: "Полуничний крем",
-    image: product19,
+    image_url: "https://cgqujdwdsgcvzfqrsgmu.supabase.co/storage/v1/object/public/products/cupcakes/products19.jpg",
     description: "Повітряний ванільний капкейк з полуничним кремом.",
     taste: "полуниця",
     type: "cupcakes",
@@ -591,7 +513,7 @@ export const products = [
   {
     id: 24124124126,
     title: "Ваніль-шоколад дрип",
-    image: product20,
+    image_url: "https://cgqujdwdsgcvzfqrsgmu.supabase.co/storage/v1/object/public/products/cupcakes/products20.jpg",
     description: "Ванільний крем з шоколадним дрипом та плиточкою шоколаду.",
     taste: "ваніль-шоколад",
     type: "cupcakes",
@@ -602,7 +524,7 @@ export const products = [
   {
     id: 24124124127,
     title: "Полуничний з ягідкою",
-    image: product21,
+    image_url: "https://cgqujdwdsgcvzfqrsgmu.supabase.co/storage/v1/object/public/products/cupcakes/products21.jpg",
     description: "Ніжний капкейк зі свіжою полуницею та кремом з ягідним пюре.",
     taste: "полуниця",
     type: "cupcakes",
@@ -613,7 +535,7 @@ export const products = [
   {
     id: 24124124128,
     title: "Шоколад-карамель",
-    image: product22,
+    image_url: "https://cgqujdwdsgcvzfqrsgmu.supabase.co/storage/v1/object/public/products/cupcakes/products22.jpg",
     description: "Ванільний крем з шоколадною стружкою та завитком какао.",
     taste: "шоколад",
     type: "cupcakes",
@@ -624,7 +546,7 @@ export const products = [
   {
     id: 24124124129,
     title: "Рожеве серце",
-    image: product23,
+    image_url: "https://cgqujdwdsgcvzfqrsgmu.supabase.co/storage/v1/object/public/products/cupcakes/products23.jpg",
     description: "Ніжний рожевий крем з цукровим сердечком.",
     taste: "ваніль",
     type: "cupcakes",
@@ -635,7 +557,7 @@ export const products = [
   {
     id: 24124124130,
     title: "Карамельний мікс",
-    image: product24,
+    image_url: "https://cgqujdwdsgcvzfqrsgmu.supabase.co/storage/v1/object/public/products/cupcakes/products24.jpg",
     description: "Білий крем з карамельним дрипом, вафельними паличками та меренгою.",
     taste: "карамель",
     type: "cupcakes",
@@ -646,7 +568,7 @@ export const products = [
   {
     id: 24124124131,
     title: "Шоколадно-полуничний",
-    image: product25,
+    image_url: "https://cgqujdwdsgcvzfqrsgmu.supabase.co/storage/v1/object/public/products/cupcakes/products25.jpg",
     description: "Шоколадний капкейк з полуничним кремом та свіжою ягодою.",
     taste: "шоколад-полуниця",
     type: "cupcakes",
@@ -657,7 +579,7 @@ export const products = [
   {
     id: 24124124132,
     title: "Шоколадна ромашка",
-    image: product26,
+    image_url: "https://cgqujdwdsgcvzfqrsgmu.supabase.co/storage/v1/object/public/products/cupcakes/products26.jpg",
     description: "Шоколадний крем, прикрашений цукровою ромашкою.",
     taste: "шоколад",
     type: "cupcakes",
@@ -668,7 +590,7 @@ export const products = [
   {
     id: 24124124133,
     title: "Орео-шоколад",
-    image: product27,
+    image_url: "https://cgqujdwdsgcvzfqrsgmu.supabase.co/storage/v1/object/public/products/cupcakes/products27.jpg",
     description: "Шоколадний крем з печивом Oreo та дрипом із шоколаду.",
     taste: "орео",
     type: "cupcakes",
@@ -679,7 +601,7 @@ export const products = [
   {
     id: 24124124134,
     title: "Шоколадні вензелі",
-    image: product28,
+    image_url: "https://cgqujdwdsgcvzfqrsgmu.supabase.co/storage/v1/object/public/products/cupcakes/products28.jpg",
     description: "Густий шоколадний крем з декоративними жовтими вензелями.",
     taste: "шоколад",
     type: "cupcakes",
@@ -690,7 +612,7 @@ export const products = [
   {
     id: 24124124135,
     title: "Червоний оксамит серця",
-    image: product29,
+    image_url: "https://cgqujdwdsgcvzfqrsgmu.supabase.co/storage/v1/object/public/products/cupcakes/products29.jpg",
     description: "Red Velvet з білим кремом та цукровими червоними сердечками.",
     taste: "ред велвет",
     type: "cupcakes",
@@ -701,7 +623,7 @@ export const products = [
   {
     id: 24124124136,
     title: "Зірковий ваніль-шоколад",
-    image: product30,
+    image_url: "https://cgqujdwdsgcvzfqrsgmu.supabase.co/storage/v1/object/public/products/cupcakes/products30.jpg",
     description: "Капкейк із зіркою з шоколаду та ніжним кремом.",
     taste: "ваніль-шоколад",
     type: "cupcakes",
@@ -712,7 +634,7 @@ export const products = [
   {
     id: 24124124137,
     title: "Полуничка в горошок",
-    image: product31,
+    image_url: "https://cgqujdwdsgcvzfqrsgmu.supabase.co/storage/v1/object/public/products/cupcakes/products31.jpg",
     description: "Ванільний крем з цукровою полуничкою та кольоровими посипками.",
     taste: "полуниця",
     type: "cupcakes",
@@ -723,7 +645,7 @@ export const products = [
   {
     id: 24124124138,
     title: "Квітковий ваніль",
-    image: product32,
+    image_url: "https://cgqujdwdsgcvzfqrsgmu.supabase.co/storage/v1/object/public/products/cupcakes/products32.jpg",
     description: "Ванільний капкейк з квітами із цукрової мастики.",
     taste: "ваніль",
     type: "cupcakes",
@@ -734,7 +656,7 @@ export const products = [
   {
     id: 24124124139,
     title: "Сердечний мікс",
-    image: product33,
+    image_url: "https://cgqujdwdsgcvzfqrsgmu.supabase.co/storage/v1/object/public/products/cupcakes/products33.jpg",
     description: "Капкейк з трьома цукровими сердечками й кремом ваніль.",
     taste: "ваніль",
     type: "cupcakes",
@@ -745,7 +667,7 @@ export const products = [
   {
     id: 24124124140,
     title: "Райдужний капкейк",
-    image: product34,
+    image_url: "https://cgqujdwdsgcvzfqrsgmu.supabase.co/storage/v1/object/public/products/cupcakes/products34.jpg",
     description: "Рожевий крем з райдужною мастичною прикрасою та посипками.",
     taste: "ваніль",
     type: "cupcakes",
@@ -756,7 +678,7 @@ export const products = [
   {
     id: 24124124141,
     title: "Єдиноріжка",
-    image: product35,
+    image_url: "https://cgqujdwdsgcvzfqrsgmu.supabase.co/storage/v1/object/public/products/cupcakes/products35.jpg",
     description: "Кремово-рожевий капкейк з рогом та вушками єдинорога.",
     taste: "ваніль",
     type: "cupcakes",
@@ -767,7 +689,7 @@ export const products = [
   {
     id: 24124124142,
     title: "Морська хвиля",
-    image: product36,
+    image_url: "https://cgqujdwdsgcvzfqrsgmu.supabase.co/storage/v1/object/public/products/cupcakes/products36.jpg",
     description: "Бірюзовий крем у формі хвилі з мушлями та цукровим піском.",
     taste: "ваніль",
     type: "cupcakes",
@@ -778,7 +700,7 @@ export const products = [
   {
     id: 24124124143,
     title: "Лимонний фреш",
-    image: product37,
+    image_url: "https://cgqujdwdsgcvzfqrsgmu.supabase.co/storage/v1/object/public/products/cupcakes/products37.jpg",
     description: "Жовтий крем з цукровою часточкою лимона та зеленим листочком.",
     taste: "лимон",
     type: "cupcakes",
@@ -789,7 +711,7 @@ export const products = [
   {
     id: 24124124144,
     title: "Шоколадний герб",
-    image: product38,
+    image_url: "https://cgqujdwdsgcvzfqrsgmu.supabase.co/storage/v1/object/public/products/cupcakes/products38.jpg",
     description: "Двоколірний крем з шоколадною прикрасою у вигляді щита.",
     taste: "шоколад",
     type: "cupcakes",
@@ -800,7 +722,7 @@ export const products = [
   {
     id: 24124124145,
     title: "Метелик ніжності",
-    image: product39,
+    image_url: "https://cgqujdwdsgcvzfqrsgmu.supabase.co/storage/v1/object/public/products/cupcakes/products39.jpg",
     description: "Рожевий крем з цукровою метеликом і ніжними перлинками.",
     taste: "ваніль",
     type: "cupcakes",
@@ -811,7 +733,7 @@ export const products = [
   {
     id: 24124124146,
     title: "Лаванда та квіти",
-    image: product40,
+    image_url: "https://cgqujdwdsgcvzfqrsgmu.supabase.co/storage/v1/object/public/products/cupcakes/products40.jpg",
     description: "Лавандовий крем із цукровими квіточками та зеленими листочками.",
     taste: "лаванда-ваніль",
     type: "cupcakes",
@@ -822,7 +744,7 @@ export const products = [
     {
     id: 24124124147,
     title: "Лавандова ніжність",
-    image: product41,
+    image_url: "https://cgqujdwdsgcvzfqrsgmu.supabase.co/storage/v1/object/public/products/cupcakes/products41.jpg",
     description: "Лавандовий крем із цукровими квіточками.",
     taste: "лаванда-ваніль",
     type: "cupcakes",
@@ -833,7 +755,7 @@ export const products = [
   {
     id: 24122101,
     title: "Жовтий класичний макарон",
-    image: product42,
+    image_url: "https://cgqujdwdsgcvzfqrsgmu.supabase.co/storage/v1/object/public/products/macarons/product42.jpg",
     description: "Ніжний мигдальний макарон з кремовою лимонною начинкою.",
     taste: "лимон",
     type: "macarons",
@@ -844,7 +766,7 @@ export const products = [
   {
     id: 24122102,
     title: "Апельсиновий макарон",
-    image: product43,
+    image_url: "https://cgqujdwdsgcvzfqrsgmu.supabase.co/storage/v1/object/public/products/macarons/product43.jpg",
     description: "Яскравий апельсиновий макарон з освіжаючим цитрусовим кремом.",
     taste: "апельсин",
     type: "macarons",
@@ -855,7 +777,7 @@ export const products = [
   {
     id: 24122103,
     title: "Фісташковий макарон",
-    image: product44,
+    image_url: "https://cgqujdwdsgcvzfqrsgmu.supabase.co/storage/v1/object/public/products/macarons/product44.jpg",
     description: "Традиційний фісташковий макарон з насиченим кремом.",
     taste: "фісташка",
     type: "macarons",
@@ -866,7 +788,7 @@ export const products = [
   {
     id: 24122104,
     title: "Шоколадно-ванільний макарон",
-    image: product45,
+    image_url: "https://cgqujdwdsgcvzfqrsgmu.supabase.co/storage/v1/object/public/products/macarons/product45.jpg",
     description: "Ніжна ванільна начинка у поєднанні з темним шоколадним ганашем.",
     taste: "шоколад",
     type: "macarons",
@@ -877,7 +799,7 @@ export const products = [
   {
     id: 24122105,
     title: "Полунично-лимонний макарон",
-    image: product46,
+    image_url: "https://cgqujdwdsgcvzfqrsgmu.supabase.co/storage/v1/object/public/products/macarons/product46.jpg",
     description: "Ніжна полунична нотка з яскравим лимонним кремом усередині.",
     taste: "полуниця",
     type: "macarons",
@@ -888,7 +810,7 @@ export const products = [
   {
     id: 24122106,
     title: "М'ятно-апельсиновий макарон",
-    image: product47,
+    image_url: "https://cgqujdwdsgcvzfqrsgmu.supabase.co/storage/v1/object/public/products/macarons/product47.jpg",
     description: "Екзотичний макарон з апельсиновим конфі та свіжим листочком м’яти.",
     taste: "апельсин",
     type: "macarons",
@@ -899,7 +821,7 @@ export const products = [
   {
     id: 24122107,
     title: "Фіолетовий макарон з шоколадом",
-    image: product48,
+    image_url: "https://cgqujdwdsgcvzfqrsgmu.supabase.co/storage/v1/object/public/products/macarons/product48.jpg",
     description: "Ніжний лавандовий макарон з білим кремом та шоколадним декором.",
     taste: "ваніль",
     type: "macarons",
@@ -910,7 +832,7 @@ export const products = [
   {
     id: 24122108,
     title: "Валентинів макарон",
-    image: product49,
+    image_url: "https://cgqujdwdsgcvzfqrsgmu.supabase.co/storage/v1/object/public/products/macarons/product49.jpg",
     description: "Полуничний макарон з серцем — ідеальний для романтичних моментів.",
     taste: "полуниця",
     type: "macarons",
@@ -921,7 +843,7 @@ export const products = [
   {
     id: 24122109,
     title: "Лимонний макарон з цукром",
-    image: product50,
+    image_url: "https://cgqujdwdsgcvzfqrsgmu.supabase.co/storage/v1/object/public/products/macarons/product50.jpg",
     description: "Яскравий лимонний макарон, посипаний хрумким цукром.",
     taste: "лимон",
     type: "macarons",
@@ -932,7 +854,7 @@ export const products = [
   {
     id: 24122110,
     title: "Класичний фісташковий макарон",
-    image: product51,
+    image_url: "https://cgqujdwdsgcvzfqrsgmu.supabase.co/storage/v1/object/public/products/macarons/product51.jpg",
     description: "Ніжний зелений макарон з густим фісташковим кремом.",
     taste: "фісташка",
     type: "macarons",
@@ -943,7 +865,7 @@ export const products = [
   {
     id: 24122111,
     title: "Медовий макарон",
-    image: product52,
+    image_url: "https://cgqujdwdsgcvzfqrsgmu.supabase.co/storage/v1/object/public/products/macarons/product52.jpg",
     description: "Макарон з медовим кремом і рельєфним верхом у вигляді стільників.",
     taste: "мед",
     type: "macarons",
@@ -954,7 +876,7 @@ export const products = [
     {
     id: 24122112,
     title: "Малиновий макарон з крем-чізом",
-    image: product53,
+    image_url: "https://cgqujdwdsgcvzfqrsgmu.supabase.co/storage/v1/object/public/products/macarons/product53.jpg",
     description: "Ніжний рожевий макарон з кремом та яскравою малиною всередині.",
     taste: "малина",
     type: "macarons",
@@ -965,7 +887,7 @@ export const products = [
   {
     id: 24122113,
     title: "Чорничний макарон",
-    image: product54,
+    image_url: "https://cgqujdwdsgcvzfqrsgmu.supabase.co/storage/v1/object/public/products/macarons/product54.jpg",
     description: "Лавандовий макарон із насиченим чорничним ганашем.",
     taste: "чорниця",
     type: "macarons",
@@ -976,7 +898,7 @@ export const products = [
   {
     id: 24122114,
     title: "Ванільний макарон",
-    image: product55,
+    image_url: "https://cgqujdwdsgcvzfqrsgmu.supabase.co/storage/v1/object/public/products/macarons/product55.jpg",
     description: "Класичний біло-кремовий макарон із насиченим ванільним кремом.",
     taste: "ваніль",
     type: "macarons",
@@ -987,7 +909,7 @@ export const products = [
   {
     id: 24122115,
     title: "Макарон із солоною карамеллю",
-    image: product56,
+    image_url: "https://cgqujdwdsgcvzfqrsgmu.supabase.co/storage/v1/object/public/products/macarons/product56.jpg",
     description: "Тануча карамель з легкою солоною ноткою всередині хрумкого макарону.",
     taste: "карамель",
     type: "macarons",
@@ -998,7 +920,7 @@ export const products = [
   {
     id: 24122116,
     title: "Екзотичний манго-маракуя",
-    image: product57,
+    image_url: "https://cgqujdwdsgcvzfqrsgmu.supabase.co/storage/v1/object/public/products/macarons/product57.jpg",
     description: "Тропічний макарон із соковитою фруктовою начинкою манго та маракуї.",
     taste: "манго",
     type: "macarons",
@@ -1009,7 +931,7 @@ export const products = [
   {
     id: 24122117,
     title: "Подвійний шоколад",
-    image: product58,
+    image_url: "https://cgqujdwdsgcvzfqrsgmu.supabase.co/storage/v1/object/public/products/macarons/product58.jpg",
     description: "Шоколадний макарон із густим бельгійським шоколадним ганашем.",
     taste: "шоколад",
     type: "macarons",
@@ -1020,7 +942,7 @@ export const products = [
   {
     id: 24122118,
     title: "Рубіновий макарон",
-    image: product59,
+    image_url: "https://cgqujdwdsgcvzfqrsgmu.supabase.co/storage/v1/object/public/products/macarons/product59.jpg",
     description: "Ніжний рожево-червоний макарон з рубіновим шоколадом.",
     taste: "рубіновий шоколад",
     type: "macarons",
@@ -1031,7 +953,7 @@ export const products = [
   {
     id: 24122119,
     title: "Кава-лате макарон",
-    image: product60,
+    image_url: "https://cgqujdwdsgcvzfqrsgmu.supabase.co/storage/v1/object/public/products/macarons/product60.jpg",
     description: "Кавовий макарон із кремом латте — ніжний та ароматний.",
     taste: "кава",
     type: "macarons",
@@ -1042,7 +964,7 @@ export const products = [
   {
     id: 24122120,
     title: "Макарон «Раф»",
-    image: product61,
+    image_url: "https://cgqujdwdsgcvzfqrsgmu.supabase.co/storage/v1/object/public/products/macarons/product61.jpg",
     description: "Ванільно-карамельна начинка в поєднанні з легким кавовим ароматом.",
     taste: "ваніль, кава",
     type: "macarons",
@@ -1053,7 +975,7 @@ export const products = [
   {
     id: 24122122324,
     title: "Ягідний Mix",
-    image: product62,
+    image_url: "https://cgqujdwdsgcvzfqrsgmu.supabase.co/storage/v1/object/public/products/macarons/product62.jpg",
     description: "Насичена ягідна начинка: малина, чорниця та полуниця.",
     taste: "ягоди",
     type: "macarons",
@@ -1064,7 +986,7 @@ export const products = [
    {
     id: 24122121,
     title: "Ягідний max",
-    image: product63,
+    image_url: "https://cgqujdwdsgcvzfqrsgmu.supabase.co/storage/v1/object/public/products/macarons/product63.jpg",
     description: "Насичена ягідна начинка: малина, чорниця та полуниця.",
     taste: "ягоди",
     type: "macarons",
@@ -1076,7 +998,7 @@ export const products = [
   {
     id: 2223414211,
     title: "Малиновий тарт класичний",
-    image: product64,
+    image_url: "https://cgqujdwdsgcvzfqrsgmu.supabase.co/storage/v1/object/public/products/tarts/product64.jpg",
     description: "Тарт з ванільним кремом та свіжою малиною, прикрашений полуницею та м'ятою.",
     taste: "малина",
     type: "tarts",
@@ -1087,7 +1009,7 @@ export const products = [
   {
     id: 2223414212,
     title: "Малиновий спіральний тарт",
-    image: product65,
+    image_url: "https://cgqujdwdsgcvzfqrsgmu.supabase.co/storage/v1/object/public/products/tarts/product65.jpg",
     description: "Незвичайний дизайн з малиновою спіраллю та полуницею.",
     taste: "малина",
     type: "tarts",
@@ -1098,7 +1020,7 @@ export const products = [
   {
     id: 2223414213,
     title: "Малиновий тарт з полуницею",
-    image: product66,
+    image_url: "https://cgqujdwdsgcvzfqrsgmu.supabase.co/storage/v1/object/public/products/tarts/product66.jpg",
     description: "Класичний тарт із щедрою кількістю малини та полуниці.",
     taste: "малина",
     type: "tarts",
@@ -1109,7 +1031,7 @@ export const products = [
   {
     id: 2223414214,
     title: "Персиково-чорничний тарт",
-    image: product67,
+    image_url: "https://cgqujdwdsgcvzfqrsgmu.supabase.co/storage/v1/object/public/products/tarts/product67.jpg",
     description: "Тарт із персиковими пелюстками та великими чорницями.",
     taste: "персик, чорниця",
     type: "tarts",
@@ -1120,7 +1042,7 @@ export const products = [
   {
     id: 2223414215,
     title: "Ягідний мікс тарт",
-    image: product68,
+    image_url: "https://cgqujdwdsgcvzfqrsgmu.supabase.co/storage/v1/object/public/products/tarts/product68.jpg",
     description: "Полуниця, малина та яблуко в красивому декоративному оформленні.",
     taste: "ягоди",
     type: "tarts",
@@ -1131,7 +1053,7 @@ export const products = [
   {
     id: 2223414216,
     title: "Мангово-малиновий тарт",
-    image: product69,
+    image_url: "https://cgqujdwdsgcvzfqrsgmu.supabase.co/storage/v1/object/public/products/tarts/product69.jpg",
     description: "Персикові пелюстки, малина та кремові бортики.",
     taste: "манго, малина",
     type: "tarts",
@@ -1142,7 +1064,7 @@ export const products = [
   {
     id: 2223414217,
     title: "Червона смородина з шоколадом",
-    image: product70,
+    image_url: "https://cgqujdwdsgcvzfqrsgmu.supabase.co/storage/v1/object/public/products/tarts/product70.jpg",
     description: "Яскравий тарт зі смородиною та шоколадною сіткою.",
     taste: "смородина",
     type: "tarts",
@@ -1153,7 +1075,7 @@ export const products = [
   {
     id: 2223414218,
     title: "Лимонний тарт з меренгою",
-    image: product71,
+    image_url: "https://cgqujdwdsgcvzfqrsgmu.supabase.co/storage/v1/object/public/products/tarts/product71.jpg",
     description: "Кисло-солодкий тарт з лимонним курдом та підпаленими італійськими меренгами.",
     taste: "лимон",
     type: "tarts",
@@ -1164,7 +1086,7 @@ export const products = [
   {
     id: 2223414219,
     title: "Лимонний тарт квітка",
-    image: product72,
+    image_url: "https://cgqujdwdsgcvzfqrsgmu.supabase.co/storage/v1/object/public/products/tarts/product72.jpg",
     description: "Акуратний дизайн у вигляді квітки з кремовими меренгами.",
     taste: "лимон",
     type: "tarts",
@@ -1175,7 +1097,7 @@ export const products = [
   {
     id: 2223414220,
     title: "Полуничний тарт класичний",
-    image: product73,
+    image_url: "https://cgqujdwdsgcvzfqrsgmu.supabase.co/storage/v1/object/public/products/tarts/product73.jpg",
     description: "Полуничний дизайн у формі квітки з м'ятою.",
     taste: "полуниця",
     type: "tarts",
@@ -1186,7 +1108,7 @@ export const products = [
   {
     id: 2223414221,
     title: "Полунично-фісташковий тарт",
-    image: product74,
+    image_url: "https://cgqujdwdsgcvzfqrsgmu.supabase.co/storage/v1/object/public/products/tarts/product74.jpg",
     description: "Полуниця та кремова фісташка у центрі — ідеальний баланс.",
     taste: "полуниця, фісташка",
     type: "tarts",
@@ -1197,7 +1119,7 @@ export const products = [
   {
     id: 2223414222,
     title: "Полуничний тарт з білим шоколадом",
-    image: product75,
+    image_url: "https://cgqujdwdsgcvzfqrsgmu.supabase.co/storage/v1/object/public/products/tarts/product75.jpg",
     description: "Полуниця, білий шоколад та фісташкові крихти.",
     taste: "полуниця, білий шоколад",
     type: "tarts",
@@ -1208,7 +1130,7 @@ export const products = [
   {
     id: 2223414223,
     title: "Полуничний тарт з темним шоколадом",
-    image: product76,
+    image_url: "https://cgqujdwdsgcvzfqrsgmu.supabase.co/storage/v1/object/public/products/tarts/product76.jpg",
     description: "Поєднання полуниці та шматочків темного шоколаду.",
     taste: "полуниця, шоколад",
     type: "tarts",
@@ -1219,7 +1141,7 @@ export const products = [
   {
     id: 2223414224,
     title: "Чорнично-малиновий тарт спіраль",
-    image: product77,
+    image_url: "https://cgqujdwdsgcvzfqrsgmu.supabase.co/storage/v1/object/public/products/tarts/product77.jpg",
     description: "Дизайнерський тарт зі спіраллю з малини та чорниці.",
     taste: "малина, чорниця",
     type: "tarts",
@@ -1230,7 +1152,7 @@ export const products = [
   {
     id: 2223414225,
     title: "Малиновий тарт з трояндою",
-    image: product78,
+    image_url: "https://cgqujdwdsgcvzfqrsgmu.supabase.co/storage/v1/object/public/products/tarts/product78.jpg",
     description: "Ніжний тарт з малиновою трояндою у центрі.",
     taste: "малина",
     type: "tarts",
@@ -1240,3 +1162,17 @@ export const products = [
   },
 ];
 
+// const headers = ["id","title","image_url","description","taste","type","category","isTheme","weight","price"];
+
+// const escapeCsv = (v) => {
+//   if (v === null || v === undefined) return "";
+//   const s = String(v).replace(/"/g, '""');
+//   return /[,"\n]/.test(s) ? `"${s}"` : s;
+// };
+
+// const csv = [
+//   headers.join(","),
+//   ...products.map(p => headers.map(h => escapeCsv(p[h])).join(",")),
+// ].join("\n");
+
+// console.log(csv);

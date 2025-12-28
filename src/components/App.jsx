@@ -12,10 +12,17 @@ import { useDispatch } from "react-redux";
 import { initAuth } from "../redux/auth/operations.js";
 import { RegisterPage } from "../pages/RegisterPage/RegisterPage.jsx";
 import { LoginPage } from "../pages/LoginPage/LoginPage.jsx";
+import { fetchPopularProducts, fetchProducts } from "../redux/products/operations.js";
+import { fetchTaste } from "../redux/tastes/operations.js";
+
 function App() {
   const dispatch = useDispatch();
+
   useEffect(() => {
     dispatch(initAuth());
+    dispatch(fetchProducts());
+    dispatch(fetchPopularProducts());
+    dispatch(fetchTaste())
   }, [dispatch]);
 
   return (

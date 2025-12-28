@@ -1,4 +1,3 @@
-import { cakes } from "../../data/data";
 import {
   PopularDessertsSection,
   Container,
@@ -28,8 +27,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { getCartItems, openCartItems } from "../../redux/selectors";
 import { addCart, toggleCart } from "../../redux/cartSlice";
 import { ModalCart } from "../modalCart/modalCart";
+import { getProductsPopular } from "../../redux/products/selectors";
 export const PopularDesserts = () => {
   const dispatch = useDispatch();
+  const popularProducts = useSelector(getProductsPopular);
   const cart = useSelector(getCartItems);
   const isOpenCart = useSelector(openCartItems);
   const handleToggleHover = () => dispatch(toggleCart(!isOpenCart));
@@ -91,9 +92,9 @@ export const PopularDesserts = () => {
           preventClicks={false}
           preventClicksPropagation={false}
         >
-          {cakes.map((item) => (
+          {popularProducts.map((item) => (
             <StyledSlideCard key={item.id}  >
-              <PopularDessertsImage src={item.image} alt="торт" />{" "}
+              <PopularDessertsImage src={item.image_url} alt="торт" />
               <WrapInfo>
                 <ProductTitle to={`menu/allProducts/${item.id}`}>{item.title}</ProductTitle>
                 <ProductPrice>{item.price} грн</ProductPrice>

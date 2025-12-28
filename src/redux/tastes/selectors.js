@@ -1,0 +1,1 @@
+export const getTastes = (state) => state.tastes.taste;

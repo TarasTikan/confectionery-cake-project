@@ -9,12 +9,13 @@ import {
   DescriptionContainer,
   TasteTextDescribe,
 } from "./taste.styled";
-import { fillings } from "../../data/data";
+import { useSelector } from "react-redux";
+import { getTastes } from "../../redux/tastes/selectors";
 
 
 
 export const Tastes = (e) => {
-
+const tastes = useSelector(getTastes);
 
   return (
     <TasteSection
@@ -30,10 +31,10 @@ export const Tastes = (e) => {
       <Container>
         <TasteTitle>Смаки</TasteTitle>
         <TasteList>
-          {fillings.map((item) => (
+          {tastes.map((item) => (
             <TasteCard key={item.id}>
               <TasteTitleProduct>{item.title}</TasteTitleProduct>
-              <TasteImage src={item.image} />
+              <TasteImage src={item.image_url} />
               <DescriptionContainer>
                 <TasteTextDescribe>{item.description}</TasteTextDescribe>
               </DescriptionContainer>
