@@ -74,7 +74,7 @@ if (cart.find((item) => item.id === product.id)) {
     }
     dispatch(addItemToCartGuest(product));
     }else {
-       dispatch(addItemToCartAuth(cartId, product));
+       dispatch(addItemToCartAuth({cartId, product}));
     }
   };
 

@@ -84,9 +84,10 @@ export const addItemToCartAuth = createAsyncThunk(
   "cart/addItemToCartAuth",
   async ({ cartId, product }, thunkAPI) => {
     try {
+      
       if (!cartId) throw new Error("Cart ID is required");
+      
       if (!product || !product.id) throw new Error("Product is required");
-
       const { data: productData, error: productError } = await superbase
         .from("cart_items")
         .select("*")
