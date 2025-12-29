@@ -138,15 +138,15 @@ const cartSlice = createSlice({
       .addCase(incrementQuantityGuest.fulfilled, (state, action) => {
         state.cartItem = action.payload;
       })
-      .addCase(clearCartGuest.fulfilled, (state) => {
-        state.cartItem = []
+      .addCase(clearCartGuest.fulfilled, (state,action) => {
+        state.cartItem = action.payload
       })
       .addCase(clearCartAuth.pending, (state) => {
         state.isLoading = true;
         state.error = null
       })
-      .addCase(clearCartAuth.fulfilled, (state) => {
-        state.cartItem = []
+      .addCase(clearCartAuth.fulfilled, (state,action) => {
+        state.cartItem = action.payload
       })
        .addCase(clearCartAuth.rejected, (state, action) => {
            state.isLoading = false;

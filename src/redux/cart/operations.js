@@ -22,7 +22,6 @@ export const getOrCreateCart = createAsyncThunk(
     try {
       const { data: authData, error: authError } =
         await superbase.auth.getUser();
-
       if (authError) throw new Error("User not found");
       const userId = authData?.user?.id;
       if (!userId) throw new Error("No authenticated user");
@@ -88,6 +87,7 @@ export const addItemToCartAuth = createAsyncThunk(
       if (!cartId) throw new Error("Cart ID is required");
       
       if (!product || !product.id) throw new Error("Product is required");
+      
       const { data: productData, error: productError } = await superbase
         .from("cart_items")
         .select("*")
@@ -216,13 +216,13 @@ export const updateCartItemQtyAuth = createAsyncThunk(
 
 export const clearCartGuest = createAsyncThunk(
   "cart/clearCartGuest",
-  async (id) => {
+  async (_, thunkAPI) => {
     return [];
   }
 );
 export const clearCartAuth = createAsyncThunk(
   "cart/clearCart",
-  async ({ cartId }, thunkAPI) => {
+  async (cartId, thunkAPI) => {
     try {
       if (!cartId) throw new Error("cartId is required");
 
@@ -232,7 +232,7 @@ export const clearCartAuth = createAsyncThunk(
         .eq("cart_id", cartId);
       if (error) throw error;
 
-      return { cartId };
+      return [];
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
     }

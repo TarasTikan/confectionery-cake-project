@@ -9,21 +9,31 @@ import {
   AuthTitle,
 } from "./LoginForm.styled";
 import { useNavigate } from "react-router-dom";
+import { fetchCartItems, getOrCreateCart } from "../../redux/cart/operations";
+
 
 export const LoginForm = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const handleLogin = (e) => {
+
+  const handleLogin = async (e) => {
     e.preventDefault();
     const form = e.target;
     const email = form.email.value;
     const password = form.password.value;
-    dispatch(loginUser({ email: email, password }));
-    form.reset();
+  try {
+    await dispatch(loginUser({ email, password })).unwrap();
+
+    const cart = await dispatch(getOrCreateCart()).unwrap(); 
+    await dispatch(fetchCartItems(cart.id)).unwrap();
+
     form.reset();
     navigate("/");
+  } catch (err) {
+    console.log("LOGIN FLOW ERROR:", err);
+  }
+    navigate("/");
   };
-
   return (
     <AuthForm onSubmit={handleLogin}>
       <AuthTitle>Авторизація</AuthTitle>

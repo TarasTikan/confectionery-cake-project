@@ -67,6 +67,7 @@ export const loginUser = createAsyncThunk(
         email,
         password,
       });
+
       if (error) throw error;
       const user = data.user;
 

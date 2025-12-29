@@ -9,6 +9,7 @@ import {
   AuthFooterText,
 } from "./Register.styled";
 import { useNavigate } from "react-router-dom";
+import { getOrCreateCart } from "../../redux/cart/operations";
 
 export const RegisterForm = () => {
   const navigate = useNavigate();
@@ -20,6 +21,7 @@ export const RegisterForm = () => {
     const password = form.password.value;
     const name = form.name.value;
     dispatch(registerUser({ email, password, name }));
+    dispatch(getOrCreateCart());
     form.reset();
     navigate("/");
   };

@@ -21,6 +21,7 @@ import {
   DeleteItemsBtn,
 } from "./modalCart.styled";
 import {
+  getCartId,
   getCartItems,
   getMode,
   openCartItems,
@@ -41,6 +42,7 @@ import { DeleteIcon } from "../../icons/deleteIcon";
 export const ModalCart = () => {
   const isOpenCart = useSelector(openCartItems);
   const cart = useSelector(getCartItems);
+  const cartId = useSelector(getCartId)
   const modeCart = useSelector(getMode);
   const dispatch = useDispatch();
   const hadleDeleteItem = (item) => {
@@ -69,7 +71,7 @@ export const ModalCart = () => {
     if (modeCart === "guest") {
       dispatch(clearCartGuest());
     } else {
-      dispatch(clearCartAuth());
+      dispatch(clearCartAuth(cartId));
     }
   };
   const handleClouse = () => dispatch(toggleCart(!isOpenCart));

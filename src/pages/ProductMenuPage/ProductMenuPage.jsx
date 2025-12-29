@@ -65,7 +65,6 @@ export const ProductMenuPage = () => {
 
   const handleToggleHover = () => dispatch(toggleCart(!isOpenCart));
   const handleCategoryCakes = (type) => dispatch(categoryProducts(type));
-
   const handleCakesCart = (product) => {
     if(modeCart === "guest") {
 if (cart.find((item) => item.id === product.id)) {

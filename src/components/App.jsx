@@ -8,17 +8,18 @@ import { ProductPage } from "../pages/ProductPage/ProductPage.jsx";
 import { OrderPage } from "../pages/OrderPage/OrderPage.jsx";
 import { ScrollToTop } from "./ScrollToTop/ScrollToTop.jsx";
 import { useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { initAuth } from "../redux/auth/operations.js";
 import { RegisterPage } from "../pages/RegisterPage/RegisterPage.jsx";
 import { LoginPage } from "../pages/LoginPage/LoginPage.jsx";
 import { fetchPopularProducts, fetchProducts } from "../redux/products/operations.js";
 import { fetchTaste } from "../redux/tastes/operations.js";
 import { fetchCartItems, getOrCreateCart, initModeCart } from "../redux/cart/operations.js";
+import { getCartId } from "../redux/cart/selectors.js";
 
 function App() {
   const dispatch = useDispatch();
-
+  const cartId = useSelector(getCartId)
   useEffect(() => {
     dispatch(initAuth());
     dispatch(fetchProducts());
@@ -26,8 +27,8 @@ function App() {
     dispatch(fetchTaste());
     dispatch(initModeCart());
     dispatch(getOrCreateCart());
-    dispatch(fetchCartItems());
-  }, [dispatch]);
+    dispatch(fetchCartItems(cartId));
+  }, [dispatch,cartId]);
 
   return (
     <>
