@@ -4,7 +4,8 @@ import { useDispatch, useSelector } from "react-redux"
 import { getCartId, getCartItems, getMode, openCartItems } from "../../redux/cart/selectors"
 import { getProducts } from "../../redux/products/selectors"
 
-import { addItemToCartAuth, addItemToCartGuest, toggleCart } from "../../redux/cart/operations"
+import { addItemToCartAuth } from "../../redux/cart/operations"
+import { addCart, toggleCart } from "../../redux/cart/cartSlice"
 
 
 export const RelatedProducts = () => {
@@ -20,10 +21,10 @@ export const RelatedProducts = () => {
   const handleCakesCart = (product) => {
     if(modeCart === "guest") {
 if (cart.find((item) => item.id === product.id)) {
-      dispatch(addItemToCartGuest(product));
+      dispatch(addCart(product));
       return;
     }
-    dispatch(addItemToCartGuest(product));
+    dispatch(addCart(product));
     }else {
        dispatch(addItemToCartAuth(cartId, product));
     }

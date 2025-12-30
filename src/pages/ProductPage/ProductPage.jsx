@@ -6,7 +6,8 @@ import { ProductPageSection, Container, WrapInfo, ImageDessert, ProductTitle, Pr
 import { RelatedProducts } from "../../components/RelatedProducts/RelatedProducts"
 import { FooterCake } from "../../components/footer/footer"
 import { getCartId, getMode } from "../../redux/cart/selectors"
-import { addItemToCartAuth, addItemToCartGuest, toggleCart } from "../../redux/cart/operations"
+import { addItemToCartAuth } from "../../redux/cart/operations"
+import { addCart, toggleCart } from "../../redux/cart/cartSlice"
 
 export const ProductPage = () => {
     const { id } = useParams()
@@ -22,12 +23,12 @@ export const ProductPage = () => {
     const handleCakesCart = (product) => {
       if(modeCart === "guest") {
   if (cart.find((item) => item.id === product.id)) {
-        dispatch(addItemToCartGuest(product));
+        dispatch(addCart(product));
         return;
       }
-      dispatch(addItemToCartGuest(product));
+      dispatch(addCart(product));
       }else {
-         dispatch(addItemToCartAuth(cartId, product));
+         dispatch(addItemToCartAuth({cartId, product}));
       }
     };
   

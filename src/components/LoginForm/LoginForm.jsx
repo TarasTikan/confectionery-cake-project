@@ -34,6 +34,7 @@ export const LoginForm = () => {
   }
     navigate("/");
   };
+  
   return (
     <AuthForm onSubmit={handleLogin}>
       <AuthTitle>Авторизація</AuthTitle>

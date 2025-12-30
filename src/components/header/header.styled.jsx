@@ -258,33 +258,108 @@ export const Separator = styled.p`
 export const UserWrap = styled.div`
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 6px;
 
-  padding: 8px 14px;
+  padding: 6px 10px;
   border-radius: 999px;
 
-  background: rgba(255, 255, 255, 0.75);
+  background: rgba(255, 255, 255, 0.78);
   backdrop-filter: blur(8px);
-
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+
+  /* 1200+ */
+  @media screen and (min-width: 1200px) {
+    padding: 10px 18px;
+  }
+
+  svg {
+  heigh: 25px;
+  width: 25px;
+
+    @media screen and (min-width: 600px) {
+     heigh: 30px;
+  width: 30px;
+  }
+
+  }
 `;
 
 export const GreetingText = styled.p`
-  font-size: 15px;
-  font-weight: 500;
+  margin: 0;
   color: #3a3a3a;
+  font-weight: 500;
+  line-height: 1.2;
+  display: none;
 
   span {
     font-weight: 600;
     color: #d16c8f;
+    white-space: nowrap;
+  }
+
+
+  /* 600+ */
+  @media screen and (min-width: 600px) {
+    font-size: 13px;
+
+  }
+
+  /* 1200+ */
+  @media screen and (min-width: 1200px) {
+    font-size: 15px;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
   }
 `;
 
 export const LogoutText = styled.button`
-  background: none;
   border: none;
-  font-size: 14px;
-  font-weight: 500;
-  color: #ff4d4f;
+  background: transparent;
+
   cursor: pointer;
+  font-weight: 600;
+  line-height: 1.2;
+
+  color: #ff4d4f;
+  padding: 6px 8px;
+  border-radius: 10px;
+
+  transition: transform 120ms ease, background 120ms ease, opacity 120ms ease;
+
+  /* 300+ */
+  @media screen and (min-width: 300px) {
+    font-size: 12px;
+  }
+
+  /* 400+ */
+  @media screen and (min-width: 400px) {
+    font-size: 13px;
+
+  }
+
+  /* 600+ */
+  @media screen and (min-width: 600px) {
+    font-size: 14px;
+
+  }
+
+  /* 1200+ */
+  @media screen and (min-width: 1200px) {
+    font-size: 14px;
+  }
+
+  &:hover {
+    background: rgba(255, 77, 79, 0.10);
+  }
+
+  &:active {
+    transform: scale(0.98);
+    opacity: 0.9;
+  }
+
+  &:focus-visible {
+    outline: 2px solid rgba(209, 108, 143, 0.45);
+    outline-offset: 2px;
+  }
 `;

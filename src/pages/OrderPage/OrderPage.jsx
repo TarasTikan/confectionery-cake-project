@@ -29,12 +29,10 @@ import { FooterCake } from "../../components/footer/footer";
 import { DeleteIcon } from "../../icons/deleteIcon";
 import { getMode } from "../../redux/cart/selectors";
 import {
-  decrementQuantityGuest,
-  incrementQuantityGuest,
   removeItemFromCartAuth,
-  removeItemFromCartGuest,
   updateCartItemQtyAuth,
 } from "../../redux/cart/operations";
+import { decrementQuantity, deleteCart, incrementQuantity } from "../../redux/cart/cartSlice";
 
 export const OrderPage = () => {
   const cart = useSelector(getCartItems);
@@ -43,7 +41,7 @@ export const OrderPage = () => {
   const modeCart = useSelector(getMode);
   const hadleDeleteItem = (item) => {
     if (modeCart === "guest") {
-      dispatch(removeItemFromCartGuest(item));
+      dispatch(deleteCart(item));
     } else {
       dispatch(removeItemFromCartAuth(item));
     }
@@ -51,14 +49,14 @@ export const OrderPage = () => {
 
   const handleIncrementQuantity = (item) => {
     if (modeCart === "guest") {
-      dispatch(incrementQuantityGuest(item));
+      dispatch(incrementQuantity(item));
     } else {
       dispatch(updateCartItemQtyAuth(item, 1));
     }
   };
   const handleDecrementQuantity = (item) => {
     if (modeCart === "guest") {
-      dispatch(decrementQuantityGuest(item));
+      dispatch(decrementQuantity(item));
     } else {
       dispatch(updateCartItemQtyAuth(item, 1));
     }

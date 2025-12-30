@@ -22,12 +22,11 @@ import { useState, useEffect } from "react";
 import { MobMenu } from "../MobMenu/MobMenu";
 import { useDispatch, useSelector } from "react-redux";
 import { getCartItems, openCartItems } from "../../redux/cart/selectors";
-
-import { toggleCart } from "../../redux/cart/operations"
 import { ModalCart } from "../modalCart/modalCart";
 import { selectAuthUser } from "../../redux/auth/selectors";
 import { UserIcon } from "../../icons/userIcon";
 import { logoutUser } from "../../redux/auth/operations";
+import { resetCart, toggleCart } from "../../redux/cart/cartSlice";
 export const SideBar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const cart = useSelector(getCartItems);
@@ -50,8 +49,8 @@ export const SideBar = () => {
   }, [isOpen, isOpenCart]);
   const handleLogout = () => {
    dispatch(logoutUser());
+dispatch(resetCart())
   }
-
   return (
     <>
       <Header>

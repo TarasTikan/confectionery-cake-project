@@ -63,22 +63,6 @@ export const fetchCartItems = createAsyncThunk(
   }
 );
 
-export const addItemToCartGuest = createAsyncThunk(
-  "cart/addItemToCartGuest",
-  async (product, thunkAPI) => {
-    const cart = localStorage.getItem("cart")
-      ? JSON.parse(localStorage.getItem("cart"))
-      : [];
-
-    const idx = cart.findIndex((i) => i.id === product.id);
-    if (idx !== -1) cart[idx].quantity += 1;
-    else cart.push({ ...product, quantity: 1 });
-
-    localStorage.setItem("cart", JSON.stringify(cart));
-
-    return cart;
-  }
-);
 export const addItemToCartAuth = createAsyncThunk(
   "cart/addItemToCartAuth",
   async ({ cartId, product }, thunkAPI) => {
@@ -161,48 +145,14 @@ export const removeItemFromCartAuth = createAsyncThunk(
     }
   }
 );
-export const incrementQuantityGuest = createAsyncThunk(
-  "cart/incrementQuantityGuest",
-  async (product, thunkAPI) => {
-    const cart = localStorage.getItem("cart")
-      ? JSON.parse(localStorage.getItem("cart"))
-      : [];
-      
-    const findIndexProduct = cart.findIndex((item) => item.id === product.id);
-    if (findIndexProduct !== -1) {
-      cart[findIndexProduct].quantity += 1;
-    }
 
-    localStorage.setItem("cart", JSON.stringify(cart));
-    return cart;
-  }
-);
-
-export const decrementQuantityGuest = createAsyncThunk(
-  "cart/decrementQuantityGuest",
-   (product, thunkAPI) => {
-    const cart = localStorage.getItem("cart")
-      ? JSON.parse(localStorage.getItem("cart"))
-      : [];
-    const findProductIndex = cart.findIndex((item) => item.id === product.id);
-    if (findProductIndex !== -1) {
-      cart[findProductIndex].quantity -= 1;
-    }
-    if (cart[findProductIndex].quantity <= 0) {
-      cart.splice(findProductIndex, 1);
-    }
-    localStorage.setItem("cart", JSON.stringify(cart));
-    return cart;
-  }
-);
 export const updateCartItemQtyAuth = createAsyncThunk(
   "cart/updateCartItemQty",
-  async ({ itemId, quantity }, thunkAPI) => {
+  async ({ itemId, quantity, incrementOrDecrement }, thunkAPI) => {
     if (!itemId) throw new Error("itemId is required");
-    const qty = Number(quantity);
     const { data: productData, error: productError } = await superbase
       .from("cart_items")
-      .update({ quantity: qty })
+      .update({ quantity: incrementOrDecrement ? quantity + 1 : quantity + (-1)})
       .eq("id", itemId)
       .select(
         "id, created_at, cart_id, product_id, title, image_url, price, quantity"
@@ -214,12 +164,7 @@ export const updateCartItemQtyAuth = createAsyncThunk(
   }
 );
 
-export const clearCartGuest = createAsyncThunk(
-  "cart/clearCartGuest",
-  async (_, thunkAPI) => {
-    return [];
-  }
-);
+
 export const clearCartAuth = createAsyncThunk(
   "cart/clearCart",
   async (cartId, thunkAPI) => {
@@ -239,9 +184,3 @@ export const clearCartAuth = createAsyncThunk(
   }
 );
 
-export const toggleCart = createAsyncThunk(
-  "cart/toggleCart",
-  async (bool, thunkAPI) => {
-    return bool;
-  }
-);

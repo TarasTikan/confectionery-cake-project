@@ -28,16 +28,12 @@ import {
 } from "../../redux/cart/selectors";
 import {
   clearCartAuth,
-  clearCartGuest,
-  decrementQuantityGuest,
-  incrementQuantityGuest,
   removeItemFromCartAuth,
-  removeItemFromCartGuest,
-  toggleCart,
   updateCartItemQtyAuth,
 } from "../../redux/cart/operations";
 import { useEffect } from "react";
 import { DeleteIcon } from "../../icons/deleteIcon";
+import { clearCart, decrementQuantity, deleteCart, incrementQuantity, toggleCart } from "../../redux/cart/cartSlice";
 
 export const ModalCart = () => {
   const isOpenCart = useSelector(openCartItems);
@@ -47,7 +43,7 @@ export const ModalCart = () => {
   const dispatch = useDispatch();
   const hadleDeleteItem = (item) => {
     if (modeCart === "guest") {
-      dispatch(removeItemFromCartGuest(item));
+      dispatch(deleteCart(item));
     } else {
       dispatch(removeItemFromCartAuth(item));
     }
@@ -55,21 +51,21 @@ export const ModalCart = () => {
 
   const handleIncrementQuantity = (item) => {
     if (modeCart === "guest") {
-      dispatch(incrementQuantityGuest(item));
+      dispatch(incrementQuantity(item));
     } else {
-      dispatch(updateCartItemQtyAuth(item, 1));
+      dispatch(updateCartItemQtyAuth({itemId: item.id, quantity: item.quantity, incrementOrDecrement: true}));
     }
   };
   const handleDecrementQuantity = (item) => {
     if (modeCart === "guest") {
-      dispatch(decrementQuantityGuest(item));
+      dispatch(decrementQuantity(item));
     } else {
-      dispatch(updateCartItemQtyAuth(item, 1));
+ dispatch(updateCartItemQtyAuth({itemId: item.id, quantity: item.quantity, incrementOrDecrement: false}));
     }
   };
   const handleClearCart = () => {
     if (modeCart === "guest") {
-      dispatch(clearCartGuest());
+      dispatch(clearCart());
     } else {
       dispatch(clearCartAuth(cartId));
     }
