@@ -189,6 +189,18 @@ const cartSlice = createSlice({
         state.isLoading = false;
         state.error = action.payload
       })
+      .addCase(mergeLocalStorageInAuthCart.pending, (state)=>{
+        state.isLoading = true;
+        state.error = null;
+      })
+       .addCase(mergeLocalStorageInAuthCart.fulfilled, (state, action)=>{
+        state.isLoading = false;
+        state.cartItem = action.payload;
+      })
+       .addCase(mergeLocalStorageInAuthCart.rejected, (state, action)=>{
+        state.isLoading = false;
+        state.error = action.payload;
+      })
   },
 });
 export const { addCart, resetCart, changeCartQuantity,incrementQuantity,decrementQuantity, toggleCart, clearCart,deleteCart} = cartSlice.actions;

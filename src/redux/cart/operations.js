@@ -184,35 +184,3 @@ export const clearCartAuth = createAsyncThunk(
   }
 );
 
-export const mergeLocalStorageInAuthCart = createAsyncThunk(
-  "cart/mergeLocalStorageInAuthCart",
-  async (cartId, thunkAPI) => {
-    try {
-      if (!cartId) throw new Error("cartId is required");
-
-      const localCart = JSON.parse(localStorage.getItem("cart") || "[]");
-      if (!Array.isArray(localCart) || localCart.length === 0) return [];
-
-      const payload = localCart.map((p) => ({
-        cart_id: cartId,
-        product_id: String(p.id),     
-        title: p.title ?? "",
-        image_url: p.image_url ?? "",
-        price: p.price ?? 0,
-        quantity: Number(p.quantity ?? 1),
-      }));
-
-      const { data, error } = await superbase
-        .from("cart_items")
-        .insert(payload)
-        .select("id, created_at, cart_id, product_id, title, image_url, price, quantity");
-
-      if (error) throw error;
-
-      localStorage.removeItem("cart");
-      return data ?? [];
-    } catch (error) {
-      return thunkAPI.rejectWithValue(error.message);
-    }
-  }
-);

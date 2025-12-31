@@ -21,17 +21,19 @@ import { Outlet } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { MobMenu } from "../MobMenu/MobMenu";
 import { useDispatch, useSelector } from "react-redux";
-import { getCartItems, openCartItems } from "../../redux/cart/selectors";
+import { getCartId, getCartItems, openCartItems } from "../../redux/cart/selectors";
 import { ModalCart } from "../modalCart/modalCart";
 import { selectAuthUser } from "../../redux/auth/selectors";
 import { UserIcon } from "../../icons/userIcon";
 import { logoutUser } from "../../redux/auth/operations";
 import { resetCart, toggleCart } from "../../redux/cart/cartSlice";
+import { mergeLocalStorageInAuthCart } from "../../redux/cart/operations";
 export const SideBar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const cart = useSelector(getCartItems);
   const isOpenCart = useSelector(openCartItems);
   const isUser = useSelector(selectAuthUser);
+  const isCard = useSelector(getCartId)
   const dispatch = useDispatch();
   const handleMobMenuClick = () => {
     setIsOpen(!isOpen);
@@ -51,6 +53,9 @@ export const SideBar = () => {
    dispatch(logoutUser());
 dispatch(resetCart())
   }
+  useEffect(()=>{
+    dispatch(mergeLocalStorageInAuthCart(isCard))
+  },[dispatch, isCard])
   return (
     <>
       <Header>
