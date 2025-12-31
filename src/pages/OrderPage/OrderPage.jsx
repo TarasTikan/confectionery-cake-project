@@ -51,14 +51,14 @@ export const OrderPage = () => {
     if (modeCart === "guest") {
       dispatch(incrementQuantity(item));
     } else {
-      dispatch(updateCartItemQtyAuth(item, 1));
+      dispatch(updateCartItemQtyAuth({itemId: item.id, quantity: item.quantity, incrementOrDecrement: true}));
     }
   };
   const handleDecrementQuantity = (item) => {
     if (modeCart === "guest") {
       dispatch(decrementQuantity(item));
     } else {
-      dispatch(updateCartItemQtyAuth(item, 1));
+ dispatch(updateCartItemQtyAuth({itemId: item.id, quantity: item.quantity, incrementOrDecrement: false}));
     }
   };
   useEffect(() => {
@@ -102,7 +102,7 @@ export const OrderPage = () => {
                 <ListOrder>
                   {cart.map((item) => (
                     <CartItem key={item.id}>
-                      <ItemImage src={item.image} />
+                      <ItemImage src={item.image_url} />
                       <ItemInfo>
                         <ItemName to={`/menu/allProducts/${item.id}`}>
                           {item.title}

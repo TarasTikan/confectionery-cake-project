@@ -184,3 +184,37 @@ export const clearCartAuth = createAsyncThunk(
   }
 );
 
+// export const mergeLocalStorageInAuthCart = createAsyncThunk(
+//   "cart/mergeLocalStorageInAuthCart",
+//   async (cartId, thunkAPI) => {
+//     try {
+//       if (!cartId) throw new Error("cartId is required");
+
+//       const raw = localStorage.getItem("cart");
+//       if (!raw) return [];
+
+//        const parsedLocal = JSON.parse(raw);
+
+//       if (!Array.isArray(parsedLocal) || parsedLocal.length === 0) return [];
+
+//       const payload = parsedLocal.map((p) => ({
+//         cart_id: cartId,
+//         product_id: String(p.id),
+//         title: p.title ?? "",
+//         image_url: p.image_url ?? "",
+//         price: Number(p.price ?? 0),
+//         quantity: Number(p.quantity ?? 1),
+//       }));
+
+//       const { data, error } = await superbase
+//         .from("cart_items")
+//         .upsert(payload, { onConflict: "cart_id,product_id" })
+//         .select("id, created_at, cart_id, product_id, title, image_url, price, quantity");
+//       if (error) throw error;
+      
+//       return data;
+//     } catch (error) {
+//       return thunkAPI.rejectWithValue(error.message);
+//     }
+//   }
+// );

@@ -8,6 +8,8 @@ export const Header = styled.header`
   top: 0;
   z-index: 100;
   background-color: #fff;
+  padding-top: 10px;
+  padding-bottom: 10px;
 `;
 export const Container = styled.div`
   padding-left: 15px;
@@ -260,22 +262,25 @@ export const UserWrap = styled.div`
   align-items: center;
   gap: 6px;
 
-  padding: 6px 10px;
+  padding: 4px 8px;
   border-radius: 999px;
 
   background: rgba(255, 255, 255, 0.78);
   backdrop-filter: blur(8px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
 
-  /* 1200+ */
+
   @media screen and (min-width: 1200px) {
     padding: 10px 18px;
   }
 
   svg {
-  heigh: 25px;
-  width: 25px;
-
+  heigh: 20px;
+  width: 20px;
+  @media screen and (min-width: 400px) {
+    heigh: 25px;
+ width: 25px;
+ }
     @media screen and (min-width: 600px) {
      heigh: 30px;
   width: 30px;
@@ -298,13 +303,11 @@ export const GreetingText = styled.p`
   }
 
 
-  /* 600+ */
   @media screen and (min-width: 600px) {
     font-size: 13px;
 
   }
 
-  /* 1200+ */
   @media screen and (min-width: 1200px) {
     font-size: 15px;
     display: inline-flex;
@@ -322,29 +325,27 @@ export const LogoutText = styled.button`
   line-height: 1.2;
 
   color: #ff4d4f;
-  padding: 6px 8px;
+  padding: 4px 6px;
   border-radius: 10px;
 
   transition: transform 120ms ease, background 120ms ease, opacity 120ms ease;
 
-  /* 300+ */
-  @media screen and (min-width: 300px) {
-    font-size: 12px;
-  }
+    font-size: 10px;
+  
 
-  /* 400+ */
+
   @media screen and (min-width: 400px) {
     font-size: 13px;
 
   }
 
-  /* 600+ */
+
   @media screen and (min-width: 600px) {
     font-size: 14px;
 
   }
 
-  /* 1200+ */
+
   @media screen and (min-width: 1200px) {
     font-size: 14px;
   }
