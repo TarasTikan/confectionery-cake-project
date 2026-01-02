@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/confectionery-cake-project/static/css/main.fa3880dd.css",
-    "main.js": "/confectionery-cake-project/static/js/main.18b5c11c.js",
+    "main.js": "/confectionery-cake-project/static/js/main.1177254d.js",
     "static/js/453.3a50c51a.chunk.js": "/confectionery-cake-project/static/js/453.3a50c51a.chunk.js",
     "static/media/cupcake_green-bgremover.png": "/confectionery-cake-project/static/media/cupcake_green-bgremover.acd6eca47f0bdedabd4a.png",
     "static/media/strawberry-bgremover.png": "/confectionery-cake-project/static/media/strawberry-bgremover.5a9d7dd716f1fd1d6c37.png",
@@ -26,11 +26,11 @@
     "static/media/authBg.jpg": "/confectionery-cake-project/static/media/authBg.8e1a2758f747e4751053.jpg",
     "index.html": "/confectionery-cake-project/index.html",
     "main.fa3880dd.css.map": "/confectionery-cake-project/static/css/main.fa3880dd.css.map",
-    "main.18b5c11c.js.map": "/confectionery-cake-project/static/js/main.18b5c11c.js.map",
+    "main.1177254d.js.map": "/confectionery-cake-project/static/js/main.1177254d.js.map",
     "453.3a50c51a.chunk.js.map": "/confectionery-cake-project/static/js/453.3a50c51a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.fa3880dd.css",
-    "static/js/main.18b5c11c.js"
+    "static/js/main.1177254d.js"
   ]
 }
