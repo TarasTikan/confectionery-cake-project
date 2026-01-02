@@ -12,7 +12,7 @@ import {
 } from "./menu.styled";
 import { useDispatch } from "react-redux";
 import { categoryProducts } from "../../redux/filter/filtersSlice";
-import { productsCategory } from "../../redux/constans";
+import { productsCategory } from "../../redux/filter/constans";
 
 export const Menu = () => {
   const dispatch = useDispatch();

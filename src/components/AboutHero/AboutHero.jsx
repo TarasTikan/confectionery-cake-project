@@ -12,7 +12,7 @@ import {
   StatsNumber,
   StatsItem,
 } from "./AboutHero.styled";
-import { getCartItems } from "../../redux/selectors";
+import { getCartItems } from "../../redux/cart/selectors";
 
 export const AboutHero = () => {
   const cart = useSelector(getCartItems);

@@ -26,7 +26,7 @@ export const Container = styled.div`
   }
 `;
 
-export const MenuTitle = styled(motion.h2)`
+export const MenuTitle = styled(motion.create("h2"))`
   font-family: "Inter", sans-serif;
   font-size: 28px;
   font-weight: 700;
@@ -52,7 +52,7 @@ export const MenuList = styled.ul`
   flex-wrap: wrap;
 `;
 
-export const MenuCard = styled(motion.li)`
+export const MenuCard = styled(motion.create("li"))`
   background: #fff;
   border-radius: 16px;
   overflow: hidden;

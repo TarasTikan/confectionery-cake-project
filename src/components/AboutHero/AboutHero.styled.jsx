@@ -46,7 +46,7 @@ export const Container = styled.div`
   }
 `;
 
-export const AboutHeroTitleSecond = styled(motion.h2)`
+export const AboutHeroTitleSecond = styled(motion.create("h2"))`
   margin-right: auto;
   margin-left: auto;
   padding: 5px 15px;
@@ -63,7 +63,7 @@ export const AboutHeroTitleSecond = styled(motion.h2)`
   }
 `;
 
-export const Title = styled(motion.h1)`
+export const Title = styled(motion.create("h1"))`
   font-weight: 800;
   line-height: 1.1;
   font-size: 40px;
@@ -87,7 +87,7 @@ export const AboutHeroWrapper = styled.div`
   margin-bottom: 20px;
 `;
 
-export const Description = styled(motion.p)`
+export const Description = styled(motion.create("p"))`
   font-size: 15px;
   line-height: 30px;
   color: #4a4a4a;
@@ -97,7 +97,7 @@ export const Description = styled(motion.p)`
   }
 `;
 
-export const PrimaryBtn = styled(motion(NavLink))`
+export const PrimaryBtn = styled(motion.create(NavLink))`
   background-color: #a663cc;
   color: #ffffff;
   padding: 12px 20px;
@@ -125,7 +125,7 @@ export const PrimaryBtn = styled(motion(NavLink))`
   }
 `;
 
-export const StatsList = styled(motion.ul)`
+export const StatsList = styled(motion.create("ul"))`
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;

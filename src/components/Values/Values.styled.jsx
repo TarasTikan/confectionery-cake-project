@@ -41,7 +41,7 @@ export const Container = styled.div`
   }
 `;
 
-export const ValuesTitle = styled(motion.h2)`
+export const ValuesTitle = styled(motion.create("h2"))`
   color: ${COLORS.text};
   font-weight: 800;
   line-height: 1.1;
@@ -59,7 +59,7 @@ export const ValuesTitle = styled(motion.h2)`
   }
 `;
 
-export const ValuesLead = styled(motion.p)`
+export const ValuesLead = styled(motion.create("p"))`
   color: ${COLORS.textMuted};
   font-size: 15px;
   line-height: 26px;
@@ -75,7 +75,7 @@ export const ValuesLead = styled(motion.p)`
   }
 `;
 
-export const ValuesGrid = styled(motion.ul)`
+export const ValuesGrid = styled(motion.create("ul"))`
   margin-top: 24px;
   display: flex;
   flex-wrap: wrap;

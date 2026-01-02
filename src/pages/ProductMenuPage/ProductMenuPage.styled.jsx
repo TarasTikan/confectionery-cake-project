@@ -13,16 +13,17 @@ const COLORS = {
   borderSoft: "#f5ccff",
 };
 
-/* -------- Секція категорії (фон, відступи) -------- */
+
 export const CategorySection = styled.section`
   width: 100%;
-  padding-bottom: 60px;
+  padding-bottom: 117px;
   padding-top: 100px;
   background: linear-gradient(
     180deg,
     ${COLORS.bgTop} 0%,
     ${COLORS.bgBottom} 100%
   );
+
 `;
 
 /* -------- Контейнер -------- */
@@ -48,8 +49,8 @@ export const CategoryContainer = styled.div`
   }
 `;
 
-/* -------- Заголовок «Торти» -------- */
-export const CategoryTitle = styled(motion.h1)`
+
+export const CategoryTitle = styled(motion.create("h1"))`
   font-size: 42px;
   font-weight: 800;
   color: ${COLORS.textMain};
@@ -75,6 +76,8 @@ export const CakesList = styled.ul`
   justify-content: center;
   list-style: none;
   gap: 20px;
+  margin-bottom: 25px;
+  max-width: 800px;  
 `;
 
 export const CakeCard = styled.li`
@@ -96,15 +99,10 @@ export const CakeCard = styled.li`
     flex-grow: 2;
   }
 
-  @media (min-width: 1200px) {
-    width: calc((100% - 30px) / 4);
-    flex-grow: 3;
-  }
   &:hover {
     transform: scale(1.05);
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
   }
-
 `;
 
 export const CakeImage = styled.img`
@@ -183,7 +181,7 @@ export const BuyButton = styled.button`
     font-size: 16px;
   }
 
-   &:hover {
+  &:hover {
     background-color: #643a99ff;
   }
 `;
@@ -249,5 +247,63 @@ export const CategoryFilterItem = styled.li`
 
   @media (min-width: 1200px) {
     padding: 10px 24px;
+  }
+`;
+
+export const WrapProductAndFilters = styled.div`
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+`
+
+
+
+
+
+
+
+export const EmptyState = styled.div`
+  max-width: 420px;
+  padding: 40px 30px;
+  text-align: center;
+
+  background: #fff;
+  border-radius: 24px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+`;
+
+export const Emoji = styled.div`
+  font-size: 48px;
+  margin-bottom: 16px;
+`;
+
+export const Title = styled.h3`
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 12px;
+`;
+
+export const Text = styled.p`
+  font-size: 15px;
+  color: #777;
+  margin-bottom: 24px;
+`;
+
+export const ResetButton = styled.button`
+  padding: 12px 22px;
+  border-radius: 999px;
+  border: none;
+
+  background: #9b7df3;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+
+  transition: transform 0.2s, box-shadow 0.2s;
+
+  &:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 14px rgba(155, 125, 243, 0.4);
   }
 `;

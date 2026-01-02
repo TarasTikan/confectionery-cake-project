@@ -24,7 +24,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import { useDispatch, useSelector } from "react-redux";
-import { getCartItems, openCartItems } from "../../redux/selectors";
+import { getCartItems, openCartItems } from "../../redux/cart/selectors";
 import { ModalCart } from "../modalCart/modalCart";
 import { getProductsPopular } from "../../redux/products/selectors";
 import { addItemToCartAuth } from "../../redux/cart/operations";

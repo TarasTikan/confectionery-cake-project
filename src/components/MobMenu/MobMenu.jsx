@@ -10,7 +10,7 @@ import {
   NavLinkAuth,
   WrapperAuth
 } from "./MobMenu.styled";
-import { getCartItems } from "../../redux/selectors";
+import { getCartItems } from "../../redux/cart/selectors";
 
 export const MobMenu = ({ clouseMobMenu, open }) => {
   const cart = useSelector(getCartItems);

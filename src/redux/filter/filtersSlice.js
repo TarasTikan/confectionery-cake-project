@@ -4,17 +4,26 @@ const filtersSlice = createSlice({
   name: "filters",
   initialState: {
     category: "allProducts",
-    taste: [],
+    priceRange: 0,
+    selectTastes: "",
   },
   reducers: {
     categoryProducts: (state, action) => {
       state.category = action.payload;
     },
-    fetchTaste: (state, action) => {
-      state.taste = action.payload;
-    }
+    selectedPriceRange(state, action) {
+      state.priceRange = action.payload;
+    },
+    selectedTastes(state, action) {
+      state.selectTastes = action.payload;
+    },
+    clearFilter(state) {
+      state.category = "allProducts";
+      state.priceRange = 0;
+      state.selectTastes = "";
+    },
   },
 });
 
-export const { categoryProducts } = filtersSlice.actions;
+export const { categoryProducts,selectedPriceRange,selectedTastes,clearFilter } = filtersSlice.actions;
 export const filtersReducer = filtersSlice.reducer;

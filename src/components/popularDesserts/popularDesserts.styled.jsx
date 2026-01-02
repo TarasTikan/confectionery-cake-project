@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { motion } from "framer-motion";
 import { NavLink } from "react-router-dom";
-export const PopularDessertsSection = styled(motion.section)`
+export const PopularDessertsSection = styled(motion.create("section"))`
   font-family: "Inter", sans-serif;
   padding-top: 30px;
   padding-bottom: 20px;

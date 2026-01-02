@@ -21,13 +21,12 @@ import {
   QuantityBtn,
   DeleteItemsBtn,
 } from "./OrderPage.styled";
-import { getCartItems } from "../../redux/selectors";
 
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { FooterCake } from "../../components/footer/footer";
 import { DeleteIcon } from "../../icons/deleteIcon";
-import { getMode } from "../../redux/cart/selectors";
+import { getMode,getCartItems } from "../../redux/cart/selectors";
 import {
   removeItemFromCartAuth,
   updateCartItemQtyAuth,

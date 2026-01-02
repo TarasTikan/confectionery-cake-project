@@ -12,14 +12,22 @@ import { useDispatch, useSelector } from "react-redux";
 import { initAuth } from "../redux/auth/operations.js";
 import { RegisterPage } from "../pages/RegisterPage/RegisterPage.jsx";
 import { LoginPage } from "../pages/LoginPage/LoginPage.jsx";
-import { fetchPopularProducts, fetchProducts } from "../redux/products/operations.js";
+import {
+  fetchPopularProducts,
+  fetchProducts,
+} from "../redux/products/operations.js";
 import { fetchTaste } from "../redux/tastes/operations.js";
-import { fetchCartItems, getOrCreateCart, initModeCart } from "../redux/cart/operations.js";
+import {
+  fetchCartItems,
+  getOrCreateCart,
+  initModeCart,
+} from "../redux/cart/operations.js";
 import { getCartId } from "../redux/cart/selectors.js";
+import { RestrictedRoute } from "./RestrictedRoute.js";
 
 function App() {
   const dispatch = useDispatch();
-  const cartId = useSelector(getCartId)
+  const cartId = useSelector(getCartId);
   useEffect(() => {
     dispatch(initAuth());
     dispatch(fetchProducts());
@@ -28,7 +36,7 @@ function App() {
     dispatch(initModeCart());
     dispatch(getOrCreateCart());
     dispatch(fetchCartItems(cartId));
-  }, [dispatch,cartId]);
+  }, [dispatch, cartId]);
 
   return (
     <>
@@ -41,8 +49,24 @@ function App() {
           <Route path="menu/:category/:id" element={<ProductPage />} />
           <Route path="order" element={<OrderPage />} />
           <Route path="about" element={<AboutPage />} />
-          <Route path="/register" element={<RegisterPage />} />
-          <Route path="/login" element={<LoginPage />} />
+          <Route
+            path="/register"
+            element={
+              <RestrictedRoute
+                component={RegisterPage}
+                redirectTo="/"
+              />
+            }
+          />
+            <Route
+            path="/login"
+            element={
+              <RestrictedRoute
+                component={LoginPage}
+                redirectTo="/"
+              />
+            }
+          />
         </Route>
       </Routes>
     </>

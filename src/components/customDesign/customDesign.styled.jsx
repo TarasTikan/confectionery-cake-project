@@ -33,7 +33,7 @@ export const Container = styled.div`
   }
 `;
 
-export const DesignTitle = styled(motion.h2)`
+export const DesignTitle = styled(motion.create("h2"))`
   font-family: "Inter", sans-serif;
   font-weight: 700;
   text-align: center;
@@ -54,7 +54,7 @@ export const DesignTitle = styled(motion.h2)`
   }
 `;
 
-export const DesignSubTitle = styled(motion.p)`
+export const DesignSubTitle = styled(motion.create("p"))`
   font-family: "Inter", sans-serif;
   font-weight: 400;
   text-align: center;
@@ -116,7 +116,7 @@ export const DesignTextCard = styled.p`
   }
 `;
 
-export const DesignList = styled(motion.ul)`
+export const DesignList = styled(motion.create("ul"))`
   list-style: none;
   display: flex;
   gap: 30px;

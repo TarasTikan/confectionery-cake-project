@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import { motion } from "framer-motion";
-export const WhyChooseUsSection = styled(motion.section)`
+export const WhyChooseUsSection = styled(motion.create("section"))`
   padding-top: 40px;
 
   @media screen and (min-width: 600px) {
@@ -101,7 +101,7 @@ export const BenefitText = styled.p`
   }
 `;
 
-export const WrapText = styled(motion.div)`
+export const WrapText = styled(motion.create("div"))`
   display: flex;
   align-items: center;
   justify-content: center;

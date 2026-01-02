@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import { motion } from "framer-motion";
-export const TasteSection = styled(motion.section)`
+export const TasteSection = styled(motion.create("section"))`
   font-family: "Inter", sans-serif;
   padding-top: 30px;
   padding-bottom: 20px;

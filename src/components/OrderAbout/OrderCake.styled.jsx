@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import { motion } from "framer-motion";
 
-export const OrderSection = styled(motion.section)`
+export const OrderSection = styled(motion.create("section"))`
   text-align: center;
   padding-top: 70px;
   padding-bottom: 120px;

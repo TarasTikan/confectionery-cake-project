@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 import { motion } from "framer-motion";
 import { NavLink as RouterNavLink } from "react-router-dom";
 
-export const Footer = styled(motion.footer)`
+export const Footer = styled(motion.create("footer"))`
   padding-top: 60px;
   padding-bottom: 60px;
   background-color: #f7f3ff;

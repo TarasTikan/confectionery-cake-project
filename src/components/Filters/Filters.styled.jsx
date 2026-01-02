@@ -1,0 +1,245 @@
+import styled from "@emotion/styled";
+export const Bar = styled.div`
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 18px;
+  box-shadow: 0 10px 30px rgba(20, 30, 60, 0.08);
+  border: 1px solid rgba(15, 23, 42, 0.06);
+  display: none;
+  flex-direction: column;
+  gap: 15px;
+  @media screen and (min-width: 800px) {
+    display: flex;
+  }
+`;
+export const WrapFilter = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+`;
+export const Field = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+`;
+
+export const Label = styled.span`
+  font-size: 12px;
+  line-height: 1.2;
+  color: rgba(15, 23, 42, 0.65);
+  font-weight: 600;
+`;
+
+export const controlBase = `
+  height: 44px;
+  padding: 0 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(15, 23, 42, 0.10);
+  background: rgba(248, 250, 252, 0.9);
+  color: rgba(15, 23, 42, 0.95);
+  font-size: 14px;
+  outline: none;
+  transition: box-shadow 180ms ease, border-color 180ms ease, background 180ms ease;
+
+  &:hover {
+    border-color: rgba(15, 23, 42, 0.18);
+    background: rgba(248, 250, 252, 1);
+  }
+
+  &:focus {
+    border-color: #9b7bf5;
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.18);
+    background: #ffffff;
+  }
+
+  &::placeholder {
+    color: rgba(15, 23, 42, 0.35);
+  }
+`;
+
+export const Select = styled.select`
+  ${controlBase};
+  appearance: none;
+  padding-right: 42px;
+
+  background-image: linear-gradient(
+      45deg,
+      transparent 50%,
+      rgba(15, 23, 42, 0.55) 50%
+    ),
+    linear-gradient(135deg, rgba(15, 23, 42, 0.55) 50%, transparent 50%);
+  background-position: calc(100% - 18px) 18px, calc(100% - 12px) 18px;
+  background-size: 6px 6px, 6px 6px;
+  background-repeat: no-repeat;
+`;
+
+export const Input = styled.input`
+  ${controlBase};
+`;
+
+export const ClearFiltrBtn = styled.button`
+  height: 44px;
+  padding: 0 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(15, 23, 42, 0.1);
+  background-color: #9b7bf5;
+  color: #ffffff;
+  font-size: 14px;
+  outline: none;
+  transition: box-shadow 180ms ease, border-color 180ms ease,
+    background 180ms ease;
+  cursor: pointer;
+  &:hover {
+    border-color: rgba(15, 23, 42, 0.18);
+    background-color: #9b7bf5;
+  }
+
+  &:focus {
+    border-color: #9b7bf5;
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.18);
+    background-color: #9b7bf5;
+  }
+  &:disabled {
+    background-color: #6c757d;
+    cursor: not-allowed;
+  }
+`;
+
+export const Count = styled.p`
+  margin: 0;
+  font-size: 14px;
+  color: rgba(15, 23, 42, 0.65);
+
+  b {
+    color: rgba(15, 23, 42, 0.95);
+  }
+`;
+
+export const Range = styled.input`
+  width: 100%;
+  height: 6px;
+  appearance: none;
+  background: linear-gradient(
+    to right,
+    #9b7bf5 0%,
+    #9b7bf5 ${({ actual }) => actual}%,
+    #e5e7eb ${({ actual }) => actual}%,
+    #e5e7eb 100%
+  );
+  border-radius: 999px;
+  outline: none;
+  cursor: pointer;
+
+  &::-webkit-slider-thumb {
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    background: #9b7bf5;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    box-shadow: 0 4px 10px rgba(20, 99, 255, 0.35);
+    transition: transform 150ms ease;
+  }
+
+  &::-webkit-slider-thumb:hover {
+    transform: scale(1.1);
+  }
+
+  &::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+    background: #e5e7eb;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    box-shadow: 0 4px 10px rgba(20, 99, 255, 0.35);
+  }
+`;
+
+export const ActiveFilters = styled.div`
+  margin-top: 6px;
+`;
+
+export const ActiveTitle = styled.h3`
+  margin: 0 0 10px 0;
+  font-size: 18px;
+  font-weight: 800;
+  color: rgba(15, 23, 42, 0.95);
+`;
+
+export const Chips = styled.ul`
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  justify-content: flex-start;
+`;
+
+export const ChipText = styled.span`
+  max-width: 380px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
+  @media (max-width: 720px) {
+    max-width: 240px;
+  }
+`;
+
+export const Chip = styled.li`
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 10px 12px;
+  border-radius: 999px;
+
+  border: 1px solid rgba(15, 23, 42, 0.1);
+  background: rgba(248, 250, 252, 0.95);
+
+  color: rgba(15, 23, 42, 0.9);
+  font-size: 14px;
+  font-weight: 650;
+
+  cursor: pointer;
+  transition: transform 180ms ease, box-shadow 180ms ease,
+    border-color 180ms ease, background 180ms ease;
+
+  &:hover {
+    border-color: rgba(20, 99, 255, 0.35);
+    box-shadow: 0 10px 22px rgba(15, 23, 42, 0.08);
+    background: #ffffff;
+    transform: translateY(-1px);
+  }
+
+  &:focus-visible {
+    outline: none;
+    border-color: rgba(20, 99, 255, 0.55);
+    box-shadow: 0 0 0 4px rgba(20, 99, 255, 0.18);
+  }
+
+  &:hover [data-chip-x] {
+    background: rgba(20, 99, 255, 0.12);
+    color: #9b7bf5;
+  }
+`;
+
+export const ChipX = styled.button`
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  width: 26px;
+  height: 26px;
+  border-radius: 999px;
+
+  background: rgba(15, 23, 42, 0.06);
+  color: rgba(15, 23, 42, 0.6);
+
+  font-size: 18px;
+  line-height: 1;
+  transition: background 180ms ease, color 180ms ease;
+`;
