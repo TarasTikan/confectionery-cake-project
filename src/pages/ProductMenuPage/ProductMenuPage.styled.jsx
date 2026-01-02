@@ -16,7 +16,7 @@ const COLORS = {
 
 export const CategorySection = styled.section`
   width: 100%;
-  padding-bottom: 117px;
+  padding-bottom: 70px;
   padding-top: 100px;
   background: linear-gradient(
     180deg,
@@ -26,8 +26,7 @@ export const CategorySection = styled.section`
 
 `;
 
-/* -------- Контейнер -------- */
-/* Ширина під 300 / 400 / 600 / 1200 */
+
 export const CategoryContainer = styled.div`
   padding-left: 15px;
   padding-right: 15px;
@@ -76,7 +75,6 @@ export const CakesList = styled.ul`
   justify-content: center;
   list-style: none;
   gap: 20px;
-  margin-bottom: 25px;
   max-width: 800px;  
 `;
 
@@ -191,7 +189,6 @@ export const CategoryFilterBar = styled.ul`
   flex-wrap: wrap;
   justify-content: center;
   gap: 10px;
-  margin-bottom: 30px;
   @media (max-width: 599px) {
     justify-content: center;
   }
@@ -212,7 +209,7 @@ export const CategoryFilterLink = styled(NavLink)`
   @media (min-width: 400px) {
     font-size: 15px;
   }
-
+color: #000000;
   @media (min-width: 600px) {
     font-size: 16px;
   }
@@ -254,6 +251,10 @@ export const WrapProductAndFilters = styled.div`
   display: flex;
   gap: 24px;
   align-items: flex-start;
+  margin-bottom: 45px;
+    @media (min-width: 800px) {
+ margin-top: 40px;
+  }
 `
 
 
@@ -305,5 +306,64 @@ export const ResetButton = styled.button`
   &:hover {
     transform: translateY(-1px);
     box-shadow: 0 6px 14px rgba(155, 125, 243, 0.4);
+  }
+`;
+
+export const FilterButton = styled.button`
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  margin: 20px auto;
+  padding: 14px 20px;
+
+  border-radius: 999px;
+  border: none;
+
+  font-weight: 600;
+  cursor: pointer;
+
+  background: linear-gradient(135deg, #cfa9ff, #9b7afc);
+  color: #fff;
+
+  box-shadow: 0 8px 24px rgba(155, 122, 252, 0.35);
+  transition: all 0.25s ease;
+
+  &:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 12px 32px rgba(155, 122, 252, 0.45);
+  }
+
+  &:active {
+    transform: scale(0.97);
+  }
+
+  svg {
+    fill: #ffff
+  }
+  
+  @media screen and (min-width: 300px) {
+    display: flex;
+    font-size: 14px;
+    padding: 12px 16px;
+    width: calc(100% - 32px);
+  }
+
+  @media screen and (min-width: 400px) {
+    font-size: 15px;
+    padding: 14px 20px;
+    width: calc(100% - 48px);
+  }
+
+  @media screen and (min-width: 600px) {
+    font-size: 16px;
+    padding: 16px 26px;
+    width: auto;
+    min-width: 240px;
+  }
+
+  @media screen and (min-width: 800px) {
+    display: none;
   }
 `;

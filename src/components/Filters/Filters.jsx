@@ -4,17 +4,17 @@ import {
   Field,
   Label,
   Select,
-  Input,
+  // Input,
   ClearFiltrBtn,
   WrapFilter,
   Count,
   Range,
-  ActiveFilters,
-  ActiveTitle,
-  Chips,
-  Chip,
-  ChipText,
-  ChipX,
+  // ActiveFilters,
+  // ActiveTitle,
+  // Chips,
+  // Chip,
+  // ChipText,
+  // ChipX,
 } from "./Filters.styled";
 import { clearFilter, selectedPriceRange, selectedTastes } from "../../redux/filter/filtersSlice";
 import { getRangePrice, getSelectTastes } from "../../redux/filter/selectors";
@@ -33,6 +33,7 @@ export const Filters = () => {
           onChange={(e) => dispatch(selectedTastes(e.target.value))}
           value={getTastes}
           >
+            <option defaultValue="За замовчуванням">За замовчуванням</option>
             <option value="шоколад">шоколад</option>
             <option value="полуниця">полуниця</option>
             <option value="чорниця">чорниця</option>

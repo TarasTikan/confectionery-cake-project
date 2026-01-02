@@ -18,11 +18,12 @@ import {
   Title,
   Text,
   ResetButton,
+  FilterButton,
 } from "./ProductMenuPage.styled";
 import Pagination from "@mui/material/Pagination";
 import { useDispatch, useSelector } from "react-redux";
-import { getCategory } from "../../redux/filter/selectors";
-import { categoryProducts, clearFilter } from "../../redux/filter/filtersSlice";
+import { getCategory, getOpenModalFilter } from "../../redux/filter/selectors";
+import { categoryProducts, clearFilter, toggleFilter } from "../../redux/filter/filtersSlice";
 import { productsCategory } from "../../redux/filter/constans";
 import { useEffect } from "react";
 import { ModalCart } from "../../components/modalCart/modalCart";
@@ -42,6 +43,9 @@ import {
 } from "../../redux/pagination/selectors";
 import { setPage } from "../../redux/pagination/paginationSlice";
 import { Filters } from "../../components/Filters/Filters";
+import { FooterCake } from "../../components/footer/footer";
+import { FilterModalMobile } from "../../components/FilterModalMobail/FilterModalMobile";
+import { FilterIcon } from "../../icons/filterIcon";
 
 export const ProductMenuPage = () => {
   const products = useSelector(getPaginatedProducts);
@@ -53,7 +57,7 @@ export const ProductMenuPage = () => {
   const cartId = useSelector(getCartId);
   const page = useSelector(getPage);
   const dispatch = useDispatch();
-
+  const isOpenFilter = useSelector(getOpenModalFilter)
   useEffect(() => {
     if (isOpenCart) {
       document.body.style.overflow = "hidden";
@@ -63,7 +67,7 @@ export const ProductMenuPage = () => {
 
     return () => (document.body.style.overflow = "auto");
   }, [isOpenCart]);
-
+  const handleToggleFilter = () => dispatch(toggleFilter(!isOpenFilter));
   const handleToggleHover = () => dispatch(toggleCart(!isOpenCart));
   const handleCategoryCakes = (type) => dispatch(categoryProducts(type));
   const handleCakesCart = (product) => {
@@ -84,6 +88,7 @@ export const ProductMenuPage = () => {
 
   return (
     <>
+      <FilterModalMobile />
       <CategorySection>
         <CategoryContainer>
           <CategoryTitle
@@ -148,6 +153,10 @@ export const ProductMenuPage = () => {
               </CategoryFilterLink>
             </CategoryFilterItem>
           </CategoryFilterBar>
+          <FilterButton onClick={handleToggleFilter}>
+            <FilterIcon />
+            Фільтри
+          </FilterButton>
           <WrapProductAndFilters>
             <Filters />
             <CakesList>
@@ -197,6 +206,7 @@ export const ProductMenuPage = () => {
         </CategoryContainer>
         <ModalCart />
       </CategorySection>
+      <FooterCake />
     </>
   );
 };

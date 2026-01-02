@@ -99,7 +99,7 @@ export const BtnHeaderClouse = styled.button`
 `;
 
 export const NavLinkAuth = styled(RouterNavLink)`
-  font-size: 20px;
+  font-size: 15px;
   font-weight: 500;
   color: #9b6bce;
   text-decoration: none;
@@ -116,5 +116,9 @@ export const WrapperAuth = styled.div`
   gap: 10px;
   margin-top: auto;
   margin-bottom: 20px;
+  align-items: center;
 `;
 
+export const Separator = styled.p`
+  color: #9b6bce;
+`;

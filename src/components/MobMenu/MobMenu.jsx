@@ -8,7 +8,8 @@ import {
   BtnHeaderClouse,
   Backdrop,
   NavLinkAuth,
-  WrapperAuth
+  WrapperAuth,
+  Separator
 } from "./MobMenu.styled";
 import { getCartItems } from "../../redux/cart/selectors";
 
@@ -48,6 +49,7 @@ export const MobMenu = ({ clouseMobMenu, open }) => {
         </div>
         <WrapperAuth>
               <NavLinkAuth to="/register">Зареєструватися</NavLinkAuth>
+              <Separator>|</Separator>
                   <NavLinkAuth to="/login">Увійти</NavLinkAuth>  
                   </WrapperAuth>
         <MobMenuBtn to={cart.length === 0 ? "/menu" : "/order"}>Замовити зараз</MobMenuBtn>

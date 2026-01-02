@@ -5,7 +5,6 @@ const initialState = {
   user: null,
   isLoading: false,
   error: null,
-  isInitialized: false, 
   profile: null,
 };
 
@@ -24,44 +23,43 @@ const authSlice = createSlice({
         state.user = action.payload?.user ?? null;
         state.profile = action.payload?.profile ?? null;
       })
-        .addCase(registerUser.rejected, (state, action) => {
+      .addCase(registerUser.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.payload;
-        })
-        .addCase(loginUser.pending, (state) => {
-            state.isLoading = true;
-            state.error = null;
-        })
-        .addCase(loginUser.fulfilled, (state, action) => {
-            state.isLoading = false;
-            state.session = action.payload?.session;
-            state.user = action.payload?.user ?? null;
-            state.profile = action.payload?.profile ?? null;
-        })
-        .addCase(loginUser.rejected, (state, action) => {
-            state.isLoading = false;
-            state.error = action.payload;
-        })
-        .addCase(initAuth.pending, (state) => {
-            state.isLoading = true;
-            state.error = null;
-        })
-        .addCase(initAuth.fulfilled, (state, action) => {
-            state.isLoading = false;
-            state.session = action.payload?.session;
-            state.user = action.payload?.user ?? null;
-            state.isInitialized = true;
-            state.profile = action.payload?.profile ?? null;
-        })
-        .addCase(initAuth.rejected, (state, action) => {
-            state.isLoading = false;
-            state.error = action.payload;
-            state.isInitialized = true;
-        }).addCase(logoutUser.fulfilled, (state) => {
-            state.session = null;
-            state.user = null;
-            state.profile = null;
-        });
+      })
+      .addCase(loginUser.pending, (state) => {
+        state.isLoading = true;
+        state.error = null;
+      })
+      .addCase(loginUser.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.session = action.payload?.session;
+        state.user = action.payload?.user ?? null;
+        state.profile = action.payload?.profile ?? null;
+      })
+      .addCase(loginUser.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.payload;
+      })
+      .addCase(initAuth.pending, (state) => {
+        state.isLoading = true;
+        state.error = null;
+      })
+      .addCase(initAuth.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.session = action.payload?.session;
+        state.user = action.payload?.user ?? null;
+
+        state.profile = action.payload?.profile ?? null;
+      })
+      .addCase(initAuth.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.payload;
+      }).addCase(logoutUser.fulfilled, (state) => {
+        state.session = null;
+        state.user = null;
+        state.profile = null;
+      });
   },
 });
 

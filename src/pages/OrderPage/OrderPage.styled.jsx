@@ -100,7 +100,6 @@ export const Input = styled.input`
 `;
 
 export const SubmitButton = styled.button`
-  margin-top: 24px;
   padding: 10px;
   border-radius: 14px;
   border: none;

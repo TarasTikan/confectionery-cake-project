@@ -6,6 +6,7 @@ const filtersSlice = createSlice({
     category: "allProducts",
     priceRange: 0,
     selectTastes: "",
+    isOpenModalFilter: false,
   },
   reducers: {
     categoryProducts: (state, action) => {
@@ -22,8 +23,11 @@ const filtersSlice = createSlice({
       state.priceRange = 0;
       state.selectTastes = "";
     },
+    toggleFilter(state, action) {
+      state.isOpenModalFilter = action.payload
+    }
   },
 });
 
-export const { categoryProducts,selectedPriceRange,selectedTastes,clearFilter } = filtersSlice.actions;
+export const { categoryProducts,selectedPriceRange,selectedTastes,clearFilter,toggleFilter } = filtersSlice.actions;
 export const filtersReducer = filtersSlice.reducer;

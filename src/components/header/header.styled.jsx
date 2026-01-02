@@ -19,6 +19,9 @@ export const Container = styled.div`
   align-items: center;
   justify-content: space-between;
 
+  @media screen and (min-width: 400px) {
+    width: 400px;
+  }
   @media screen and (min-width: 600px) {
     width: 600px;
   }

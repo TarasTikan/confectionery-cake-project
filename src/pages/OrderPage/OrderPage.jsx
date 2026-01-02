@@ -32,11 +32,13 @@ import {
   updateCartItemQtyAuth,
 } from "../../redux/cart/operations";
 import { decrementQuantity, deleteCart, incrementQuantity } from "../../redux/cart/cartSlice";
+import { selectAuthUser } from "../../redux/auth/selectors";
 
 export const OrderPage = () => {
   const cart = useSelector(getCartItems);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const isAuth = useSelector(selectAuthUser)
   const modeCart = useSelector(getMode);
   const hadleDeleteItem = (item) => {
     if (modeCart === "guest") {
@@ -45,7 +47,7 @@ export const OrderPage = () => {
       dispatch(removeItemFromCartAuth(item));
     }
   };
-
+console.log(isAuth)
   const handleIncrementQuantity = (item) => {
     if (modeCart === "guest") {
       dispatch(incrementQuantity(item));
@@ -94,7 +96,7 @@ export const OrderPage = () => {
                   Адреса отримувача
                   <Input type="text" />
                 </label>
-                <SubmitButton>Оформити замовлення</SubmitButton>
+                {isAuth ? <SubmitButton>Оформити замовлення</SubmitButton> : <SubmitButton>Оформити замовлення як гість</SubmitButton>}   
               </Form>
               <SummaryBox>
                 <TitleListOrder>Ваше замовлення</TitleListOrder>
@@ -133,11 +135,11 @@ export const OrderPage = () => {
                   ))}
                 </ListOrder>
                 <SummaryText>
-                  Всього:{" "}
+                  Всього:
                   {cart.reduce(
                     (total, item) => total + item.price * item.quantity,
                     0
-                  )}{" "}
+                  )}
                   грн
                 </SummaryText>
               </SummaryBox>
