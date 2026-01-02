@@ -1,9 +1,9 @@
 import { useDispatch, useSelector } from "react-redux"
-import { Backdrop, BtnHeaderClouse, ClearFiltrBtn, Field, Label, MobFilterSection, MobFilterContainer, Range, Select, WrapFilter } from "./FilterModalMobile.styled"
+import { Backdrop, BtnHeaderClouse, ClearFiltrBtn, Field, Label, MobFilterSection, MobFilterContainer, Range, Select, WrapFilter } from "./FilterModalMob.styled"
 import { getOpenModalFilter, getRangePrice, getSelectTastes } from "../../redux/filter/selectors"
 import { clearFilter, selectedPriceRange, selectedTastes, toggleFilter } from "../../redux/filter/filtersSlice"
 
-export const FilterModalMobile = () => {
+export const FilterModalMob = () => {
     const isOpenFilter = useSelector(getOpenModalFilter)
     const dispatch = useDispatch()
 

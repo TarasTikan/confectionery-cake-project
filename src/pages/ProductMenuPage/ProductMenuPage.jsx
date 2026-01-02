@@ -26,7 +26,7 @@ import { getCategory, getOpenModalFilter } from "../../redux/filter/selectors";
 import { categoryProducts, clearFilter, toggleFilter } from "../../redux/filter/filtersSlice";
 import { productsCategory } from "../../redux/filter/constans";
 import { useEffect } from "react";
-import { ModalCart } from "../../components/modalCart/modalCart";
+import { ModalCart } from "../../components/ModalCart/ModalCart";
 import { Link } from "react-router-dom";
 import {
   getCartId,
@@ -43,8 +43,8 @@ import {
 } from "../../redux/pagination/selectors";
 import { setPage } from "../../redux/pagination/paginationSlice";
 import { Filters } from "../../components/Filters/Filters";
-import { FooterCake } from "../../components/footer/footer";
-import { FilterModalMobile } from "../../components/FilterModalMobail/FilterModalMobile";
+import { FooterCake } from "../../components/Footer/Footer";
+import { FilterModalMob } from "../../components/FilterModalMob/FilterModalMob";
 import { FilterIcon } from "../../icons/filterIcon";
 
 export const ProductMenuPage = () => {
@@ -88,7 +88,7 @@ export const ProductMenuPage = () => {
 
   return (
     <>
-      <FilterModalMobile />
+      <FilterModalMob />
       <CategorySection>
         <CategoryContainer>
           <CategoryTitle

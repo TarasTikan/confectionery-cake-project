@@ -1,5 +1,5 @@
-import { FooterCake } from "../../components/footer/footer";
-import { Menu } from "../../components/menu/menu";
+import { FooterCake } from "../../components/Footer/Footer";
+import { Menu } from "../../components/Menu/Menu";
 
 export const MenuPage = () => {
   return (

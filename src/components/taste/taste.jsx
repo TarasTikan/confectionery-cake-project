@@ -8,7 +8,7 @@ import {
   TasteTitleProduct,
   DescriptionContainer,
   TasteTextDescribe,
-} from "./taste.styled";
+} from "./Taste.styled";
 import { useSelector } from "react-redux";
 import { getTastes } from "../../redux/tastes/selectors";
 

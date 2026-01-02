@@ -9,7 +9,7 @@ import {
   Designbtn,
   DesignListItem,
   CreateCustombtn,
-} from "./customDesign.styled";
+} from "./CustomDesign.styled";
 import { FormIcon } from "../../icons/formIcon";
 import { DownloadIcon } from "../../icons/downloadIcon";
 import { SizeCakeIcon } from "../../icons/sizeCakeIcon";
@@ -17,7 +17,7 @@ import { TasteIcon } from "../../icons/tasteIcon";
 import { DecorIcon } from "../../icons/decorIcon";
 import { PencilIcon } from "../../icons/pencilIcon";
 import { useState, useEffect } from "react";
-import { Modal } from "../modal/modal";
+import { CustomDesignModal } from "../CustomDesignModal/CustomDesignModal";
 
 export const CustomDesign = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -120,7 +120,7 @@ export const CustomDesign = () => {
           Створити власний дизайн
         </CreateCustombtn>
       </Container>
-      <Modal open={isOpen} clouseModal={handleToggleHover} />
+      <CustomDesignModal open={isOpen} clouseModal={handleToggleHover} />
     </DesignSection>
   );
 };

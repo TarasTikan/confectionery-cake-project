@@ -6,7 +6,7 @@ import {
   WhyTitle,
   BenefitText,
   WrapText,
-} from "./whyChooseUs.styled";
+} from "./WhyChooseUs.styled";
 import womanImg from "../../img/womanPopular.png";
 import { CakeIcon } from "../../icons/cakeIcon";
 import { HeartIcon } from "../../icons/heartIcon";

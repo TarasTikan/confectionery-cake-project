@@ -22,12 +22,12 @@ import {
   ButtonsWrapper,
   FileLabel,
   TextModalCustom,
-} from "./modal.styled";
+} from "./CustomDesignModal.styled.jsx";
 
 import { fillings } from "../../data/data.js";
 import { useEffect, useState } from "react";
 
-export const Modal = ({ clouseModal, open }) => {
+export const CustomDesignModal = ({ clouseModal, open }) => {
   const handleClouse = () => {
     clouseModal();
   };

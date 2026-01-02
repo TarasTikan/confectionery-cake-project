@@ -9,7 +9,7 @@ import {
   MenuName,
   MenuBtn,
   WrapInfo,
-} from "./menu.styled";
+} from "./Menu.styled";
 import { useDispatch } from "react-redux";
 import { categoryProducts } from "../../redux/filter/filtersSlice";
 import { productsCategory } from "../../redux/filter/constans";

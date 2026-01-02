@@ -6,7 +6,7 @@ import {
   HeroImage,
   HeroSection,
   HeroWrapInfo,
-} from "./hero.styled";
+} from "./Hero.styled";
 import imgHero from "../../img/heroImage.png";
 export const Hero = () => {
   return (

@@ -24,7 +24,7 @@ import {
 
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { FooterCake } from "../../components/footer/footer";
+import { FooterCake } from "../../components/Footer/Footer";
 import { DeleteIcon } from "../../icons/deleteIcon";
 import { getMode,getCartItems } from "../../redux/cart/selectors";
 import {

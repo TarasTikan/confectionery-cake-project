@@ -9,7 +9,7 @@ import {
   ProductTitle,
   ProductPrice,
   ProductButton,
-} from "./popularDesserts.styled";
+} from "./PopularDesserts.styled";
 import {
   Navigation,
   Pagination,
@@ -25,7 +25,7 @@ import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import { useDispatch, useSelector } from "react-redux";
 import { getCartItems, openCartItems } from "../../redux/cart/selectors";
-import { ModalCart } from "../modalCart/modalCart";
+import { ModalCart } from "../ModalCart/ModalCart";
 import { getProductsPopular } from "../../redux/products/selectors";
 import { addItemToCartAuth } from "../../redux/cart/operations";
 import { getCartId, getMode } from "../../redux/cart/selectors";

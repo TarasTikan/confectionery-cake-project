@@ -19,7 +19,7 @@ import {
   ClearButton,
   TitlePrice,
   DeleteItemsBtn,
-} from "./modalCart.styled";
+} from "./ModalCart.styled";
 import {
   getCartId,
   getCartItems,

@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import { SideBar } from "./header/header.jsx";
+import { SideBar } from "./Header/Header.jsx";
 import { HomePage } from "../pages/HomePage/HomePage.jsx";
 import { MenuPage } from "../pages/MenuPage/MenuPage.jsx";
 import { AboutPage } from "../pages/AboutPage/AboutPage.jsx";

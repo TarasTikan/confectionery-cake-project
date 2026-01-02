@@ -13,7 +13,7 @@ import {
   SocLinkFooter,
   SocLinkList,
   Copyright,
-} from "./footer.styled";
+} from "./Footer.styled";
 import { CallIcon } from "../../icons/callIcon";
 import { TelegramIcon } from "../../icons/telegramIcon";
 import { ViberIcon } from "../../icons/viberIcon";

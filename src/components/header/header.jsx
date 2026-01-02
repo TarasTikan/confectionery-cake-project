@@ -14,7 +14,7 @@ import {
   UserWrap,
   GreetingText,
   LogoutText,
-} from "./header.styled";
+} from "./Header.styled";
 import { ShopBascetIcon } from "../../icons/shopBascetIcon";
 import { MobMenuIcon } from "../../icons/mobMenuIcon";
 import { Outlet } from "react-router-dom";
@@ -22,7 +22,7 @@ import { useState, useEffect } from "react";
 import { MobMenu } from "../MobMenu/MobMenu";
 import { useDispatch, useSelector } from "react-redux";
 import { getCartItems, openCartItems } from "../../redux/cart/selectors";
-import { ModalCart } from "../modalCart/modalCart";
+import { ModalCart } from "../ModalCart/ModalCart";
 import { selectAuthUser } from "../../redux/auth/selectors";
 import { UserIcon } from "../../icons/userIcon";
 import { logoutUser } from "../../redux/auth/operations";

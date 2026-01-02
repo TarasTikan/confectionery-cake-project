@@ -1,5 +1,5 @@
 import { AboutHero } from "../../components/AboutHero/AboutHero";
-import { FooterCake } from "../../components/footer/footer";
+import { FooterCake } from "../../components/Footer/Footer";
 import { OrderCake } from "../../components/OrderAbout/OrderCake";
 import { Values } from "../../components/Values/Values";
 
