@@ -12,8 +12,8 @@ export const RelatedList = styled.ul`
   display: flex;
   gap: 20px;
 
-  flex-wrap: nowrap;      
-  overflow-x: auto;        
+  flex-wrap: nowrap;
+  overflow-x: auto;
   overflow-y: hidden;
   justify-content: center;
   align-items: center;
@@ -23,17 +23,15 @@ export const RelatedList = styled.ul`
   &::-webkit-scrollbar {
     height: 6px;
   }
-  
+
   &::-webkit-scrollbar-thumb {
     background: #d3c3ff;
     border-radius: 10px;
   }
-
-  
 `;
 
 export const RelatedCard = styled.li`
- background-color: #fff;
+  background-color: #fff;
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
@@ -43,7 +41,7 @@ export const RelatedCard = styled.li`
   position: relative;
   cursor: pointer;
   min-width: 250px;
-min-height: 250px;
+  min-height: 250px;
   &:hover {
     transform: scale(1.05);
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
@@ -54,10 +52,10 @@ min-height: 250px;
   }
 `;
 
-export const RelatedImage  = styled.img`
- display: block;
-width: 250px;
-height: 250px;
+export const RelatedImage = styled.img`
+  display: block;
+  width: 250px;
+  height: 250px;
   object-fit: cover;
 `;
 
@@ -89,7 +87,7 @@ export const RelatedName = styled(NavLink)`
   font-weight: 700;
   color: #2e2e2e;
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    &:hover {
+  &:hover {
     color: #a663cc;
   }
 `;

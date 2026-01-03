@@ -7,7 +7,7 @@ export const ScrollToTop = () => {
   useEffect(() => {
     window.scrollTo({
       top: 0,
-      behavior: "smooth", // можна "auto" якщо хочеш без анімації
+      behavior: "smooth",
     });
   }, [pathname]);
 

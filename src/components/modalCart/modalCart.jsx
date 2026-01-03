@@ -1,4 +1,4 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import {
   CartOverlay,
   CartModal,
@@ -20,79 +20,44 @@ import {
   TitlePrice,
   DeleteItemsBtn,
 } from "./ModalCart.styled";
-import {
-  getCartId,
-  getCartItems,
-  getMode,
-  openCartItems,
-} from "../../redux/cart/selectors";
-import {
-  clearCartAuth,
-  removeItemFromCartAuth,
-  updateCartItemQtyAuth,
-} from "../../redux/cart/operations";
+import { getCartItems, openCartItems } from "../../redux/cart/selectors";
 import { useEffect } from "react";
 import { DeleteIcon } from "../../icons/deleteIcon";
-import { clearCart, decrementQuantity, deleteCart, incrementQuantity, toggleCart } from "../../redux/cart/cartSlice";
+import { useCartItemActions } from "../../hooks/useCartItemActions";
+import { useCartActions } from "../../hooks/useCartActions";
 
 export const ModalCart = () => {
   const isOpenCart = useSelector(openCartItems);
   const cart = useSelector(getCartItems);
-  const cartId = useSelector(getCartId)
-  const modeCart = useSelector(getMode);
-  const dispatch = useDispatch();
-  const hadleDeleteItem = (item) => {
-    if (modeCart === "guest") {
-      dispatch(deleteCart(item));
-    } else {
-      dispatch(removeItemFromCartAuth(item));
-    }
-  };
-
-  const handleIncrementQuantity = (item) => {
-    if (modeCart === "guest") {
-      dispatch(incrementQuantity(item));
-    } else {
-      dispatch(updateCartItemQtyAuth({itemId: item.id, quantity: item.quantity, incrementOrDecrement: true}));
-    }
-  };
-  const handleDecrementQuantity = (item) => {
-    if (modeCart === "guest") {
-      dispatch(decrementQuantity(item));
-    } else {
- dispatch(updateCartItemQtyAuth({itemId: item.id, quantity: item.quantity, incrementOrDecrement: false}));
-    }
-  };
-  const handleClearCart = () => {
-    if (modeCart === "guest") {
-      dispatch(clearCart());
-    } else {
-      dispatch(clearCartAuth(cartId));
-    }
-  };
-  const handleClouse = () => dispatch(toggleCart(!isOpenCart));
+  const {
+    hadleDeleteItem,
+    handleIncrementQuantity,
+    handleDecrementQuantity,
+    handleClearCart,
+  } = useCartItemActions();
+  const { toggleCartModal } = useCartActions();
 
   useEffect(() => {
     if (isOpenCart && cart.length === 0) {
-      dispatch(toggleCart(!isOpenCart));
+      toggleCartModal();
     }
-  }, [cart, isOpenCart, dispatch]);
+  }, [toggleCartModal, isOpenCart, cart]);
 
   return (
-    <CartOverlay open={isOpenCart} onClick={handleClouse}>
+    <CartOverlay open={isOpenCart} onClick={toggleCartModal}>
       <CartModal open={isOpenCart} onClick={(e) => e.stopPropagation()}>
         <CartHeader>
           <CartTitle>Ваше замовлення</CartTitle>
-          <CloseBtn onClick={handleClouse}>X</CloseBtn>
+          <CloseBtn onClick={toggleCartModal}>X</CloseBtn>
         </CartHeader>
         <CartList>
           {cart.map((item) => (
             <CartItem key={item.id}>
-              <ItemImage src={item.image_url} />
+              <ItemImage src={item.image_url} loading="lazy" />
               <ItemInfo>
                 <ItemName
                   to={`/menu/allProducts/${item.id}`}
-                  onClick={handleClouse}
+                  onClick={toggleCartModal}
                 >
                   {item.title}
                 </ItemName>
@@ -136,10 +101,10 @@ export const ModalCart = () => {
             Очистити корзину
           </ClearButton>
         </WrapPrice>
-        <CheckoutButton to={`/order`} onClick={handleClouse}>
+        <CheckoutButton to={`/order`} onClick={toggleCartModal}>
           Оформити замовлення
         </CheckoutButton>
-        <ContinueButton type="button" onClick={handleClouse}>
+        <ContinueButton type="button" onClick={toggleCartModal}>
           Повернутись до покупок
         </ContinueButton>
       </CartModal>

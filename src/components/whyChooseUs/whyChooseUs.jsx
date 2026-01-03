@@ -7,7 +7,6 @@ import {
   BenefitText,
   WrapText,
 } from "./WhyChooseUs.styled";
-import womanImg from "../../img/womanPopular.png";
 import { CakeIcon } from "../../icons/cakeIcon";
 import { HeartIcon } from "../../icons/heartIcon";
 import { DeliveryIcon } from "../../icons/deliveryIcon";
@@ -24,7 +23,10 @@ export const WhyChooseUs = () => {
       viewport={{ once: true, amount: 0.25 }}
     >
       <Container>
-        <WhyChooseImg src={womanImg} alt="жінка тримає торт" />
+        <WhyChooseImg
+          src="https://cgqujdwdsgcvzfqrsgmu.supabase.co/storage/v1/object/public/products/pageImages/womanPopular.png"
+          alt="жінка тримає торт"
+        />
         <WrapWhyText>
           <WhyTitle>Чому нас обирають?</WhyTitle>
           <WrapText></WrapText>

@@ -12,10 +12,8 @@ import {
 import { useSelector } from "react-redux";
 import { getTastes } from "../../redux/tastes/selectors";
 
-
-
-export const Tastes = (e) => {
-const tastes = useSelector(getTastes);
+export const Tastes = () => {
+  const tastes = useSelector(getTastes);
 
   return (
     <TasteSection
@@ -38,8 +36,7 @@ const tastes = useSelector(getTastes);
               <DescriptionContainer>
                 <TasteTextDescribe>{item.description}</TasteTextDescribe>
               </DescriptionContainer>
-   
-          </TasteCard>
+            </TasteCard>
           ))}
         </TasteList>
       </Container>

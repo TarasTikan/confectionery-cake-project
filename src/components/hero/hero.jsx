@@ -7,7 +7,6 @@ import {
   HeroSection,
   HeroWrapInfo,
 } from "./Hero.styled";
-import imgHero from "../../img/heroImage.png";
 export const Hero = () => {
   return (
     <HeroSection>
@@ -19,7 +18,7 @@ export const Hero = () => {
           </HeroSubTitle>
           <HeroBtn to="/menu">Переглянути меню</HeroBtn>
         </HeroWrapInfo>
-        <HeroImage src={imgHero} alt="тортик" />
+        <HeroImage src="https://cgqujdwdsgcvzfqrsgmu.supabase.co/storage/v1/object/public/products/pageImages/heroImage.png" alt="тортик" />
       </Container>
     </HeroSection>
   );

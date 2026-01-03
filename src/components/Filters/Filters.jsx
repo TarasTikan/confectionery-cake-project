@@ -4,17 +4,10 @@ import {
   Field,
   Label,
   Select,
-  // Input,
   ClearFiltrBtn,
   WrapFilter,
   Count,
   Range,
-  // ActiveFilters,
-  // ActiveTitle,
-  // Chips,
-  // Chip,
-  // ChipText,
-  // ChipX,
 } from "./Filters.styled";
 import { clearFilter, selectedPriceRange, selectedTastes } from "../../redux/filter/filtersSlice";
 import { getRangePrice, getSelectTastes } from "../../redux/filter/selectors";

@@ -23,32 +23,13 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
-import { useDispatch, useSelector } from "react-redux";
-import { getCartItems, openCartItems } from "../../redux/cart/selectors";
+import { useSelector } from "react-redux";
 import { ModalCart } from "../ModalCart/ModalCart";
 import { getProductsPopular } from "../../redux/products/selectors";
-import { addItemToCartAuth } from "../../redux/cart/operations";
-import { getCartId, getMode } from "../../redux/cart/selectors";
-import { addCart, toggleCart } from "../../redux/cart/cartSlice";
+import { useCartActions } from "../../hooks/useCartActions";
 export const PopularDesserts = () => {
-  const dispatch = useDispatch();
   const popularProducts = useSelector(getProductsPopular);
-  const cart = useSelector(getCartItems);
-    const modeCart = useSelector(getMode);
-      const cartId = useSelector(getCartId)
-  const isOpenCart = useSelector(openCartItems);
-  const handleToggleHover = () => dispatch(toggleCart(!isOpenCart));
-  const handleCakesCart = (product) => {
-    if(modeCart === "guest") {
-if (cart.find((item) => item.id === product.id)) {
-      dispatch(addCart(product));
-      return;
-    }
-    dispatch(addCart(product));
-    }else {
-       dispatch(addItemToCartAuth(cartId, product));
-    }
-  };
+  const { addToCartAndOpen } = useCartActions();
 
   const swiperRef = useRef(null);
   return (
@@ -68,7 +49,6 @@ if (cart.find((item) => item.id === product.id)) {
           modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
           spaceBetween={30}
           speed={3000}
-          loop={true}
           autoplay={{
             delay: 0,
             disableOnInteraction: false,
@@ -101,15 +81,16 @@ if (cart.find((item) => item.id === product.id)) {
           preventClicksPropagation={false}
         >
           {popularProducts.map((item) => (
-            <StyledSlideCard key={item.id}  >
+            <StyledSlideCard key={item.id}>
               <PopularDessertsImage src={item.image_url} alt="торт" />
               <WrapInfo>
-                <ProductTitle to={`menu/allProducts/${item.id}`}>{item.title}</ProductTitle>
+                <ProductTitle to={`menu/allProducts/${item.id}`}>
+                  {item.title}
+                </ProductTitle>
                 <ProductPrice>{item.price} грн</ProductPrice>
-                <ProductButton onClick={() => {
-                  handleCakesCart(item);
-                  handleToggleHover();
-                }}>Додати до кошику</ProductButton>
+                <ProductButton onClick={() => addToCartAndOpen(item)}>
+                  Додати до кошику
+                </ProductButton>
               </WrapInfo>
             </StyledSlideCard>
           ))}

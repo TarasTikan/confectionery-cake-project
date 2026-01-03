@@ -1,4 +1,4 @@
-import { useDispatch} from "react-redux";
+import { useDispatch } from "react-redux";
 import { loginUser } from "../../redux/auth/operations";
 import {
   AuthButton,
@@ -11,8 +11,6 @@ import {
 import { useNavigate } from "react-router-dom";
 import { fetchCartItems, getOrCreateCart } from "../../redux/cart/operations";
 
-
-
 export const LoginForm = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -21,17 +19,17 @@ export const LoginForm = () => {
     const form = e.target;
     const email = form.email.value;
     const password = form.password.value;
-  try {
-    await dispatch(loginUser({ email, password })).unwrap();
+    try {
+      await dispatch(loginUser({ email, password })).unwrap();
 
-    const cart = await dispatch(getOrCreateCart()).unwrap(); 
-    await dispatch(fetchCartItems(cart.id)).unwrap();
+      const cart = await dispatch(getOrCreateCart()).unwrap();
+      await dispatch(fetchCartItems(cart.id)).unwrap();
 
-    form.reset();
-    navigate("/");
-  } catch (err) {
-    console.log("LOGIN FLOW ERROR:", err);
-  }
+      form.reset();
+      navigate("/");
+    } catch (err) {
+      console.log(err);
+    }
     navigate("/");
   };
 

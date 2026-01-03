@@ -6,7 +6,6 @@ import { useCallback } from "react";
 
 export const useCartActions = () => {
   const dispatch = useDispatch();
-
   const modeCart = useSelector(getMode);
   const isOpenCart = useSelector(openCartItems);
   const cartId = useSelector(getCartId);

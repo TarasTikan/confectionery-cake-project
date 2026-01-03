@@ -1,21 +1,21 @@
-import { ProductPageSection, Container,} from "./ProductPage.styled"
-import { RelatedProducts } from "../../components/RelatedProducts/RelatedProducts"
-import { FooterCake } from "../../components/Footer/Footer"
+import { ProductPageSection, Container } from "./ProductPage.styled";
+import { RelatedProducts } from "../../components/RelatedProducts/RelatedProducts";
+import { FooterCake } from "../../components/Footer/Footer";
 
-import { ProductDetails } from "../../components/ProductDetails/ProductDetails"
+import { ProductDetails } from "../../components/ProductDetails/ProductDetails";
 
 export const ProductPage = () => {
-    return (
-        <>
-        <main>
+  return (
+    <>
+      <main>
         <ProductPageSection>
-            <Container>
-               <ProductDetails/>
-                <RelatedProducts />
-            </Container>
+          <Container>
+            <ProductDetails />
+            <RelatedProducts />
+          </Container>
         </ProductPageSection>
-        </main>
-        <FooterCake/>
-        </>
-    )
-}
+      </main>
+      <FooterCake />
+    </>
+  );
+};

@@ -20,7 +20,7 @@ export const MobMenu = ({ clouseMobMenu, open }) => {
   const handleClouse = () => {
     clouseMobMenu();
   };
-  console.log(isAuth);
+
   return (
     <Backdrop open={open} onClick={handleClouse}>
       <MobMenuSection open={open}>

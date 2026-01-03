@@ -5,10 +5,6 @@ import {
   FilterButton,
 } from "./ProductMenuPage.styled";
 import Pagination from "@mui/material/Pagination";
-import { useDispatch, useSelector } from "react-redux";
-import { getOpenModalFilter } from "../../redux/filter/selectors";
-import { toggleFilter } from "../../redux/filter/filtersSlice";
-
 import { ModalCart } from "../../components/ModalCart/ModalCart";
 
 import { FooterCake } from "../../components/Footer/Footer";
@@ -16,12 +12,10 @@ import { FilterModalMob } from "../../components/FilterModalMob/FilterModalMob";
 import { FilterIcon } from "../../icons/filterIcon";
 import { CategoryTabs } from "../../components/CategoryTabs/CategoryTabs";
 import { ProductAndFilters } from "../../components/ProductAndFilters/ProductAndFilters";
+import { useFilterActions } from "../../hooks/useFilterActions";
 
 export const ProductMenuPage = () => {
-  const dispatch = useDispatch();
-  const isOpenFilter = useSelector(getOpenModalFilter);
-
-  const handleToggleFilter = () => dispatch(toggleFilter(!isOpenFilter));
+  const { handleToggleFilter } = useFilterActions();
 
   return (
     <>

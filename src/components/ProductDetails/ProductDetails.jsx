@@ -18,7 +18,7 @@ import { useCartActions } from "../../hooks/useCartActions";
 export const ProductDetails = () => {
   const { id } = useParams();
   const product = useSelector((state) => getProductById(state, id));
- const {addToCart, addToCartAndOpen} = useCartActions()
+  const { addToCart, addToCartAndOpen } = useCartActions();
   return (
     <ProductWrapInfo>
       <ProductImg src={product?.image_url} alt={product?.description} />
@@ -36,10 +36,7 @@ export const ProductDetails = () => {
           <strong>Категорія:</strong> {product?.category}
         </ProductInfo>
         <ButtonsWrap>
-          <AddToCartBtn
-            type="button"
-            onClick={() => addToCartAndOpen(product)}
-          >
+          <AddToCartBtn type="button" onClick={() => addToCartAndOpen(product)}>
             Додати до кошика
           </AddToCartBtn>
           <BuyNowBtn to={`/order`} onClick={() => addToCart(product)}>

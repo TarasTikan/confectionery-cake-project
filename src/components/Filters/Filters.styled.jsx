@@ -73,9 +73,6 @@ export const Select = styled.select`
   background-repeat: no-repeat;
 `;
 
-export const Input = styled.input`
-  ${controlBase};
-`;
 
 export const ClearFiltrBtn = styled.button`
   height: 44px;
@@ -153,93 +150,4 @@ export const Range = styled.input`
     border: 3px solid #fff;
     box-shadow: 0 4px 10px rgba(20, 99, 255, 0.35);
   }
-`;
-
-export const ActiveFilters = styled.div`
-  margin-top: 6px;
-`;
-
-export const ActiveTitle = styled.h3`
-  margin: 0 0 10px 0;
-  font-size: 18px;
-  font-weight: 800;
-  color: rgba(15, 23, 42, 0.95);
-`;
-
-export const Chips = styled.ul`
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  align-items: center;
-  justify-content: flex-start;
-`;
-
-export const ChipText = styled.span`
-  max-width: 380px;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-
-  @media (max-width: 720px) {
-    max-width: 240px;
-  }
-`;
-
-export const Chip = styled.li`
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-
-  padding: 10px 12px;
-  border-radius: 999px;
-
-  border: 1px solid rgba(15, 23, 42, 0.1);
-  background: rgba(248, 250, 252, 0.95);
-
-  color: rgba(15, 23, 42, 0.9);
-  font-size: 14px;
-  font-weight: 650;
-
-  cursor: pointer;
-  transition: transform 180ms ease, box-shadow 180ms ease,
-    border-color 180ms ease, background 180ms ease;
-
-  &:hover {
-    border-color: rgba(20, 99, 255, 0.35);
-    box-shadow: 0 10px 22px rgba(15, 23, 42, 0.08);
-    background: #ffffff;
-    transform: translateY(-1px);
-  }
-
-  &:focus-visible {
-    outline: none;
-    border-color: rgba(20, 99, 255, 0.55);
-    box-shadow: 0 0 0 4px rgba(20, 99, 255, 0.18);
-  }
-
-  &:hover [data-chip-x] {
-    background: rgba(20, 99, 255, 0.12);
-    color: #9b7bf5;
-  }
-`;
-
-export const ChipX = styled.button`
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border: none;
-  cursor: pointer;
-  width: 26px;
-  height: 26px;
-  border-radius: 999px;
-
-  background: rgba(15, 23, 42, 0.06);
-  color: rgba(15, 23, 42, 0.6);
-
-  font-size: 18px;
-  line-height: 1;
-  transition: background 180ms ease, color 180ms ease;
 `;

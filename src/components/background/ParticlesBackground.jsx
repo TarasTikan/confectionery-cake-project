@@ -2,14 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
 import { loadImageShape } from "@tsparticles/shape-image";
-import charryBg from "../../img/charry-bgremover.png";
-import chokoBg from "../../img/choko-bgremover.png";
-import cupcakeGreenBg from "../../img/cupcake_green-bgremover.png";
-import cupcakeYellowBg from "../../img/cupcake_yellow-bgremover.png";
-import makaronGreenBg from "../../img/makaron_green-bgremover.png";
-import makaronPinkBg from "../../img/makaron_pink-bgremover.png";
-import makaronYelowBg from "../../img/makaron_yellow-bgremover.png";
-import strawbarryBg from "../../img/strawberry-bgremover.png";
+
 export function ParticlesBg() {
   const [ready, setReady] = useState(false);
 
@@ -44,14 +37,46 @@ export function ParticlesBg() {
           type: "image",
           options: {
             image: [
-              { src: charryBg, width: 200, height: 200 },
-              { src: chokoBg, width: 200, height: 200 },
-              { src: cupcakeGreenBg, width: 200, height: 240 },
-              { src: cupcakeYellowBg, width: 200, height: 240 },
-              { src: makaronGreenBg, width: 200, height: 240 },
-              { src: makaronPinkBg, width: 200, height: 240 },
-              { src: makaronYelowBg, width: 200, height: 240 },
-              { src: strawbarryBg, width: 200, height: 200 },
+              {
+                src: "https://cgqujdwdsgcvzfqrsgmu.supabase.co/storage/v1/object/public/products/bgElements/charry-bgremover.png",
+                width: 200,
+                height: 200,
+              },
+              {
+                src: "https://cgqujdwdsgcvzfqrsgmu.supabase.co/storage/v1/object/public/products/bgElements/choko-bgremover.png",
+                width: 200,
+                height: 200,
+              },
+              {
+                src: "https://cgqujdwdsgcvzfqrsgmu.supabase.co/storage/v1/object/public/products/bgElements/cupcake_green-bgremover.png",
+                width: 200,
+                height: 240,
+              },
+              {
+                src: "https://cgqujdwdsgcvzfqrsgmu.supabase.co/storage/v1/object/public/products/bgElements/cupcake_yellow-bgremover.png",
+                width: 200,
+                height: 240,
+              },
+              {
+                src: "https://cgqujdwdsgcvzfqrsgmu.supabase.co/storage/v1/object/public/products/bgElements/makaron_green-bgremover.png",
+                width: 200,
+                height: 240,
+              },
+              {
+                src: "https://cgqujdwdsgcvzfqrsgmu.supabase.co/storage/v1/object/public/products/bgElements/makaron_pink-bgremover.png",
+                width: 200,
+                height: 240,
+              },
+              {
+                src: "https://cgqujdwdsgcvzfqrsgmu.supabase.co/storage/v1/object/public/products/bgElements/makaron_yellow-bgremover.png",
+                width: 200,
+                height: 240,
+              },
+              {
+                src: "https://cgqujdwdsgcvzfqrsgmu.supabase.co/storage/v1/object/public/products/bgElements/strawberry-bgremover.png",
+                width: 200,
+                height: 200,
+              },
             ],
           },
         },

@@ -20,7 +20,6 @@ import { clearFilter } from "../../redux/filter/filtersSlice";
 import { getPaginatedProducts } from "../../redux/pagination/selectors";
 import { useCartActions } from "../../hooks/useCartActions";
 
-
 export const ProductAndFilters = () => {
   const dispatch = useDispatch();
   const products = useSelector(getPaginatedProducts);
@@ -42,7 +41,7 @@ export const ProductAndFilters = () => {
           products.map((product) => (
             <CakeCard key={product.id}>
               <Link to={`${product.id}`}>
-                <CakeImage src={product.image_url} />
+                <CakeImage src={product.image_url} loading="lazy" />
               </Link>
               <WrapCakeInfo>
                 <CakeName to={`${product.id}`}>{product.title}</CakeName>

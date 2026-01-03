@@ -16,16 +16,12 @@ import { SizeCakeIcon } from "../../icons/sizeCakeIcon";
 import { TasteIcon } from "../../icons/tasteIcon";
 import { DecorIcon } from "../../icons/decorIcon";
 import { PencilIcon } from "../../icons/pencilIcon";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { CustomDesignModal } from "../CustomDesignModal/CustomDesignModal";
+import { useToggleMobMenu } from "../../hooks/useToggleMobMenu";
 
 export const CustomDesign = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const handleToggleHover = () => {
-    setIsOpen(!isOpen);
-  };
-
+  const { toggle, isOpen } = useToggleMobMenu();
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
@@ -64,7 +60,7 @@ export const CustomDesign = () => {
           viewport={{ once: true, amount: 0.2 }}
         >
           <DesignListItem>
-            <Designbtn onClick={handleToggleHover}>
+            <Designbtn onClick={toggle}>
               <DesignTitleCard>Форма</DesignTitleCard>
               <FormIcon />
               <DesignTextCard>
@@ -73,7 +69,7 @@ export const CustomDesign = () => {
             </Designbtn>
           </DesignListItem>
           <DesignListItem>
-            <Designbtn onClick={handleToggleHover}>
+            <Designbtn onClick={toggle}>
               <DesignTitleCard>Розмір</DesignTitleCard>
               <SizeCakeIcon />
               <DesignTextCard>
@@ -82,7 +78,7 @@ export const CustomDesign = () => {
             </Designbtn>
           </DesignListItem>
           <DesignListItem>
-            <Designbtn onClick={handleToggleHover}>
+            <Designbtn onClick={toggle}>
               <DesignTitleCard>Смак</DesignTitleCard>
               <TasteIcon />
               <DesignTextCard>
@@ -91,7 +87,7 @@ export const CustomDesign = () => {
             </Designbtn>
           </DesignListItem>
           <DesignListItem>
-            <Designbtn onClick={handleToggleHover}>
+            <Designbtn onClick={toggle}>
               <DesignTitleCard>Декор</DesignTitleCard>
               <DecorIcon />
               <DesignTextCard>
@@ -100,14 +96,14 @@ export const CustomDesign = () => {
             </Designbtn>
           </DesignListItem>
           <DesignListItem>
-            <Designbtn onClick={handleToggleHover}>
+            <Designbtn onClick={toggle}>
               <DesignTitleCard>Напис</DesignTitleCard>
               <PencilIcon />
               <DesignTextCard>ім'я, вітання, побажання і т.д.</DesignTextCard>
             </Designbtn>
           </DesignListItem>
           <DesignListItem>
-            <Designbtn onClick={handleToggleHover}>
+            <Designbtn onClick={toggle}>
               <DesignTitleCard>Фото</DesignTitleCard>
               <DownloadIcon />
               <DesignTextCard>
@@ -116,11 +112,11 @@ export const CustomDesign = () => {
             </Designbtn>
           </DesignListItem>
         </DesignList>
-        <CreateCustombtn onClick={handleToggleHover}>
+        <CreateCustombtn onClick={toggle}>
           Створити власний дизайн
         </CreateCustombtn>
       </Container>
-      <CustomDesignModal open={isOpen} clouseModal={handleToggleHover} />
+      <CustomDesignModal open={isOpen} clouseModal={toggle} />
     </DesignSection>
   );
 };

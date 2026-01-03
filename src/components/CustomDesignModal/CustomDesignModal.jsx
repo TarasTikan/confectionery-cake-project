@@ -24,14 +24,15 @@ import {
   TextModalCustom,
 } from "./CustomDesignModal.styled.jsx";
 
-import { fillings } from "../../data/data.js";
 import { useEffect, useState } from "react";
+import { getTastes } from "../../redux/tastes/selectors.js";
+import { useSelector } from "react-redux";
 
 export const CustomDesignModal = ({ clouseModal, open }) => {
   const handleClouse = () => {
     clouseModal();
   };
-
+const tastes = useSelector(getTastes);
   const [form, setForm] = useState(
     JSON.parse(localStorage.getItem("form")) || ""
   );
@@ -209,7 +210,7 @@ export const CustomDesignModal = ({ clouseModal, open }) => {
                   value={taste}
                   onChange={handleTasteChange}
                 >
-                  {fillings.map(({ id, title }) => (
+                  {tastes.map(({ id, title }) => (
                     <option value={title} key={id}>
                       {title}
                     </option>
