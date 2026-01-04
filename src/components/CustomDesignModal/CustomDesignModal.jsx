@@ -24,67 +24,35 @@ import {
   TextModalCustom,
 } from "./CustomDesignModal.styled.jsx";
 
-import { useEffect, useState } from "react";
 import { getTastes } from "../../redux/tastes/selectors.js";
 import { useSelector } from "react-redux";
+import {
+  getComment,
+  getDesignElements,
+  getForm,
+  getSize,
+  getTaste,
+} from "../../redux/customProduct/selectors.js";
+import { useCustomProduct } from "../../hooks/useCustomProduct.js";
 
 export const CustomDesignModal = ({ clouseModal, open }) => {
+  const form = useSelector(getForm);
+  const size = useSelector(getSize);
+  const taste = useSelector(getTaste);
+  const design = useSelector(getDesignElements);
+  const comment = useSelector(getComment);
+  const tastes = useSelector(getTastes);
   const handleClouse = () => {
     clouseModal();
   };
-const tastes = useSelector(getTastes);
-  const [form, setForm] = useState(
-    JSON.parse(localStorage.getItem("form")) || ""
-  );
-  const [size, setSize] = useState(
-    JSON.parse(localStorage.getItem("size")) || ""
-  );
-  const [taste, setTaste] = useState(
-    JSON.parse(localStorage.getItem("taste")) || ""
-  );
-  const [design, setDesign] = useState(
-    JSON.parse(localStorage.getItem("design")) || []
-  );
-  const [comment, setComment] = useState(
-    JSON.parse(localStorage.getItem("comment")) || ""
-  );
-  const [file, setFile] = useState("");
 
-  const handleFormChange = (e) => {
-    setForm(e.target.value);
-  };
-  const handleSizeChange = (e) => {
-    setSize(e.target.value);
-  };
-
-  const handleTasteChange = (e) => {
-    setTaste(e.target.value);
-  };
-
-  const handleDesignChange = (e) => {
-    setDesign((prevState) =>
-      prevState.includes(e.target.value)
-        ? prevState.filter((item) => item !== e.target.value)
-        : [...prevState, e.target.value]
-    );
-  };
-
-  const handleCommentChange = (e) => {
-    setComment(e.target.value);
-  };
-
-  const handleFileChange = (e) => {
-    setFile(e.target.value);
-  };
-
-  useEffect(() => {
-    localStorage.setItem("design", JSON.stringify(design));
-    localStorage.setItem("form", JSON.stringify(form));
-    localStorage.setItem("size", JSON.stringify(size));
-    localStorage.setItem("taste", JSON.stringify(taste));
-    localStorage.setItem("comment", JSON.stringify(comment));
-    localStorage.setItem("file", JSON.stringify(file));
-  }, [design, form, size, taste, comment, file]);
+  const {
+    handleFormChange,
+    handleSizeChange,
+    handleTasteChange,
+    handleDesignChange,
+    handleCommentChange,
+  } = useCustomProduct();
 
   return (
     <Backdrop open={open}>
@@ -310,8 +278,6 @@ const tastes = useSelector(getTastes);
                 <FileInput
                   id="img-cakes"
                   type="file"
-                  value={file}
-                  onChange={handleFileChange}
                 />
               </FileUploadForm>
             </ItemForm>

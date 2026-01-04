@@ -67,11 +67,10 @@ export const addItemToCartAuth = createAsyncThunk(
   "cart/addItemToCartAuth",
   async ({ cartId, product }, thunkAPI) => {
     try {
-      
       if (!cartId) throw new Error("Cart ID is required");
-      
+
       if (!product || !product.id) throw new Error("Product is required");
-      
+
       const { data: productData, error: productError } = await superbase
         .from("cart_items")
         .select("*")
@@ -152,7 +151,7 @@ export const updateCartItemQtyAuth = createAsyncThunk(
     if (!itemId) throw new Error("itemId is required");
     const { data: productData, error: productError } = await superbase
       .from("cart_items")
-      .update({ quantity: incrementOrDecrement ? quantity + 1 : quantity + (-1)})
+      .update({ quantity: incrementOrDecrement ? quantity + 1 : quantity + -1 })
       .eq("id", itemId)
       .select(
         "id, created_at, cart_id, product_id, title, image_url, price, quantity"
@@ -163,7 +162,6 @@ export const updateCartItemQtyAuth = createAsyncThunk(
     return productData;
   }
 );
-
 
 export const clearCartAuth = createAsyncThunk(
   "cart/clearCart",
@@ -211,7 +209,7 @@ export const clearCartAuth = createAsyncThunk(
 //         .upsert(payload, { onConflict: "cart_id,product_id" })
 //         .select("id, created_at, cart_id, product_id, title, image_url, price, quantity");
 //       if (error) throw error;
-      
+
 //       return data;
 //     } catch (error) {
 //       return thunkAPI.rejectWithValue(error.message);

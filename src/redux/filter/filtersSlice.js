@@ -24,10 +24,16 @@ const filtersSlice = createSlice({
       state.selectTastes = "";
     },
     toggleFilter(state, action) {
-      state.isOpenModalFilter = action.payload
-    }
+      state.isOpenModalFilter = action.payload;
+    },
   },
 });
 
-export const { categoryProducts,selectedPriceRange,selectedTastes,clearFilter,toggleFilter } = filtersSlice.actions;
+export const {
+  categoryProducts,
+  selectedPriceRange,
+  selectedTastes,
+  clearFilter,
+  toggleFilter,
+} = filtersSlice.actions;
 export const filtersReducer = filtersSlice.reducer;

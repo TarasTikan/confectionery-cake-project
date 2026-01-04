@@ -1,10 +1,9 @@
 import { createSelector } from "@reduxjs/toolkit";
 import { getProductRangePrice } from "../filter/selectors";
 export const getProducts = (state) => state.products.productItem;
-export const getCategory = (state) => state.filters.category; 
+export const getCategory = (state) => state.filters.category;
 export const getPage = (state) => state.pagination.page;
 export const getPerPage = (state) => state.pagination.perPage;
-
 
 export const getPaginatedProducts = createSelector(
   [getProductRangePrice, getPage, getPerPage],
