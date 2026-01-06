@@ -4,7 +4,6 @@ import {
   CategoryTitle,
   FilterButton,
 } from "./ProductMenuPage.styled";
-import Pagination from "@mui/material/Pagination";
 import { ModalCart } from "../../components/ModalCart/ModalCart";
 
 import { FooterCake } from "../../components/Footer/Footer";
@@ -16,7 +15,7 @@ import { useFilterActions } from "../../hooks/useFilterActions";
 
 export const ProductMenuPage = () => {
   const { handleToggleFilter } = useFilterActions();
-
+ 
   return (
     <>
       <FilterModalMob />
@@ -36,7 +35,6 @@ export const ProductMenuPage = () => {
             Фільтри
           </FilterButton>
           <ProductAndFilters />
-          <Pagination />
         </CategoryContainer>
         <ModalCart />
       </CategorySection>

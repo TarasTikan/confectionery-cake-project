@@ -19,7 +19,9 @@ export const RegisterForm = () => {
     const form = e.target;
     const email = form.email.value;
     const password = form.password.value;
+    const confirmPassword = form.confirmPassword.value;
     const name = form.name.value;
+    if (confirmPassword !== password) return alert("Не співпадають введені паролі")
     dispatch(registerUser({ email, password, name }));
     dispatch(getOrCreateCart());
     form.reset();
@@ -45,6 +47,8 @@ export const RegisterForm = () => {
         name="password"
         required
         placeholder="Пароль"
+        pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z\d]).{8,}$"
+        title="Мінімум 8 символів, хоча б 1 літера і 1 цифра"
       />
       <AuthInput
         type="password"

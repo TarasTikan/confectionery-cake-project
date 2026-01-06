@@ -13,13 +13,16 @@ export const getFilteredProducts = createSelector(
     switch (category) {
       case productsCategory.tarts:
         return products.filter((i) => i.type === productsCategory.tarts);
+
       case productsCategory.cakes:
         return products.filter((i) => i.type === productsCategory.cakes);
+
       case productsCategory.cupcakes:
         return products.filter((i) => i.type === productsCategory.cupcakes);
+
       case productsCategory.macarons:
         return products.filter((i) => i.type === productsCategory.macarons);
-      case productsCategory.allProducts:
+
       default:
         return products;
     }

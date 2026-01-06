@@ -181,3 +181,19 @@ export const BuyButton = styled.button`
     background-color: #643a99ff;
   }
 `;
+
+export const Count = styled.p`
+  font-size: 14px;
+  color: rgba(15, 23, 42, 0.65);
+  margin-bottom: 10px;
+
+  b {
+    color: rgba(15, 23, 42, 0.95);
+  }
+  @media (min-width: 600px) {
+    margin-left: 35px;
+  }
+  @media (min-width: 800px) {
+    display: none;
+  }
+`;

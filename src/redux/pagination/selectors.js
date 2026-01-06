@@ -10,7 +10,7 @@ export const getPaginatedProducts = createSelector(
   (products, page, perPage) => {
     const start = (page - 1) * perPage;
     const end = start + perPage;
-    return products.slice(start, end);
+    return { paginatinProducts: products.slice(start, end), productCount: products.length }
   }
 );
 

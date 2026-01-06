@@ -11,10 +11,11 @@ import {
 } from "./Filters.styled";
 import { clearFilter, selectedPriceRange, selectedTastes } from "../../redux/filter/filtersSlice";
 import { getRangePrice, getSelectTastes } from "../../redux/filter/selectors";
+import { getPaginatedProducts } from "../../redux/pagination/selectors";
 
 export const Filters = () => {
   const dispatch = useDispatch()
-
+  const getProducts = useSelector(getPaginatedProducts)
   const getTastes = useSelector(getSelectTastes)
   const valuePriceRange = useSelector(getRangePrice);
   return (
@@ -23,8 +24,8 @@ export const Filters = () => {
         <Field>
           <Label>Сортування за смаком</Label>
           <Select
-          onChange={(e) => dispatch(selectedTastes(e.target.value))}
-          value={getTastes}
+            onChange={(e) => dispatch(selectedTastes(e.target.value))}
+            value={getTastes}
           >
             <option defaultValue="За замовчуванням">За замовчуванням</option>
             <option value="шоколад">шоколад</option>
@@ -65,18 +66,18 @@ export const Filters = () => {
             <Range
               type="range"
               name="filterPrice"
-                value={valuePriceRange}
-                onChange={(e) => dispatch(selectedPriceRange(e.target.value))}
+              value={valuePriceRange}
+              onChange={(e) => dispatch(selectedPriceRange(e.target.value))}
               min="0"
               max="2000"
-                actual={((Number(valuePriceRange) - 0) * 100) / (2000 - 0)}
+              actual={((Number(valuePriceRange) - 0) * 100) / (2000 - 0)}
             />
           </Label>
         </Field>
         <ClearFiltrBtn type="button" onClick={(e) => dispatch(clearFilter())}>Скинути фільтри</ClearFiltrBtn>
       </WrapFilter>
 
-      <Count>{/* Знайдено: <b>{products.length} товари</b> */}</Count>
+      <Count>Знайдено: <b>{getProducts.productCount} товари</b></Count>
 
     </Bar>
   );

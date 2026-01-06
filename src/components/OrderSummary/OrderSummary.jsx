@@ -14,13 +14,14 @@ import {
   QuantityBtn,
   QuantityControl,
 } from "./OrderSummary.styled";
-import { getCartItems } from "../../redux/cart/selectors";
+import { getCartItems, getCartSumItems } from "../../redux/cart/selectors";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useCartItemActions } from "../../hooks/useCartItemActions";
 
 export const OrderSummary = () => {
   const cart = useSelector(getCartItems);
+  const cartSumItems = useSelector(getCartSumItems)
   const navigate = useNavigate();
   const { hadleDeleteItem, handleIncrementQuantity, handleDecrementQuantity } =
     useCartItemActions();
@@ -68,7 +69,7 @@ export const OrderSummary = () => {
       </ListOrder>
       <SummaryText>
         Всього:{" "}
-        {cart.reduce((total, item) => total + item.price * item.quantity, 0)}{" "}
+        {cartSumItems}{" "}
         грн
       </SummaryText>
     </SummaryBox>

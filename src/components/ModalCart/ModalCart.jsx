@@ -20,7 +20,7 @@ import {
   TitlePrice,
   DeleteItemsBtn,
 } from "./ModalCart.styled";
-import { getCartItems, openCartItems } from "../../redux/cart/selectors";
+import { getCartItems, getCartSumItems, openCartItems } from "../../redux/cart/selectors";
 import { useEffect } from "react";
 import { DeleteIcon } from "../../icons/deleteIcon";
 import { useCartItemActions } from "../../hooks/useCartItemActions";
@@ -29,6 +29,7 @@ import { useCartActions } from "../../hooks/useCartActions";
 export const ModalCart = () => {
   const isOpenCart = useSelector(openCartItems);
   const cart = useSelector(getCartItems);
+  const cartSumItems = useSelector(getCartSumItems)
   const {
     hadleDeleteItem,
     handleIncrementQuantity,
@@ -91,10 +92,7 @@ export const ModalCart = () => {
         <WrapPrice>
           <TitlePrice>
             Загальна сума:{" "}
-            {cart.reduce(
-              (total, item) => total + item.price * item.quantity,
-              0
-            )}{" "}
+            {cartSumItems}{" "}
             грн
           </TitlePrice>
           <ClearButton type="button" onClick={handleClearCart}>
