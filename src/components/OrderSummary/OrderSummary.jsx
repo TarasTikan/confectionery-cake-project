@@ -38,10 +38,10 @@ export const OrderSummary = () => {
           <CartItem key={item.id}>
             <ItemImage src={item.image_url} />
             <ItemInfo>
-              <ItemName to={`/menu/allProducts/${item.id}`}>
+              <ItemName to={item.price === 0 ? undefined : `/menu/allProducts/${item.id}`}>
                 {item.title}
               </ItemName>
-              <ItemPrice>{item.price} грн</ItemPrice>
+              <ItemPrice>{item.price || "Потрібно уточнювати"} грн</ItemPrice>
             </ItemInfo>
             <QuantityControl>
               <DeleteItemsBtn

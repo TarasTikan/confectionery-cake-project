@@ -19,6 +19,7 @@
     "@tsparticles/slim": "^3.9.1",
     "axios": "^1.13.2",
     "motion": "^12.23.22",
+    "nanoid": "^5.1.6",
     "prop-types": "^15.8.1",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",

@@ -54,15 +54,15 @@ export const ModalCart = () => {
         <CartList>
           {cart.map((item) => (
             <CartItem key={item.id}>
-              <ItemImage src={item.image_url} loading="lazy" />
+              <ItemImage src={item.image_url} />
               <ItemInfo>
                 <ItemName
-                  to={`/menu/allProducts/${item.id}`}
+                  to={item.price === 0 ? undefined : `/menu/allProducts/${item.id}`}
                   onClick={toggleCartModal}
                 >
                   {item.title}
                 </ItemName>
-                <ItemPrice>{item.price} грн</ItemPrice>
+                <ItemPrice>{item.price || "Потрібно уточнювати"} грн</ItemPrice>
               </ItemInfo>
               <QuantityControl>
                 <DeleteItemsBtn

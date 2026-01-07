@@ -89,7 +89,7 @@ export const CakeCard = styled.li`
   cursor: pointer;
   width: calc((100% - 30px) / 2);
   flex-grow: 1;
-
+  overflow: auto;
   @media (min-width: 600px) {
     width: calc((100% - 30px) / 3);
     flex-grow: 2;

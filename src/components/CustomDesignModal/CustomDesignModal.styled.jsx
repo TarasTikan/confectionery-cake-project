@@ -301,7 +301,7 @@ export const DecorCheckbox = styled.input`
 `;
 
 export const CommentCakes = styled.textarea`
-  width: 100%;
+width: 90%;
   padding: 5px;
   border-radius: 12px;
   height: 100%;
@@ -314,7 +314,7 @@ export const CommentCakes = styled.textarea`
   cursor: pointer;
   transition: all 0.3s ease;
   resize: none;
-  /* При наведенні */
+
   &:hover {
     border-color: #9b6bce;
   }
@@ -441,3 +441,36 @@ export const TextModalCustom = styled.p`
     font-size: 16px;
   }
 `;
+
+export const TitleInput = styled.input`
+width: 90%;
+  padding: 5px;
+  border-radius: 12px;
+  height: 100%;
+  border: 2px solid #e5e5e5;
+  background: #fff;
+  font-family: "Inter", sans-serif;
+  font-size: 7px;
+  font-weight: 600;
+  color: #2e2e2e;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+  &:hover {
+    border-color: #9b6bce;
+  }
+
+  &:focus {
+    outline: none;
+    border-color: #9b6bce;
+    box-shadow: 0 0 0 3px rgba(155, 107, 206, 0.15);
+  }
+  @media (min-width: 600px) {
+    padding: 5px;
+    font-size: 10px;
+  }
+  @media (min-width: 1200px) {
+    padding: 10px;
+    font-size: 15px;
+  }
+`

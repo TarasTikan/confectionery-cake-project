@@ -6,6 +6,7 @@ export const getMode = (state) => state.cart.mode;
 export const getCartId = (state) => state.cart.cartId;
 
 export const getCartSumItems = createSelector([getCartItems], (cart) => {
+    
     return cart.reduce(
         (total, item) => total + item.price * item.quantity,
         0

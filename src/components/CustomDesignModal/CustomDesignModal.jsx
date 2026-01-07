@@ -22,6 +22,7 @@ import {
   ButtonsWrapper,
   FileLabel,
   TextModalCustom,
+  TitleInput,
 } from "./CustomDesignModal.styled.jsx";
 
 import { getTastes } from "../../redux/tastes/selectors.js";
@@ -32,8 +33,9 @@ import {
   getForm,
   getSize,
   getTaste,
+  getTitle,
 } from "../../redux/customProduct/selectors.js";
-import { useCustomProduct } from "../../hooks/useCustomProduct.js";
+import { useAddCustomProductInCart, useCustomProduct } from "../../hooks/useCustomProduct.js";
 
 export const CustomDesignModal = ({ clouseModal, open }) => {
   const form = useSelector(getForm);
@@ -42,6 +44,7 @@ export const CustomDesignModal = ({ clouseModal, open }) => {
   const design = useSelector(getDesignElements);
   const comment = useSelector(getComment);
   const tastes = useSelector(getTastes);
+  const title = useSelector(getTitle);
   const handleClouse = () => {
     clouseModal();
   };
@@ -52,8 +55,9 @@ export const CustomDesignModal = ({ clouseModal, open }) => {
     handleTasteChange,
     handleDesignChange,
     handleCommentChange,
+    handleTitleChange
   } = useCustomProduct();
-
+  const addCustomProductInCart = useAddCustomProductInCart()
   return (
     <Backdrop open={open}>
       <ModalWindow open={open}>
@@ -110,9 +114,6 @@ export const CustomDesignModal = ({ clouseModal, open }) => {
             <ItemForm>
               <TitleForm>Розмір форми та вага</TitleForm>
               <FormCakes>
-                <RadioLabel htmlFor="size-cakes-one">
-                  16 см та 1,5 кг
-                </RadioLabel>
                 <RadioInput
                   type="radio"
                   name="size-cakes"
@@ -121,7 +122,7 @@ export const CustomDesignModal = ({ clouseModal, open }) => {
                   checked={size === "16 см та 1,5 кг"}
                   onChange={handleSizeChange}
                 />
-
+                <RadioLabel htmlFor="size-cakes-one">16 см та 1,5 кг</RadioLabel>
                 <RadioInput
                   type="radio"
                   name="size-cakes"
@@ -267,8 +268,10 @@ export const CustomDesignModal = ({ clouseModal, open }) => {
                 <CommentCakes
                   placeholder="ім'я, дата або привітання"
                   value={comment}
+                  name="comment"
                   onChange={handleCommentChange}
                 />
+                <TitleInput placeholder="Вкажіть назву свого кастомного торта" name="title" onChange={handleTitleChange} value={title} maxLength={30}/>
               </form>
             </ItemForm>
             <ItemForm>
@@ -287,7 +290,7 @@ export const CustomDesignModal = ({ clouseModal, open }) => {
             уточнення дизайну вашого торта!
           </TextModalCustom>
           <ButtonsWrapper>
-            <ConfirmButton>Додати до кошика</ConfirmButton>
+            <ConfirmButton onClick={e => addCustomProductInCart()}>Додати до кошика</ConfirmButton>
             <CancelButton onClick={handleClouse}>Скасувати</CancelButton>
           </ButtonsWrapper>
         </Container>

@@ -5,6 +5,7 @@ const initialState = {
   taste: JSON.parse(localStorage.getItem("taste")) || "",
   designElements: JSON.parse(localStorage.getItem("designElements")) || [],
   comment: JSON.parse(localStorage.getItem("comment")) || "",
+  title: JSON.parse(localStorage.getItem("title")) || "",
 };
 export const customProductSlice = createSlice({
   name: "customProduct",
@@ -33,9 +34,27 @@ export const customProductSlice = createSlice({
       state.comment = action.payload;
       localStorage.setItem("comment", JSON.stringify(action.payload));
     },
+    setTitleCustom(state, action) {
+      state.title = action.payload;
+      localStorage.setItem("title", JSON.stringify(action.payload));
+    },
+    clearCustomProduct(state) {
+      state.form = "";
+      state.size = "";
+      state.taste = "";
+      state.designElements = [];
+      state.comment = "";
+      state.title = "";
+      localStorage.removeItem("form");
+      localStorage.removeItem("size");
+      localStorage.removeItem("taste");
+      localStorage.removeItem("designElements");
+      localStorage.removeItem("comment");
+      localStorage.removeItem("title");
+    }
   },
 });
 
-export const { setForm, setSize, setTaste, setDesignElements, setComment } =
+export const { setForm, setSize, setTaste, setDesignElements, setComment, clearCustomProduct, setTitleCustom } =
   customProductSlice.actions;
 export const customProductReducer = customProductSlice.reducer;

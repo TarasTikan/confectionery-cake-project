@@ -75,6 +75,7 @@ const cartSlice = createSlice({
       state.isLoading = false;
       state.cartItem = JSON.parse(localStorage.getItem("cart") || []);
     },
+
   },
   extraReducers: (builder) => {
     builder

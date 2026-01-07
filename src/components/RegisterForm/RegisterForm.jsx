@@ -9,12 +9,12 @@ import {
   AuthFooterText,
 } from "./Register.styled";
 import { useNavigate } from "react-router-dom";
-import { getOrCreateCart } from "../../redux/cart/operations";
+import { fetchCartItems, getOrCreateCart } from "../../redux/cart/operations";
 
 export const RegisterForm = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const handleRegister = (e) => {
+  const handleRegister = async (e) => {
     e.preventDefault();
     const form = e.target;
     const email = form.email.value;
@@ -22,9 +22,17 @@ export const RegisterForm = () => {
     const confirmPassword = form.confirmPassword.value;
     const name = form.name.value;
     if (confirmPassword !== password) return alert("Не співпадають введені паролі")
-    dispatch(registerUser({ email, password, name }));
-    dispatch(getOrCreateCart());
-    form.reset();
+    try {
+      await dispatch(registerUser({ email, password, name })).unwrap();
+
+      const cart = await dispatch(getOrCreateCart()).unwrap();
+      await dispatch(fetchCartItems(cart.id)).unwrap();
+
+      form.reset();
+      navigate("/");
+    } catch (err) {
+      console.log(err);
+    }
     navigate("/");
   };
 
@@ -47,8 +55,8 @@ export const RegisterForm = () => {
         name="password"
         required
         placeholder="Пароль"
-        pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z\d]).{8,}$"
-        title="Мінімум 8 символів, хоча б 1 літера і 1 цифра"
+        pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
+        title="Повинно містити щонайменше 8 символів, включно з великими та малими літерами, цифрою та спеціальним символом."
       />
       <AuthInput
         type="password"
