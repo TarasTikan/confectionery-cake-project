@@ -51,10 +51,17 @@ export const customProductSlice = createSlice({
       localStorage.removeItem("designElements");
       localStorage.removeItem("comment");
       localStorage.removeItem("title");
-    }
+    },
   },
 });
 
-export const { setForm, setSize, setTaste, setDesignElements, setComment, clearCustomProduct, setTitleCustom } =
-  customProductSlice.actions;
+export const {
+  setForm,
+  setSize,
+  setTaste,
+  setDesignElements,
+  setComment,
+  clearCustomProduct,
+  setTitleCustom,
+} = customProductSlice.actions;
 export const customProductReducer = customProductSlice.reducer;

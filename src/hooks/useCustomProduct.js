@@ -8,7 +8,14 @@ import {
   setTaste,
   setTitleCustom,
 } from "../redux/customProduct/customProductSlice";
-import { getComment, getDesignElements, getForm, getSize, getTaste, getTitle } from "../redux/customProduct/selectors";
+import {
+  getComment,
+  getDesignElements,
+  getForm,
+  getSize,
+  getTaste,
+  getTitle,
+} from "../redux/customProduct/selectors";
 import { addCart } from "../redux/cart/cartSlice";
 import { nanoid } from "nanoid";
 import { getCartId, getMode } from "../redux/cart/selectors";
@@ -45,16 +52,16 @@ export const useCustomProduct = () => {
     handleTasteChange,
     handleDesignChange,
     handleCommentChange,
-    handleTitleChange
+    handleTitleChange,
   };
 };
 
 export const useAddCustomProductInCart = () => {
-  const form = useSelector(getForm)
-  const size = useSelector(getSize)
-  const taste = useSelector(getTaste)
-  const designElements = useSelector(getDesignElements)
-  const comment = useSelector(getComment)
+  const form = useSelector(getForm);
+  const size = useSelector(getSize);
+  const taste = useSelector(getTaste);
+  const designElements = useSelector(getDesignElements);
+  const comment = useSelector(getComment);
   const title = useSelector(getTitle);
   const dispatch = useDispatch();
 
@@ -62,30 +69,42 @@ export const useAddCustomProductInCart = () => {
   const cartId = useSelector(getCartId);
   const handleAddCustomProduct = (e) => {
     if (!form) {
-      return alert("Оберіть будь ласка форми")
+      return alert("Оберіть будь ласка форми");
     }
     if (!size) {
-      return alert("Оберіть будь ласка розмір")
+      return alert("Оберіть будь ласка розмір");
     }
     if (!taste) {
-      return alert("Оберіть будь ласка смак")
+      return alert("Оберіть будь ласка смак");
     }
 
     if (!title) {
-      return alert("Вкажіть назву вашого десерту")
+      return alert("Вкажіть назву вашого десерту");
     }
-    const product = { category: "Кастомний десерт", description: comment, image_url: "https://cgqujdwdsgcvzfqrsgmu.supabase.co/storage/v1/object/public/products/pageImages/customProduct.jpg", title: title, type: "cake", weight: size, price: 0, quantity: 1, form: form, taste: taste, design: designElements, id: nanoid() }
+    const product = {
+      category: "Кастомний десерт",
+      description: comment,
+      image_url:
+        "https://cgqujdwdsgcvzfqrsgmu.supabase.co/storage/v1/object/public/products/pageImages/customProduct.jpg",
+      title: title,
+      type: "cake",
+      weight: size,
+      price: 0,
+      quantity: 1,
+      form: form,
+      taste: taste,
+      design: designElements,
+      id: nanoid(),
+    };
     if (modeCart === "guest") {
       dispatch(addCart(product));
     }
-
 
     if (cartId) {
       dispatch(addItemToCartAuth({ cartId, product: product }));
     }
 
-
-    dispatch(clearCustomProduct())
-  }
-  return handleAddCustomProduct
-}
+    dispatch(clearCustomProduct());
+  };
+  return handleAddCustomProduct;
+};
