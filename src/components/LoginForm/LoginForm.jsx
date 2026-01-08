@@ -1,4 +1,4 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { loginUser } from "../../redux/auth/operations";
 import {
   AuthButton,
@@ -7,13 +7,16 @@ import {
   AuthInput,
   AuthSubtitle,
   AuthTitle,
+  ErrorText,
 } from "./LoginForm.styled";
 import { useNavigate } from "react-router-dom";
 import { fetchCartItems, getOrCreateCart } from "../../redux/cart/operations";
+import { selectAuthError } from "../../redux/auth/selectors";
 
 export const LoginForm = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const errorLogin = useSelector(selectAuthError);
   const handleLogin = async (e) => {
     e.preventDefault();
     const form = e.target;
@@ -30,7 +33,6 @@ export const LoginForm = () => {
     } catch (err) {
       console.log(err);
     }
-    navigate("/");
   };
 
   return (
@@ -50,7 +52,7 @@ export const LoginForm = () => {
         required
         placeholder="Пароль"
       />
-
+      {errorLogin ? <ErrorText>Не вірна пошта чи пароль</ErrorText> : undefined}
       <AuthButton type="submit">Авторизаватися</AuthButton>
       <AuthFooterText>
         Ще не маєте аккаунт? <a href="/">Зареєструватися</a>

@@ -1,4 +1,4 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { registerUser } from "../../redux/auth/operations";
 import {
   AuthForm,
@@ -7,13 +7,16 @@ import {
   AuthButton,
   AuthSubtitle,
   AuthFooterText,
+  ErrorText,
 } from "./Register.styled";
 import { useNavigate } from "react-router-dom";
 import { fetchCartItems, getOrCreateCart } from "../../redux/cart/operations";
+import { selectAuthError } from "../../redux/auth/selectors";
 
 export const RegisterForm = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const errorLogin = useSelector(selectAuthError);
   const handleRegister = async (e) => {
     e.preventDefault();
     const form = e.target;
@@ -21,7 +24,8 @@ export const RegisterForm = () => {
     const password = form.password.value;
     const confirmPassword = form.confirmPassword.value;
     const name = form.name.value;
-    if (confirmPassword !== password) return alert("Не співпадають введені паролі")
+    if (confirmPassword !== password)
+      return alert("Не співпадають введені паролі");
     try {
       await dispatch(registerUser({ email, password, name })).unwrap();
 
@@ -33,7 +37,6 @@ export const RegisterForm = () => {
     } catch (err) {
       console.log(err);
     }
-    navigate("/");
   };
 
   return (
@@ -64,6 +67,9 @@ export const RegisterForm = () => {
         required
         placeholder="Підтвердження паролю"
       />
+      {errorLogin ? (
+        <ErrorText>Користувач з такою поштою вже існує</ErrorText>
+      ) : undefined}
       <AuthButton type="submit">Зареєструватися</AuthButton>
       <AuthFooterText>
         Вже маєте аккаунт? <a href="/">Увійдіть</a>

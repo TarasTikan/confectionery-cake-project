@@ -96,8 +96,8 @@ export function ParticlesBg() {
         inset: 0,
         width: "100%",
         height: "100%",
-        zIndex: 0, // canvas над фоном body
-        pointerEvents: "none", // не блокує кліки
+        zIndex: 0,
+        pointerEvents: "none", 
       }}
     />
   );

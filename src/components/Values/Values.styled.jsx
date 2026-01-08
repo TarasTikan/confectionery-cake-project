@@ -124,22 +124,6 @@ export const ValueCard = styled.li`
   }
 `;
 
-// export const ValueIcon = styled.div`
-//   width: 38px;
-//   height: 38px;
-//   font-size: 26px;
-//   display: grid;
-//   place-items: center;
-//   border-radius: 12px;
-//   background: ${COLORS.lavender};
-
-//   @media screen and (min-width: 400px) {
-//     width: 40px;
-//     height: 40px;
-//     font-size: 28px;
-//   }
-// `;
-
 export const ValueTitle = styled.h3`
   color: ${COLORS.text};
   font-weight: 700;

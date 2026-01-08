@@ -37,7 +37,6 @@ export const FooterLogo = styled.a`
   letter-spacing: -0.01em;
   color: #2b1f1f;
   text-decoration: none;
-  font-size: 24px; /* 320 */
   @media screen and (min-width: 400px) {
     font-size: 28px;
   }
@@ -53,8 +52,6 @@ export const FooterNavTitle = styled.h4`
   color: #2b1f1f;
   text-transform: none;
   letter-spacing: -0.005em;
-
-  font-size: 16px; /* 320 */
   @media screen and (min-width: 400px) {
     font-size: 17px;
   }
@@ -77,8 +74,6 @@ export const NavLink = styled(RouterNavLink)`
   text-decoration: none;
   color: #2b1f1f;
   font-weight: 600;
-
-  font-size: 15px; /* 320 */
   @media screen and (min-width: 400px) {
     font-size: 15.5px;
   }
@@ -120,7 +115,6 @@ export const Phone = styled.a`
   text-decoration: none;
   font-weight: 600;
   transition: color 0.2s ease, transform 0.2s ease;
-  font-size: 16px; /* 320 */
   @media screen and (min-width: 400px) {
     font-size: 17px;
   }

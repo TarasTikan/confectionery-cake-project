@@ -114,17 +114,6 @@ export const addItemToCartAuth = createAsyncThunk(
   }
 );
 
-export const removeItemFromCartGuest = createAsyncThunk(
-  "cart/removeItemFromCartGuest",
-  async (productId, thunkAPI) => {
-    const cart = localStorage.getItem("cart")
-      ? JSON.parse(localStorage.getItem("cart"))
-      : [];
-    const deleteInCartItems = cart.filter((item) => item.id !== productId);
-    localStorage.setItem("cart", JSON.stringify(deleteInCartItems));
-    return deleteInCartItems;
-  }
-);
 
 export const removeItemFromCartAuth = createAsyncThunk(
   "cart/removeItemFromCartAuth",
@@ -148,18 +137,36 @@ export const removeItemFromCartAuth = createAsyncThunk(
 export const updateCartItemQtyAuth = createAsyncThunk(
   "cart/updateCartItemQty",
   async ({ itemId, quantity, incrementOrDecrement }, thunkAPI) => {
-    if (!itemId) throw new Error("itemId is required");
-    const { data: productData, error: productError } = await superbase
-      .from("cart_items")
-      .update({ quantity: incrementOrDecrement ? quantity + 1 : quantity + -1 })
-      .eq("id", itemId)
-      .select(
-        "id, created_at, cart_id, product_id, title, image_url, price, quantity"
-      )
-      .single();
+    try {
+      if (!itemId) throw new Error("itemId is required");
 
-    if (productError) throw productError;
-    return productData;
+      const nextQty = incrementOrDecrement ? quantity + 1 : quantity - 1;
+
+      if (nextQty <= 0) {
+        const { error } = await superbase
+          .from("cart_items")
+          .delete()
+          .eq("id", itemId);
+
+        if (error) throw error;
+
+        return { deletedId: itemId };
+      }
+
+      const { data: productData, error: productError } = await superbase
+        .from("cart_items")
+        .update({ quantity: nextQty })
+        .eq("id", itemId)
+        .select(
+          "id, created_at, cart_id, product_id, title, image_url, price, quantity"
+        )
+        .single();
+
+      if (productError) throw productError;
+      return productData;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
   }
 );
 
@@ -182,37 +189,3 @@ export const clearCartAuth = createAsyncThunk(
   }
 );
 
-// export const mergeLocalStorageInAuthCart = createAsyncThunk(
-//   "cart/mergeLocalStorageInAuthCart",
-//   async (cartId, thunkAPI) => {
-//     try {
-//       if (!cartId) throw new Error("cartId is required");
-
-//       const raw = localStorage.getItem("cart");
-//       if (!raw) return [];
-
-//        const parsedLocal = JSON.parse(raw);
-
-//       if (!Array.isArray(parsedLocal) || parsedLocal.length === 0) return [];
-
-//       const payload = parsedLocal.map((p) => ({
-//         cart_id: cartId,
-//         product_id: String(p.id),
-//         title: p.title ?? "",
-//         image_url: p.image_url ?? "",
-//         price: Number(p.price ?? 0),
-//         quantity: Number(p.quantity ?? 1),
-//       }));
-
-//       const { data, error } = await superbase
-//         .from("cart_items")
-//         .upsert(payload, { onConflict: "cart_id,product_id" })
-//         .select("id, created_at, cart_id, product_id, title, image_url, price, quantity");
-//       if (error) throw error;
-
-//       return data;
-//     } catch (error) {
-//       return thunkAPI.rejectWithValue(error.message);
-//     }
-//   }
-// );

@@ -190,12 +190,10 @@ export const TasteSelect = styled.select`
   cursor: pointer;
   transition: all 0.3s ease;
 
-  /* При наведенні */
   &:hover {
     border-color: #9b6bce;
   }
 
-  /* Фокус (коли відкривається список) */
   &:focus {
     outline: none;
     border-color: #9b6bce;
@@ -250,24 +248,22 @@ export const DecorCheckbox = styled.input`
   width: 12px;
   height: 12px;
   border: 2px solid #bdbdbd;
-  border-radius: 8px; /* легке округлення */
+  border-radius: 8px; 
   background: #fff;
   position: relative;
   transition: all 0.2s ease;
 
-  /* фокус із клавіатури */
+
   &:focus-visible {
     outline: none;
     box-shadow: 0 0 0 3px rgba(155, 107, 206, 0.35);
     border-color: #9b6bce;
   }
 
-  /* стан hover саме на боксі */
   &:hover {
     border-color: #9b6bce;
   }
 
-  /* стан checked: фіолетовий фон + біла галочка */
   &:checked {
     border-color: #9b6bce;
     background-color: #9b6bce;
@@ -319,7 +315,6 @@ width: 90%;
     border-color: #9b6bce;
   }
 
-  /* Фокус (коли відкривається список) */
   &:focus {
     outline: none;
     border-color: #9b6bce;

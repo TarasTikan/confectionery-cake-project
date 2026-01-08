@@ -63,7 +63,7 @@ export const NavList = styled.ul`
 `;
 
 export const NavLink = styled(RouterNavLink)`
-  font-size: 14px; /* мобілка */
+  font-size: 14px;
   font-weight: 500;
   color: #2e2e2e;
   text-decoration: none;
@@ -80,7 +80,7 @@ export const NavLink = styled(RouterNavLink)`
 
   @media screen and (min-width: 1200px) {
     font-size: 16px;
-    padding: 20px 0; /* більше простору */
+    padding: 20px 0; 
   }
 `;
 export const BtnHeader = styled(RouterNavLink)`

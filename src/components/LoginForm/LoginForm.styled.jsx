@@ -102,3 +102,26 @@ export const AuthFooterText = styled.p`
     }
   }
 `;
+
+export const ErrorText = styled.p`
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.4;
+
+  color: #ff4d4f;
+
+  text-align: center;
+
+  animation: fadeIn 200ms ease;
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-4px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+`;

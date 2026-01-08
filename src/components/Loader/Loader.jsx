@@ -1,5 +1,6 @@
-import { BeatLoader } from "react-spinners";
-import { LoaderWrap, LoaderText } from "./Loader.styled";
+import {BeatLoader} from "react-spinners"
+import { LoaderText, LoaderWrap } from "./Loader.styled";
+
 
 export const Loader = ({ text = "Завантажуємо десерти…" }) => {
   return (

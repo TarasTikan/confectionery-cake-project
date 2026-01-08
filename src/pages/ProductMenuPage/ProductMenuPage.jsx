@@ -12,10 +12,13 @@ import { FilterIcon } from "../../icons/filterIcon";
 import { CategoryTabs } from "../../components/CategoryTabs/CategoryTabs";
 import { ProductAndFilters } from "../../components/ProductAndFilters/ProductAndFilters";
 import { useFilterActions } from "../../hooks/useFilterActions";
+import { useSelector } from "react-redux";
+import { getIsLoading } from "../../redux/products/selectors";
+import { Loader } from "../../components/Loader/Loader";
 
 export const ProductMenuPage = () => {
   const { handleToggleFilter } = useFilterActions();
- 
+  const loading = useSelector(getIsLoading);
   return (
     <>
       <FilterModalMob />
@@ -34,7 +37,7 @@ export const ProductMenuPage = () => {
             <FilterIcon />
             Фільтри
           </FilterButton>
-          <ProductAndFilters />
+          {loading ? <Loader /> : <ProductAndFilters />}
         </CategoryContainer>
         <ModalCart />
       </CategorySection>

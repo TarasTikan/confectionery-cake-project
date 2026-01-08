@@ -38,13 +38,11 @@ export const CartModal = styled.div`
   opacity: ${({ open }) => (open ? 1 : 0)};
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
     transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  /* 400px */
   @media (min-width: 400px) {
     padding: 28px;
     max-width: 520px;
   }
 
-  /* 600px */
   @media (min-width: 600px) {
     max-width: 560px;
   }
@@ -170,7 +168,6 @@ export const QuantityControl = styled.div`
   display: flex;
   align-items: center;
   gap: 14px;
-
 `;
 export const DeleteItemsBtn = styled.button`
   background: none;

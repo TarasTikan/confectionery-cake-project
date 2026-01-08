@@ -7,15 +7,19 @@ import { ParticlesBg } from "../../components/Background/ParticlesBackground";
 import { WhyChooseUs } from "../../components/WhyChooseUs/WhyChooseUs";
 import { OrderCake } from "../../components/OrderAbout/OrderCake";
 import { FooterCake } from "../../components/Footer/Footer";
+import { useSelector } from "react-redux";
+import { getIsLoading } from "../../redux/products/selectors";
+import { Loader } from "../../components/Loader/Loader";
 export const HomePage = () => {
+  const loading = useSelector(getIsLoading)
   return (
     <>
       <ParticlesBg />
       <main>
         <Hero />
         <Menu />
-        <PopularDesserts />
-        <Tastes />
+        {loading ? <Loader /> : <PopularDesserts />}
+        {loading ? <Loader text={"Завантажуємо смаки"}/> : <Tastes />}  
         <CustomDesign />
         <WhyChooseUs />
         <OrderCake />

@@ -75,7 +75,6 @@ const cartSlice = createSlice({
       state.isLoading = false;
       state.cartItem = JSON.parse(localStorage.getItem("cart") || []);
     },
-
   },
   extraReducers: (builder) => {
     builder
@@ -124,7 +123,6 @@ const cartSlice = createSlice({
         state.error = null;
 
         const item = action.payload;
-
         const idx = state.cartItem.findIndex((i) => i.id === item.id);
 
         if (idx !== -1) {
@@ -160,13 +158,16 @@ const cartSlice = createSlice({
         state.isLoading = false;
         state.error = null;
 
-        const item = action.payload;
-
-        const idx = state.cartItem.findIndex((i) => i.id === item.id);
-
-        if (idx !== -1) {
-          state.cartItem[idx] = item;
+        if (action.payload?.deletedId) {
+          state.cartItem = state.cartItem.filter(
+            (i) => i.id !== action.payload.deletedId
+          );
+          return;
         }
+
+        const item = action.payload;
+        const idx = state.cartItem.findIndex((i) => i.id === item.id);
+        if (idx !== -1) state.cartItem[idx] = item;
       })
       .addCase(updateCartItemQtyAuth.rejected, (state, action) => {
         state.isLoading = false;
