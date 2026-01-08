@@ -1,6 +1,7 @@
 import { createSelector } from "@reduxjs/toolkit";
 
 export const getProducts = (state) => state.products.productItem;
+export const getIsLoading = (state) => state.products.isLoading;
 export const getProductsPopular = (state) => state.products.productPopularItem;
 
 export const getProductById = createSelector(

@@ -22,6 +22,7 @@ import { getPage, getPageCount, getPaginatedProducts } from "../../redux/paginat
 import { useCartActions } from "../../hooks/useCartActions";
 import { setPage } from "../../redux/pagination/paginationSlice";
 import { Pagination } from "@mui/material";
+// import { getIsLoading } from "../../redux/products/selectors";
 
 
 
@@ -31,7 +32,7 @@ export const ProductAndFilters = () => {
   const pageCount = useSelector(getPageCount);
   const page = useSelector(getPage);
   const { addToCartAndOpen } = useCartActions();
-  
+  // const loading = useSelector(getIsLoading)
   return (
     <>
       <WrapProductAndFilters>
