@@ -1,70 +1,72 @@
-# Getting Started with Create React App
+# 🍰 Confectionery Cake Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Frontend e-commerce проєкт для онлайн-кондитерської з каталогом десертів, авторизацією користувачів, корзиною та кастомним замовленням.
 
-## Available Scripts
+Проєкт створений як портфоліо та навчальний продукт для відпрацювання **React, Redux Toolkit та Supabase** з максимально наближеним до реального інтернет-магазину функціоналом.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## 🔗 Demo
+👉 https://tarastikan.github.io/confectionery-cake-project/
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## ✨ Основний функціонал
 
-### `npm test`
+### 🛍️ Магазин
+- 📦 Каталог товарів (торти, десерти, набори)
+- 🔍 Фільтрація за категоріями та ціною
+- ↕️ Сортування товарів
+- 📄 Сторінка товару з описом
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 🛒 Корзина
+- ➕ Додавання товарів
+- ➖ Зміна кількості
+- ❌ Видалення товарів
+- 💾 Збереження корзини
+  - для **неавторизованих** — `localStorage`
+  - для **авторизованих** — база даних Supabase
 
-### `npm run build`
+### 👤 Авторизація
+- 🔐 Реєстрація та логін користувача
+- 👥 Управління сесією
+- 🔄 Автоматичне відновлення сесії після перезавантаження
+- 🔒 Розмежування логіки для гостьового та авторизованого користувача
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 🎂 Кастомне замовлення
+- Вибір форми, розміру та смаку
+- Додавання коментаря
+- Підготовка структури під збереження замовлення
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 📱 UI / UX
+- 📱 Адаптивний дизайн (mobile / tablet / desktop)
+- 🧭 Навігація між сторінками (React Router)
+- ⚡ Модальні вікна, мобільне меню
+- 🔔 UI-стейти (порожня корзина, відсутні товари, loading)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## 🛠️ Технології
+- **React**
+- **Redux Toolkit**
+- **React Router**
+- **Supabase (Auth + Database)**
+- **Emotion / Styled Components**
+- **JavaScript (ES6+)**
+- **HTML5 / CSS3**
+- **LocalStorage**
+- **Create React App**
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 🔐 Supabase
+У проєкті використовується **Supabase** для:
+- Авторизації користувачів
+- Збереження корзини авторизованого користувача
+- Управління сесіями
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Для запуску необхідно створити файл `.env.local`:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```env
+REACT_APP_SUPABASE_URL=your_supabase_url
+REACT_APP_SUPABASE_ANON_KEY=your_supabase_anon_key
