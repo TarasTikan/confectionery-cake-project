@@ -61,7 +61,7 @@ export const Select = styled.select`
   ${controlBase};
   appearance: none;
   padding-right: 42px;
-
+  cursor: pointer;
   background-image: linear-gradient(
       45deg,
       transparent 50%,
